@@ -5,7 +5,7 @@ export default function PageLoadingComponent(
 ) {
   return (
     <div className=" h-full w-full justify-center items-center flex ">
-      <span className="loading loading-spinner loading-lg"></span>
+      <span className="loading loading-spinner loading-lg text-primary"></span>
     </div>
   );
 }

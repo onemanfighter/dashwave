@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../Firebase/Firebase";
+import { auth } from "../firebase/Firebase";
 import { AuthData, UserData } from "../../../data_store/slice/AuthSlice";
 import { storeAuthkeyData } from "../../storage/auth/AuthStorageApi";
 

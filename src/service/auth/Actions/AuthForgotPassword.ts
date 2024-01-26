@@ -1,5 +1,5 @@
 import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../Firebase/Firebase";
+import { auth } from "../firebase/Firebase";
 
 /**
  * Method to sign-in using firebase.

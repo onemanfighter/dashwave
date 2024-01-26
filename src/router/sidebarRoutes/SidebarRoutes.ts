@@ -1,38 +1,40 @@
+/**
+ * Routes for the sidebar.
+ */
 export const sidebarRoutes = [
   {
     name: "Home",
-    path: "/home",
+    path: "/dashboard",
+    iconName: "home",
   },
   {
-    name: "About",
-    path: "/about",
+    name: "Projects",
+    path: "/projects",
+    iconName: "projects",
   },
   {
-    name: "Contact",
-    path: "/contact",
+    name: "Plans",
+    path: "/plans",
+    iconName: "plans",
   },
   {
-    name: "Login",
-    path: "/login",
+    name: "Expenses",
+    path: "/expense",
+    iconName: "expenses",
   },
   {
-    name: "Register",
-    path: "/register",
+    name: "Goals",
+    path: "/goals",
+    iconName: "goals",
   },
   {
-    name: "Forgot Password",
-    path: "/forgot-password",
-  },
-  {
-    name: "Reset Password",
-    path: "/reset-password",
+    name: "Creds",
+    path: "/creds",
+    iconName: "credentials",
   },
   {
     name: "Profile",
     path: "/profile",
-  },
-  {
-    name: "Logout",
-    path: "/logout",
+    iconName: "profile",
   },
 ];

@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Theme, setTheme } from "../../data_store/slice/ThemeSlice";
 import { RootState } from "../../data_store/Store";
+import { ProfileIcon } from "../../assets/icons/ProfileIcon";
+import { SettingIcon } from "../../assets/icons/SettingsIcon";
+import { LogoutIcon } from "../../assets/icons/LogoutIcon";
+import { PasswordResetIcon } from "../../assets/icons/PasswordResetIcon";
 
 export interface INavigationComponentProps {
   logOutClickHandler: () => void;
@@ -84,20 +88,33 @@ export default function NavigationComponent(props: INavigationComponentProps) {
             tabIndex={0}
             className="mt-3 z-[1] p-2 shadow menu menu-md dropdown-content bg-base-300 rounded-box w-52 drop-shadow-2xl"
           >
-            <li>
-              <NavLink className="justify-between" to={""}>
-                Profile
+            <li className="m-1">
+              <NavLink className="justify-between" to={"/profile/preview"}>
+                <div className="flex flex-row gap-2 items-center">
+                  <ProfileIcon />
+                  Profile
+                </div>
                 <span className="badge">New</span>
               </NavLink>
             </li>
-            <li>
-              <NavLink to={""}>Settings</NavLink>
+            <li className="m-1">
+              <NavLink to={"/profile/reset"}>
+                <PasswordResetIcon />
+                Password reset
+              </NavLink>
             </li>
-            <li>
+            <li className="m-1">
+              <NavLink to={"/profile/settings"}>
+                <SettingIcon />
+                Settings
+              </NavLink>
+            </li>
+            <li className="m-1">
               <button
                 onClick={props.logOutClickHandler}
                 className=" bg-error text-error-content"
               >
+                <LogoutIcon />
                 Logout
               </button>
             </li>

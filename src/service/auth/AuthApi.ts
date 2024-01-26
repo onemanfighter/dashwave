@@ -1,8 +1,8 @@
-import { AuthData, onSignOut } from "../../data_store/slice/AuthSlice";
-import { firebaseForgotPassword } from "./Actions/AuthForgotPassword";
-import { LoginCred, firebaseSingIn } from "./Actions/AuthSignIn";
-import { firebaseSignOut } from "./Actions/AuthSignOut";
-import firebaseSignUp, { SignUpCred } from "./Actions/AuthSignUp";
+import { AuthData } from "../../data_store/slice/AuthSlice";
+import { firebaseForgotPassword } from "./actions/AuthForgotPassword";
+import { LoginCred, firebaseSingIn } from "./actions/AuthSignIn";
+import { firebaseSignOut } from "./actions/AuthSignOut";
+import firebaseSignUp, { SignUpCred } from "./actions/AuthSignUp";
 
 /**
  * Method to make the Firebase signin

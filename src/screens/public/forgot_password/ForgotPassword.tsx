@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ErrorText from "../../../components/text/ErrorText";
 import InputText from "../../../components/text/InputText";
 import LandingIntro from "../../../components/landing_intro/LandingIntro";

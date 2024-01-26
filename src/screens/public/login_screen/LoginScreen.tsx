@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import LandingIntro from "../../../components/landing_intro/LandingIntro";
 import InputText from "../../../components/text/InputText";
 import ErrorText from "../../../components/text/ErrorText";
-import { LoginCred } from "../../../service/auth/Actions/AuthSignIn";
+import { LoginCred } from "../../../service/auth/actions/AuthSignIn";
 import { signIn } from "../../../service/auth/AuthApi";
 import { AuthData, onLogin } from "../../../data_store/slice/AuthSlice";
 import { useDispatch } from "react-redux";
