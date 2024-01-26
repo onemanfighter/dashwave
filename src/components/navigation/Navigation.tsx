@@ -29,7 +29,7 @@ export default function NavigationComponent(props: INavigationComponentProps) {
   }, [dispatch, themeCheckState]);
 
   return (
-    <div className="navbar bg-base-300 sticky">
+    <div className="navbar bg-base-300 h-[9%]">
       <div className="flex-none">
         <button
           className="btn btn-square btn-ghost"

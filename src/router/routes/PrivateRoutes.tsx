@@ -11,6 +11,10 @@ import {
   LazyGoalsScreenComponent,
   LazyHomeScreenComponent,
   LazyPlansScreenComponent,
+  LazyProjectAddComponent,
+  LazyProjectEditComponent,
+  LazyProjectMainScreenComponent,
+  LazyProjectPreviewComponent,
   LazyProjectsScreenComponent,
 } from "../../provider/lazy_provider/lazy_screen/LazyPrivateScreen";
 import {
@@ -28,7 +32,12 @@ const privateRouter = createBrowserRouter(
     <Route path="/" element={<LazyHomeScreenComponent />}>
       <Route path="" element={<Navigate to="dashboard" replace />} />
       <Route path="dashboard" element={<LazyDashboardScreenComponent />} />
-      <Route path="projects" element={<LazyProjectsScreenComponent />}></Route>
+      <Route path="projects" element={<LazyProjectsScreenComponent />}>
+        <Route path="" element={<LazyProjectMainScreenComponent />} />
+        <Route path="preview" element={<LazyProjectPreviewComponent />} />
+        <Route path="add" element={<LazyProjectAddComponent />} />
+        <Route path="edit" element={<LazyProjectEditComponent />} />
+      </Route>
       <Route path="plans" element={<LazyPlansScreenComponent />}></Route>
       <Route path="expense" element={<LazyExpenseScreenComponent />}></Route>
       <Route path="goals" element={<LazyGoalsScreenComponent />}></Route>

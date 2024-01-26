@@ -38,9 +38,9 @@ export default function MainRootScreen(props: IMainRootScreenProps) {
           openSidebarClickHandler={openSidebarClickHandler}
         />
       </div>
-      <div className=" flex flex-wrap h-screen">
+      <div className=" flex flex-wrap h-[92%]">
         {sidebarOpen && (
-          <div className="w-1/6 h-full outline bg-base-200">
+          <div className="w-1/6 h-full border-r border-primary bg-base-200">
             <SidebarComponent />
           </div>
         )}
