@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import ErrorText from "../../../components/text/ErrorText";
 import InputText from "../../../components/text/InputText";
 import LandingIntro from "../../../components/landing_intro/LandingIntro";
+import { forgotPassword } from "../../../service/auth/AuthApi";
+import { isValidEmail } from "../../../util/input/Input";
 
 interface UpdateProps {
   updateType: string;
@@ -23,17 +25,29 @@ function ForgotPassword() {
   const [linkSent, setLinkSent] = useState(false);
   const [userObj, setUserObj] = useState(INITIAL_USER_OBJ);
 
+  const forgotPasswordHandler = () => {
+    setLoading(false);
+    setLinkSent(true);
+  };
+
   const submitForm = (e: any) => {
     e.preventDefault();
     setErrorMessage("");
 
     if (userObj.emailId.trim() === "")
       return setErrorMessage("Email Id is required! (use any value)");
-    else {
+    else if (!isValidEmail(userObj.emailId)) {
+      return setErrorMessage("Email Id is not valid!");
+    } else {
       setLoading(true);
+      forgotPassword(
+        userObj.emailId,
+        forgotPasswordHandler,
+        (error: string) => {
+          setErrorMessage(error);
+        }
+      );
       // Call API to send password reset link
-      setLoading(false);
-      setLinkSent(true);
     }
   };
 
@@ -52,7 +66,7 @@ function ForgotPassword() {
     >
       <div className="card mx-auto w-full max-w-5xl shadow-xl">
         <div className="grid  md:grid-cols-2 grid-cols-1 rounded-xl">
-          <div className="glass">
+          <div className=" bg-base-content">
             <LandingIntro />
           </div>
           <div className="py-24 px-10 bg-primary-content">

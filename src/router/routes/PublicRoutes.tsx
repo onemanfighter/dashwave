@@ -4,13 +4,13 @@ import {
   createBrowserRouter,
   createRoutesFromChildren,
 } from "react-router-dom";
-import LazyComponentProvider from "../provider/lazy_provider/LazyComponent";
+import LazyComponentProvider from "../../provider/lazy_provider/component/LazyComponent";
 import {
   LazyAppComponent,
   LazyForgotPasswordScreenComponent,
   LazyLoginScreenComponent,
   LazySignupScreenComponent,
-} from "../provider/lazy_provider/LazyScreen";
+} from "../../provider/lazy_provider/LazyScreen";
 
 /**
  * Router declaration for the demo app before login.

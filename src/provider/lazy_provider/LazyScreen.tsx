@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import LazyComponentProvider from "./LazyComponent";
+import LazyComponentProvider from "./component/LazyComponent";
 
 const App = lazy(() => import("../../App"));
 const LoginScreen = lazy(
@@ -9,7 +9,13 @@ const SignupScreen = lazy(
   () => import("../../screens/public/signup_screen/SignupScreen")
 );
 
-const HomeScreen = lazy(() => import("../../screens/home_screen/HomeScreen"));
+const HomeScreen = lazy(
+  () => import("../../screens/private/home_screen/HomeScreen")
+);
+
+const DashboardHome = lazy(
+  () => import("../../screens/private/dashboard_home/DashboardHome")
+);
 
 const ForgotPasswordScreen = lazy(
   () => import("../../screens/public/forgot_password/ForgotPassword")
@@ -30,6 +36,7 @@ export function LazyAppComponent() {
   );
 }
 
+// Private screens components.
 /**
  * Component definition for the lazy home screen component.
  * @returns The LazyHomeScreenComponent component.
@@ -42,6 +49,19 @@ export function LazyHomeScreenComponent() {
   );
 }
 
+/**
+ * Component definition for the lazy dashboard screen component.
+ * @returns The LazyDashboardScreenComponent component.
+ */
+export function LazyDashboardScreenComponent() {
+  return (
+    <LazyComponentProvider>
+      <DashboardHome />
+    </LazyComponentProvider>
+  );
+}
+
+// Public screens components.
 /**
  * Component definition for the lazy login screen component.
  * @returns The LazyLoginScreenComponent component.

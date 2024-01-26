@@ -3,45 +3,52 @@ import { NavLink } from "react-router-dom";
 import LandingIntro from "../../../components/landing_intro/LandingIntro";
 import InputText from "../../../components/text/InputText";
 import ErrorText from "../../../components/text/ErrorText";
+import { SignUpCred } from "../../../service/auth/Actions/AuthSignUp";
+import { useDispatch } from "react-redux";
+import { signUp } from "../../../service/auth/AuthApi";
+import { AuthData, onSignUp } from "../../../data_store/slice/AuthSlice";
 
 interface UpdateProps {
   updateType: string;
   value: string;
 }
 
-interface RegisterObjType {
-  name: string;
-  password: string;
-  emailId: string;
-}
-
 function Register() {
-  const INITIAL_REGISTER_OBJ: RegisterObjType = {
-    name: "",
+  const INITIAL_REGISTER_OBJ: SignUpCred = {
+    fName: "",
+    lName: "",
     password: "",
-    emailId: "",
+    email: "",
   };
 
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [registerObj, setRegisterObj] = useState(INITIAL_REGISTER_OBJ);
+
+  const signUpHandler = (authData: AuthData) => {
+    dispatch(onSignUp(authData));
+  };
 
   const submitForm = (e: any) => {
     e.preventDefault();
     setErrorMessage("");
 
-    if (registerObj.name.trim() === "")
-      return setErrorMessage("Name is required! (use any value)");
-    if (registerObj.emailId.trim() === "")
+    if (registerObj.fName.trim() === "")
+      return setErrorMessage("First name is required! (use any value)");
+    if (registerObj.lName.trim() === "")
+      return setErrorMessage("Last name is required! (use any value)");
+    if (registerObj.email.trim() === "")
       return setErrorMessage("Email Id is required! (use any value)");
     if (registerObj.password.trim() === "")
       return setErrorMessage("Password is required! (use any value)");
     else {
       setLoading(true);
+      signUp(registerObj, signUpHandler, (error: string) => {
+        setErrorMessage(error);
+      });
       // Call API to check user credentials and save token in localstorage
-      localStorage.setItem("token", "DumyTokenHere");
       setLoading(false);
-      window.location.href = "/app/welcome";
     }
   };
 
@@ -60,7 +67,7 @@ function Register() {
     >
       <div className="card mx-auto w-full max-w-5xl  shadow-xl ">
         <div className="grid md:grid-cols-2 grid-cols-1">
-          <div className=" bg-transparent glass">
+          <div className=" bg-base-content">
             <LandingIntro />
           </div>
           <div className="py-24 px-10 bg-primary-content">
@@ -70,16 +77,23 @@ function Register() {
             <form onSubmit={(e) => submitForm(e)}>
               <div className="mb-4">
                 <InputText
-                  defaultValue={registerObj.name}
-                  updateType="name"
+                  defaultValue={registerObj.fName}
+                  updateType="fName"
                   containerStyle="mt-4"
-                  labelTitle="Name"
+                  labelTitle="First name"
                   updateFormValue={updateFormValue}
                 />
 
                 <InputText
-                  defaultValue={registerObj.emailId}
-                  updateType="emailId"
+                  defaultValue={registerObj.lName}
+                  updateType="lName"
+                  containerStyle="mt-4"
+                  labelTitle="Last name"
+                  updateFormValue={updateFormValue}
+                />
+                <InputText
+                  defaultValue={registerObj.email}
+                  updateType="email"
                   containerStyle="mt-4"
                   labelTitle="Email Id"
                   updateFormValue={updateFormValue}

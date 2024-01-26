@@ -1,12 +1,36 @@
 import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Theme, setTheme } from "../../data_store/slice/ThemeSlice";
+import { RootState } from "../../data_store/Store";
 
-export interface INavigationComponentProps {}
+export interface INavigationComponentProps {
+  logOutClickHandler: () => void;
+  openSidebarClickHandler: () => void;
+}
 
 export default function NavigationComponent(props: INavigationComponentProps) {
+  const dispatch = useDispatch();
+  const themeState = useSelector((state: RootState) => state.theme);
+  const [themeCheckState, setThemeCheckState] = useState(
+    themeState.theme === Theme.DARK ? true : false
+  );
+
+  useEffect(() => {
+    if (themeCheckState) {
+      dispatch(setTheme({ theme: Theme.DARK }));
+    } else {
+      dispatch(setTheme({ theme: Theme.LIGHT }));
+    }
+  }, [dispatch, themeCheckState]);
+
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-300 sticky">
       <div className="flex-none">
-        <button className="btn btn-square btn-ghost">
+        <button
+          className="btn btn-square btn-ghost"
+          onClick={props.openSidebarClickHandler}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -24,46 +48,25 @@ export default function NavigationComponent(props: INavigationComponentProps) {
       </div>
       <div className="flex-1">
         <NavLink className="btn btn-ghost text-xl" to={""}>
-          daisyUI
+          <img
+            src={require("../../assets/images/logo-no-bg.png")}
+            className=" w-36 inline-block"
+            alt="dashwind-logo"
+          />
         </NavLink>
       </div>
       <div className="flex-none">
-        <label className="cursor-pointer grid place-items-center">
+        <div className="px-2">
           <input
+            checked={themeCheckState}
             type="checkbox"
-            value="synthwave"
-            className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
+            value="night"
+            onClick={() => {
+              setThemeCheckState((prev) => !prev);
+            }}
+            className=" toggle theme-controller bg-amber-300 border-sky-400 [--tglbg:theme(colors.sky.500)] checked:bg-blue-300 checked:border-blue-800 checked:[--tglbg:theme(colors.blue.900)] row-start-1 col-start-1 col-span-2"
           />
-          <svg
-            className="col-start-1 row-start-1 stroke-base-100 fill-base-100"
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="5" />
-            <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
-          </svg>
-          <svg
-            className="col-start-2 row-start-1 stroke-base-100 fill-base-100"
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </label>
+        </div>
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
@@ -79,7 +82,7 @@ export default function NavigationComponent(props: INavigationComponentProps) {
           </div>
           <ul
             tabIndex={0}
-            className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            className="mt-3 z-[1] p-2 shadow menu menu-md dropdown-content bg-base-300 rounded-box w-52 drop-shadow-2xl"
           >
             <li>
               <NavLink className="justify-between" to={""}>
@@ -91,7 +94,12 @@ export default function NavigationComponent(props: INavigationComponentProps) {
               <NavLink to={""}>Settings</NavLink>
             </li>
             <li>
-              <NavLink to={""}>Logout</NavLink>
+              <button
+                onClick={props.logOutClickHandler}
+                className=" bg-error text-error-content"
+              >
+                Logout
+              </button>
             </li>
           </ul>
         </div>

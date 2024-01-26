@@ -28,15 +28,18 @@ export const authSlice = createSlice({
   name: AUTH_NAME,
   initialState: initialState,
   reducers: {
-    onLogin: (state, action: PayloadAction<AuthData>) => {
+    onLogin: (_state, action: PayloadAction<AuthData>) => {
+      return action.payload;
+    },
+    onSignUp: (_state, action: PayloadAction<AuthData>) => {
       return action.payload;
     },
     onSignOut: (state) => {
-      state = initialState;
+      return initialState;
     },
   },
 });
 
-export const { onLogin, onSignOut } = authSlice.actions;
+export const { onLogin, onSignUp, onSignOut } = authSlice.actions;
 
 export default authSlice.reducer;

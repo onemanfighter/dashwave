@@ -1,5 +1,5 @@
 import * as React from "react";
-import PageLoadingComponent from "../../components/page_loading/PageLoading";
+import PageLoadingComponent from "../../../components/page_loading/PageLoading";
 
 export interface ILazyComponentProviderProps {
   children: React.ReactNode;

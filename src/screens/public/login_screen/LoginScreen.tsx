@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import LandingIntro from "../../../components/landing_intro/LandingIntro";
 import InputText from "../../../components/text/InputText";
 import ErrorText from "../../../components/text/ErrorText";
-import { LoginCred } from "../../../service/auth/AuthSignIn";
+import { LoginCred } from "../../../service/auth/Actions/AuthSignIn";
 import { signIn } from "../../../service/auth/AuthApi";
 import { AuthData, onLogin } from "../../../data_store/slice/AuthSlice";
 import { useDispatch } from "react-redux";
@@ -39,17 +39,18 @@ function Login() {
   const submitForm = (e: any) => {
     e.preventDefault();
     setErrorMessage("");
-
-    // if (loginObj.email.trim() === "")
-    //   return setErrorMessage("Email Id is required! (use any value)");
-    // if (loginObj.password.trim() === "")
-    //   return setErrorMessage("Password is required! (use any value)");
-    // else {
-    setLoading(true);
-    signIn(loginObj, signInHandler);
-    localStorage.setItem("token", "DumyTokenHere");
-    setLoading(false);
-    // }
+    if (loginObj.email.trim() === "")
+      return setErrorMessage("Email Id is required! (use any value)");
+    if (loginObj.password.trim() === "")
+      return setErrorMessage("Password is required! (use any value)");
+    else {
+      setLoading(true);
+      signIn(loginObj, signInHandler, (error: string) => {
+        console.log("error", error);
+        setErrorMessage(error);
+      });
+      setLoading(false);
+    }
   };
 
   const updateFormValue = ({ updateType, value }: UpdateProps) => {
@@ -67,7 +68,7 @@ function Login() {
     >
       <div className="card mx-auto w-full max-w-5xl shadow-xl ">
         <div className="grid md:grid-cols-2 grid-cols-1">
-          <div className=" bg-transparent glass">
+          <div className=" bg-base-content">
             <LandingIntro />
           </div>
           <div className="py-24 px-10 bg-primary-content">
@@ -75,9 +76,9 @@ function Login() {
             <form onSubmit={(e) => submitForm(e)}>
               <div className="mb-4">
                 <InputText
-                  type="emailId"
+                  type="email"
                   defaultValue={loginObj.email}
-                  updateType="emailId"
+                  updateType="email"
                   containerStyle="mt-4"
                   labelTitle="Email Id"
                   updateFormValue={updateFormValue}
@@ -104,9 +105,9 @@ function Login() {
               <ErrorText styleClass="mt-8">{errorMessage}</ErrorText>
               <button
                 type="submit"
-                className={
-                  "btn mt-2 w-full btn-primary" + (loading ? " loading" : "")
-                }
+                className={`btn mt-2 w-full btn-primary + ${
+                  loading ? " loading" : ""
+                }`}
               >
                 Login
               </button>
