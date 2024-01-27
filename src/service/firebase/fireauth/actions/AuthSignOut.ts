@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
-import { auth } from "../firebase/Firebase";
-import { removeAuthKeyData } from "../../storage/auth/AuthStorageApi";
+import { auth } from "../../firebase_main/Firebase";
+import { removeAuthKeyData } from "../../../storage/auth/AuthStorageApi";
 
 export interface LoginCred {
   email: string;

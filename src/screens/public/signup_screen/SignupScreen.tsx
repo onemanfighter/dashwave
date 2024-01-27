@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 import LandingIntro from "../../../components/landing_intro/LandingIntro";
 import InputText from "../../../components/text/InputText";
 import ErrorText from "../../../components/text/ErrorText";
-import { SignUpCred } from "../../../service/auth/actions/AuthSignUp";
+import { SignUpCred } from "../../../service/firebase/fireauth/actions/AuthSignUp";
 import { useDispatch } from "react-redux";
-import { signUp } from "../../../service/auth/AuthApi";
+import { signUp } from "../../../service/firebase/fireauth/AuthApi";
 import { AuthData, onSignUp } from "../../../data_store/slice/AuthSlice";
 
 interface UpdateProps {

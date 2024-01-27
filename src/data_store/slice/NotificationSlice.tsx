@@ -16,7 +16,7 @@ const initialData: NotificationData = {
 
 const NOTIFICATION = "notification";
 
-export const themeSlice = createSlice({
+export const notificationSlice = createSlice({
   name: NOTIFICATION,
   initialState: initialData,
   reducers: {
@@ -26,6 +26,6 @@ export const themeSlice = createSlice({
   },
 });
 
-export const { showNotification } = themeSlice.actions;
+export const { showNotification } = notificationSlice.actions;
 
-export default themeSlice.reducer;
+export default notificationSlice.reducer;

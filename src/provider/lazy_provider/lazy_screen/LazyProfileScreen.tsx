@@ -3,10 +3,7 @@ import LazyComponentProvider from "../component/LazyComponent";
 
 // Profile screens components.
 const ProfileMainScreen = lazy(
-  () =>
-    import(
-      "../../../screens/private/profile_screen/profile_main_screen/ProfileMainScreen"
-    )
+  () => import("../../../screens/private/profile_screen/ProfileMainScreen")
 );
 
 const ProfilePasswordResetScreen = lazy(

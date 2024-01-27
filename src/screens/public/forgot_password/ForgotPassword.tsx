@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import ErrorText from "../../../components/text/ErrorText";
 import InputText from "../../../components/text/InputText";
 import LandingIntro from "../../../components/landing_intro/LandingIntro";
-import { forgotPassword } from "../../../service/auth/AuthApi";
+import { forgotPassword } from "../../../service/firebase/fireauth/AuthApi";
 import { isValidEmail } from "../../../util/input/Input";
 
 interface UpdateProps {

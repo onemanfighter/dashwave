@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { sidebarRoutes } from "../../router/sidebarRoutes/SidebarRoutes";
-import HomeIcon from "../../assets/icons/HomeIcon";
-import ProjectIcon from "../../assets/icons/ProjectIcon";
-import PlanIcon from "../../assets/icons/PlanIcon";
-import ExpenseIcon from "../../assets/icons/ExpenseIcon";
-import GoalsIcon from "../../assets/icons/GoalsIcon";
-import CredsIcon from "../../assets/icons/CredsIcon";
-import { ProfileIcon } from "../../assets/icons/ProfileIcon";
+import HomeIcon from "../../assets/icons/sidebar_icons/HomeIcon";
+import ProjectIcon from "../../assets/icons/sidebar_icons/ProjectIcon";
+import PlanIcon from "../../assets/icons/sidebar_icons/PlanIcon";
+import ExpenseIcon from "../../assets/icons/sidebar_icons/ExpenseIcon";
+import GoalsIcon from "../../assets/icons/sidebar_icons/GoalsIcon";
+import CredsIcon from "../../assets/icons/sidebar_icons/CredsIcon";
+import { ProfileIcon } from "../../assets/icons/profile_icon/ProfileIcon";
 
 export interface ISidebarComponentProps {}
 
@@ -17,7 +17,7 @@ export default function SidebarComponent(props: ISidebarComponentProps) {
         {/* Sidebar content here */}
         {sidebarRoutes.map((route, index) => {
           return (
-            <li className="mt-2">
+            <li className="mt-2" key={index}>
               <NavLink
                 key={index}
                 to={route.path}

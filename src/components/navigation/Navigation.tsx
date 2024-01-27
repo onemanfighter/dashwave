@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Theme, setTheme } from "../../data_store/slice/ThemeSlice";
 import { RootState } from "../../data_store/Store";
-import { ProfileIcon } from "../../assets/icons/ProfileIcon";
-import { SettingIcon } from "../../assets/icons/SettingsIcon";
-import { LogoutIcon } from "../../assets/icons/LogoutIcon";
-import { PasswordResetIcon } from "../../assets/icons/PasswordResetIcon";
+import { ProfileIcon } from "../../assets/icons/profile_icon/ProfileIcon";
+import { SettingIcon } from "../../assets/icons/profile_icon/SettingsIcon";
+import { LogoutIcon } from "../../assets/icons/sidebar_icons/LogoutIcon";
+import { PasswordResetIcon } from "../../assets/icons/profile_icon/PasswordResetIcon";
 
 export interface INavigationComponentProps {
   logOutClickHandler: () => void;
@@ -16,6 +16,7 @@ export interface INavigationComponentProps {
 export default function NavigationComponent(props: INavigationComponentProps) {
   const dispatch = useDispatch();
   const themeState = useSelector((state: RootState) => state.theme);
+  const profileState = useSelector((state: RootState) => state.profile);
   const [themeCheckState, setThemeCheckState] = useState(
     themeState.theme === Theme.DARK ? true : false
   );
@@ -65,7 +66,7 @@ export default function NavigationComponent(props: INavigationComponentProps) {
             checked={themeCheckState}
             type="checkbox"
             value="night"
-            onClick={() => {
+            onChange={(e: any) => {
               setThemeCheckState((prev) => !prev);
             }}
             className=" toggle theme-controller bg-amber-300 border-sky-400 [--tglbg:theme(colors.sky.500)] checked:bg-blue-300 checked:border-blue-800 checked:[--tglbg:theme(colors.blue.900)] row-start-1 col-start-1 col-span-2"
@@ -80,7 +81,7 @@ export default function NavigationComponent(props: INavigationComponentProps) {
             <div className="w-10 rounded-full">
               <img
                 alt="Tailwind CSS Navbar component"
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                src={profileState.profile}
               />
             </div>
           </div>
@@ -88,6 +89,11 @@ export default function NavigationComponent(props: INavigationComponentProps) {
             tabIndex={0}
             className="mt-3 z-[1] p-2 shadow menu menu-md dropdown-content bg-base-300 rounded-box w-52 drop-shadow-2xl"
           >
+            <li className="menu-title">
+              <span>
+                Hi, {profileState.fname} {profileState.lname}
+              </span>
+            </li>
             <li className="m-1">
               <NavLink className="justify-between" to={"/profile/preview"}>
                 <div className="flex flex-row gap-2 items-center">
