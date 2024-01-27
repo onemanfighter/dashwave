@@ -1,8 +1,8 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { SettingIcon } from "../../../assets/icons/profile_icon/SettingsIcon";
-import { ProfileIcon } from "../../../assets/icons/profile_icon/ProfileIcon";
-import { PasswordResetIcon } from "../../../assets/icons/profile_icon/PasswordResetIcon";
-import TooltipComponent from "../../../components/tooltip/TooltipComponent";
+import { SettingIcon } from "../../../../assets/icons/profile_icon/SettingsIcon";
+import { ProfileIcon } from "../../../../assets/icons/profile_icon/ProfileIcon";
+import { PasswordResetIcon } from "../../../../assets/icons/profile_icon/PasswordResetIcon";
+import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
 
 export interface IProfileMainScreenProps {}
 
@@ -15,8 +15,8 @@ const ProfileRoutes = [
 export default function ProfileMainScreen(props: IProfileMainScreenProps) {
   return (
     <div className="h-full">
-      <div className=" m-2 bg-primary-content p-2 drop-shadow-md rounded-lg flex flex-row justify-between items-center">
-        <div className="text-2xl font-semibold mx-4">Profile</div>
+      <div className=" m-2 bg-primary-content p-1 drop-shadow-md rounded-lg flex flex-row justify-between items-center">
+        <div className="text-xl font-semibold mx-4">Profile</div>
         <div className="flex flex-row space-x-2 gap-3">
           {ProfileRoutes.map((item, index) => (
             <TooltipComponent key={index} title={item.title}>

@@ -1,15 +1,15 @@
 import { useSelector } from "react-redux";
-import TitleCard from "../../../../components/card/TitleCard";
-import { RootState } from "../../../../data_store/Store";
-import { SocialLink } from "../../../../service/firebase/firestore/UserCollection";
-import SocialIcon from "../../../../assets/icons/social_icon/IconApi";
-import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
-import NameIcon from "../../../../assets/icons/profile_icon/NameIcon";
-import EmailIcon from "../../../../assets/icons/profile_icon/EmailIcon";
-import PlaceIcon from "../../../../assets/icons/profile_icon/PlaceIcon";
-import TitleIcon from "../../../../assets/icons/profile_icon/TitleIcon";
-import DateIcon from "../../../../assets/icons/profile_icon/DateIcon";
-import ExperienceIcon from "../../../../assets/icons/profile_icon/ExperienceIcon";
+import TitleCard from "../../../../../components/card/TitleCard";
+import { RootState } from "../../../../../data_store/Store";
+import { SocialLink } from "../../../../../service/firebase/firestore/UserCollection";
+import SocialIcon from "../../../../../assets/icons/social_icon/IconApi";
+import TooltipComponent from "../../../../../components/tooltip/TooltipComponent";
+import NameIcon from "../../../../../assets/icons/profile_icon/NameIcon";
+import EmailIcon from "../../../../../assets/icons/profile_icon/EmailIcon";
+import PlaceIcon from "../../../../../assets/icons/profile_icon/PlaceIcon";
+import TitleIcon from "../../../../../assets/icons/profile_icon/TitleIcon";
+import DateIcon from "../../../../../assets/icons/profile_icon/DateIcon";
+import ExperienceIcon from "../../../../../assets/icons/profile_icon/ExperienceIcon";
 
 const TextStyle =
   "text-lg font-semibold mt-2 outline rounded-md p-2 flex flex-row items-center gap-2";

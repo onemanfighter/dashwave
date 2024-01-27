@@ -17,8 +17,8 @@ const ExpensesRoutes = [
 export default function ExpenseScreen(props: IExpenseScreenProps) {
   return (
     <div className="h-full">
-      <div className=" m-2 bg-primary-content p-2 drop-shadow-md rounded-lg flex flex-row justify-between items-center">
-        <div className="text-2xl font-semibold mx-4">Expenses</div>
+      <div className=" m-2 bg-primary-content p-1 drop-shadow-md rounded-lg flex flex-row justify-between items-center">
+        <div className="text-xl font-semibold mx-4">Expenses</div>
         <div className="flex flex-row space-x-2 gap-3">
           {ExpensesRoutes.map((item, index) => (
             <TooltipComponent key={index} title={item.title}>

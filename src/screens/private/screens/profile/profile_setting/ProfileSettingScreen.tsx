@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
-import InputText from "../../../../components/text/InputText";
-import { showNotification } from "../../../../data_store/slice/NotificationSlice";
-import TitleCard from "../../../../components/card/TitleCard";
-import { RootState } from "../../../../data_store/Store";
-import { SocialType } from "../../../../service/firebase/firestore/UserCollection";
-import FacebookIcon from "../../../../assets/icons/social_icon/FacebookIcon";
-import { InstagramIcon } from "../../../../assets/icons/social_icon/InstagramIcon";
-import { GithubIcon } from "../../../../assets/icons/social_icon/GithubIcon";
-import { LinkedInIcon } from "../../../../assets/icons/social_icon/LinkinIcon";
-import { XIcon } from "../../../../assets/icons/social_icon/XIcon";
-import { YoutubeIcon } from "../../../../assets/icons/social_icon/YoutubeIcon";
-import { WebsiteIcon } from "../../../../assets/icons/social_icon/WebsiteIcon";
+import InputText from "../../../../../components/text/InputText";
+import { showNotification } from "../../../../../data_store/slice/NotificationSlice";
+import TitleCard from "../../../../../components/card/TitleCard";
+import { RootState } from "../../../../../data_store/Store";
+import { SocialType } from "../../../../../service/firebase/firestore/UserCollection";
+import FacebookIcon from "../../../../../assets/icons/social_icon/FacebookIcon";
+import { InstagramIcon } from "../../../../../assets/icons/social_icon/InstagramIcon";
+import { GithubIcon } from "../../../../../assets/icons/social_icon/GithubIcon";
+import { LinkedInIcon } from "../../../../../assets/icons/social_icon/LinkinIcon";
+import { XIcon } from "../../../../../assets/icons/social_icon/XIcon";
+import { YoutubeIcon } from "../../../../../assets/icons/social_icon/YoutubeIcon";
+import { WebsiteIcon } from "../../../../../assets/icons/social_icon/WebsiteIcon";
 
 interface UpdateFormValue {
   updateType: string;
