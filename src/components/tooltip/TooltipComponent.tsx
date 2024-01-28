@@ -4,6 +4,7 @@
 export interface ITooltipComponentProps {
   title: string;
   children: React.ReactNode;
+  position?: "tooltip-top" | "bottom" | "left" | "tooltip-right";
   disable?: boolean;
 }
 
@@ -15,8 +16,12 @@ export interface ITooltipComponentProps {
  */
 export default function TooltipComponent(props: ITooltipComponentProps) {
   const show = props.disable !== null && props.disable === true ? false : true;
+  const position = props.position ? props.position : "tooltip-top";
   return (
-    <div className={show ? " tooltip" : ""} data-tip={props.title}>
+    <div
+      className={`${show ? " tooltip" : ""} ${position}`}
+      data-tip={props.title}
+    >
       {props.children}
     </div>
   );

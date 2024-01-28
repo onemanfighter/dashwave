@@ -56,7 +56,7 @@ export default function NavigationComponent(props: INavigationComponentProps) {
           <img
             src={require("../../assets/images/logo-no-bg.png")}
             className=" w-36 inline-block"
-            alt="dashwind-logo"
+            alt="Dashwave-logo"
           />
         </NavLink>
       </div>

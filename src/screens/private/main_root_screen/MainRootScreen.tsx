@@ -9,8 +9,8 @@ import {
   removeProfile,
   setProfile,
 } from "../../../data_store/slice/ProfileSlice";
-import { userProfileDataRead } from "../../../service/firebase/firestore/StoreApi";
-import { UserProfData } from "../../../service/firebase/firestore/UserCollection";
+import { userProfileDataRead } from "../../../service/firebase/firestore/user_profile/UserProfileStoreApi";
+import { UserProfData } from "../../../service/firebase/firestore/user_profile/UserCollection";
 import { RootState } from "../../../data_store/Store";
 
 /**
@@ -62,15 +62,17 @@ export default function MainRootScreen(props: IMainRootScreenProps) {
           openSidebarClickHandler={openSidebarClickHandler}
         />
       </div>
-      <div className=" flex flex-wrap h-[92%]">
-        {sidebarOpen && (
-          <div className="w-1/6 h-full border-r border-primary bg-base-200">
-            <SidebarComponent />
-          </div>
-        )}
+      <div className=" flex flex-wrap h-[92%] w-full">
         <div
           className={`${
-            sidebarOpen ? "w-5/6" : "w-full"
+            sidebarOpen ? "w-1/6" : "w-[5%]"
+          } h-full border-r border-primary bg-base-200`}
+        >
+          <SidebarComponent sideBarOpen={sidebarOpen} />
+        </div>
+        <div
+          className={`${
+            sidebarOpen ? "w-5/6" : "w-[95%]"
           } h-full p-4 drop-shadow-lg`}
         >
           <Outlet />

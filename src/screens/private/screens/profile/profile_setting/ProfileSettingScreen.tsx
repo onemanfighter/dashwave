@@ -3,7 +3,7 @@ import InputText from "../../../../../components/text/InputText";
 import { showNotification } from "../../../../../data_store/slice/NotificationSlice";
 import TitleCard from "../../../../../components/card/TitleCard";
 import { RootState } from "../../../../../data_store/Store";
-import { SocialType } from "../../../../../service/firebase/firestore/UserCollection";
+import { SocialType } from "../../../../../service/firebase/firestore/user_profile/UserCollection";
 import FacebookIcon from "../../../../../assets/icons/social_icon/FacebookIcon";
 import { InstagramIcon } from "../../../../../assets/icons/social_icon/InstagramIcon";
 import { GithubIcon } from "../../../../../assets/icons/social_icon/GithubIcon";

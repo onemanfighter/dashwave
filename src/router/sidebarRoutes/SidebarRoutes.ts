@@ -28,7 +28,17 @@ export const sidebarRoutes = [
     iconName: "goals",
   },
   {
-    name: "Creds",
+    name: "Learning",
+    path: "/learning",
+    iconName: "learning",
+  },
+  {
+    name: "Resources",
+    path: "/resources",
+    iconName: "resources",
+  },
+  {
+    name: "Credentials",
     path: "/creds",
     iconName: "credentials",
   },

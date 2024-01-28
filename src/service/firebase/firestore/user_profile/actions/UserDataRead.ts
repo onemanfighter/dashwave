@@ -1,5 +1,5 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { firestoreDB } from "../../firebase_main/Firebase";
+import { firestoreDB } from "../../../firebase_main/Firebase";
 import { SocialType, UserProfData } from "../UserCollection";
 
 // Get a list of cities from your database

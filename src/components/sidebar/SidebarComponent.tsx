@@ -7,28 +7,38 @@ import ExpenseIcon from "../../assets/icons/sidebar_icons/ExpenseIcon";
 import GoalsIcon from "../../assets/icons/sidebar_icons/GoalsIcon";
 import CredsIcon from "../../assets/icons/sidebar_icons/CredsIcon";
 import { ProfileIcon } from "../../assets/icons/profile_icon/ProfileIcon";
+import TooltipComponent from "../tooltip/TooltipComponent";
 
-export interface ISidebarComponentProps {}
+export interface ISidebarComponentProps {
+  sideBarOpen: boolean;
+}
 
 export default function SidebarComponent(props: ISidebarComponentProps) {
   return (
     <div className=" flex-col text-base-content">
-      <ul className="menu p-4 w-full ">
+      <ul className="menu p-2 w-full ">
         {/* Sidebar content here */}
         {sidebarRoutes.map((route, index) => {
           return (
-            <li className="mt-2" key={index}>
-              <NavLink
-                key={index}
-                to={route.path}
-                className={
-                  " hover:bg-primary-content hover:outline-dotted hover:outline-primary"
-                }
-              >
-                {getIcon(route.iconName)}
-                {route.name}
-              </NavLink>
-            </li>
+            <TooltipComponent
+              key={index}
+              title={route.name}
+              position="tooltip-right"
+              disable={props.sideBarOpen}
+            >
+              <li className="mt-2" key={index}>
+                <NavLink
+                  key={index}
+                  to={route.path}
+                  className={
+                    " hover:bg-primary-content hover:outline-dotted hover:outline-primary"
+                  }
+                >
+                  {getIcon(route.iconName)}
+                  {props.sideBarOpen ? route.name : ""}
+                </NavLink>
+              </li>
+            </TooltipComponent>
           );
         })}
       </ul>
