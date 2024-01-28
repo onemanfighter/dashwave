@@ -2,8 +2,12 @@ import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
 // Creds screens components.
-const CredsMainScreen = lazy(
+const CredsScreen = lazy(
   () => import("../../../screens/private/screens/creds/CredsScreen")
+);
+
+const CredsMainScreen = lazy(
+  () => import("../../../screens/private/screens/creds/creds_main/CredsMain")
 );
 
 const CredsPreviewScreen = lazy(
@@ -23,6 +27,18 @@ const CredsDeleteScreen = lazy(
   () =>
     import("../../../screens/private/screens/creds/creds_delete/CredsDelete")
 );
+
+/**
+ * Component definition for the lazy creds screen component.
+ * @returns The LazyCredsScreenComponent component.
+ */
+export function LazyCredsScreenComponent() {
+  return (
+    <LazyComponentProvider>
+      <CredsScreen />
+    </LazyComponentProvider>
+  );
+}
 
 /**
  * Component definition for the lazy creds main screen component.

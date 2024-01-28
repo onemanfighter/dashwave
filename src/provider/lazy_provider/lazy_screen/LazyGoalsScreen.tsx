@@ -2,8 +2,13 @@ import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
 // Goals screens components.
-const GoalsMainScreen = lazy(
+
+const GoalsScreen = lazy(
   () => import("../../../screens/private/screens/goals/GoalsScreen")
+);
+
+const GoalsMainScreen = lazy(
+  () => import("../../../screens/private/screens/goals/goals_main/GoalsMain")
 );
 
 const GoalsPreviewScreen = lazy(
@@ -23,6 +28,18 @@ const GoalsDeleteScreen = lazy(
   () =>
     import("../../../screens/private/screens/goals/goals_delete/GoalsDelete")
 );
+
+/**
+ * Component definition for the lazy goals screen component.
+ * @returns The LazyGoalsScreenComponent component.
+ */
+export function LazyGoalsScreenComponent() {
+  return (
+    <LazyComponentProvider>
+      <GoalsScreen />
+    </LazyComponentProvider>
+  );
+}
 
 /**
  * Component definition for the lazy goals main screen component.

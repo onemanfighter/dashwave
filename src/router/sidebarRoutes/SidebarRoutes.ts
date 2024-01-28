@@ -19,7 +19,7 @@ export const sidebarRoutes = [
   },
   {
     name: "Expenses",
-    path: "/expense",
+    path: "/expenses",
     iconName: "expenses",
   },
   {

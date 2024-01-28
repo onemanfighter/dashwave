@@ -1,8 +1,9 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { SettingIcon } from "../../../../assets/icons/profile_icon/SettingsIcon";
 import { ProfileIcon } from "../../../../assets/icons/profile_icon/ProfileIcon";
 import { PasswordResetIcon } from "../../../../assets/icons/profile_icon/PasswordResetIcon";
 import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
+import getSubNavTitle from "../../../../util/nav/NavTitle";
 
 export interface IProfileMainScreenProps {}
 
@@ -13,10 +14,13 @@ const ProfileRoutes = [
 ];
 
 export default function ProfileMainScreen(props: IProfileMainScreenProps) {
+  const currentLocation = useLocation();
   return (
     <div className="h-full">
       <div className=" m-2 bg-primary-content p-1 drop-shadow-md rounded-lg flex flex-row justify-between items-center">
-        <div className="text-xl font-semibold mx-4">Profile</div>
+        <div className="text-xl font-semibold mx-4">
+          {getSubNavTitle(currentLocation.pathname)}
+        </div>
         <div className="flex flex-row space-x-2 gap-3">
           {ProfileRoutes.map((item, index) => (
             <TooltipComponent key={index} title={item.title}>

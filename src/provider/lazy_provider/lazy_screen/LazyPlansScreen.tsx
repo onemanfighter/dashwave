@@ -2,8 +2,13 @@ import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
 // Plans screens components.
-const PlansMainScreen = lazy(
+
+const PlansScreen = lazy(
   () => import("../../../screens/private/screens/plans/PlansScreen")
+);
+
+const PlansMainScreen = lazy(
+  () => import("../../../screens/private/screens/plans/plans_main/PlansMain")
 );
 
 const PlansPreviewScreen = lazy(
@@ -23,6 +28,18 @@ const PlansDeleteScreen = lazy(
   () =>
     import("../../../screens/private/screens/plans/plans_delete/PlansDelete")
 );
+
+/**
+ * Component definition for the lazy plans screen component.
+ * @returns The LazyPlansScreenComponent component.
+ */
+export function LazyPlansScreenComponent() {
+  return (
+    <LazyComponentProvider>
+      <PlansScreen />
+    </LazyComponentProvider>
+  );
+}
 
 /**
  * Component definition for the lazy plans main screen component.
