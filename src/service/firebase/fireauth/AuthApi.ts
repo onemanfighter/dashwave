@@ -1,4 +1,5 @@
 import { AuthData } from "../../../data_store/slice/AuthSlice";
+import { AuthTokenKey } from "../../local_storage/token_constants/StorageConstant";
 import { firebaseForgotPassword } from "./actions/AuthForgotPassword";
 import { LoginCred, firebaseSingIn } from "./actions/AuthSignIn";
 import { firebaseSignOut } from "./actions/AuthSignOut";
@@ -52,7 +53,7 @@ export function alreadySignedIn(
   signInHandler: (authData: AuthData) => void,
   signOutHandler: () => void
 ) {
-  const authData = localStorage.getItem("tokenDetails");
+  const authData = localStorage.getItem(AuthTokenKey);
   let token = "";
   if (!authData) {
     signOutHandler();

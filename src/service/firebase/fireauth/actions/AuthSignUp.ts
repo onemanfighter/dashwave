@@ -1,7 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase_main/Firebase";
 import { AuthData, UserData } from "../../../../data_store/slice/AuthSlice";
-import { storeAuthkeyData } from "../../../storage/auth/AuthStorageApi";
 
 export interface SignUpCred {
   fName: string;
@@ -26,7 +25,6 @@ export default function firebaseSignUp(
       userCredential.user.getIdToken().then((authToken) => {
         const authData: AuthData = { userData: user, authToken: authToken };
         signUpHandler(authData);
-        storeAuthkeyData(authData);
         console.log(authToken);
       });
     })

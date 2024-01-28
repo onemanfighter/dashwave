@@ -72,7 +72,11 @@ function GetSocialLink(props: SocialLinkProps) {
       {props.socialLinks.map((socialLink, index) => {
         const disabled = socialLink.link === "";
         return (
-          <TooltipComponent title={socialLink.type} disable={disabled}>
+          <TooltipComponent
+            title={socialLink.type}
+            disable={disabled}
+            key={index}
+          >
             <a
               href={socialLink.link}
               className={`btn btn-ghost btn-square ${

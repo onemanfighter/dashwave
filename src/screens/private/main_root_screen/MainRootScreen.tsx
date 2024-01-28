@@ -1,11 +1,14 @@
 import { Outlet } from "react-router-dom";
 import NavigationComponent from "../../../components/navigation/Navigation";
-import { useDispatch, useSelector } from "react-redux";
+import { batch, useDispatch, useSelector } from "react-redux";
 import { onSignOut } from "../../../data_store/slice/AuthSlice";
 import { signOut } from "../../../service/firebase/fireauth/AuthApi";
 import SidebarComponent from "../../../components/sidebar/SidebarComponent";
 import { useEffect, useState } from "react";
-import { setProfile } from "../../../data_store/slice/ProfileSlice";
+import {
+  removeProfile,
+  setProfile,
+} from "../../../data_store/slice/ProfileSlice";
 import { userProfileDataRead } from "../../../service/firebase/firestore/StoreApi";
 import { UserProfData } from "../../../service/firebase/firestore/UserCollection";
 import { RootState } from "../../../data_store/Store";
@@ -24,18 +27,24 @@ export default function MainRootScreen(props: IMainRootScreenProps) {
   const emailState = useSelector(
     (state: RootState) => state.auth.userData.email
   );
+  const profileDataState = useSelector((state: RootState) => state.profile);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    userProfileDataRead(emailState, (user: UserProfData) => {
-      console.log(user);
-      dispatch(setProfile(user));
-    });
-  }, [dispatch, emailState]);
+    if (profileDataState.email === "") {
+      console.log("Updating profile data from firestore server");
+      userProfileDataRead(emailState, (user: UserProfData) => {
+        dispatch(setProfile(user));
+      });
+    }
+  }, [dispatch, emailState, profileDataState]);
 
   const signOutHandler = () => {
-    dispatch(onSignOut());
+    batch(() => {
+      dispatch(onSignOut());
+      dispatch(removeProfile());
+    });
   };
 
   const logOutClickHandler = () => {

@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import {
   getThemeData,
   setThemeData,
-} from "../../service/storage/theme/ThemeStorageApi";
+} from "../../service/local_storage/theme/ThemeStorageApi";
 
 export enum Theme {
   LIGHT = "light",

@@ -3,6 +3,8 @@ import {
   SocialType,
   UserProfData,
 } from "../../service/firebase/firestore/UserCollection";
+import { storeProfilekeyData } from "../../service/local_storage/profile/ProfileStorageApi";
+import { ProfileTokenKey } from "../../service/local_storage/token_constants/StorageConstant";
 
 const initialProfile: UserProfData = {
   userId: "",
@@ -29,15 +31,37 @@ const PROFILE = "profile";
 
 export const profileSlice = createSlice({
   name: PROFILE,
-  initialState: initialProfile,
+  initialState: getProfileData(),
   reducers: {
     setProfile: (_state, action: PayloadAction<UserProfData>) => {
-      console.log(action.payload);
+      storeProfilekeyData(action.payload);
+      return action.payload;
+    },
+    removeProfile: (_state) => {
+      storeProfilekeyData(initialProfile);
+      return initialProfile;
+    },
+    updateProfile: (_state, action: PayloadAction<UserProfData>) => {
+      storeProfilekeyData(action.payload);
       return action.payload;
     },
   },
 });
 
-export const { setProfile } = profileSlice.actions;
+/**
+ * Get the profile data from the local storage.
+ *
+ * @returns The profile data from the local storage.
+ */
+export function getProfileData(): UserProfData {
+  const profileData = localStorage.getItem(ProfileTokenKey);
+  if (profileData) {
+    return JSON.parse(profileData);
+  }
+  return initialProfile;
+}
+
+export const { setProfile, removeProfile, updateProfile } =
+  profileSlice.actions;
 
 export default profileSlice.reducer;

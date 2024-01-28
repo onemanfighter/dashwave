@@ -1,7 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase_main/Firebase";
 import { AuthData, UserData } from "../../../../data_store/slice/AuthSlice";
-import { storeAuthkeyData } from "../../../storage/auth/AuthStorageApi";
 
 export interface LoginCred {
   email: string;
@@ -26,7 +25,6 @@ export function firebaseSingIn(
         };
         userCredential.user.getIdToken().then((authToken) => {
           const authData: AuthData = { userData: user, authToken: authToken };
-          storeAuthkeyData(authData);
           signInHandler(authData);
         });
       })

@@ -1,6 +1,5 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase_main/Firebase";
-import { removeAuthKeyData } from "../../../storage/auth/AuthStorageApi";
 
 export interface LoginCred {
   email: string;
@@ -13,7 +12,6 @@ export function firebaseSignOut(signOutHandler: () => void) {
   signOut(auth)
     .then(() => {
       signOutHandler();
-      removeAuthKeyData();
     })
     .catch((error) => {
       const errorCode = error.code;

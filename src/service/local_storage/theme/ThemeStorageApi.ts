@@ -1,5 +1,5 @@
 import { Theme } from "../../../data_store/slice/ThemeSlice";
-import { themeKey } from "./constants/ThemeConstant";
+import { themeKey } from "../token_constants/StorageConstant";
 
 export const themeCheck = getThemeData() === "dark" ? true : false;
 

@@ -1,5 +1,5 @@
 import { AuthData } from "../../../data_store/slice/AuthSlice";
-import { AuthTokenKey } from "./constants/StorageConstant";
+import { AuthTokenKey } from "../token_constants/StorageConstant";
 
 /**
  * Method to store the authkey in local storage
