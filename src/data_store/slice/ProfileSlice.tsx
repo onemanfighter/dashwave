@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import {
   SocialType,
   UserProfData,
-} from "../../service/firebase/firestore/user_profile/UserCollection";
+} from "../../service/supabase/supastore/user_profile/UserCollection";
 import { storeProfilekeyData } from "../../service/local_storage/profile/ProfileStorageApi";
 import { ProfileTokenKey } from "../../service/local_storage/token_constants/StorageConstant";
 
@@ -34,6 +34,7 @@ export const profileSlice = createSlice({
   initialState: getProfileData(),
   reducers: {
     setProfile: (_state, action: PayloadAction<UserProfData>) => {
+      console.log("setProfile", action.payload);
       storeProfilekeyData(action.payload);
       return action.payload;
     },

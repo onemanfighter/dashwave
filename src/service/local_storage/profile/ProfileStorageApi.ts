@@ -1,4 +1,4 @@
-import { UserProfData } from "../../firebase/firestore/user_profile/UserCollection";
+import { UserProfData } from "../../supabase/supastore/user_profile/UserCollection";
 import { ProfileTokenKey } from "../token_constants/StorageConstant";
 
 /**

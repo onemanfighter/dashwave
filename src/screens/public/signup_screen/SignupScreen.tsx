@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import LandingIntro from "../../../components/landing_intro/LandingIntro";
 import InputText from "../../../components/text/InputText";
 import ErrorText from "../../../components/text/ErrorText";
-import { SignUpCred } from "../../../service/firebase/fireauth/actions/AuthSignUp";
-import { useDispatch } from "react-redux";
-import { signUp } from "../../../service/firebase/fireauth/AuthApi";
-import { AuthData, onSignUp } from "../../../data_store/slice/AuthSlice";
+import { SignUpCred } from "../../../service/supabase/supa_auth/actions/AuthSignUp";
+import { signUp } from "../../../service/supabase/supa_auth/AuthApi";
 
 interface UpdateProps {
   updateType: string;
@@ -21,13 +19,13 @@ function Register() {
     email: "",
   };
 
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [registerObj, setRegisterObj] = useState(INITIAL_REGISTER_OBJ);
 
-  const signUpHandler = (authData: AuthData) => {
-    dispatch(onSignUp(authData));
+  const signUpHandler = () => {
+    navigate("login");
   };
 
   const submitForm = (e: any) => {
@@ -44,10 +42,10 @@ function Register() {
       return setErrorMessage("Password is required! (use any value)");
     else {
       setLoading(true);
+      // Show alert
       signUp(registerObj, signUpHandler, (error: string) => {
         setErrorMessage(error);
       });
-      // Call API to check user credentials and save token in localstorage
       setLoading(false);
     }
   };

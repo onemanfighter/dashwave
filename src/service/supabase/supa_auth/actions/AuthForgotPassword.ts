@@ -1,5 +1,4 @@
-import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../../firebase_main/Firebase";
+import { SupabaseAuth } from "../../supabase_main/Supabase";
 
 /**
  * Method to sign-in using firebase.
@@ -10,11 +9,11 @@ export function firebaseForgotPassword(
   errorCallback: (error: string) => void
 ) {
   if (email !== null)
-    sendPasswordResetEmail(auth, email)
-      .then(() => {
+    SupabaseAuth.resetPasswordForEmail(email)
+      .then((response: any) => {
         forgotPasswordHandler();
       })
-      .catch((error) => {
+      .catch((error: { code: any; message: any }) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);

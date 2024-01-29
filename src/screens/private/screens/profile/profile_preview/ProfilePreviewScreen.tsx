@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import TitleCard from "../../../../../components/card/TitleCard";
 import { RootState } from "../../../../../data_store/Store";
-import { SocialLink } from "../../../../../service/firebase/firestore/user_profile/UserCollection";
+import { SocialLink } from "../../../../../service/supabase/supastore/user_profile/UserCollection";
 import SocialIcon from "../../../../../assets/icons/social_icon/IconApi";
 import TooltipComponent from "../../../../../components/tooltip/TooltipComponent";
 import NameIcon from "../../../../../assets/icons/profile_icon/NameIcon";

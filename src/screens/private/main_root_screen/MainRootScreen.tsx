@@ -2,15 +2,15 @@ import { Outlet } from "react-router-dom";
 import NavigationComponent from "../../../components/navigation/Navigation";
 import { batch, useDispatch, useSelector } from "react-redux";
 import { onSignOut } from "../../../data_store/slice/AuthSlice";
-import { signOut } from "../../../service/firebase/fireauth/AuthApi";
+import { signOut } from "../../../service/supabase/supa_auth/AuthApi";
 import SidebarComponent from "../../../components/sidebar/SidebarComponent";
 import { useEffect, useState } from "react";
 import {
   removeProfile,
   setProfile,
 } from "../../../data_store/slice/ProfileSlice";
-import { userProfileDataRead } from "../../../service/firebase/firestore/user_profile/UserProfileStoreApi";
-import { UserProfData } from "../../../service/firebase/firestore/user_profile/UserCollection";
+import { userProfileDataRead } from "../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
+import { UserProfData } from "../../../service/supabase/supastore/user_profile/UserCollection";
 import { RootState } from "../../../data_store/Store";
 
 /**
@@ -24,21 +24,17 @@ export interface IMainRootScreenProps {}
  * @returns The MainRootScreen component.
  */
 export default function MainRootScreen(props: IMainRootScreenProps) {
-  const emailState = useSelector(
-    (state: RootState) => state.auth.userData.email
-  );
-  const profileDataState = useSelector((state: RootState) => state.profile);
+  const userAuthState = useSelector((state: RootState) => state.auth);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (profileDataState.email === "") {
-      console.log("Updating profile data from firestore server");
-      userProfileDataRead(emailState, (user: UserProfData) => {
+    if (userAuthState.authToken !== "") {
+      userProfileDataRead(userAuthState.userData, (user: UserProfData) => {
         dispatch(setProfile(user));
       });
     }
-  }, [dispatch, emailState, profileDataState]);
+  }, [dispatch, userAuthState]);
 
   const signOutHandler = () => {
     batch(() => {

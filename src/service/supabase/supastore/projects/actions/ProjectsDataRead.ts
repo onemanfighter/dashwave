@@ -1,30 +1,10 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { firestoreDB } from "../../../firebase_main/Firebase";
-import { SocialType, UserProfData } from "../UserCollection";
+import { SocialType, UserProfData } from "../ProjectsCollection";
 
-// Get a list of cities from your database
+// Get a list of projects from your database
 export function getUserUsingId(
-  email: string,
+  projectId: string,
   callback: (user: UserProfData) => void
-) {
-  console.log("getUserUsingId", email);
-  const newQuery = query(
-    collection(firestoreDB, "users"),
-    where("email", "==", email)
-  );
-
-  getDocs(newQuery)
-    .then((querySnapshot) => {
-      console.log("querySnapshot", querySnapshot);
-      querySnapshot.forEach((doc) => {
-        // Sending back the response.
-        callback(getProfDataFromResponse(doc.data()));
-      });
-    })
-    .catch((error) => {
-      console.log("Error getting documents: ", error);
-    });
-}
+) {}
 
 /**
  * Method to get the user profileData.
@@ -32,7 +12,7 @@ export function getUserUsingId(
  * @param user - The user data.
  * @returns The user data.
  */
-function getProfDataFromResponse(user: any): UserProfData {
+function getProjectsDataFromResponse(user: any): UserProfData {
   const profData: UserProfData = {
     userId: user.userId,
     fname: user.fName,

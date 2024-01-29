@@ -1,3 +1,4 @@
+import { UserData } from "../../../../data_store/slice/AuthSlice";
 import { UserProfData } from "./UserCollection";
 import { getUserUsingId } from "./actions/UserDataRead";
 import { updateUserData } from "./actions/UserDataWrite";
@@ -5,14 +6,14 @@ import { updateUserData } from "./actions/UserDataWrite";
 /**
  * Method to get the user profileData
  *
- * @param email - The email id.
+ * @param userAuthState - The user auth data.
  * @returns The user data.
  */
 export function userProfileDataRead(
-  email: string,
+  userAuthState: UserData,
   callback: (user: UserProfData) => void
 ) {
-  getUserUsingId(email, callback);
+  getUserUsingId(userAuthState, callback);
 }
 
 /**
@@ -21,6 +22,9 @@ export function userProfileDataRead(
  * @param data - The user data.
  * @returns The user data.
  */
-export function userProfileDataUpdate(userId: string, data: UserProfData) {
-  return updateUserData(userId, data);
+export function userProfileDataUpdate(
+  data: UserProfData,
+  callback: () => void
+) {
+  return updateUserData(data, callback);
 }

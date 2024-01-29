@@ -3,7 +3,7 @@
  */
 
 // Authtoken key for local storage
-export const AuthTokenKey = "auth_data";
+export const AuthTokenKey = "sb-derclltpzfohoecoxvge-auth-token";
 
 // Profile key for local storage
 export const ProfileTokenKey = "user_profile";

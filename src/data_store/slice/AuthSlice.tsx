@@ -1,12 +1,10 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import {
-  removeAuthKeyData,
-  storeAuthkeyData,
-} from "../../service/local_storage/auth/AuthStorageApi";
 import { AuthTokenKey } from "../../service/local_storage/token_constants/StorageConstant";
 import { removeProfileKeyData } from "../../service/local_storage/profile/ProfileStorageApi";
+import { getAuthKeyData } from "../../service/local_storage/auth/AuthStorageApi";
 
 export interface UserData {
+  userId: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -18,6 +16,7 @@ export interface AuthData {
 }
 
 const initialUserData: UserData = {
+  userId: "",
   firstName: "",
   lastName: "",
   email: "",
@@ -35,16 +34,10 @@ export const authSlice = createSlice({
   initialState: getAuthData(),
   reducers: {
     onLogin: (_state, action: PayloadAction<AuthData>) => {
-      storeAuthkeyData(action.payload);
-      return action.payload;
-    },
-    onSignUp: (_state, action: PayloadAction<AuthData>) => {
-      storeAuthkeyData(action.payload);
       return action.payload;
     },
     onSignOut: (state) => {
       removeProfileKeyData();
-      removeAuthKeyData();
       return initialState;
     },
   },
@@ -56,13 +49,14 @@ export const authSlice = createSlice({
  * @returns The auth data from the local storage.
  */
 function getAuthData(): AuthData {
-  const authData = localStorage.getItem(AuthTokenKey);
+  const authData = getAuthKeyData();
   if (authData) {
-    return JSON.parse(authData);
+    return authData;
   }
+
   return initialState;
 }
 
-export const { onLogin, onSignUp, onSignOut } = authSlice.actions;
+export const { onLogin, onSignOut } = authSlice.actions;
 
 export default authSlice.reducer;

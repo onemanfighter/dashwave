@@ -3,7 +3,7 @@ import { AuthTokenKey } from "../../local_storage/token_constants/StorageConstan
 import { firebaseForgotPassword } from "./actions/AuthForgotPassword";
 import { LoginCred, firebaseSingIn } from "./actions/AuthSignIn";
 import { firebaseSignOut } from "./actions/AuthSignOut";
-import firebaseSignUp, { SignUpCred } from "./actions/AuthSignUp";
+import supabaseSignUp, { SignUpCred } from "./actions/AuthSignUp";
 
 /**
  * Method to make the Firebase signin
@@ -21,10 +21,10 @@ export function signIn(
  */
 export function signUp(
   cred: SignUpCred,
-  signUpHandler: (authData: AuthData) => void,
+  signUpHandler: () => void,
   errorCallback: (error: string) => void
 ) {
-  firebaseSignUp(cred, signUpHandler, errorCallback);
+  supabaseSignUp(cred, signUpHandler, errorCallback);
 }
 
 /**
