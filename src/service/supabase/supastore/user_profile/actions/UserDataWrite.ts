@@ -1,15 +1,19 @@
+import { SupabaseUsersDB } from "../../../supabase_main/Supabase";
 import {
-  SupabaseSocialsDB,
-  SupabaseUsersDB,
-} from "../../../supabase_main/Supabase";
-import { UserProfData } from "../UserCollection";
+  SocialType,
+  UserDataTableSchema,
+  UserProfileData,
+} from "../UserCollection";
 export function userDataWrite() {}
 
 export async function updateUserData(
-  userProfFormdata: UserProfData,
-  callback: (user: UserProfData) => void
+  userIdFromAuth: string,
+  userProfFormdata: UserProfileData,
+  callback: (user: UserProfileData) => void,
+  showNotification: () => void
 ) {
-  const userData = {
+  const userData: UserDataTableSchema = {
+    id: userIdFromAuth,
     email: userProfFormdata.email,
     fname: userProfFormdata.fname,
     lname: userProfFormdata.lname,
@@ -18,43 +22,26 @@ export async function updateUserData(
     dob: userProfFormdata.dateOfBirth,
     yoe: userProfFormdata.yearOfExp,
     designation: userProfFormdata.designation,
-    created_at: new Date(),
-  };
-
-  const socialData = {
-    linkedin: userProfFormdata.socialLinks[0].link,
-    facebook: userProfFormdata.socialLinks[1].link,
-    x: userProfFormdata.socialLinks[2].link,
-    github: userProfFormdata.socialLinks[3].link,
-    instagram: userProfFormdata.socialLinks[4].link,
-    website: userProfFormdata.socialLinks[5].link,
+    social_fb: userProfFormdata.socialLinks.get(SocialType.Facebook)!,
+    social_insta: userProfFormdata.socialLinks.get(SocialType.Instagram)!,
+    social_x: userProfFormdata.socialLinks.get(SocialType.X)!,
+    social_git: userProfFormdata.socialLinks.get(SocialType.Github)!,
+    social_li: userProfFormdata.socialLinks.get(SocialType.Linkedin)!,
+    social_web: userProfFormdata.socialLinks.get(SocialType.Website)!,
+    social_yt: userProfFormdata.socialLinks.get(SocialType.Youtube)!,
   };
 
   try {
-    const { data, error } = await SupabaseUsersDB.upsert({
-      id: userProfFormdata.userId,
-      ...userData,
-    }).single();
+    const { data, error } = await SupabaseUsersDB.upsert([
+      { ...userData },
+    ]).select();
 
     if (error) {
       console.log(error);
     } else {
       console.log(data);
-    }
-  } catch (error) {
-    console.log(error);
-  }
-
-  try {
-    const { data, error } = await SupabaseSocialsDB.upsert({
-      id: userProfFormdata.userId,
-      ...socialData,
-    }).single();
-
-    if (error) {
-      console.log(error);
-    } else {
-      console.log(data);
+      callback(userProfFormdata);
+      showNotification();
     }
   } catch (error) {
     console.log(error);

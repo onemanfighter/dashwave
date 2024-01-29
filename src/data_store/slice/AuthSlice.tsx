@@ -34,6 +34,7 @@ export const authSlice = createSlice({
   initialState: getAuthData(),
   reducers: {
     onLogin: (_state, action: PayloadAction<AuthData>) => {
+      console.log("onLogin", action.payload);
       return action.payload;
     },
     onSignOut: (state) => {
@@ -55,6 +56,15 @@ function getAuthData(): AuthData {
   }
 
   return initialState;
+}
+
+export function getAuthUserID(): string {
+  const authData = getAuthKeyData();
+  if (authData) {
+    return authData.userData.userId;
+  }
+
+  return "";
 }
 
 export const { onLogin, onSignOut } = authSlice.actions;

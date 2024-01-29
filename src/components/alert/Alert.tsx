@@ -4,7 +4,7 @@ import InfoIcon from "../../assets/icons/alert_icon/InfoIcon";
 import WarningIcon from "../../assets/icons/alert_icon/WarningIcon";
 import ErrorIcon from "../../assets/icons/alert_icon/ErrorIcon";
 
-enum AlertType {
+export enum AlertType {
   NORMAL = "normal",
   SUCCESS = "success",
   INFO = "info",
@@ -14,9 +14,7 @@ enum AlertType {
 
 export interface IAlertComponentProps {
   title: string;
-  description: string;
   type: AlertType;
-  duration: number;
 }
 
 export default function AlertComponent(props: IAlertComponentProps) {
@@ -24,7 +22,7 @@ export default function AlertComponent(props: IAlertComponentProps) {
   return (
     <div role="alert" className={`alert ${typeString}`}>
       {icon}
-      <span>Your purchase has been confirmed!</span>
+      <span>{props.title}</span>
     </div>
   );
 }

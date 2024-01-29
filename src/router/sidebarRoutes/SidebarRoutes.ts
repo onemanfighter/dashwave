@@ -42,9 +42,10 @@ export const sidebarRoutes = [
     path: "/creds",
     iconName: "credentials",
   },
-  {
-    name: "Profile",
-    path: "/profile",
-    iconName: "profile",
-  },
 ];
+
+export const ProfileRoute = {
+  name: "Profile",
+  path: "/profile",
+  iconName: "profile",
+};

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import TitleCard from "../../../../../components/card/TitleCard";
 import { RootState } from "../../../../../data_store/Store";
-import { SocialLink } from "../../../../../service/supabase/supastore/user_profile/UserCollection";
+import { SocialType } from "../../../../../service/supabase/supastore/user_profile/UserCollection";
 import SocialIcon from "../../../../../assets/icons/social_icon/IconApi";
 import TooltipComponent from "../../../../../components/tooltip/TooltipComponent";
 import NameIcon from "../../../../../assets/icons/profile_icon/NameIcon";
@@ -10,6 +10,7 @@ import PlaceIcon from "../../../../../assets/icons/profile_icon/PlaceIcon";
 import TitleIcon from "../../../../../assets/icons/profile_icon/TitleIcon";
 import DateIcon from "../../../../../assets/icons/profile_icon/DateIcon";
 import ExperienceIcon from "../../../../../assets/icons/profile_icon/ExperienceIcon";
+import { ProfilePlaceholder } from "../../../../../assets/icons/profile_icon/ProfilePlaceholder";
 
 const TextStyle =
   "text-lg font-semibold mt-2 outline rounded-md p-2 flex flex-row items-center gap-2";
@@ -44,18 +45,22 @@ export default function ProfilePreviewScreen() {
             </div>
             <div className="divider divider-horizontal"></div>
             <div className="w-64 h-64 items-center mx-auto rounded-full bg-base-200 btn btn-square btn-outline">
-              <img
-                src={profileData.profile}
-                alt="profile"
-                className="w-full h-full rounded-full object-cover"
-                loading="lazy"
-              />
+              {profileData.profile === "" ? (
+                <div className=" scale-150">
+                  <ProfilePlaceholder />
+                </div>
+              ) : (
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src={profileData.profile}
+                />
+              )}
             </div>
           </div>
         </div>
         <div className="divider"></div>
         <div className=" flex flex-row justify-evenly w-full ">
-          <GetSocialLink socialLinks={profileData.socialLinks} />
+          <GetSocialLink socialLinksMap={profileData.socialLinks} />
         </div>
       </TitleCard>
     </div>
@@ -63,27 +68,59 @@ export default function ProfilePreviewScreen() {
 }
 
 interface SocialLinkProps {
-  socialLinks: Array<SocialLink>;
+  socialLinksMap: Map<SocialType, string>;
+}
+
+interface NewLinkMap {
+  type: SocialType;
+  socialLink: string;
 }
 
 function GetSocialLink(props: SocialLinkProps) {
+  const socialLinksMap: Array<NewLinkMap> = [
+    {
+      type: SocialType.Facebook,
+      socialLink: props.socialLinksMap?.get(SocialType.Facebook) || "",
+    },
+    {
+      type: SocialType.Instagram,
+      socialLink: props.socialLinksMap?.get(SocialType.Instagram) || "",
+    },
+    {
+      type: SocialType.Github,
+      socialLink: props.socialLinksMap?.get(SocialType.Github) || "",
+    },
+    {
+      type: SocialType.X,
+      socialLink: props.socialLinksMap?.get(SocialType.X) || "",
+    },
+    {
+      type: SocialType.Linkedin,
+      socialLink: props.socialLinksMap?.get(SocialType.Linkedin) || "",
+    },
+    {
+      type: SocialType.Youtube,
+      socialLink: props.socialLinksMap?.get(SocialType.Youtube) || "",
+    },
+    {
+      type: SocialType.Website,
+      socialLink: props.socialLinksMap?.get(SocialType.Website) || "",
+    },
+  ];
+
   return (
     <>
-      {props.socialLinks.map((socialLink, index) => {
-        const disabled = socialLink.link === "";
+      {socialLinksMap.map(({ type, socialLink }) => {
+        let disabled = socialLink === "";
         return (
-          <TooltipComponent
-            title={socialLink.type}
-            disable={disabled}
-            key={index}
-          >
+          <TooltipComponent title={type} disable={disabled} key={type}>
             <a
-              href={socialLink.link}
+              href={socialLink}
               className={`btn btn-ghost btn-square ${
                 disabled ? " btn-disabled bg-blend-overlay opacity-50" : ""
               }`}
             >
-              <SocialIcon socialType={socialLink.type} />
+              <SocialIcon socialType={type} />
             </a>
           </TooltipComponent>
         );

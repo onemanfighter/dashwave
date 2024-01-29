@@ -7,6 +7,8 @@ import { ProfileIcon } from "../../assets/icons/profile_icon/ProfileIcon";
 import { SettingIcon } from "../../assets/icons/profile_icon/SettingsIcon";
 import { LogoutIcon } from "../../assets/icons/sidebar_icons/LogoutIcon";
 import { PasswordResetIcon } from "../../assets/icons/profile_icon/PasswordResetIcon";
+import { ProfilePlaceholder } from "../../assets/icons/profile_icon/ProfilePlaceholder";
+import NavigationToggleButton from "./NavigationToggleButton";
 
 export interface INavigationComponentProps {
   logOutClickHandler: () => void;
@@ -36,19 +38,9 @@ export default function NavigationComponent(props: INavigationComponentProps) {
           className="btn btn-square btn-ghost"
           onClick={props.openSidebarClickHandler}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="inline-block w-5 h-5 stroke-current"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
+          <NavigationToggleButton
+            openSidebarClickHandler={props.openSidebarClickHandler}
+          />
         </button>
       </div>
       <div className="flex-1">
@@ -79,10 +71,14 @@ export default function NavigationComponent(props: INavigationComponentProps) {
             className="btn btn-ghost btn-circle avatar"
           >
             <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src={profileState.profile}
-              />
+              {profileState.profile === "" ? (
+                <ProfilePlaceholder />
+              ) : (
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src={profileState.profile}
+                />
+              )}
             </div>
           </div>
           <ul

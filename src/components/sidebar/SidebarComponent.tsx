@@ -1,5 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { sidebarRoutes } from "../../router/sidebarRoutes/SidebarRoutes";
+import {
+  ProfileRoute,
+  sidebarRoutes,
+} from "../../router/sidebarRoutes/SidebarRoutes";
 import ProjectIcon from "../../assets/icons/sidebar_icons/ProjectIcon";
 import PlanIcon from "../../assets/icons/sidebar_icons/PlanIcon";
 import ExpenseIcon from "../../assets/icons/sidebar_icons/ExpenseIcon";
@@ -17,7 +20,7 @@ export interface ISidebarComponentProps {
 
 export default function SidebarComponent(props: ISidebarComponentProps) {
   return (
-    <div className=" flex-col text-base-content">
+    <div className=" flex-col text-base-content flex justify-between h-[95%]">
       <ul className="menu p-2 w-full ">
         {/* Sidebar content here */}
         {sidebarRoutes.map((route, index) => {
@@ -43,6 +46,25 @@ export default function SidebarComponent(props: ISidebarComponentProps) {
             </TooltipComponent>
           );
         })}
+      </ul>
+      <ul className="menu p-2 w-full ">
+        <TooltipComponent
+          title={ProfileRoute.name}
+          position="tooltip-right"
+          disable={props.sideBarOpen}
+        >
+          <li className="mt-2">
+            <NavLink
+              to={ProfileRoute.path}
+              className={
+                " hover:bg-primary-content hover:outline-dotted hover:outline-primary"
+              }
+            >
+              {getIcon(ProfileRoute.iconName)}
+              {props.sideBarOpen ? ProfileRoute.name : ""}
+            </NavLink>
+          </li>
+        </TooltipComponent>
       </ul>
     </div>
   );

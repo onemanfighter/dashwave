@@ -5,11 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { alreadySignedIn } from "./service/supabase/supa_auth/AuthApi";
 import { AuthData, onLogin, onSignOut } from "./data_store/slice/AuthSlice";
 import { Theme } from "./data_store/slice/ThemeSlice";
+import ToastComponent from "./components/toast/ToastComponent";
+import { RootState } from "./data_store/Store";
 
 function App() {
-  console.log(process.env);
   const dispatch = useDispatch();
   const theme: Theme = useSelector((state: any) => state.theme.theme);
+  const toastAlert = useSelector((state: RootState) => state.toastAlert);
 
   const signOutHandler = () => {
     dispatch(onSignOut());
@@ -24,6 +26,11 @@ function App() {
   });
   return (
     <div data-theme={theme}>
+      <ToastComponent
+        children={toastAlert.children}
+        xposition={toastAlert.xPosition}
+        yposition={toastAlert.yPosition}
+      />
       <Outlet />
     </div>
   );

@@ -1,17 +1,17 @@
-import { UserProfData } from "../../supabase/supastore/user_profile/UserCollection";
+import { UserProfileData } from "../../supabase/supastore/user_profile/UserCollection";
 import { ProfileTokenKey } from "../token_constants/StorageConstant";
 
 /**
  * Method to store the profilekey in local storage
  */
-export function storeProfilekeyData(profileData: UserProfData) {
+export function storeProfilekeyData(profileData: UserProfileData) {
   localStorage.setItem(ProfileTokenKey, JSON.stringify(profileData));
 }
 
 /**
  * Method to get the profilekey from local storage
  */
-export function getProfileKeyData(): UserProfData | null {
+export function getProfileKeyData(): UserProfileData | null {
   const profileData = localStorage.getItem(ProfileTokenKey);
   if (profileData) {
     return JSON.parse(profileData);

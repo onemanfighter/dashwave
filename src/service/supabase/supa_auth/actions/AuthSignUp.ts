@@ -1,5 +1,4 @@
 import { SupabaseAuth } from "../../supabase_main/Supabase";
-import { AuthData } from "../../../../data_store/slice/AuthSlice";
 
 export interface SignUpCred {
   fName: string;

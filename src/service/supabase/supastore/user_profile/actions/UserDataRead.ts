@@ -1,11 +1,11 @@
 import { UserData } from "../../../../../data_store/slice/AuthSlice";
 import { SupabaseUsersDB } from "../../../supabase_main/Supabase";
-import { SocialType, UserProfData } from "../UserCollection";
+import { SocialType, UserProfileData } from "../UserCollection";
 
 // Get a list of cities from your database
 export async function getUserUsingId(
   userAuthState: UserData,
-  callback: (user: UserProfData) => void
+  callback: (user: UserProfileData) => void
 ) {
   try {
     const { data, error } = await SupabaseUsersDB.select("*")
@@ -30,7 +30,6 @@ export async function getUserUsingId(
         dob: new Date(),
         yoe: 0,
         designation: "",
-        created_at: new Date(),
       }).single();
 
       if (error) {
@@ -51,8 +50,8 @@ export async function getUserUsingId(
  * @param user - The user data.
  * @returns The user data.
  */
-function getProfDataFromResponse(user: any): UserProfData {
-  const profData: UserProfData = {
+function getProfDataFromResponse(user: any): UserProfileData {
+  const profData: UserProfileData = {
     userId: user.id,
     fname: user.fName,
     lname: user.lName,
@@ -62,24 +61,14 @@ function getProfDataFromResponse(user: any): UserProfData {
     dateOfBirth: user.dob,
     designation: user.designation,
     yearOfExp: user.yoe,
-    socialLinks: [
-      {
-        type: SocialType.Linkedin,
-        link: "",
-      },
-      {
-        type: SocialType.Facebook,
-        link: "",
-      },
-      { type: SocialType.Youtube, link: "" },
-      { type: SocialType.X, link: "" },
-      { type: SocialType.Github, link: "" },
-      {
-        type: SocialType.Instagram,
-        link: "",
-      },
-      { type: SocialType.Website, link: "" },
-    ],
+    socialLinks: new Map<SocialType, string>()
+      .set(SocialType.Facebook, user.social_fb)
+      .set(SocialType.Instagram, user.social_insta)
+      .set(SocialType.X, user.social_x)
+      .set(SocialType.Github, user.social_git)
+      .set(SocialType.Linkedin, user.social_li)
+      .set(SocialType.Website, user.social_web)
+      .set(SocialType.Youtube, user.social_yt),
   };
   return profData;
 }

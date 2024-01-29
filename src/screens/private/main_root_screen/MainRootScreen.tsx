@@ -5,34 +5,21 @@ import { onSignOut } from "../../../data_store/slice/AuthSlice";
 import { signOut } from "../../../service/supabase/supa_auth/AuthApi";
 import SidebarComponent from "../../../components/sidebar/SidebarComponent";
 import { useEffect, useState } from "react";
-import {
-  removeProfile,
-  setProfile,
-} from "../../../data_store/slice/ProfileSlice";
-import { userProfileDataRead } from "../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
-import { UserProfData } from "../../../service/supabase/supastore/user_profile/UserCollection";
+import { removeProfile } from "../../../data_store/slice/ProfileSlice";
 import { RootState } from "../../../data_store/Store";
-
-/**
- * Proptypes for the main root screen component.
- */
-export interface IMainRootScreenProps {}
+import NotificationComponent from "../../../components/notification/NotificationComponent";
 
 /**
  * Component definition for the main root screen component.
- * @param props The proptypes for the component.
  * @returns The MainRootScreen component.
  */
-export default function MainRootScreen(props: IMainRootScreenProps) {
+export default function MainRootScreen() {
   const userAuthState = useSelector((state: RootState) => state.auth);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (userAuthState.authToken !== "") {
-      userProfileDataRead(userAuthState.userData, (user: UserProfData) => {
-        dispatch(setProfile(user));
-      });
     }
   }, [dispatch, userAuthState]);
 
@@ -52,6 +39,7 @@ export default function MainRootScreen(props: IMainRootScreenProps) {
   };
   return (
     <div className="flex flex-col h-screen">
+      <NotificationComponent />
       <div className="z-50">
         <NavigationComponent
           logOutClickHandler={logOutClickHandler}

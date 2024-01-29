@@ -91,6 +91,14 @@ const privateRouter = createBrowserRouter(
         <Route path="edit" element={<LazyGoalsEditScreenComponent />} />
         <Route path="delete" element={<LazyGoalsDeleteScreenComponent />} />
       </Route>
+      <Route path="learning" element={<LazyProfileMainScreenComponent />}>
+        <Route path="" element={<LazyCredsMainScreenComponent />} />
+        <Route path="preview" element={<LazyProfilePreviewScreenComponent />} />
+      </Route>
+      <Route path="resources" element={<LazyProfileMainScreenComponent />}>
+        <Route path="" element={<LazyCredsMainScreenComponent />} />
+        <Route path="preview" element={<LazyProfilePreviewScreenComponent />} />
+      </Route>
       <Route path="creds" element={<LazyCredsScreenComponent />}>
         <Route path="" element={<LazyCredsMainScreenComponent />} />
         <Route path="preview" element={<LazyCredsPreviewScreenComponent />} />

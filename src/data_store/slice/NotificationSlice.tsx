@@ -1,26 +1,17 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-export interface NotificationData {
-  title: string;
-  description: string;
-  type: "success" | "error" | "warning" | "info";
-  duration: number;
-}
-
-const initialData: NotificationData = {
-  title: "",
-  description: "",
-  type: "success",
-  duration: 0,
-};
+import { NotificationData } from "../../components/notification/NotificationComponent";
 
 const NOTIFICATION = "notification";
 
+export type NotificationState = NotificationData | null;
+
+const initialNotificationState: NotificationState = null as NotificationState;
+
 export const notificationSlice = createSlice({
   name: NOTIFICATION,
-  initialState: initialData,
+  initialState: initialNotificationState,
   reducers: {
-    showNotification: (_state, action: PayloadAction<NotificationData>) => {
+    showNotification: (_state, action: PayloadAction<NotificationState>) => {
       return action.payload;
     },
   },

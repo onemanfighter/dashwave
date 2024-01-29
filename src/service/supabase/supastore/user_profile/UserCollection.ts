@@ -34,7 +34,7 @@
  * }
  * }
  */
-export interface UserProfData {
+export interface UserProfileData {
   userId: string;
   fname: string;
   lname: string;
@@ -44,7 +44,7 @@ export interface UserProfData {
   dateOfBirth: string;
   designation: string;
   yearOfExp: number;
-  socialLinks: Array<SocialLink>;
+  socialLinks: Map<SocialType, string>;
 }
 
 /**
@@ -64,4 +64,27 @@ export enum SocialType {
 export interface SocialLink {
   type: SocialType;
   link: string;
+}
+
+/**
+ * @interface UserDataTableSchema
+ * @description The user data table schema.
+ */
+export interface UserDataTableSchema {
+  id: string;
+  email: string;
+  fname: string;
+  lname: string;
+  profile_image: string;
+  place: string;
+  dob: string;
+  yoe: number;
+  designation: string;
+  social_fb: string;
+  social_insta: string;
+  social_x: string;
+  social_git: string;
+  social_li: string;
+  social_web: string;
+  social_yt: string;
 }

@@ -17,9 +17,5 @@ export const SupabaseAuth = Supabase.auth;
 const usersTable = "dashwave_users";
 export const SupabaseUsersDB = Supabase.from(usersTable);
 
-// Initialize socials Database
-const socialsTable = "dashwave_socials";
-export const SupabaseSocialsDB = Supabase.from(socialsTable);
-
 // Initialize Storage
 export const SupabaseStorage = Supabase.storage;

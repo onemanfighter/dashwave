@@ -1,12 +1,12 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import {
   SocialType,
-  UserProfData,
+  UserProfileData,
 } from "../../service/supabase/supastore/user_profile/UserCollection";
 import { storeProfilekeyData } from "../../service/local_storage/profile/ProfileStorageApi";
 import { ProfileTokenKey } from "../../service/local_storage/token_constants/StorageConstant";
 
-const initialProfile: UserProfData = {
+const initialProfile: UserProfileData = {
   userId: "",
   fname: "",
   lname: "",
@@ -16,15 +16,15 @@ const initialProfile: UserProfData = {
   dateOfBirth: "",
   designation: "",
   yearOfExp: 0,
-  socialLinks: [
-    { type: SocialType.Facebook, link: "" },
-    { type: SocialType.Instagram, link: "" },
-    { type: SocialType.Github, link: "" },
-    { type: SocialType.X, link: "" },
-    { type: SocialType.Linkedin, link: "" },
-    { type: SocialType.Youtube, link: "" },
-    { type: SocialType.Website, link: "" },
-  ],
+  socialLinks: new Map<SocialType, string>([
+    [SocialType.Facebook, ""],
+    [SocialType.Instagram, ""],
+    [SocialType.Github, ""],
+    [SocialType.X, ""],
+    [SocialType.Linkedin, ""],
+    [SocialType.Youtube, ""],
+    [SocialType.Website, ""],
+  ]),
 };
 
 const PROFILE = "profile";
@@ -33,7 +33,7 @@ export const profileSlice = createSlice({
   name: PROFILE,
   initialState: getProfileData(),
   reducers: {
-    setProfile: (_state, action: PayloadAction<UserProfData>) => {
+    setProfile: (_state, action: PayloadAction<UserProfileData>) => {
       console.log("setProfile", action.payload);
       storeProfilekeyData(action.payload);
       return action.payload;
@@ -41,10 +41,6 @@ export const profileSlice = createSlice({
     removeProfile: (_state) => {
       storeProfilekeyData(initialProfile);
       return initialProfile;
-    },
-    updateProfile: (_state, action: PayloadAction<UserProfData>) => {
-      storeProfilekeyData(action.payload);
-      return action.payload;
     },
   },
 });
@@ -54,7 +50,7 @@ export const profileSlice = createSlice({
  *
  * @returns The profile data from the local storage.
  */
-export function getProfileData(): UserProfData {
+export function getProfileData(): UserProfileData {
   const profileData = localStorage.getItem(ProfileTokenKey);
   if (profileData) {
     return JSON.parse(profileData);
@@ -62,7 +58,6 @@ export function getProfileData(): UserProfData {
   return initialProfile;
 }
 
-export const { setProfile, removeProfile, updateProfile } =
-  profileSlice.actions;
+export const { setProfile, removeProfile } = profileSlice.actions;
 
 export default profileSlice.reducer;
