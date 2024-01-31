@@ -2,7 +2,12 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../data_store/Store";
 
 /**
- * Proptypes for the notification component.
+ * Interface definition for the notification provider props.
+ *
+ * @param title The title of the notification.
+ * @param description The description of the notification.
+ * @param children The children of the notification.
+ * @param onConfirm The on confirm callback.
  */
 export interface NotificationData {
   title: string;
@@ -11,8 +16,15 @@ export interface NotificationData {
   onConfirm?: () => void;
 }
 
+/**
+ * The notification modal id.
+ */
 const NOTIFICATION_MODAL_ID = "notification_modal";
 
+/**
+ * Component definition for the notification component.
+ * @returns The notification component.
+ */
 export default function NotificationComponent() {
   const notificationData = useSelector(
     (state: RootState) => state.notification

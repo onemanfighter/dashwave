@@ -2,18 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { Provider } from "react-redux";
-import { store } from "./data_store/Store";
 import RouterProviderComponent from "./router/RouterProvider";
+import ReduxServiceProvider from "./provider/redux_service_provider/ReduxServiceProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <ReduxServiceProvider>
       <RouterProviderComponent />
-    </Provider>
+    </ReduxServiceProvider>
   </React.StrictMode>
 );
 

@@ -10,6 +10,13 @@ export enum NotificationButtonType {
   LINK = "btn-link",
 }
 
+/**
+ * The notification button props.
+ * @param buttonText The text of the button.
+ * @param onClickHandler The on click handler of the button.
+ * @param buttonType The button type.
+ * @param isButtonOutline The button outline.
+ */
 export interface INotificationButtonProps {
   buttonText: string;
   onClickHandler: () => void;

@@ -7,7 +7,6 @@ import SidebarComponent from "../../../components/sidebar/SidebarComponent";
 import { useEffect, useState } from "react";
 import { removeProfile } from "../../../data_store/slice/ProfileSlice";
 import { RootState } from "../../../data_store/Store";
-import NotificationComponent from "../../../components/notification/NotificationComponent";
 
 /**
  * Component definition for the main root screen component.
@@ -39,7 +38,6 @@ export default function MainRootScreen() {
   };
   return (
     <div className="flex flex-col h-screen">
-      <NotificationComponent />
       <div className="z-50">
         <NavigationComponent
           logOutClickHandler={logOutClickHandler}
