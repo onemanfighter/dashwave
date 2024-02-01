@@ -1,14 +1,5 @@
-import * as React from "react";
-import { useDispatch } from "react-redux";
-import {
-  ToastAlertData,
-  showAlertWithTimeout,
-} from "../../../../data_store/slice/ToastAlertSlice";
-import AlertComponent, { AlertType } from "../../../../components/alert/Alert";
-import {
-  ToastXPosition,
-  ToastYPosition,
-} from "../../../../components/toast/ToastComponent";
+import { batch, useDispatch } from "react-redux";
+import { showAlertWithTimeout } from "../../../../data_store/slice/ToastAlertSlice";
 import {
   NotificationState,
   showNotification,
@@ -16,17 +7,12 @@ import {
 import NotificationButton, {
   NotificationButtonType,
 } from "../../../../components/notification/NotificationButton";
+import { getErrorAlertData } from "../../../../provider/alert_toast_provider/AlertToastProvider";
 
 export interface IDashboardHomeProps {}
 
 export default function DashboardHome(props: IDashboardHomeProps) {
   const dispatch = useDispatch();
-
-  const alertDatas: ToastAlertData = {
-    children: <AlertComponent title="Alert" type={AlertType.WARNING} />,
-    xPosition: ToastXPosition.END,
-    yPosition: ToastYPosition.BOTTOM,
-  };
 
   const notificationData: NotificationState = {
     title: "Notification",
@@ -34,7 +20,10 @@ export default function DashboardHome(props: IDashboardHomeProps) {
   };
 
   const clickHandler = () => {
-    dispatch(showNotification(notificationData));
+    batch(() => {
+      showAlertWithTimeout(dispatch, getErrorAlertData("Error"), 3000);
+      dispatch(showNotification(notificationData));
+    });
   };
 
   return (

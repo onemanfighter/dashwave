@@ -3,6 +3,10 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import RouterProviderComponent from "./router/RouterProvider";
+import ThemeProvider from "./provider/theme_provider/ThemeProvider";
+import AlreadyLoginServiceProvider from "./provider/already_login/AlreadyLoginServiceProvider";
+import NotificationProvider from "./provider/notification_provider/NotificationProvider";
+import AlertToastProvider from "./provider/alert_toast_provider/AlertToastProvider";
 import ReduxServiceProvider from "./provider/redux_service_provider/ReduxServiceProvider";
 
 const root = ReactDOM.createRoot(
@@ -11,7 +15,15 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ReduxServiceProvider>
-      <RouterProviderComponent />
+      <ThemeProvider>
+        <AlreadyLoginServiceProvider>
+          <NotificationProvider>
+            <AlertToastProvider>
+              <RouterProviderComponent />
+            </AlertToastProvider>
+          </NotificationProvider>
+        </AlreadyLoginServiceProvider>
+      </ThemeProvider>
     </ReduxServiceProvider>
   </React.StrictMode>
 );

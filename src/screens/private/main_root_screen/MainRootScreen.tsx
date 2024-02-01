@@ -4,8 +4,12 @@ import { batch, useDispatch, useSelector } from "react-redux";
 import { onSignOut } from "../../../data_store/slice/AuthSlice";
 import { signOut } from "../../../service/supabase/supa_auth/AuthApi";
 import SidebarComponent from "../../../components/sidebar/SidebarComponent";
-import { useEffect, useState } from "react";
-import { removeProfile } from "../../../data_store/slice/ProfileSlice";
+import { useCallback, useEffect, useState } from "react";
+import {
+  removeProfile,
+  syncForTheFirstTime,
+  updateProfile,
+} from "../../../data_store/slice/ProfileSlice";
 import { RootState } from "../../../data_store/Store";
 
 /**
@@ -13,32 +17,39 @@ import { RootState } from "../../../data_store/Store";
  * @returns The MainRootScreen component.
  */
 export default function MainRootScreen() {
-  const userAuthState = useSelector((state: RootState) => state.auth);
+  const userAuthEmailState = useSelector(
+    (state: RootState) => state.auth.userData.email
+  );
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (userAuthState.authToken !== "") {
-    }
-  }, [dispatch, userAuthState]);
-
-  const signOutHandler = () => {
-    batch(() => {
-      dispatch(onSignOut());
-      dispatch(removeProfile());
-    });
-  };
-
-  const logOutClickHandler = () => {
+  const logOutClickHandler = useCallback(() => {
+    const signOutHandler = () => {
+      batch(() => {
+        dispatch(onSignOut());
+        dispatch(removeProfile());
+      });
+    };
     signOut(signOutHandler);
-  };
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (userAuthEmailState === "") {
+      logOutClickHandler();
+    } else {
+      console.log("syncing for the first time");
+      const userData = syncForTheFirstTime();
+      if (userData) dispatch(updateProfile(userData));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userAuthEmailState]);
 
   const openSidebarClickHandler = () => {
     setSidebarOpen((prev) => !prev);
   };
   return (
-    <div className="flex flex-col h-screen">
-      <div className="z-50">
+    <div className="flex flex-col h-screen -z-10">
+      <div className="z-10">
         <NavigationComponent
           logOutClickHandler={logOutClickHandler}
           openSidebarClickHandler={openSidebarClickHandler}

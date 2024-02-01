@@ -36,15 +36,15 @@
  */
 export interface UserProfileData {
   userId: string;
-  fname: string;
-  lname: string;
+  firstName: string;
+  lastName: string;
   profile: string;
   email: string;
   place: string;
   dateOfBirth: string;
   designation: string;
   yearOfExp: number;
-  socialLinks: Map<SocialType, string>;
+  socialLinks: Array<SocialLink>;
 }
 
 /**
@@ -73,8 +73,8 @@ export interface SocialLink {
 export interface UserDataTableSchema {
   id: string;
   email: string;
-  fname: string;
-  lname: string;
+  first_name: string;
+  last_name: string;
   profile_image: string;
   place: string;
   dob: string;

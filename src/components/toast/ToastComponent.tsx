@@ -1,3 +1,5 @@
+import AlertComponent, { AlertComponentData } from "../alert/Alert";
+
 export enum ToastXPosition {
   START = "toast-start",
   CENTER = "toast-center",
@@ -10,23 +12,28 @@ export enum ToastYPosition {
   BOTTOM = "toast-bottom",
 }
 
-export interface IToastComponentProps {
+export interface IToastAlertComponentProps {
+  alertComponentData: AlertComponentData;
   xposition?: ToastXPosition;
   yposition?: ToastYPosition;
-  children: React.ReactNode;
   bounce?: boolean;
 }
 
-export default function ToastComponent(props: IToastComponentProps) {
-  return (
+export default function ToastAlertComponent(props: IToastAlertComponentProps) {
+  return props.alertComponentData.title === "" ? (
+    <></>
+  ) : (
     <div
-      className={`toast ${
+      className={`toast z-50 ${
         props.bounce !== null && !props.bounce ? "" : "animate-bounce"
       } ${props.xposition ? props.xposition : ""} ${
         props.yposition ? props.yposition : ""
       }`}
     >
-      {props.children}
+      <AlertComponent
+        title={props.alertComponentData.title}
+        type={props.alertComponentData.type}
+      />
     </div>
   );
 }

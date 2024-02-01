@@ -1,7 +1,10 @@
 import { useSelector } from "react-redux";
 import TitleCard from "../../../../../components/card/TitleCard";
 import { RootState } from "../../../../../data_store/Store";
-import { SocialType } from "../../../../../service/supabase/supastore/user_profile/UserCollection";
+import {
+  SocialLink,
+  SocialType,
+} from "../../../../../service/supabase/supastore/user_profile/UserCollection";
 import SocialIcon from "../../../../../assets/icons/social_icon/IconApi";
 import TooltipComponent from "../../../../../components/tooltip/TooltipComponent";
 import NameIcon from "../../../../../assets/icons/profile_icon/NameIcon";
@@ -11,6 +14,7 @@ import TitleIcon from "../../../../../assets/icons/profile_icon/TitleIcon";
 import DateIcon from "../../../../../assets/icons/profile_icon/DateIcon";
 import ExperienceIcon from "../../../../../assets/icons/profile_icon/ExperienceIcon";
 import { ProfilePlaceholder } from "../../../../../assets/icons/profile_icon/ProfilePlaceholder";
+import { getSocialMediaLink } from "../../../../../util/Utils";
 
 const TextStyle =
   "text-lg font-semibold mt-2 outline rounded-md p-2 flex flex-row items-center gap-2";
@@ -25,7 +29,7 @@ export default function ProfilePreviewScreen() {
           <div className="flex flex-row items-start justify-between">
             <div className="grid grid-cols-1 m-auto">
               <div className={TextStyle}>
-                <NameIcon /> {profileData.fname} {profileData.lname}
+                <NameIcon /> {profileData.firstName} {profileData.lastName}
               </div>
               <div className={TextStyle}>
                 <EmailIcon /> {profileData.email}
@@ -68,54 +72,49 @@ export default function ProfilePreviewScreen() {
 }
 
 interface SocialLinkProps {
-  socialLinksMap: Map<SocialType, string>;
-}
-
-interface NewLinkMap {
-  type: SocialType;
-  socialLink: string;
+  socialLinksMap: Array<SocialLink>;
 }
 
 function GetSocialLink(props: SocialLinkProps) {
-  const socialLinksMap: Array<NewLinkMap> = [
+  const socialLinksMap: Array<SocialLink> = [
     {
       type: SocialType.Facebook,
-      socialLink: props.socialLinksMap?.get(SocialType.Facebook) || "",
+      link: getSocialMediaLink(props.socialLinksMap, SocialType.Facebook),
     },
     {
       type: SocialType.Instagram,
-      socialLink: props.socialLinksMap?.get(SocialType.Instagram) || "",
+      link: getSocialMediaLink(props.socialLinksMap, SocialType.Instagram),
     },
     {
       type: SocialType.Github,
-      socialLink: props.socialLinksMap?.get(SocialType.Github) || "",
+      link: getSocialMediaLink(props.socialLinksMap, SocialType.Github),
     },
     {
       type: SocialType.X,
-      socialLink: props.socialLinksMap?.get(SocialType.X) || "",
+      link: getSocialMediaLink(props.socialLinksMap, SocialType.X),
     },
     {
       type: SocialType.Linkedin,
-      socialLink: props.socialLinksMap?.get(SocialType.Linkedin) || "",
+      link: getSocialMediaLink(props.socialLinksMap, SocialType.Linkedin),
     },
     {
       type: SocialType.Youtube,
-      socialLink: props.socialLinksMap?.get(SocialType.Youtube) || "",
+      link: getSocialMediaLink(props.socialLinksMap, SocialType.Youtube),
     },
     {
       type: SocialType.Website,
-      socialLink: props.socialLinksMap?.get(SocialType.Website) || "",
+      link: getSocialMediaLink(props.socialLinksMap, SocialType.Website),
     },
   ];
 
   return (
     <>
-      {socialLinksMap.map(({ type, socialLink }) => {
-        let disabled = socialLink === "";
+      {socialLinksMap.map(({ type, link }) => {
+        let disabled = link === "";
         return (
           <TooltipComponent title={type} disable={disabled} key={type}>
             <a
-              href={socialLink}
+              href={link}
               className={`btn btn-ghost btn-square ${
                 disabled ? " btn-disabled bg-blend-overlay opacity-50" : ""
               }`}

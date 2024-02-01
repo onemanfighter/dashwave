@@ -19,7 +19,7 @@ export interface NotificationData {
 /**
  * The notification modal id.
  */
-const NOTIFICATION_MODAL_ID = "notification_modal";
+export const NOTIFICATION_MODAL_ID = "notification_modal";
 
 /**
  * Component definition for the notification component.
@@ -31,7 +31,7 @@ export default function NotificationComponent() {
   );
   return (
     notificationData && (
-      <div>
+      <div className="z-50">
         <input
           type="checkbox"
           id={NOTIFICATION_MODAL_ID}

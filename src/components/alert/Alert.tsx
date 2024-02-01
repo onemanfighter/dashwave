@@ -12,12 +12,12 @@ export enum AlertType {
   ERROR = "error",
 }
 
-export interface IAlertComponentProps {
+export interface AlertComponentData {
   title: string;
   type: AlertType;
 }
 
-export default function AlertComponent(props: IAlertComponentProps) {
+export default function AlertComponent(props: AlertComponentData) {
   const { typeString, icon } = getAlertType(props.type);
   return (
     <div role="alert" className={`alert ${typeString}`}>

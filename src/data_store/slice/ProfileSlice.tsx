@@ -3,61 +3,95 @@ import {
   SocialType,
   UserProfileData,
 } from "../../service/supabase/supastore/user_profile/UserCollection";
-import { storeProfilekeyData } from "../../service/local_storage/profile/ProfileStorageApi";
-import { ProfileTokenKey } from "../../service/local_storage/token_constants/StorageConstant";
+import {
+  getProfileKeyData,
+  storeProfileKeyData,
+} from "../../service/local_storage/profile/ProfileStorageApi";
+import { userProfileDataRead } from "../../service/supabase/supastore/user_profile/UserProfileStoreApi";
+import { getAuthData } from "./AuthSlice";
 
 const initialProfile: UserProfileData = {
   userId: "",
-  fname: "",
-  lname: "",
+  firstName: "",
+  lastName: "",
   email: "",
   profile: "",
   place: "",
   dateOfBirth: "",
   designation: "",
   yearOfExp: 0,
-  socialLinks: new Map<SocialType, string>([
-    [SocialType.Facebook, ""],
-    [SocialType.Instagram, ""],
-    [SocialType.Github, ""],
-    [SocialType.X, ""],
-    [SocialType.Linkedin, ""],
-    [SocialType.Youtube, ""],
-    [SocialType.Website, ""],
-  ]),
+  socialLinks: [
+    {
+      type: SocialType.Facebook,
+      link: "",
+    },
+    {
+      type: SocialType.Instagram,
+      link: "",
+    },
+    {
+      type: SocialType.Github,
+      link: "",
+    },
+    {
+      type: SocialType.X,
+      link: "",
+    },
+    {
+      type: SocialType.Linkedin,
+      link: "",
+    },
+    {
+      type: SocialType.Youtube,
+      link: "",
+    },
+    {
+      type: SocialType.Website,
+      link: "",
+    },
+  ],
 };
 
 const PROFILE = "profile";
 
 export const profileSlice = createSlice({
   name: PROFILE,
-  initialState: getProfileData(),
+  initialState: initialProfile,
   reducers: {
-    setProfile: (_state, action: PayloadAction<UserProfileData>) => {
-      console.log("setProfile", action.payload);
-      storeProfilekeyData(action.payload);
+    updateProfile: (_state, action: PayloadAction<UserProfileData>) => {
+      console.log("action.payload", action.payload);
+      storeProfileKeyData(action.payload);
       return action.payload;
     },
     removeProfile: (_state) => {
-      storeProfilekeyData(initialProfile);
+      storeProfileKeyData(initialProfile);
       return initialProfile;
     },
   },
 });
 
 /**
- * Get the profile data from the local storage.
+ * Check if local storage has profile data, if not then fetch from the server database.
+ * If the profile data is not available in the server database then add the initial profile data.
+ * Then once the profile data is available in the server database, store it in the local storage.
+ * Finally return the profile data from the local storage.
  *
  * @returns The profile data from the local storage.
  */
-export function getProfileData(): UserProfileData {
-  const profileData = localStorage.getItem(ProfileTokenKey);
-  if (profileData) {
-    return JSON.parse(profileData);
+export function syncForTheFirstTime(): UserProfileData | void {
+  const profileData = getProfileKeyData();
+  if (profileData != null && profileData?.userId !== "") {
+    console.log("profileData", profileData);
+    return profileData as UserProfileData;
   }
-  return initialProfile;
+
+  userProfileDataRead(getAuthData().userData, (data) => {
+    console.log("data", data);
+    storeProfileKeyData(data);
+    return data;
+  });
 }
 
-export const { setProfile, removeProfile } = profileSlice.actions;
+export const { updateProfile, removeProfile } = profileSlice.actions;
 
 export default profileSlice.reducer;

@@ -1,4 +1,5 @@
 import { UserData } from "../../../../data_store/slice/AuthSlice";
+import { ToastAlertData } from "../../../../provider/alert_toast_provider/AlertToastProvider";
 import { UserProfileData } from "./UserCollection";
 import { getUserUsingId } from "./actions/UserDataRead";
 import { updateUserData } from "./actions/UserDataWrite";
@@ -14,6 +15,7 @@ export function userProfileDataRead(
   userAuthState: UserData,
   callback: (user: UserProfileData) => void
 ) {
+  console.log("userProfileDataRead");
   getUserUsingId(userAuthState, callback);
 }
 
@@ -22,14 +24,14 @@ export function userProfileDataRead(
  * @param userIdFromAuth - The user id.
  * @param data - The user data.
  * @param callback - The callback function.
- * @param showNotification - The notification function.
+ * @param showAlertHandler - The notification function.
  * @returns The user data.
  */
 export function userProfileDataUpdate(
   userIdFromAuth: string,
   data: UserProfileData,
   callback: (profile: UserProfileData) => void,
-  showNotification: () => void
+  showAlertHandler: (toastAlertData: ToastAlertData) => void
 ) {
-  return updateUserData(userIdFromAuth, data, callback, showNotification);
+  return updateUserData(userIdFromAuth, data, callback, showAlertHandler);
 }

@@ -1,3 +1,5 @@
+import { NOTIFICATION_MODAL_ID } from "./NotificationComponent";
+
 export enum NotificationButtonType {
   PRIMARY = "btn-primary",
   SECONDARY = "btn-secondary",
@@ -28,7 +30,7 @@ export default function NotificationButton(props: INotificationButtonProps) {
   return (
     <div>
       <label
-        htmlFor="notification_modal"
+        htmlFor={NOTIFICATION_MODAL_ID}
         className={`btn ${props.buttonType} ${
           props.isButtonOutline ? "btn-outline" : ""
         }`}

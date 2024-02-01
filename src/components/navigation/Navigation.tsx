@@ -87,7 +87,7 @@ export default function NavigationComponent(props: INavigationComponentProps) {
           >
             <li className="menu-title">
               <span>
-                Hi, {profileState.fname} {profileState.lname}
+                Hi, {profileState.firstName} {profileState.lastName}
               </span>
             </li>
             <li className="m-1">

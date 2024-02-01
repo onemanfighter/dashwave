@@ -29,8 +29,8 @@ export async function firebaseSingIn(
           authToken: data.session.access_token,
           userData: {
             userId: data.user.id,
-            firstName: data.user.user_metadata.first_name,
-            lastName: data.user.user_metadata.last_name,
+            firstName: data.user.user_metadata.fName,
+            lastName: data.user.user_metadata.lName,
             email: data.user.email ? data.user.email : "",
           },
         };

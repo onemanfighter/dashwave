@@ -1,6 +1,6 @@
 import { UserData } from "../../../../../data_store/slice/AuthSlice";
 import { SupabaseUsersDB } from "../../../supabase_main/Supabase";
-import { SocialType, UserProfileData } from "../UserCollection";
+import { SocialLink, SocialType, UserProfileData } from "../UserCollection";
 
 // Get a list of cities from your database
 export async function getUserUsingId(
@@ -8,36 +8,31 @@ export async function getUserUsingId(
   callback: (user: UserProfileData) => void
 ) {
   try {
-    const { data, error } = await SupabaseUsersDB.select("*")
-      .eq("id", userAuthState.userId)
-      .single();
-    if (data !== null) {
-      console.log("data", data);
+    const { data, error } = await SupabaseUsersDB.select("*").eq(
+      "id",
+      userAuthState.userId
+    );
+    if (data !== null && data.length > 0 && data !== undefined && !error) {
       const user = getProfDataFromResponse(data);
       callback(user);
       return;
     }
 
-    if (error) {
-      console.log("error");
-      const { data, error } = await SupabaseUsersDB.upsert({
-        id: userAuthState.userId,
-        email: userAuthState.email,
-        fname: userAuthState.firstName,
-        lname: userAuthState.lastName,
-        profile_image: "",
-        place: "",
-        dob: new Date(),
-        yoe: 0,
-        designation: "",
-      }).single();
+    const { data: dataUser, error: regisError } = await SupabaseUsersDB.upsert({
+      id: userAuthState.userId,
+      email: userAuthState.email,
+      first_name: userAuthState.firstName,
+      last_name: userAuthState.lastName,
+    })
+      .select()
+      .single();
 
-      if (error) {
-        console.log(error);
-      } else {
-        const user = getProfDataFromResponse(data);
-        callback(user);
-      }
+    if (regisError) {
+      console.log(regisError);
+    } else {
+      console.log(dataUser);
+      const user = getProfDataFromResponse(dataUser);
+      callback(user);
     }
   } catch (error) {
     console.log(error);
@@ -53,22 +48,44 @@ export async function getUserUsingId(
 function getProfDataFromResponse(user: any): UserProfileData {
   const profData: UserProfileData = {
     userId: user.id,
-    fname: user.fName,
-    lname: user.lName,
+    firstName: user.first_name,
+    lastName: user.last_name,
     profile: user.profile_image,
     email: user.email,
     place: user.place,
     dateOfBirth: user.dob,
     designation: user.designation,
     yearOfExp: user.yoe,
-    socialLinks: new Map<SocialType, string>()
-      .set(SocialType.Facebook, user.social_fb)
-      .set(SocialType.Instagram, user.social_insta)
-      .set(SocialType.X, user.social_x)
-      .set(SocialType.Github, user.social_git)
-      .set(SocialType.Linkedin, user.social_li)
-      .set(SocialType.Website, user.social_web)
-      .set(SocialType.Youtube, user.social_yt),
+    socialLinks: new Array<SocialLink>(
+      {
+        type: SocialType.Facebook,
+        link: user.social_fb,
+      },
+      {
+        type: SocialType.Instagram,
+        link: user.social_insta,
+      },
+      {
+        type: SocialType.X,
+        link: user.social_x,
+      },
+      {
+        type: SocialType.Github,
+        link: user.social_git,
+      },
+      {
+        type: SocialType.Linkedin,
+        link: user.social_li,
+      },
+      {
+        type: SocialType.Website,
+        link: user.social_web,
+      },
+      {
+        type: SocialType.Youtube,
+        link: user.social_yt,
+      }
+    ),
   };
   return profData;
 }

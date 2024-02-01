@@ -15,9 +15,15 @@ export default function supabaseSignUp(
   SupabaseAuth.signUp({
     email: cred.email,
     password: cred.password,
+    options: {
+      data: {
+        first_name: cred.fName,
+        last_name: cred.lName,
+      },
+    },
   }).then(
     (response) => {
-      console.log("signup", response);
+      console.log(response);
       signUpHandler();
     },
     (error) => {

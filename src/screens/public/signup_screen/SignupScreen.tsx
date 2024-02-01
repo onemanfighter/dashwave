@@ -5,16 +5,9 @@ import InputText from "../../../components/text/InputText";
 import ErrorText from "../../../components/text/ErrorText";
 import { SignUpCred } from "../../../service/supabase/supa_auth/actions/AuthSignUp";
 import { signUp } from "../../../service/supabase/supa_auth/AuthApi";
-import {
-  ToastAlertData,
-  showAlertWithTimeout,
-} from "../../../data_store/slice/ToastAlertSlice";
+import { showAlertWithTimeout } from "../../../data_store/slice/ToastAlertSlice";
 import { useDispatch } from "react-redux";
-import {
-  ToastXPosition,
-  ToastYPosition,
-} from "../../../components/toast/ToastComponent";
-import AlertComponent, { AlertType } from "../../../components/alert/Alert";
+import { getSuccessAlertData } from "../../../provider/alert_toast_provider/AlertToastProvider";
 
 interface UpdateProps {
   updateType: string;
@@ -35,19 +28,14 @@ function Register() {
   const [errorMessage, setErrorMessage] = useState("");
   const [registerObj, setRegisterObj] = useState(INITIAL_REGISTER_OBJ);
 
-  const toastAlertData: ToastAlertData = {
-    children: (
-      <AlertComponent
-        title="Sign up successfull! Please verify the email to login."
-        type={AlertType.SUCCESS}
-      />
-    ),
-    xPosition: ToastXPosition.END,
-    yPosition: ToastYPosition.BOTTOM,
-  };
-
   const signUpHandler = () => {
-    showAlertWithTimeout(dispatch, toastAlertData, 3000);
+    showAlertWithTimeout(
+      dispatch,
+      getSuccessAlertData(
+        "Sign up successfull! Please verify the email to login."
+      ),
+      3000
+    );
     navigate("login");
   };
 

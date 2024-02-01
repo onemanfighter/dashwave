@@ -13,8 +13,8 @@ export function getAuthKeyData(): AuthData | null {
       userData: {
         userId: data.user.id as string,
         email: data.user.email as string,
-        firstName: data.user.user_metadata.first_name!,
-        lastName: data.user.user_metadata.last_name!,
+        firstName: data.user.user_metadata.first_name,
+        lastName: data.user.user_metadata.last_name,
       },
     };
   }

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { AuthData, onLogin, onSignOut } from "../../data_store/slice/AuthSlice";
+import { onSignOut } from "../../data_store/slice/AuthSlice";
 import { useEffect } from "react";
 import { alreadySignedIn } from "../../service/supabase/supa_auth/AuthApi";
 
@@ -16,12 +16,8 @@ export default function AlreadyLoginServiceProvider(
     dispatch(onSignOut());
   };
 
-  const signInHandler = (authData: AuthData) => {
-    dispatch(onLogin(authData));
-  };
-
   useEffect(() => {
-    alreadySignedIn(signInHandler, signOutHandler);
+    alreadySignedIn(signOutHandler);
   });
   return <div>{props.children}</div>;
 }

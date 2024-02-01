@@ -49,22 +49,10 @@ export function forgotPassword(
  * Method to make the firebase already signin
  *
  */
-export function alreadySignedIn(
-  signInHandler: (authData: AuthData) => void,
-  signOutHandler: () => void
-) {
+export function alreadySignedIn(signOutHandler: () => void) {
   const authData = localStorage.getItem(AuthTokenKey);
-  let token = "";
   if (!authData) {
     signOutHandler();
     return;
   }
-
-  const authDataJson: AuthData = JSON.parse(authData as string);
-  token = authDataJson.authToken;
-  const user: AuthData = {
-    userData: authDataJson.userData,
-    authToken: token,
-  };
-  signInHandler(user);
 }

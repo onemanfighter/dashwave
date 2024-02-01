@@ -16,11 +16,15 @@ import { YoutubeIcon } from "../../../../../assets/icons/social_icon/YoutubeIcon
 import { WebsiteIcon } from "../../../../../assets/icons/social_icon/WebsiteIcon";
 import { useState } from "react";
 import { userProfileDataUpdate } from "../../../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
-import { setProfile } from "../../../../../data_store/slice/ProfileSlice";
+import { updateProfile } from "../../../../../data_store/slice/ProfileSlice";
 import { getAuthUserID } from "../../../../../data_store/slice/AuthSlice";
 import NotificationButton, {
   NotificationButtonType,
 } from "../../../../../components/notification/NotificationButton";
+import { getSocialMediaLink } from "../../../../../util/Utils";
+import { showAlertWithTimeout } from "../../../../../data_store/slice/ToastAlertSlice";
+import { ToastAlertData } from "../../../../../provider/alert_toast_provider/AlertToastProvider";
+import PageLoadingComponent from "../../../../../components/page_loading/PageLoading";
 
 interface UpdateFormValue {
   updateType: string;
@@ -29,41 +33,31 @@ interface UpdateFormValue {
 
 function ProfileSettingScreen() {
   const profileData = useSelector((state: RootState) => state.profile);
-  const authUserId = useSelector(
-    (state: RootState) => state.auth.userData.userId
-  );
   const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
   const [userProfileState, setUserProfileState] =
     useState<UserProfileData>(profileData);
   const dispatch = useDispatch();
 
-  const showNotificationHandler = () => {
-    dispatch(
-      showNotification({
-        title: "Profile Updated",
-        description: "Your profile has been updated successfully!",
-      })
-    );
+  const showSuccessAlertHandler = (toastAlertData: ToastAlertData) => {
+    showAlertWithTimeout(dispatch, toastAlertData, 3000);
   };
 
   const profileSavingHandler = (profile: UserProfileData) => {
-    dispatch(setProfile(profile));
+    dispatch(updateProfile(profile));
   };
 
-  const updateProfile = () => {
+  const updateProfileHandler = () => {
     setLoading(true);
     userProfileDataUpdate(
       getAuthUserID(),
       userProfileState,
       profileSavingHandler,
-      showNotificationHandler
+      showSuccessAlertHandler
     );
     setLoading(false);
   };
 
   const updateFormValue = ({ updateType, value }: UpdateFormValue) => {
-    setErrorMessage("");
     setUserProfileState({ ...userProfileState, [updateType]: value });
   };
 
@@ -78,7 +72,7 @@ function ProfileSettingScreen() {
             showNotification({
               title: "Profile Update",
               description: "Are you sure you want to update your profile?",
-              onConfirm: updateProfile,
+              onConfirm: updateProfileHandler,
             })
           );
         }}
@@ -87,6 +81,7 @@ function ProfileSettingScreen() {
   };
   return (
     <div className="m-2 overflow-scroll">
+      {loading && <PageLoadingComponent />}
       <TitleCard
         title="Profile Settings"
         topMargin="mt-2"
@@ -96,14 +91,14 @@ function ProfileSettingScreen() {
           <InputText
             type="text"
             labelTitle="First name"
-            defaultValue={profileData.fname}
+            defaultValue={profileData.firstName}
             updateType="fname"
             updateFormValue={updateFormValue}
           />
           <InputText
             type="text"
             labelTitle="Last name"
-            defaultValue={profileData.lname}
+            defaultValue={profileData.lastName}
             updateType="lname"
             updateFormValue={updateFormValue}
           />
@@ -160,7 +155,10 @@ function ProfileSettingScreen() {
             <IconBorderProvider children={<FacebookIcon />} />
             <InputText
               labelTitle="Facebook"
-              defaultValue={profileData.socialLinks.get(SocialType.Facebook)}
+              defaultValue={getSocialMediaLink(
+                profileData.socialLinks,
+                SocialType.Facebook
+              )}
               updateType="facebook"
               updateFormValue={updateFormValue}
             />
@@ -169,7 +167,12 @@ function ProfileSettingScreen() {
             <IconBorderProvider children={<InstagramIcon />} />
             <InputText
               labelTitle="Instagram"
-              defaultValue={profileData.socialLinks.get(SocialType.Instagram)}
+              defaultValue={
+                getSocialMediaLink(
+                  profileData.socialLinks,
+                  SocialType.Instagram
+                ) ?? ""
+              }
               updateType="instagram"
               updateFormValue={updateFormValue}
             />
@@ -178,7 +181,10 @@ function ProfileSettingScreen() {
             <IconBorderProvider children={<GithubIcon />} />
             <InputText
               labelTitle="Github"
-              defaultValue={profileData.socialLinks.get(SocialType.Github)}
+              defaultValue={getSocialMediaLink(
+                profileData.socialLinks,
+                SocialType.Github
+              )}
               updateType="github"
               updateFormValue={updateFormValue}
             />
@@ -187,7 +193,10 @@ function ProfileSettingScreen() {
             <IconBorderProvider children={<LinkedInIcon />} />
             <InputText
               labelTitle="LinkedIn"
-              defaultValue={profileData.socialLinks.get(SocialType.Linkedin)}
+              defaultValue={getSocialMediaLink(
+                profileData.socialLinks,
+                SocialType.Linkedin
+              )}
               updateType="linkedin"
               updateFormValue={updateFormValue}
             />
@@ -196,7 +205,10 @@ function ProfileSettingScreen() {
             <IconBorderProvider children={<XIcon />} />
             <InputText
               labelTitle="X(Twitter)"
-              defaultValue={profileData.socialLinks.get(SocialType.X)}
+              defaultValue={getSocialMediaLink(
+                profileData.socialLinks,
+                SocialType.X
+              )}
               updateType="x"
               updateFormValue={updateFormValue}
             />
@@ -205,7 +217,10 @@ function ProfileSettingScreen() {
             <IconBorderProvider children={<YoutubeIcon />} />
             <InputText
               labelTitle="Youtube"
-              defaultValue={profileData.socialLinks.get(SocialType.Youtube)}
+              defaultValue={getSocialMediaLink(
+                profileData.socialLinks,
+                SocialType.Youtube
+              )}
               updateType="youtube"
               updateFormValue={updateFormValue}
             />
@@ -214,13 +229,18 @@ function ProfileSettingScreen() {
             <IconBorderProvider children={<WebsiteIcon />} />
             <InputText
               labelTitle="Website"
-              defaultValue={profileData.socialLinks.get(SocialType.Website)}
+              defaultValue={getSocialMediaLink(
+                profileData.socialLinks,
+                SocialType.Website
+              )}
               updateType="website"
               updateFormValue={updateFormValue}
             />
           </div>
         </div>
-        <TopSideButton />
+        <div className="flex justify-end">
+          <TopSideButton />
+        </div>
       </TitleCard>
     </div>
   );
