@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import InputText from "../../../../../components/text/InputText";
+import InputText, { InputType } from "../../../../../components/text/InputText";
 import { showNotification } from "../../../../../data_store/slice/NotificationSlice";
 import TitleCard from "../../../../../components/card/TitleCard";
 import { RootState } from "../../../../../data_store/Store";
@@ -89,49 +89,49 @@ function ProfileSettingScreen() {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <InputText
-            type="text"
+            type={InputType.TEXT}
             labelTitle="First name"
             defaultValue={profileData.firstName}
             updateType="fname"
             updateFormValue={updateFormValue}
           />
           <InputText
-            type="text"
+            type={InputType.TEXT}
             labelTitle="Last name"
             defaultValue={profileData.lastName}
             updateType="lname"
             updateFormValue={updateFormValue}
           />
           <InputText
-            type="email"
+            type={InputType.EMAIL}
             labelTitle="Email Id"
             updateType="email"
             defaultValue={profileData.email}
             updateFormValue={updateFormValue}
           />
           <InputText
-            type="text"
+            type={InputType.TEXT}
             labelTitle="Designation"
             updateType="designation"
             defaultValue={profileData.designation}
             updateFormValue={updateFormValue}
           />
           <InputText
-            type="text"
+            type={InputType.TEXT}
             labelTitle="Place"
             updateType="place"
             defaultValue={profileData.place}
             updateFormValue={updateFormValue}
           />
           <InputText
-            type="number"
+            type={InputType.NUMBER}
             labelTitle="Year of Experience"
             updateType="yearOfExp"
             defaultValue={profileData.yearOfExp.toString()}
             updateFormValue={updateFormValue}
           />
           <InputText
-            type="date"
+            type={InputType.DATE}
             labelTitle="Date of Birth"
             updateType="dateOfBirth"
             defaultValue={profileData.dateOfBirth}

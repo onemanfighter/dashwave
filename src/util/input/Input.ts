@@ -4,7 +4,7 @@
  * @returns boolean
  */
 
-export function isValidEmail(email: string) {
+export function validateEmail(email: string) {
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
@@ -16,7 +16,7 @@ export function isValidEmail(email: string) {
  * @description Password must contain at least one lowercase letter, one uppercase letter, one numeric digit,
  * and one special character. The password must be eight characters or longer.
  */
-export function isValidPassword(password: string) {
+export function validatePassword(password: string): boolean {
   var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
   return passwordRegex.test(password);
 }

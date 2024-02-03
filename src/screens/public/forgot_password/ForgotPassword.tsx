@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ErrorText from "../../../components/text/ErrorText";
-import InputText from "../../../components/text/InputText";
+import InputText, { InputType } from "../../../components/text/InputText";
 import LandingIntro from "../../../components/landing_intro/LandingIntro";
 import { forgotPassword } from "../../../service/supabase/supa_auth/AuthApi";
-import { isValidEmail } from "../../../util/input/Input";
+import { validateEmail } from "../../../util/input/Input";
 
 interface UpdateProps {
   updateType: string;
@@ -36,7 +36,7 @@ function ForgotPassword() {
 
     if (userObj.emailId.trim() === "")
       return setErrorMessage("Email Id is required! (use any value)");
-    else if (!isValidEmail(userObj.emailId)) {
+    else if (!validateEmail(userObj.emailId)) {
       return setErrorMessage("Email Id is not valid!");
     } else {
       setLoading(true);
@@ -98,7 +98,7 @@ function ForgotPassword() {
                 <form onSubmit={(e) => submitForm(e)}>
                   <div className="mb-4">
                     <InputText
-                      type="emailId"
+                      type={InputType.EMAIL}
                       defaultValue={userObj.emailId}
                       updateType="emailId"
                       containerStyle="mt-4"

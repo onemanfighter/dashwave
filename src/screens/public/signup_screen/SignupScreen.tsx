@@ -110,7 +110,6 @@ function Register() {
 
                 <InputText
                   defaultValue={registerObj.password}
-                  type="password"
                   updateType="password"
                   containerStyle="mt-4"
                   labelTitle="Password"
