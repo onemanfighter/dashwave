@@ -18,6 +18,7 @@ export async function updateUserData(
   callback: (user: UserProfileData) => void,
   showAlertHandler: (toastAlertData: ToastAlertData) => void
 ) {
+  console.log("updateUserData", userProfFormData);
   const userData: UserDataTableSchema = {
     id: userIdFromAuth,
     email: userProfFormData.email,
@@ -55,10 +56,12 @@ export async function updateUserData(
     ),
   };
 
+  console.log(userData);
+
   try {
-    const { data, error } = await SupabaseUsersDB.upsert([
-      { ...userData },
-    ]).select();
+    const { data, error } = await SupabaseUsersDB.upsert([{ ...userData }])
+      .select()
+      .single();
 
     if (error) {
       console.log(error);

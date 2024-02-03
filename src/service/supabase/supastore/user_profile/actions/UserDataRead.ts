@@ -8,10 +8,9 @@ export async function getUserUsingId(
   callback: (user: UserProfileData) => void
 ) {
   try {
-    const { data, error } = await SupabaseUsersDB.select("*").eq(
-      "id",
-      userAuthState.userId
-    );
+    const { data, error } = await SupabaseUsersDB.select("*")
+      .eq("id", userAuthState.userId)
+      .single();
     if (data !== null && data.length > 0 && data !== undefined && !error) {
       const user = getProfDataFromResponse(data);
       callback(user);

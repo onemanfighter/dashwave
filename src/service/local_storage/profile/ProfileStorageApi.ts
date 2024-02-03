@@ -13,9 +13,15 @@ export function storeProfileKeyData(profileData: UserProfileData) {
  */
 export function getProfileKeyData(): UserProfileData | null {
   const profileData = localStorage.getItem(ProfileTokenKey);
-  if (profileData) {
-    return JSON.parse(profileData);
+  const profile: UserProfileData = profileData ? JSON.parse(profileData) : null;
+  if (
+    profile !== null &&
+    profile !== undefined &&
+    profile.userId !== "undefined"
+  ) {
+    return profile;
   }
+  console.log("Profile data not found");
   return null;
 }
 
