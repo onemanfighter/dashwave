@@ -78,18 +78,19 @@ export const profileSlice = createSlice({
  *
  * @returns The profile data from the local storage.
  */
-export function syncForTheFirstTime(): UserProfileData | void {
+export function syncForTheFirstTime(
+  setProfileCallback: (data: UserProfileData) => void
+): UserProfileData | void {
   const profileData = getProfileKeyData();
-  if (profileData != null && profileData?.userId !== "") {
-    console.log("profileData", profileData);
+  if (
+    profileData != null &&
+    profileData?.userId !== "" &&
+    profileData?.userId !== undefined
+  ) {
     return profileData as UserProfileData;
   }
 
-  userProfileDataRead(getAuthData().userData, (data) => {
-    console.log("data", data);
-    storeProfileKeyData(data);
-    return data;
-  });
+  userProfileDataRead(getAuthData().userData, setProfileCallback);
 }
 
 export const { updateProfile, removeProfile } = profileSlice.actions;

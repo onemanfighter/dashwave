@@ -17,8 +17,8 @@ import { RootState } from "../../../data_store/Store";
  * @returns The MainRootScreen component.
  */
 export default function MainRootScreen() {
-  const userAuthEmailState = useSelector(
-    (state: RootState) => state.auth.userData.email
+  const userAuthUserIdState = useSelector(
+    (state: RootState) => state.auth.userData.userId
   );
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const dispatch = useDispatch();
@@ -34,15 +34,17 @@ export default function MainRootScreen() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (userAuthEmailState === "") {
+    if (userAuthUserIdState === "") {
       logOutClickHandler();
     } else {
       console.log("syncing for the first time");
-      const userData = syncForTheFirstTime();
+      const userData = syncForTheFirstTime((data) =>
+        dispatch(updateProfile(data))
+      );
       if (userData) dispatch(updateProfile(userData));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userAuthEmailState]);
+  }, [userAuthUserIdState]);
 
   const openSidebarClickHandler = () => {
     setSidebarOpen((prev) => !prev);
