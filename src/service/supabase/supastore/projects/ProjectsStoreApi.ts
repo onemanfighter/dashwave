@@ -1,26 +1,66 @@
-import { UserProfData } from "./ProjectsCollection";
-import { getUserUsingId } from "./actions/ProjectsDataRead";
-import { updateUserData } from "./actions/ProjectsDataWrite";
+import { ToastAlertData } from "../../../../provider/alert_toast_provider/AlertToastProvider";
+import { ProjectData } from "./ProjectsCollection";
+import {
+  getAllProjectForMainScreen,
+  getProjectUsingProjectId,
+} from "./actions/ProjectsDataRead";
+import { insertOrUpdateProject } from "./actions/ProjectsDataWrite";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
- * Method to get the user project data
+ * Method to get the project data.
  *
- * @param projectId - The project id.
- * @returns The user data.
+ * @param projects - The project data.
+ * @returns The project data.
  */
-export function userProfileDataRead(
-  email: string,
-  callback: (user: UserProfData) => void
-) {
-  getUserUsingId(email, callback);
+function getSingleProject(projectId: string) {
+  return getProjectUsingProjectId(projectId);
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
- * Method to update the user profileData.
+ * Method to get the all associated project data.
+ *
  * @param userId - The user id.
- * @param data - The user data.
- * @returns The user data.
+ * @returns The project data.
  */
-export function userProfileDataUpdate(userId: string, data: UserProfData) {
-  return updateUserData(userId, data);
+function getAllProjects(userId: string) {
+  return getAllProjectForMainScreen(userId);
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Method to add the new project data.
+ *
+ * @param projectData - The project data.
+ * @param showAlertHandler - The notification function.
+ */
+function addNewProject(
+  projectData: ProjectData,
+  showAlertHandler: (toastAlertData: ToastAlertData) => void
+) {
+  insertOrUpdateProject(projectData, showAlertHandler);
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Method to update the existing project data.
+ *
+ * @param projectData - The project data.
+ * @param showAlertHandler - The notification function.
+ */
+function updateExistingProject(
+  projectData: ProjectData,
+  showAlertHandler: (toastAlertData: ToastAlertData) => void
+) {
+  insertOrUpdateProject(projectData, showAlertHandler);
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export {
+  getSingleProject,
+  getAllProjects,
+  addNewProject,
+  updateExistingProject,
+};
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

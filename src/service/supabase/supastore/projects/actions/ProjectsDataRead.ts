@@ -1,46 +1,88 @@
-import { SocialType, UserProfData } from "../ProjectsCollection";
+import { SupabaseProjectsDB } from "../../../supabase_main/Supabase";
+import { ProjectData, ProjectDataSchema } from "../ProjectsCollection";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Get a list of projects from your database
-export function getUserUsingId(
-  projectId: string,
-  callback: (user: UserProfData) => void
-) {}
+export async function getAllProjectForMainScreen(userId: string) {
+  try {
+    const { data, error } = await SupabaseProjectsDB.select("*")
+      .eq("user_id", userId)
+      .order("started_on", { ascending: false });
+    if (data !== null && data.length > 0 && data !== undefined && !error) {
+      const projects = getProjectsDateFromMultipleResponse(data);
+      return projects;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 /**
- * Method to get the user profileData.
+ * Method to get the project data.
  *
- * @param user - The user data.
- * @returns The user data.
+ * @param projects - The project data.
+ * @returns The project data.
  */
-function getProjectsDataFromResponse(user: any): UserProfData {
-  const profData: UserProfData = {
-    userId: user.userId,
-    fname: user.fName,
-    lname: user.lName,
-    profile: user.profile,
-    email: user.email,
-    place: user.place,
-    dateOfBirth: user.date_of_birth,
-    designation: user.designation,
-    yearOfExp: user.year_of_experience,
-    socialLinks: [
-      {
-        type: SocialType.Linkedin,
-        link: user.social_links.linkedIn as string,
-      },
-      {
-        type: SocialType.Facebook,
-        link: user.social_links.facebook as string,
-      },
-      { type: SocialType.Youtube, link: user.social_links.youtube as string },
-      { type: SocialType.X, link: user.social_links.x as string },
-      { type: SocialType.Github, link: user.social_links.github as string },
-      {
-        type: SocialType.Instagram,
-        link: user.social_links.instagram as string,
-      },
-      { type: SocialType.Website, link: user.social_links.website as string },
-    ],
+function getProjectsDateFromMultipleResponse(
+  projects: ProjectDataSchema[]
+): ProjectData[] {
+  const projectData: ProjectData[] = [];
+  projects.forEach((project) => {
+    projectData.push(getProjectDataFromSingleResponse(project));
+  });
+  return projectData;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Method to get the single project data.
+ *
+ * @param projects - The project data.
+ * @returns The project data.
+ */
+export async function getProjectUsingProjectId(projectId: string) {
+  try {
+    const { data, error } = await SupabaseProjectsDB.select("*")
+      .eq("project_id", projectId)
+      .single();
+    if (data !== null && data.length > 0 && data !== undefined && !error) {
+      const project = getProjectDataFromSingleResponse(data);
+      return project;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Method to get the project data.
+ *
+ * @param projects - The project data.
+ * @returns The project data.
+ */
+function getProjectDataFromSingleResponse(
+  project: ProjectDataSchema
+): ProjectData {
+  const projectData: ProjectData = {
+    projectId: project.project_id,
+    userId: project.user_id,
+    projectName: project.project_name,
+    projectDesc: project.project_desc,
+    projectIcon: project.project_icon,
+    techUsed: project.tech_used.data,
+    projectLink: project.project_link,
+    githubLink: project.github_link,
+    hostingerLink: project.hostinger_link,
+    images: project.images.data,
+    isLive: project.is_live,
+    relatedIdeas: project.related_ideas.data,
+    startedOn: project.started_on,
+    features: project.features.data,
+    todos: project.todos.data,
+    projectCompleted: project.project_completed,
+    backendLink: project.backend_link,
   };
-  return profData;
+
+  return projectData;
 }
