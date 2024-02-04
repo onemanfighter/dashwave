@@ -1,6 +1,5 @@
-/**
- * AddIcon
- */
+//~~~~~~ Add icon ~~~~~~
+// Summary: This file contains the SVG for the add icon
 export function AddIcon() {
   return (
     <svg

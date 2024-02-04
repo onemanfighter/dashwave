@@ -1,3 +1,5 @@
+//~~~~~ Expense Icon ~~~~~
+// Summary: This file contains the SVG for the expense icon
 export default function ExpenseIcon() {
   return (
     <svg

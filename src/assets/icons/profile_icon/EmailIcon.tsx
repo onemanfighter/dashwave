@@ -1,6 +1,5 @@
-/**
- * Email icon
- */
+//~~~ Email Icon ~~~
+// Summary: This file contains the SVG for the email icon
 export default function EmailIcon() {
   return (
     <svg

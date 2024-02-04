@@ -1,3 +1,5 @@
+//~~~~~~ ProfilePlaceholder icon ~~~~~~~
+// Summary: This file contains the SVG for the profile placeholder icon
 export function ProfilePlaceholder() {
   return (
     <svg

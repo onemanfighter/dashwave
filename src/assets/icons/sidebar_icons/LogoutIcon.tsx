@@ -1,6 +1,5 @@
-/**
- * Logout icon.
- */
+//~~~~~~ Logout icon ~~~~~~
+// Summary: This file contains the SVG for the logout icon
 export function LogoutIcon() {
   return (
     <svg

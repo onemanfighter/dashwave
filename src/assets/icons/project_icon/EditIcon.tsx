@@ -1,6 +1,5 @@
-/**
- * EditIcon
- */
+//~~~~~ Edit Icon ~~~~~
+// Summary: This file contains the SVG for the edit icon
 export default function EditIcon() {
   return (
     <svg

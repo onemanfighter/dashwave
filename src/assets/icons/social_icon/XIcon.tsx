@@ -1,6 +1,5 @@
-/**
- * x Icon
- */
+//~~~~~~~ X Icon ~~~~~~~
+// Summary: This file contains the SVG for the x icon
 export function XIcon() {
   return (
     <svg

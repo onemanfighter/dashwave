@@ -1,6 +1,5 @@
-/**
- * Profile icon
- */
+//~~~~~~~ Profile Icon ~~~~~~~
+// Summary: This file contains the SVG for the profile icon
 export function ProfileIcon() {
   return (
     <svg

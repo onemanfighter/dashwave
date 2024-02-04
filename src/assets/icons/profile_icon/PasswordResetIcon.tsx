@@ -1,3 +1,5 @@
+//~~~~~~ PasswordResetIcon icon ~~~~~~~
+// Summary: This file contains the SVG for the password reset icon
 export function PasswordResetIcon() {
   return (
     <svg

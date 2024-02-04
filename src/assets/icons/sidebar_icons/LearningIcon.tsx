@@ -1,6 +1,9 @@
 /**
  * Learning Icon.
  */
+
+//~~~~~ Learning Icon ~~~~~
+// Summary: This file contains the SVG for the learning icon
 export default function LearningIcon() {
   return (
     <svg

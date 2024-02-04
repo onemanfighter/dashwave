@@ -1,6 +1,5 @@
-/**
- * Youtube Icon
- */
+//~~~~~~ Youtube Icon ~~~~~~~
+// Summary: This file contains the SVG for the youtube icon
 export function YoutubeIcon() {
   return (
     <svg

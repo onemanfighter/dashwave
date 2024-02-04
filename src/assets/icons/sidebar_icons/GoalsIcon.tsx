@@ -1,6 +1,5 @@
-/**
- * Goals icon
- */
+//~~~~~~ Goals icon ~~~~~~
+// Summary: This file contains the SVG for the goals icon
 export default function GoalsIcon() {
   return (
     <svg

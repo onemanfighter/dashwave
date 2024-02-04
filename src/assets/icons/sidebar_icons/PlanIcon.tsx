@@ -1,3 +1,5 @@
+//~~~~~ Plan Icon ~~~~~
+// Summary: This file contains the SVG for the plan icon
 export default function PlanIcon() {
   return (
     <svg

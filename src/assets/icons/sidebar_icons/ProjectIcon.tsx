@@ -1,3 +1,5 @@
+//~~~~~~~ ProjectIcon icon ~~~~~~~
+// Summary: This file contains the SVG for the project icon
 export default function ProjectIcon() {
   return (
     <svg

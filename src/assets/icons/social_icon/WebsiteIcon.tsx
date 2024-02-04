@@ -1,6 +1,5 @@
-/**
- * Website Icon
- */
+//~~~~~~ Website Icon ~~~~~~~
+// Summary: This file contains the SVG for the website icon
 export function WebsiteIcon() {
   return (
     <svg

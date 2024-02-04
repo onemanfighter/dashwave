@@ -1,6 +1,5 @@
-/**
- * TitleIcon
- */
+//~~~~~ Title Icon ~~~~~
+// Summary: This file contains the SVG for the title icon
 export default function TitleIcon() {
   return (
     <svg

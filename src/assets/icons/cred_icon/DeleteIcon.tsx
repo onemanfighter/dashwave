@@ -1,6 +1,5 @@
-/**
- * Delete Icon
- */
+//~~~ DeleteIcon ~~~
+// Summary: This file contains the SVG for the delete icon
 export default function DeleteIcon() {
   return (
     <svg

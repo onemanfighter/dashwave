@@ -1,6 +1,9 @@
 /**
  * DateIcon
  */
+
+//~~~ DateIcon ~~~
+// Summary: This file contains the SVG for the date icon
 export default function DateIcon() {
   return (
     <svg

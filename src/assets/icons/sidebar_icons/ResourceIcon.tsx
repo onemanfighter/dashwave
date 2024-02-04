@@ -1,3 +1,5 @@
+//~~~~~~ Resource icon ~~~~~~~~
+// Summary: This file contains the SVG for the resource icon
 export default function ResourceIcon() {
   return (
     <svg

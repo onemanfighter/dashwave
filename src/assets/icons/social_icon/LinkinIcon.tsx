@@ -1,6 +1,5 @@
-/**
- * LinkedIn Icon
- */
+//~~~~~~~ LinkedIn Icon ~~~~~~~
+// Summary: This file contains the SVG for the LinkedIn icon
 export function LinkedInIcon() {
   return (
     <svg

@@ -1,6 +1,5 @@
-/**
- * ExperienceIcon
- */
+//~~~ Experience icon ~~~
+// Summary: This file contains the SVG for the experience icon
 export default function ExperienceIcon() {
   return (
     <svg

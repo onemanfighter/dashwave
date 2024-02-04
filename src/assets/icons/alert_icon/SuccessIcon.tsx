@@ -1,3 +1,5 @@
+//~~~ SuccessIcon ~~~
+// Summary: This is the success icon used in the alert component
 export default function SuccessIcon() {
   return (
     <svg
