@@ -3,6 +3,7 @@ import {
   SocialType,
 } from "../service/supabase/supastore/user_profile/UserCollection";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get social links from the user profile data.
  *
@@ -13,3 +14,5 @@ import {
 export function getSocialMediaLink(links: Array<SocialLink>, type: SocialType) {
   return links.find((socialLink) => socialLink.type === type)?.link || "";
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
