@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import {
   ToastAlertData,
   getErrorAlertData,
@@ -22,7 +28,7 @@ export function userDataWrite() {}
  * @param showAlertHandler - The notification function.
  * @returns The user data.
  */
-export async function updateUserData(
+async function updateUserData(
   userIdFromAuth: string,
   userProfFormData: UserProfileData,
   callback: (user: UserProfileData) => void,
@@ -94,3 +100,10 @@ export async function updateUserData(
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the function
+export { updateUserData };
+export type { UserProfileData };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

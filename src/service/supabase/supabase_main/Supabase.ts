@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 // Import the functions you need from the SDKs you need
 import { createClient } from "@supabase/supabase-js";
 
@@ -10,19 +16,27 @@ const Supabase = createClient(supabaseUrl, supabaseKey);
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Initialize Auth
-export const SupabaseAuth = Supabase.auth;
+const SupabaseAuth = Supabase.auth;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Initialize users Database
 const usersTable = "dashwave_users";
-export const SupabaseUsersDB = Supabase.from(usersTable);
+const SupabaseUsersDB = Supabase.from(usersTable);
 
 // Initialize Projects Database
 const projectsTable = "dashwave_projects";
-export const SupabaseProjectsDB = Supabase.from(projectsTable);
+const SupabaseProjectsDB = Supabase.from(projectsTable);
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Initialize Storage
-export const SupabaseStorage = Supabase.storage;
+const SupabaseStorage = Supabase.storage;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the functions
+export { SupabaseAuth };
+export { SupabaseUsersDB, SupabaseProjectsDB };
+export { SupabaseStorage };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

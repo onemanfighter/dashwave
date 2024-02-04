@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
 import EditIcon from "../../../../assets/icons/project_icon/EditIcon";
@@ -6,8 +12,16 @@ import OverviewIcon from "../../../../assets/icons/cred_icon/OverviewIcon";
 import DeleteIcon from "../../../../assets/icons/cred_icon/DeleteIcon";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 
-export interface IPlansScreenProps {}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Props for the PlansScreen component.
+ */
+interface IPlansScreenProps {}
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Plans screen routes.
+ */
 const PlansRoutes = [
   { title: "Plans overview", icon: <OverviewIcon />, path: "preview" },
   { title: "Add plan", icon: <AddIcon />, path: "add" },
@@ -15,7 +29,13 @@ const PlansRoutes = [
   { title: "Delete plan", icon: <DeleteIcon />, path: "delete" },
 ];
 
-export default function PlansScreen(props: IPlansScreenProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Component definition for the plans screen component.
+ * @param props The props for the plans screen component.
+ * @returns The plans screen component.
+ */
+function PlansScreen(props: IPlansScreenProps) {
   const currentLocation = useLocation();
   return (
     <div className="h-full">
@@ -39,3 +59,12 @@ export default function PlansScreen(props: IPlansScreenProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the PlansScreen component.
+export default PlansScreen;
+export type { IPlansScreenProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

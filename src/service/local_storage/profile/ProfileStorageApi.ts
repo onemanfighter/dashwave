@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { UserProfileData } from "../../supabase/supastore/user_profile/UserCollection";
 import { ProfileTokenKey } from "../token_constants/StorageConstant";
 
@@ -5,7 +11,7 @@ import { ProfileTokenKey } from "../token_constants/StorageConstant";
 /**
  * Method to store the profile key in local storage
  */
-export function storeProfileKeyData(profileData: UserProfileData) {
+function storeProfileKeyData(profileData: UserProfileData) {
   localStorage.setItem(ProfileTokenKey, JSON.stringify(profileData));
 }
 
@@ -13,7 +19,7 @@ export function storeProfileKeyData(profileData: UserProfileData) {
 /**
  * Method to get the profile key from local storage
  */
-export function getProfileKeyData(): UserProfileData | null {
+function getProfileKeyData(): UserProfileData | null {
   const profileData = localStorage.getItem(ProfileTokenKey);
   const profile: UserProfileData = profileData ? JSON.parse(profileData) : null;
   if (
@@ -31,8 +37,14 @@ export function getProfileKeyData(): UserProfileData | null {
 /**
  * Method to remove the profile key from local storage
  */
-export function removeProfileKeyData() {
+function removeProfileKeyData() {
   localStorage.removeItem(ProfileTokenKey);
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the functions
+export { storeProfileKeyData, getProfileKeyData, removeProfileKeyData };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

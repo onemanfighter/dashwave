@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
 import EditIcon from "../../../../assets/icons/project_icon/EditIcon";
@@ -6,8 +12,16 @@ import OverviewIcon from "../../../../assets/icons/cred_icon/OverviewIcon";
 import DeleteIcon from "../../../../assets/icons/cred_icon/DeleteIcon";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 
-export interface ICredsScreenProps {}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Props for the CredsScreen component.
+ */
+interface ICredsScreenProps {}
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * cred screen routes.
+ */
 const CredsRoutes = [
   { title: "Credentials over", icon: <OverviewIcon />, path: "preview" },
   { title: "Credentials add", icon: <AddIcon />, path: "add" },
@@ -15,7 +29,13 @@ const CredsRoutes = [
   { title: "Delete credentials", icon: <DeleteIcon />, path: "delete" },
 ];
 
-export default function CredsScreen(props: ICredsScreenProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Component definition for the creds screen component.
+ * @param props The props for the creds screen component.
+ * @returns The creds screen component.
+ */
+function CredsScreen(props: ICredsScreenProps) {
   const currentLocation = useLocation();
   return (
     <div className="h-full">
@@ -39,3 +59,12 @@ export default function CredsScreen(props: ICredsScreenProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the CredsScreen component.
+export default CredsScreen;
+export type { ICredsScreenProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

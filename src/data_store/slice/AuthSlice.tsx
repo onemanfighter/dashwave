@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { removeProfileKeyData } from "../../service/local_storage/profile/ProfileStorageApi";
 import { getAuthKeyData } from "../../service/local_storage/auth/AuthStorageApi";
@@ -100,4 +106,6 @@ export type { AuthData, UserData };
 export { getAuthUserID };
 export { getAuthData };
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

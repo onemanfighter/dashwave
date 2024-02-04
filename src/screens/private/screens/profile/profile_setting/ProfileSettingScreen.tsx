@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { useDispatch, useSelector } from "react-redux";
 import InputText, { InputType } from "../../../../../components/text/InputText";
 import { showNotification } from "../../../../../data_store/slice/NotificationSlice";
@@ -26,11 +32,20 @@ import { showAlertWithTimeout } from "../../../../../data_store/slice/ToastAlert
 import { ToastAlertData } from "../../../../../provider/alert_toast_provider/AlertToastProvider";
 import PageLoadingComponent from "../../../../../components/page_loading/PageLoading";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Type definition for the update form value.
+ */
 interface UpdateFormValue {
   updateType: string;
   value: string;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The profile setting screen component.
+ * @returns The ProfileSettingScreen component.
+ */
 function ProfileSettingScreen() {
   const profileData = useSelector((state: RootState) => state.profile);
   const [loading, setLoading] = useState(false);
@@ -252,4 +267,10 @@ function IconBorderProvider(props: { children: any }) {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the ProfileSettingScreen component.
 export default ProfileSettingScreen;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

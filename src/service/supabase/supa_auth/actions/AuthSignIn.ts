@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { SupabaseAuth } from "../../supabase_main/Supabase";
 import { AuthData } from "../../../../data_store/slice/AuthSlice";
 
@@ -5,7 +11,7 @@ import { AuthData } from "../../../../data_store/slice/AuthSlice";
 /**
  * Interface for the login credentials.
  */
-export interface LoginCred {
+interface LoginCred {
   email: string;
   password: string;
 }
@@ -14,7 +20,7 @@ export interface LoginCred {
 /**
  * Method to sign-in using firebase.
  */
-export async function firebaseSingIn(
+async function firebaseSingIn(
   cred: LoginCred,
   signInHandler: (authData: AuthData) => void,
   errorCallback: (error: string) => void
@@ -48,3 +54,10 @@ export async function firebaseSingIn(
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the function
+export { firebaseSingIn };
+export type { LoginCred };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

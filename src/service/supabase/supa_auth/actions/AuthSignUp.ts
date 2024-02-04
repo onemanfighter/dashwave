@@ -1,10 +1,16 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { SupabaseAuth } from "../../supabase_main/Supabase";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Interface for the login credentials.
  */
-export interface SignUpCred {
+interface SignUpCred {
   fName: string;
   lName: string;
   email: string;
@@ -15,7 +21,7 @@ export interface SignUpCred {
 /**
  * Method to sign-up using supabase.
  */
-export default function supabaseSignUp(
+function supabaseSignUp(
   cred: SignUpCred,
   signUpHandler: () => void,
   errorCallback: (error: string) => void
@@ -42,3 +48,10 @@ export default function supabaseSignUp(
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the function
+export default supabaseSignUp;
+export type { SignUpCred };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

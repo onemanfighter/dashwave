@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ErrorText from "../../../components/text/ErrorText";
@@ -6,15 +12,28 @@ import LandingIntro from "../../../components/landing_intro/LandingIntro";
 import { forgotPassword } from "../../../service/supabase/supa_auth/AuthApi";
 import { validateEmail } from "../../../util/input/Input";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Update props.
+ */
 interface UpdateProps {
   updateType: string;
   value: string;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Register object type.
+ */
 interface RegisterObjType {
   emailId: string;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The forgot password screen component.
+ * @returns The ForgotPassword component.
+ */
 function ForgotPassword() {
   const INITIAL_USER_OBJ: RegisterObjType = {
     emailId: "",
@@ -136,4 +155,10 @@ function ForgotPassword() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the ForgotPassword component.
 export default ForgotPassword;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

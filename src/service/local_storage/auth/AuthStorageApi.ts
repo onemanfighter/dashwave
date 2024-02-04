@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { AuthData } from "../../../data_store/slice/AuthSlice";
 import { AuthTokenKey } from "../token_constants/StorageConstant";
 
@@ -5,7 +11,7 @@ import { AuthTokenKey } from "../token_constants/StorageConstant";
 /**
  * Method to get the authkey from local storage
  */
-export function getAuthKeyData(): AuthData | null {
+function getAuthKeyData(): AuthData | null {
   const authData = localStorage.getItem(AuthTokenKey);
   if (authData) {
     const data = JSON.parse(authData);
@@ -22,4 +28,10 @@ export function getAuthKeyData(): AuthData | null {
   return null;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the function
+export { getAuthKeyData };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

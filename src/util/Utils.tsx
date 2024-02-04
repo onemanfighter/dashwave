@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import {
   SocialLink,
   SocialType,
@@ -11,8 +17,14 @@ import {
  * @param type  The social type.
  * @returns The social link.
  */
-export function getSocialMediaLink(links: Array<SocialLink>, type: SocialType) {
+function getSocialMediaLink(links: Array<SocialLink>, type: SocialType) {
   return links.find((socialLink) => socialLink.type === type)?.link || "";
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the getSocialMediaLink function.
+export { getSocialMediaLink };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

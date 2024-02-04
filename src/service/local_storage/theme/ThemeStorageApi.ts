@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { Theme } from "../../../data_store/slice/ThemeSlice";
 import { themeKey } from "../token_constants/StorageConstant";
 
@@ -5,14 +11,14 @@ import { themeKey } from "../token_constants/StorageConstant";
 /**
  * Theme check for dark mode.
  */
-export const themeCheck = getThemeData() === "dark" ? true : false;
+const themeCheck = getThemeData() === "dark" ? true : false;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Function to get theme data from local storage.
  * @returns theme data from local storage.
  */
-export function getThemeData() {
+function getThemeData() {
   return localStorage.getItem(themeKey);
 }
 
@@ -21,8 +27,10 @@ export function getThemeData() {
  * Function to set theme data in local storage.
  * @param theme theme data to set in local storage.
  */
-export function setThemeData(theme: Theme) {
+function setThemeData(theme: Theme) {
   localStorage.setItem(themeKey, theme);
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the functions
+export { themeCheck, getThemeData, setThemeData };

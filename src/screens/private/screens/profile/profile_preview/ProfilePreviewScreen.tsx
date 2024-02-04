@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { useSelector } from "react-redux";
 import TitleCard from "../../../../../components/card/TitleCard";
 import { RootState } from "../../../../../data_store/Store";
@@ -16,10 +22,19 @@ import ExperienceIcon from "../../../../../assets/icons/profile_icon/ExperienceI
 import { ProfilePlaceholder } from "../../../../../assets/icons/profile_icon/ProfilePlaceholder";
 import { getSocialMediaLink } from "../../../../../util/Utils";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The text style for the profile preview screen.
+ */
 const TextStyle =
   "text-lg font-semibold mt-2 outline rounded-md p-2 flex flex-row items-center gap-2";
 
-export default function ProfilePreviewScreen() {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Component definition for the profile preview screen.
+ * @returns The profile preview screen component.
+ */
+function ProfilePreviewScreen() {
   const profileData = useSelector((state: RootState) => state.profile);
 
   return (
@@ -71,10 +86,18 @@ export default function ProfilePreviewScreen() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Interface type definition for the social link props.
 interface SocialLinkProps {
   socialLinksMap: Array<SocialLink>;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Get the social media link.
+ * @param props The social link props.
+ * @returns The social media link.
+ */
 function GetSocialLink(props: SocialLinkProps) {
   const socialLinksMap: Array<SocialLink> = [
     {
@@ -127,3 +150,11 @@ function GetSocialLink(props: SocialLinkProps) {
     </>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the ProfilePreviewScreen component.
+export default ProfilePreviewScreen;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

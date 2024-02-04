@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { Outlet } from "react-router-dom";
 import NavigationComponent from "../../../components/navigation/Navigation";
 import { batch, useDispatch, useSelector } from "react-redux";
@@ -12,11 +18,12 @@ import {
 } from "../../../data_store/slice/ProfileSlice";
 import { RootState } from "../../../data_store/Store";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the main root screen component.
  * @returns The MainRootScreen component.
  */
-export default function MainRootScreen() {
+function MainRootScreen() {
   const userAuthUserIdState = useSelector(
     (state: RootState) => state.auth.userData.userId
   );
@@ -76,3 +83,11 @@ export default function MainRootScreen() {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the MainRootScreen component.
+export default MainRootScreen;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

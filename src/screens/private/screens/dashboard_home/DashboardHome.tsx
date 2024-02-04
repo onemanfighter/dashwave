@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { batch, useDispatch } from "react-redux";
 import { showAlertWithTimeout } from "../../../../data_store/slice/ToastAlertSlice";
 import {
@@ -9,9 +15,19 @@ import NotificationButton, {
 } from "../../../../components/notification/NotificationButton";
 import { getErrorAlertData } from "../../../../provider/alert_toast_provider/AlertToastProvider";
 
-export interface IDashboardHomeProps {}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Interface definition for the dashboard home props.
+ */
+interface IDashboardHomeProps {}
 
-export default function DashboardHome(props: IDashboardHomeProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Component definition for the dashboard home component.
+ * @param props The props for the dashboard home component.
+ * @returns The dashboard home component.
+ */
+function DashboardHome(props: IDashboardHomeProps) {
   const dispatch = useDispatch();
 
   const notificationData: NotificationState = {
@@ -48,3 +64,12 @@ export default function DashboardHome(props: IDashboardHomeProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the dashboard home component.
+export default DashboardHome;
+export type { IDashboardHomeProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

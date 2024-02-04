@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { SettingIcon } from "../../../../assets/icons/profile_icon/SettingsIcon";
 import { ProfileIcon } from "../../../../assets/icons/profile_icon/ProfileIcon";
@@ -5,15 +11,29 @@ import { PasswordResetIcon } from "../../../../assets/icons/profile_icon/Passwor
 import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 
-export interface IProfileMainScreenProps {}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Props for the ProfileMainScreen component.
+ */
+interface IProfileMainScreenProps {}
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Profile screen routes.
+ */
 const ProfileRoutes = [
   { title: "Profile preview", icon: <ProfileIcon />, path: "preview" },
   { title: "Reset password", icon: <PasswordResetIcon />, path: "reset" },
   { title: "Profile setting", icon: <SettingIcon />, path: "settings" },
 ];
 
-export default function ProfileMainScreen(props: IProfileMainScreenProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Component definition for the profile screen component.
+ * @param props The props for the profile screen component.
+ * @returns The profile screen component.
+ */
+function ProfileMainScreen(props: IProfileMainScreenProps) {
   const currentLocation = useLocation();
   return (
     <div className="h-full">
@@ -37,3 +57,12 @@ export default function ProfileMainScreen(props: IProfileMainScreenProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the profile screen component.
+export default ProfileMainScreen;
+export type { IProfileMainScreenProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

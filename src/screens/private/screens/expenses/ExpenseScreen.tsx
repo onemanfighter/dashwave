@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
 import EditIcon from "../../../../assets/icons/project_icon/EditIcon";
@@ -6,8 +12,16 @@ import OverviewIcon from "../../../../assets/icons/cred_icon/OverviewIcon";
 import DeleteIcon from "../../../../assets/icons/cred_icon/DeleteIcon";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Props for the CredsScreen component.
+ */
 export interface IExpenseScreenProps {}
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * cred screen routes.
+ */
 const ExpensesRoutes = [
   { title: "Expenses overview", icon: <OverviewIcon />, path: "preview" },
   { title: "Add expense", icon: <AddIcon />, path: "add" },
@@ -15,6 +29,12 @@ const ExpensesRoutes = [
   { title: "Delete expense", icon: <DeleteIcon />, path: "delete" },
 ];
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Component definition for the creds screen component.
+ * @param props The props for the creds screen component.
+ * @returns The creds screen component.
+ */
 export default function ExpenseScreen(props: IExpenseScreenProps) {
   const currentLocation = useLocation();
   return (
@@ -39,3 +59,7 @@ export default function ExpenseScreen(props: IExpenseScreenProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,10 +1,12 @@
-// Purpose: Define the schema for the project data.
-
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Type definition for the tech data.
  */
-export interface TechData {
+interface TechData {
   names: string;
   icon: string;
 }
@@ -13,21 +15,21 @@ export interface TechData {
 /**
  * Type definition for the project todo.
  */
-export interface ProjectTodo {
+interface ProjectTodo {
   todoName: string;
   projectDesc: string;
   isCompleted: boolean;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export interface ProjectFeature {
+interface ProjectFeature {
   featureName: string;
   featureDesc: string;
   isCompleted: boolean;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export interface ProjectDataSchema {
+interface ProjectDataSchema {
   project_id: string;
   user_id: string;
   project_name: string;
@@ -48,7 +50,7 @@ export interface ProjectDataSchema {
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export interface ProjectData {
+interface ProjectData {
   projectId: string;
   userId: string;
   projectName: string;
@@ -67,3 +69,17 @@ export interface ProjectData {
   projectCompleted: number;
   backendLink: string;
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the type
+export type {
+  ProjectData,
+  ProjectDataSchema,
+  TechData,
+  ProjectTodo,
+  ProjectFeature,
+};
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

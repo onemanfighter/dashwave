@@ -1,9 +1,15 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { SupabaseProjectsDB } from "../../../supabase_main/Supabase";
 import { ProjectData, ProjectDataSchema } from "../ProjectsCollection";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Get a list of projects from your database
-export async function getAllProjectForMainScreen(userId: string) {
+async function getAllProjectForMainScreen(userId: string) {
   try {
     const { data, error } = await SupabaseProjectsDB.select("*")
       .eq("user_id", userId)
@@ -40,7 +46,7 @@ function getProjectsDateFromMultipleResponse(
  * @param projects - The project data.
  * @returns The project data.
  */
-export async function getProjectUsingProjectId(projectId: string) {
+async function getProjectUsingProjectId(projectId: string) {
   try {
     const { data, error } = await SupabaseProjectsDB.select("*")
       .eq("project_id", projectId)
@@ -86,3 +92,11 @@ function getProjectDataFromSingleResponse(
 
   return projectData;
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the functions
+export { getAllProjectForMainScreen, getProjectUsingProjectId };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

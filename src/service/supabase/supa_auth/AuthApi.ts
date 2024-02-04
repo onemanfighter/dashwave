@@ -1,3 +1,8 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import { AuthData } from "../../../data_store/slice/AuthSlice";
 import { AuthTokenKey } from "../../local_storage/token_constants/StorageConstant";
 import { firebaseForgotPassword } from "./actions/AuthForgotPassword";
@@ -9,7 +14,7 @@ import supabaseSignUp, { SignUpCred } from "./actions/AuthSignUp";
 /**
  * Method to make the Firebase signin
  */
-export function signIn(
+function signIn(
   cred: LoginCred,
   signInHandler: (authData: AuthData) => void,
   errorCallback: (error: string) => void
@@ -21,7 +26,7 @@ export function signIn(
 /**
  * Method to make the Firebase signup
  */
-export function signUp(
+function signUp(
   cred: SignUpCred,
   signUpHandler: () => void,
   errorCallback: (error: string) => void
@@ -33,7 +38,7 @@ export function signUp(
 /**
  * Method to make firebase signout
  */
-export function signOut(signOutHandler: () => void) {
+function signOut(signOutHandler: () => void) {
   firebaseSignOut(signOutHandler);
 }
 
@@ -41,7 +46,7 @@ export function signOut(signOutHandler: () => void) {
 /**
  * Method to make the firebase forgot password.
  */
-export function forgotPassword(
+function forgotPassword(
   email: string,
   forgotPasswordHandler: () => void,
   errorCallback: (error: string) => void
@@ -54,7 +59,7 @@ export function forgotPassword(
  * Method to make the firebase already signin
  *
  */
-export function alreadySignedIn(signOutHandler: () => void) {
+function alreadySignedIn(signOutHandler: () => void) {
   const authData = localStorage.getItem(AuthTokenKey);
   if (!authData) {
     signOutHandler();
@@ -62,4 +67,10 @@ export function alreadySignedIn(signOutHandler: () => void) {
   }
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the function
+export { signIn, signUp, signOut, forgotPassword, alreadySignedIn };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

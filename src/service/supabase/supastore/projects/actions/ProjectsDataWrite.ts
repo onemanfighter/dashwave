@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import {
   ToastAlertData,
   getErrorAlertData,
@@ -16,7 +22,7 @@ import {
  * @param projectData  - The project data.
  * @param alertCallback  - The alert callback function.
  */
-export async function insertOrUpdateProject(
+async function insertOrUpdateProject(
   projectData: ProjectData,
   showAlertHandler: (toastAlertData: ToastAlertData) => void
 ) {
@@ -77,3 +83,11 @@ function getProjectSchema(project: ProjectData): ProjectSchemaData {
   };
   return projectSchemaData;
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the functions
+export { insertOrUpdateProject };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

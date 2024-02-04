@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
 import { AddIcon } from "../../../../assets/icons/project_icon/AddIcon";
@@ -6,8 +12,16 @@ import PreviewIcon from "../../../../assets/icons/project_icon/PreviewIcon";
 import DeleteIcon from "../../../../assets/icons/cred_icon/DeleteIcon";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 
-export interface IProjectsScreenProps {}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Props for the ProjectsScreen component.
+ */
+interface IProjectsScreenProps {}
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Project screen routes.
+ */
 const ProjectRoutes = [
   { title: "Project preview", icon: <PreviewIcon />, path: "preview" },
   { title: "Add project", icon: <AddIcon />, path: "add" },
@@ -15,7 +29,13 @@ const ProjectRoutes = [
   { title: "Delete project", icon: <DeleteIcon />, path: "delete" },
 ];
 
-export default function ProjectsScreen(props: IProjectsScreenProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Component definition for the projects screen component.
+ * @param props The props for the projects screen component.
+ * @returns The projects screen component.
+ */
+function ProjectsScreen(props: IProjectsScreenProps) {
   const currentLocation = useLocation();
   return (
     <div className="h-full">
@@ -39,3 +59,12 @@ export default function ProjectsScreen(props: IProjectsScreenProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the ProjectsScreen component.
+export default ProjectsScreen;
+export type { IProjectsScreenProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

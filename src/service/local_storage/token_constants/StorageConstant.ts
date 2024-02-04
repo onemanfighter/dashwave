@@ -1,21 +1,28 @@
 /**
- * @description This file contains all the constants related to storage
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
  */
-
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 // Auth_token key for local storage
-export const AuthTokenKey = "sb-derclltpzfohoecoxvge-auth-token";
+const AuthTokenKey = "sb-derclltpzfohoecoxvge-auth-token";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Profile key for local storage
-export const ProfileTokenKey = "user_profile";
+const ProfileTokenKey = "user_profile";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Theme key for local storage
-export const themeKey = "theme_data";
+const themeKey = "theme_data";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // current path key for local storage
-export const currentPathKey = "current_path";
+const currentPathKey = "current_path";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the constants
+export { AuthTokenKey, ProfileTokenKey, themeKey, currentPathKey };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

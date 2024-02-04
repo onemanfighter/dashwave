@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { UserData } from "../../../../data_store/slice/AuthSlice";
 import { ToastAlertData } from "../../../../provider/alert_toast_provider/AlertToastProvider";
 import { UserProfileData } from "./UserCollection";
@@ -12,7 +18,7 @@ import { updateUserData } from "./actions/UserDataWrite";
  * @param callback - The callback function.
  * @returns The user data.
  */
-export function userProfileDataRead(
+function userProfileDataRead(
   userAuthState: UserData,
   callback: (user: UserProfileData) => void
 ) {
@@ -29,7 +35,7 @@ export function userProfileDataRead(
  * @param showAlertHandler - The notification function.
  * @returns The user data.
  */
-export function userProfileDataUpdate(
+function userProfileDataUpdate(
   userIdFromAuth: string,
   data: UserProfileData,
   callback: (profile: UserProfileData) => void,
@@ -38,4 +44,10 @@ export function userProfileDataUpdate(
   return updateUserData(userIdFromAuth, data, callback, showAlertHandler);
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the functions
+export { userProfileDataRead, userProfileDataUpdate };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

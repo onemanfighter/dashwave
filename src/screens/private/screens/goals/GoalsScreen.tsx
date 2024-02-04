@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
 import EditIcon from "../../../../assets/icons/project_icon/EditIcon";
@@ -6,8 +12,16 @@ import OverviewIcon from "../../../../assets/icons/cred_icon/OverviewIcon";
 import DeleteIcon from "../../../../assets/icons/cred_icon/DeleteIcon";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 
-export interface IGoalsScreenProps {}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Props for the GoalsScreen component.
+ */
+interface IGoalsScreenProps {}
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Goals screen routes.
+ */
 const GoalsRoutes = [
   { title: "Goals overview", icon: <OverviewIcon />, path: "preview" },
   { title: "Add goal", icon: <AddIcon />, path: "add" },
@@ -15,7 +29,13 @@ const GoalsRoutes = [
   { title: "Delete goal", icon: <DeleteIcon />, path: "delete" },
 ];
 
-export default function GoalsScreen(props: IGoalsScreenProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Component definition for the goals screen component.
+ * @param props The props for the goals screen component.
+ * @returns The goals screen component.
+ */
+function GoalsScreen(props: IGoalsScreenProps) {
   const currentLocation = useLocation();
   return (
     <div className="h-full">
@@ -39,3 +59,12 @@ export default function GoalsScreen(props: IGoalsScreenProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the GoalsScreen component.
+export default GoalsScreen;
+export type { IGoalsScreenProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

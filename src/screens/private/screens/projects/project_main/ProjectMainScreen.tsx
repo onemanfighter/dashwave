@@ -1,8 +1,24 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import ProjectCard from "../../../../../components/card/ProjectCard";
 
-export interface IProjectMainScreenProps {}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Interface definition for the project main screen props.
+ */
+interface IProjectMainScreenProps {}
 
-export default function ProjectMainScreen(props: IProjectMainScreenProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Component definition for the project main screen.
+ * @param props The props for the project main screen.
+ * @returns The ProjectMainScreen component.
+ */
+function ProjectMainScreen(props: IProjectMainScreenProps) {
   const dummyData = [1, 1, 1, 1, 1, 1, 1, 1];
 
   return (
@@ -15,3 +31,11 @@ export default function ProjectMainScreen(props: IProjectMainScreenProps) {
     </div>
   );
 }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the ProjectMainScreen component.
+export default ProjectMainScreen;
+export type { IProjectMainScreenProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

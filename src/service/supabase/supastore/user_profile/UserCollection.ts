@@ -1,4 +1,9 @@
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 /**
  * The user profile data.
  *
@@ -34,7 +39,7 @@
  * }
  * }
  */
-export interface UserProfileData {
+interface UserProfileData {
   userId: string;
   firstName: string;
   lastName: string;
@@ -51,7 +56,7 @@ export interface UserProfileData {
 /**
  * Social type enum.
  */
-export enum SocialType {
+enum SocialType {
   Facebook = "facebook",
   X = "x",
   Instagram = "instagram",
@@ -63,7 +68,7 @@ export enum SocialType {
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Social link interface.
-export interface SocialLink {
+interface SocialLink {
   type: SocialType;
   link: string;
 }
@@ -73,7 +78,7 @@ export interface SocialLink {
  * @interface UserDataTableSchema
  * @description The user data table schema.
  */
-export interface UserDataTableSchema {
+interface UserDataTableSchema {
   id: string;
   email: string;
   first_name: string;
@@ -92,4 +97,11 @@ export interface UserDataTableSchema {
   social_yt: string;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the type
+export type { UserProfileData, UserDataTableSchema, SocialLink };
+export { SocialType };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

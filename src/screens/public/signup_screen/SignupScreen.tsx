@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import LandingIntro from "../../../components/landing_intro/LandingIntro";
@@ -9,11 +15,21 @@ import { showAlertWithTimeout } from "../../../data_store/slice/ToastAlertSlice"
 import { useDispatch } from "react-redux";
 import { getSuccessAlertData } from "../../../provider/alert_toast_provider/AlertToastProvider";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Prop types for the update form value function.
+ */
 interface UpdateProps {
   updateType: string;
   value: string;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Component definition for the register screen.
+ *
+ * @returns The Register component.
+ */
 function Register() {
   const INITIAL_REGISTER_OBJ: SignUpCred = {
     fName: "",
@@ -143,4 +159,10 @@ function Register() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the Register component.
 export default Register;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

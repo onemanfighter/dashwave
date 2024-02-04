@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { UserData } from "../../../../../data_store/slice/AuthSlice";
 import { SupabaseUsersDB } from "../../../supabase_main/Supabase";
 import { SocialLink, SocialType, UserProfileData } from "../UserCollection";
@@ -10,7 +16,7 @@ import { SocialLink, SocialType, UserProfileData } from "../UserCollection";
  * @param callback - The callback function.
  * @returns The user data.
  */
-export async function getUserUsingId(
+async function getUserUsingId(
   userAuthState: UserData,
   callback: (user: UserProfileData) => void
 ) {
@@ -98,3 +104,9 @@ function getProfDataFromResponseSchema(user: any): UserProfileData {
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the function
+export { getUserUsingId };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
