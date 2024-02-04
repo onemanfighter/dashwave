@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
 
-export interface IProjectCardProps {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Project card props.
+ */
+interface IProjectCardProps {
   title: string;
   description: string;
   image: string;
@@ -8,6 +12,10 @@ export interface IProjectCardProps {
   previewLink: string;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Project card component.
+ */
 const defaultProps: IProjectCardProps = {
   title: "Project Title",
   description: "Project Description",
@@ -17,7 +25,7 @@ const defaultProps: IProjectCardProps = {
   previewLink: "/",
 };
 
-export default function ProjectCard() {
+function ProjectCard() {
   const props = defaultProps;
   return (
     <div>
@@ -41,3 +49,10 @@ export default function ProjectCard() {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the ProjectCard component.
+export default ProjectCard;
+export type { IProjectCardProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

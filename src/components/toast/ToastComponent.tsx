@@ -1,25 +1,44 @@
 import AlertComponent, { AlertComponentData } from "../alert/Alert";
 
-export enum ToastXPosition {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Toast x position.
+ */
+enum ToastXPosition {
   START = "toast-start",
   CENTER = "toast-center",
   END = "toast-end",
 }
 
-export enum ToastYPosition {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Toast y position.
+ */
+enum ToastYPosition {
   TOP = "toast-top",
   CENTER = "toast-center",
   BOTTOM = "toast-bottom",
 }
 
-export interface IToastAlertComponentProps {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Toast alert component props.
+ */
+interface IToastAlertComponentProps {
   alertComponentData: AlertComponentData;
   xposition?: ToastXPosition;
   yposition?: ToastYPosition;
   bounce?: boolean;
 }
 
-export default function ToastAlertComponent(props: IToastAlertComponentProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Toast alert component.
+ *
+ * @param props  The toast alert component props.
+ * @returns The toast alert component.
+ */
+function ToastAlertComponent(props: IToastAlertComponentProps) {
   return props.alertComponentData.title === "" ? (
     <></>
   ) : (
@@ -37,3 +56,10 @@ export default function ToastAlertComponent(props: IToastAlertComponentProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the ToastAlertComponent.
+export default ToastAlertComponent;
+export type { IToastAlertComponentProps, ToastXPosition, ToastYPosition };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

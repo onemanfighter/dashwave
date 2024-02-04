@@ -14,11 +14,22 @@ import LearningIcon from "../../assets/icons/sidebar_icons/LearningIcon";
 import ResourceIcon from "../../assets/icons/sidebar_icons/ResourceIcon";
 import HomeIcon from "../../assets/icons/sidebar_icons/HomeIcon";
 
-export interface ISidebarComponentProps {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Sidebar component props.
+ */
+interface ISidebarComponentProps {
   sideBarOpen: boolean;
 }
 
-export default function SidebarComponent(props: ISidebarComponentProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Sidebar component.
+ *
+ * @param props  The sidebar component props.
+ * @returns The sidebar component.
+ */
+function SidebarComponent(props: ISidebarComponentProps) {
   return (
     <div className=" flex-col text-base-content flex justify-between h-[95%]">
       <ul className="menu p-2 w-full ">
@@ -70,6 +81,7 @@ export default function SidebarComponent(props: ISidebarComponentProps) {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Gets the icon for the sidebar.
  * @param icon The icon name.
@@ -99,3 +111,10 @@ function getIcon(icon: string) {
       return null;
   }
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the SidebarComponent component.
+export default SidebarComponent;
+export type { ISidebarComponentProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

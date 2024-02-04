@@ -10,12 +10,23 @@ import { PasswordResetIcon } from "../../assets/icons/profile_icon/PasswordReset
 import { ProfilePlaceholder } from "../../assets/icons/profile_icon/ProfilePlaceholder";
 import NavigationToggleButton from "./NavigationToggleButton";
 
-export interface INavigationComponentProps {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Navigation component props.
+ */
+interface INavigationComponentProps {
   logOutClickHandler: () => void;
   openSidebarClickHandler: () => void;
 }
 
-export default function NavigationComponent(props: INavigationComponentProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Navigation component.
+ *
+ * @param props  The navigation component props.
+ * @returns The navigation component.
+ */
+function NavigationComponent(props: INavigationComponentProps) {
   const dispatch = useDispatch();
   const themeState = useSelector((state: RootState) => state.theme);
   const profileState = useSelector((state: RootState) => state.profile);
@@ -126,3 +137,10 @@ export default function NavigationComponent(props: INavigationComponentProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the NavigationComponent component.
+export default NavigationComponent;
+export type { INavigationComponentProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

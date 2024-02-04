@@ -1,20 +1,22 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
- * Proptypes for the tooltip component.
+ * Prop types for the tooltip component.
  */
-export interface ITooltipComponentProps {
+interface ITooltipComponentProps {
   title: string;
   children: React.ReactNode;
   position?: "tooltip-top" | "bottom" | "left" | "tooltip-right";
   disable?: boolean;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Functional component for the tooltip.
  *
  * @param props ITooltipComponentProps
  * @returns JSX.Element
  */
-export default function TooltipComponent(props: ITooltipComponentProps) {
+function TooltipComponent(props: ITooltipComponentProps) {
   const show = props.disable !== null && props.disable === true ? false : true;
   const position = props.position ? props.position : "tooltip-top";
   return (
@@ -26,3 +28,10 @@ export default function TooltipComponent(props: ITooltipComponentProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the TooltipComponent.
+export default TooltipComponent;
+export type { ITooltipComponentProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

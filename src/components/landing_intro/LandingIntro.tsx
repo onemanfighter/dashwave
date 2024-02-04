@@ -1,5 +1,11 @@
 import TemplatePointers from "./TemplatePointer";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * LandingIntro component
+ *
+ * @returns The LandingIntro component.
+ */
 function LandingIntro() {
   return (
     <div className="hero min-h-full rounded-l-xl bg-transparent">
@@ -23,4 +29,8 @@ function LandingIntro() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the LandingIntro component.
 export default LandingIntro;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

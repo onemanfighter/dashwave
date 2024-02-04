@@ -1,3 +1,7 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Title card props.
+ */
 interface ITitleCardProps {
   title: string;
   children: React.ReactNode;
@@ -5,6 +9,13 @@ interface ITitleCardProps {
   TopSideButtons?: React.ReactNode;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Title card component.
+ *
+ * @param props  The title card props.
+ * @returns The title card component.
+ */
 function TitleCard(props: ITitleCardProps) {
   return (
     <div
@@ -33,4 +44,8 @@ function TitleCard(props: ITitleCardProps) {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the TitleCard component.
 export default TitleCard;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,9 +1,10 @@
 import { useState } from "react";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * The input types for the input component.
  */
-export enum InputType {
+enum InputType {
   EMAIL = "email",
   PASSWORD = "password",
   TEXT = "text",
@@ -12,6 +13,10 @@ export enum InputType {
   FILE = "file",
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The input text props.
+ */
 interface IInputTextProps {
   labelTitle: string;
   labelStyle?: string;
@@ -24,6 +29,13 @@ interface IInputTextProps {
   errorState?: boolean;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Input text component.
+ *
+ * @param props  The input text props.
+ * @returns The input text component.
+ */
 function InputText(props: IInputTextProps) {
   const [value, setValue] = useState(props.defaultValue);
 
@@ -67,6 +79,12 @@ function InputText(props: IInputTextProps) {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Export the InputText password eye component.
+ * @param props  The password eye props.
+ * @returns The password eye component.
+ */
 function PasswordEye(props: { handleVisibility: () => void }) {
   return (
     <label className="swap  scale-75">
@@ -102,4 +120,9 @@ function PasswordEye(props: { handleVisibility: () => void }) {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the InputText component
 export default InputText;
+export type { InputType, IInputTextProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

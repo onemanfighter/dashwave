@@ -1,6 +1,10 @@
 import { NOTIFICATION_MODAL_ID } from "./NotificationComponent";
 
-export enum NotificationButtonType {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Enums for the notification button type.
+ */
+enum NotificationButtonType {
   PRIMARY = "btn-primary",
   SECONDARY = "btn-secondary",
   SUCCESS = "btn-success",
@@ -12,6 +16,7 @@ export enum NotificationButtonType {
   LINK = "btn-link",
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * The notification button props.
  * @param buttonText The text of the button.
@@ -19,14 +24,21 @@ export enum NotificationButtonType {
  * @param buttonType The button type.
  * @param isButtonOutline The button outline.
  */
-export interface INotificationButtonProps {
+interface INotificationButtonProps {
   buttonText: string;
   onClickHandler: () => void;
   buttonType?: NotificationButtonType;
   isButtonOutline?: boolean;
 }
 
-export default function NotificationButton(props: INotificationButtonProps) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Notification button component.
+ *
+ * @param props  The notification button props.
+ * @returns The notification button component.
+ */
+function NotificationButton(props: INotificationButtonProps) {
   return (
     <div>
       <label
@@ -41,3 +53,11 @@ export default function NotificationButton(props: INotificationButtonProps) {
     </div>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the NotificationButton component.
+export default NotificationButton;
+export type { INotificationButtonProps };
+export { NotificationButtonType };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

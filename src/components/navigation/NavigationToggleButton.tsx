@@ -1,10 +1,19 @@
-export interface NavigationToggleButtonProps {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Navigation toggle button component props.
+ */
+interface NavigationToggleButtonProps {
   openSidebarClickHandler: () => void;
 }
 
-export default function NavigationToggleButton(
-  props: NavigationToggleButtonProps
-) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Navigation toggle button component.
+ *
+ * @param props  The navigation toggle button props.
+ * @returns The navigation toggle button component.
+ */
+function NavigationToggleButton(props: NavigationToggleButtonProps) {
   return (
     <label className="swap swap-rotate">
       {/* this hidden checkbox controls the state */}
@@ -34,3 +43,10 @@ export default function NavigationToggleButton(
     </label>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the NavigationToggleButton component
+export default NavigationToggleButton;
+export type { NavigationToggleButtonProps };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

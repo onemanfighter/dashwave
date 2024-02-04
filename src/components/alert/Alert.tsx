@@ -4,7 +4,11 @@ import InfoIcon from "../../assets/icons/alert_icon/InfoIcon";
 import WarningIcon from "../../assets/icons/alert_icon/WarningIcon";
 import ErrorIcon from "../../assets/icons/alert_icon/ErrorIcon";
 
-export enum AlertType {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Alert type declaration.
+ */
+enum AlertType {
   NORMAL = "normal",
   SUCCESS = "success",
   INFO = "info",
@@ -12,12 +16,23 @@ export enum AlertType {
   ERROR = "error",
 }
 
-export interface AlertComponentData {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Alert component data.
+ */
+interface AlertComponentData {
   title: string;
   type: AlertType;
 }
 
-export default function AlertComponent(props: AlertComponentData) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Alert component.
+ *
+ * @param props  The alert component data.
+ * @returns The alert component.
+ */
+function AlertComponent(props: AlertComponentData) {
   const { typeString, icon } = getAlertType(props.type);
   return (
     <div role="alert" className={`alert ${typeString}`}>
@@ -27,11 +42,22 @@ export default function AlertComponent(props: AlertComponentData) {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Getting alert type.
+ */
 interface GettingAlertType {
   typeString: string;
   icon: React.ReactNode;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Get alert type.
+ *
+ * @param type  The alert type.
+ * @returns The alert type.
+ */
 function getAlertType(type: AlertType): GettingAlertType {
   switch (type) {
     case AlertType.NORMAL:
@@ -46,3 +72,11 @@ function getAlertType(type: AlertType): GettingAlertType {
       return { typeString: "alert-error", icon: <ErrorIcon /> };
   }
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the AlertComponent.
+export type { AlertComponentData };
+export { AlertType };
+export default AlertComponent;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
