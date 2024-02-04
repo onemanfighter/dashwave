@@ -1,11 +1,16 @@
 import { SupabaseAuth } from "../../supabase_main/Supabase";
 import { AuthData } from "../../../../data_store/slice/AuthSlice";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Interface for the login credentials.
+ */
 export interface LoginCred {
   email: string;
   password: string;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to sign-in using firebase.
  */
@@ -41,3 +46,5 @@ export async function firebaseSingIn(
       errorCallback(error);
     }
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

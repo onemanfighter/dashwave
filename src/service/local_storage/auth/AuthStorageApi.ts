@@ -1,6 +1,7 @@
 import { AuthData } from "../../../data_store/slice/AuthSlice";
 import { AuthTokenKey } from "../token_constants/StorageConstant";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to get the authkey from local storage
  */
@@ -20,3 +21,5 @@ export function getAuthKeyData(): AuthData | null {
   }
   return null;
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

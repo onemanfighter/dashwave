@@ -1,5 +1,6 @@
 import { SupabaseAuth } from "../../supabase_main/Supabase";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to sign-in using firebase.
  */
@@ -20,3 +21,5 @@ export function firebaseForgotPassword(
         errorCallback(errorMessage);
       });
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

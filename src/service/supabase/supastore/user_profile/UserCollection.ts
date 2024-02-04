@@ -1,6 +1,6 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
- * @interface UserProfData
- * @description The user profile data.
+ * The user profile data.
  *
  * @property {string} userId - The user id.
  * @property {string} fname - The first name.
@@ -47,6 +47,7 @@ export interface UserProfileData {
   socialLinks: Array<SocialLink>;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Social type enum.
  */
@@ -60,12 +61,14 @@ export enum SocialType {
   Website = "website",
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Social link interface.
 export interface SocialLink {
   type: SocialType;
   link: string;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * @interface UserDataTableSchema
  * @description The user data table schema.
@@ -88,3 +91,5 @@ export interface UserDataTableSchema {
   social_web: string;
   social_yt: string;
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

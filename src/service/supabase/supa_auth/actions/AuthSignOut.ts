@@ -1,9 +1,6 @@
 import { SupabaseAuth } from "../../supabase_main/Supabase";
 
-export interface LoginCred {
-  email: string;
-  password: string;
-}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to sign-out using supabase.
  */

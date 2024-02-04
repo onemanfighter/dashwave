@@ -1,5 +1,9 @@
 import { SupabaseAuth } from "../../supabase_main/Supabase";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Interface for the login credentials.
+ */
 export interface SignUpCred {
   fName: string;
   lName: string;
@@ -7,6 +11,10 @@ export interface SignUpCred {
   password: string;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Method to sign-up using supabase.
+ */
 export default function supabaseSignUp(
   cred: SignUpCred,
   signUpHandler: () => void,
@@ -32,3 +40,5 @@ export default function supabaseSignUp(
     }
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

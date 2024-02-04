@@ -2,7 +2,14 @@ import { UserData } from "../../../../../data_store/slice/AuthSlice";
 import { SupabaseUsersDB } from "../../../supabase_main/Supabase";
 import { SocialLink, SocialType, UserProfileData } from "../UserCollection";
 
-// Get a list of cities from your database
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Method to get the user profileData
+ *
+ * @param userAuthState - The user auth data.
+ * @param callback - The callback function.
+ * @returns The user data.
+ */
 export async function getUserUsingId(
   userAuthState: UserData,
   callback: (user: UserProfileData) => void
@@ -12,7 +19,7 @@ export async function getUserUsingId(
       .eq("id", userAuthState.userId)
       .single();
     if (data !== null && data.length > 0 && data !== undefined && !error) {
-      const user = getProfDataFromResponse(data);
+      const user = getProfDataFromResponseSchema(data);
       callback(user);
       return;
     }
@@ -30,7 +37,7 @@ export async function getUserUsingId(
       console.log(regisError);
     } else {
       console.log(dataUser);
-      const user = getProfDataFromResponse(dataUser);
+      const user = getProfDataFromResponseSchema(dataUser);
       callback(user);
     }
   } catch (error) {
@@ -38,13 +45,14 @@ export async function getUserUsingId(
   }
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to get the user profileData.
  *
  * @param user - The user data.
  * @returns The user data.
  */
-function getProfDataFromResponse(user: any): UserProfileData {
+function getProfDataFromResponseSchema(user: any): UserProfileData {
   const profData: UserProfileData = {
     userId: user.id,
     firstName: user.first_name,
@@ -88,3 +96,5 @@ function getProfDataFromResponse(user: any): UserProfileData {
   };
   return profData;
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -5,6 +5,7 @@ import { LoginCred, firebaseSingIn } from "./actions/AuthSignIn";
 import { firebaseSignOut } from "./actions/AuthSignOut";
 import supabaseSignUp, { SignUpCred } from "./actions/AuthSignUp";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to make the Firebase signin
  */
@@ -16,6 +17,7 @@ export function signIn(
   firebaseSingIn(cred, signInHandler, errorCallback);
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to make the Firebase signup
  */
@@ -27,6 +29,7 @@ export function signUp(
   supabaseSignUp(cred, signUpHandler, errorCallback);
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to make firebase signout
  */
@@ -34,6 +37,7 @@ export function signOut(signOutHandler: () => void) {
   firebaseSignOut(signOutHandler);
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to make the firebase forgot password.
  */
@@ -45,6 +49,7 @@ export function forgotPassword(
   firebaseForgotPassword(email, forgotPasswordHandler, errorCallback);
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to make the firebase already signin
  *
@@ -56,3 +61,5 @@ export function alreadySignedIn(signOutHandler: () => void) {
     return;
   }
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

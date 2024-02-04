@@ -12,6 +12,16 @@ import {
 } from "../UserCollection";
 export function userDataWrite() {}
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Method to update the user profileData.
+ *
+ * @param userIdFromAuth - The user id.
+ * @param userProfFormData - The user data.
+ * @param callback - The callback function.
+ * @param showAlertHandler - The notification function.
+ * @returns The user data.
+ */
 export async function updateUserData(
   userIdFromAuth: string,
   userProfFormData: UserProfileData,
@@ -82,3 +92,5 @@ export async function updateUserData(
     );
   }
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
