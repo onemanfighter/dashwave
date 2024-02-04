@@ -2,18 +2,30 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { removeProfileKeyData } from "../../service/local_storage/profile/ProfileStorageApi";
 import { getAuthKeyData } from "../../service/local_storage/auth/AuthStorageApi";
 
-export interface UserData {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * User data.
+ */
+interface UserData {
   userId: string;
   firstName: string;
   lastName: string;
   email: string;
 }
 
-export interface AuthData {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Auth data.
+ */
+interface AuthData {
   authToken: string;
   userData: UserData;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Initial user data.
+ */
 const initialUserData: UserData = {
   userId: "",
   firstName: "",
@@ -21,14 +33,26 @@ const initialUserData: UserData = {
   email: "",
 };
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Initial auth data.
+ */
 const initialState: AuthData = {
   authToken: "",
   userData: initialUserData,
 };
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The name of the auth slice.
+ */
 const AUTH_NAME = "auth_token";
 
-export const authSlice = createSlice({
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The auth slice.
+ */
+const authSlice = createSlice({
   name: AUTH_NAME,
   initialState: getAuthData(),
   reducers: {
@@ -42,12 +66,13 @@ export const authSlice = createSlice({
   },
 });
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get the auth data from the local storage.
  *
  * @returns The auth data from the local storage.
  */
-export function getAuthData(): AuthData {
+function getAuthData(): AuthData {
   const authData = getAuthKeyData();
   if (authData) {
     return authData;
@@ -56,7 +81,8 @@ export function getAuthData(): AuthData {
   return initialState;
 }
 
-export function getAuthUserID(): string {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function getAuthUserID(): string {
   const authData = getAuthKeyData();
   if (authData) {
     return authData.userData.userId;
@@ -65,6 +91,13 @@ export function getAuthUserID(): string {
   return "";
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the auth slice.
 export const { onLogin, onSignOut } = authSlice.actions;
-
 export default authSlice.reducer;
+
+export type { AuthData, UserData };
+export { getAuthUserID };
+export { getAuthData };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

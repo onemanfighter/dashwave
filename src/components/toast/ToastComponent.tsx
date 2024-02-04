@@ -60,6 +60,7 @@ function ToastAlertComponent(props: IToastAlertComponentProps) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the ToastAlertComponent.
 export default ToastAlertComponent;
-export type { IToastAlertComponentProps, ToastXPosition, ToastYPosition };
+export type { IToastAlertComponentProps };
+export { ToastXPosition, ToastYPosition };
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

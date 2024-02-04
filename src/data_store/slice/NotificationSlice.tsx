@@ -1,13 +1,23 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { NotificationData } from "../../components/notification/NotificationComponent";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The name of the notification slice.
+ */
 const NOTIFICATION = "notification";
 
-export type NotificationState = NotificationData | null;
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Notification state type definition.
+ */
+type NotificationState = NotificationData | null;
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const initialNotificationState: NotificationState = null as NotificationState;
 
-export const notificationSlice = createSlice({
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const notificationSlice = createSlice({
   name: NOTIFICATION,
   initialState: initialNotificationState,
   reducers: {
@@ -17,6 +27,10 @@ export const notificationSlice = createSlice({
   },
 });
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the notification slice.
 export const { showNotification } = notificationSlice.actions;
-
 export default notificationSlice.reducer;
+
+export type { NotificationState };
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

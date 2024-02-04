@@ -5,7 +5,11 @@ import notificationReducer from "./slice/NotificationSlice";
 import profileReducer from "./slice/ProfileSlice";
 import toastAlertReducer from "./slice/ToastAlertSlice";
 
-export const store = configureStore({
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The redux store.
+ */
+const store = configureStore({
   reducer: {
     auth: authReducer,
     theme: themeReducer,
@@ -15,6 +19,10 @@ export const store = configureStore({
   },
 });
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the store.
 export type RootState = ReturnType<typeof store.getState>;
-
 export type AppDispatch = typeof store.dispatch;
+export default store;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

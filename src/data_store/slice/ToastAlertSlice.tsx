@@ -6,8 +6,16 @@ import {
 import { AlertType } from "../../components/alert/Alert";
 import { ToastAlertData } from "../../provider/alert_toast_provider/AlertToastProvider";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The name of the toast alert slice.
+ */
 const TOAST_ALERT = "alert";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Initial toast alert state.
+ */
 const initialToastAlertState: ToastAlertData = {
   alertData: {
     title: "",
@@ -18,6 +26,10 @@ const initialToastAlertState: ToastAlertData = {
   bounce: false,
 };
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The toast alert slice.
+ */
 export const alertSlice = createSlice({
   name: TOAST_ALERT,
   initialState: initialToastAlertState,
@@ -31,8 +43,7 @@ export const alertSlice = createSlice({
   },
 });
 
-const { showToastAlert, hideToastAlert } = alertSlice.actions;
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Show the alert with a timeout.
  *
@@ -40,7 +51,7 @@ const { showToastAlert, hideToastAlert } = alertSlice.actions;
  * @param alertData The alert data.
  * @param timeMS The time in milliseconds.
  */
-export function showAlertWithTimeout(
+function showAlertWithTimeout(
   dispatch: any,
   alertData: ToastAlertData,
   timeMS: number
@@ -51,4 +62,10 @@ export function showAlertWithTimeout(
   }, timeMS);
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const { showToastAlert, hideToastAlert } = alertSlice.actions;
 export default alertSlice.reducer;
+
+export type { ToastAlertData };
+export { showAlertWithTimeout };
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

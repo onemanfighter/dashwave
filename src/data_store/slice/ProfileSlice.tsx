@@ -10,6 +10,10 @@ import {
 import { userProfileDataRead } from "../../service/supabase/supastore/user_profile/UserProfileStoreApi";
 import { getAuthData } from "./AuthSlice";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * Initial profile data.
+ */
 const initialProfile: UserProfileData = {
   userId: "",
   firstName: "",
@@ -52,8 +56,13 @@ const initialProfile: UserProfileData = {
   ],
 };
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const PROFILE = "profile";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * The profile slice.
+ */
 export const profileSlice = createSlice({
   name: PROFILE,
   initialState: initialProfile,
@@ -70,6 +79,7 @@ export const profileSlice = createSlice({
   },
 });
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Check if local storage has profile data, if not then fetch from the server database.
  * If the profile data is not available in the server database then add the initial profile data.
@@ -78,7 +88,7 @@ export const profileSlice = createSlice({
  *
  * @returns The profile data from the local storage.
  */
-export function syncForTheFirstTime(
+function syncForTheFirstTime(
   setProfileCallback: (data: UserProfileData) => void
 ): UserProfileData | void {
   const profileData = getProfileKeyData();
@@ -93,6 +103,12 @@ export function syncForTheFirstTime(
   userProfileDataRead(getAuthData().userData, setProfileCallback);
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Export the profile slice.
 export const { updateProfile, removeProfile } = profileSlice.actions;
-
 export default profileSlice.reducer;
+
+export type { UserProfileData };
+export { syncForTheFirstTime };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
