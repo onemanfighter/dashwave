@@ -1,8 +1,14 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
-// Goals screens components.
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Goals screens lazy components.
 const GoalsScreen = lazy(
   () => import("../../../screens/private/screens/goals/GoalsScreen")
 );
@@ -29,6 +35,10 @@ const GoalsDeleteScreen = lazy(
     import("../../../screens/private/screens/goals/goals_delete/GoalsDelete")
 );
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Goals screens components.
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy goals screen component.
  * @returns The LazyGoalsScreenComponent component.
@@ -41,6 +51,7 @@ export function LazyGoalsScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy goals main screen component.
  * @returns The LazyGoalsMainScreenComponent component.
@@ -53,6 +64,7 @@ export function LazyGoalsMainScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy goals preview screen component.
  * @returns The LazyGoalsPreviewScreenComponent component.
@@ -65,6 +77,7 @@ export function LazyGoalsPreviewScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy goals edit screen component.
  * @returns The LazyGoalsEditScreenComponent component.
@@ -77,6 +90,7 @@ export function LazyGoalsEditScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy goals add screen component.
  * @returns The LazyGoalsAddScreenComponent component.
@@ -89,6 +103,7 @@ export function LazyGoalsAddScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy goals delete screen component.
  * @returns The LazyGoalsDeleteScreenComponent component.
@@ -100,3 +115,7 @@ export function LazyGoalsDeleteScreenComponent() {
     </LazyComponentProvider>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

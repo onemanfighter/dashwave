@@ -1,7 +1,14 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
-// Public screens components.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Public screens lazy components.
 const LoginScreen = lazy(
   () => import("../../../screens/public/login_screen/LoginScreen")
 );
@@ -13,7 +20,10 @@ const ForgotPasswordScreen = lazy(
   () => import("../../../screens/public/forgot_password/ForgotPassword")
 );
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Public screens components.
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy login screen component.
  * @returns The LazyLoginScreenComponent component.
@@ -26,6 +36,7 @@ export function LazyLoginScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy signup screen component.
  * @returns The LazySignupScreenComponent component.
@@ -38,6 +49,7 @@ export function LazySignupScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy forgot password screen component.
  * @returns The LazyForgotPasswordScreenComponent component.
@@ -49,3 +61,7 @@ export function LazyForgotPasswordScreenComponent() {
     </LazyComponentProvider>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

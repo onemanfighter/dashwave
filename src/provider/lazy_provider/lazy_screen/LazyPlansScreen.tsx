@@ -1,8 +1,14 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
-// Plans screens components.
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Plans screens lazy components.
 const PlansScreen = lazy(
   () => import("../../../screens/private/screens/plans/PlansScreen")
 );
@@ -29,6 +35,10 @@ const PlansDeleteScreen = lazy(
     import("../../../screens/private/screens/plans/plans_delete/PlansDelete")
 );
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Plans screens components.
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy plans screen component.
  * @returns The LazyPlansScreenComponent component.
@@ -41,6 +51,7 @@ export function LazyPlansScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy plans main screen component.
  * @returns The LazyPlansMainScreenComponent component.
@@ -53,6 +64,7 @@ export function LazyPlansMainScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy plans preview screen component.
  * @returns The LazyPlansPreviewScreenComponent component.
@@ -65,6 +77,7 @@ export function LazyPlansPreviewScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy plans edit screen component.
  * @returns The LazyPlansEditScreenComponent component.
@@ -77,6 +90,7 @@ export function LazyPlansEditScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy plans add screen component.
  * @returns The LazyPlansAddScreenComponent component.
@@ -89,6 +103,7 @@ export function LazyPlansAddScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy plans delete screen component.
  * @returns The LazyPlansDeleteScreenComponent component.
@@ -100,3 +115,7 @@ export function LazyPlansDeleteScreenComponent() {
     </LazyComponentProvider>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

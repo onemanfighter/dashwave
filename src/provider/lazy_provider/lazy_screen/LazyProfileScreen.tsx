@@ -1,7 +1,14 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
-// Profile screens components.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Profile screens lazy components.
 const ProfileMainScreen = lazy(
   () => import("../../../screens/private/screens/profile/ProfileMainScreen")
 );
@@ -27,6 +34,10 @@ const ProfilePreviewScreen = lazy(
     )
 );
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Profile screens components.
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy profile main screen component.
  * @returns The LazyProfileMainScreenComponent component.
@@ -39,6 +50,7 @@ export function LazyProfileMainScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy profile edit screen component.
  * @returns The LazyProfilePasswordResetScreenComponent component.
@@ -51,6 +63,7 @@ export function LazyProfilePasswordResetScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy profile setting screen component.
  * @returns The LazyProfileSettingScreenComponent component.
@@ -63,6 +76,7 @@ export function LazyProfileSettingScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy profile preview screen component.
  * @returns The LazyProfilePreviewScreenComponent component.
@@ -74,3 +88,7 @@ export function LazyProfilePreviewScreenComponent() {
     </LazyComponentProvider>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

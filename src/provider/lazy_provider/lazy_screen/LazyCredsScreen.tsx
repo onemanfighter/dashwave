@@ -1,7 +1,14 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
-// Creds screens components.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Creds screens lazy components.
 const CredsScreen = lazy(
   () => import("../../../screens/private/screens/creds/CredsScreen")
 );
@@ -28,6 +35,9 @@ const CredsDeleteScreen = lazy(
     import("../../../screens/private/screens/creds/creds_delete/CredsDelete")
 );
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Creds screens components.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy creds screen component.
  * @returns The LazyCredsScreenComponent component.
@@ -40,6 +50,7 @@ export function LazyCredsScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy creds main screen component.
  * @returns The LazyCredsMainScreenComponent component.
@@ -52,6 +63,7 @@ export function LazyCredsMainScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy creds preview screen component.
  * @returns The LazyCredsPreviewScreenComponent component.
@@ -64,6 +76,7 @@ export function LazyCredsPreviewScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy creds edit screen component.
  * @returns The LazyCredsEditScreenComponent component.
@@ -76,6 +89,7 @@ export function LazyCredsEditScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy creds add screen component.
  * @returns The LazyCredsAddScreenComponent component.
@@ -88,6 +102,7 @@ export function LazyCredsAddScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy creds delete screen component.
  * @returns The LazyCredsDeleteScreenComponent component.
@@ -99,3 +114,7 @@ export function LazyCredsDeleteScreenComponent() {
     </LazyComponentProvider>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

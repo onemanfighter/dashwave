@@ -1,3 +1,9 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { useSelector } from "react-redux";
 import { RootState } from "../../data_store/Store";
 import ToastAlertComponent, {
@@ -6,6 +12,7 @@ import ToastAlertComponent, {
 } from "../../components/toast/ToastComponent";
 import { AlertComponentData, AlertType } from "../../components/alert/Alert";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Interface definition for the alert toast provider props.
  */
@@ -13,6 +20,7 @@ export interface IToastAlertProviderProps {
   children: React.ReactNode;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Interface definition for the alert toast provider props.
  */
@@ -23,6 +31,7 @@ export interface ToastAlertData {
   bounce?: boolean;
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the alert toast provider.
  * @param props The props for the alert toast provider.
@@ -44,6 +53,7 @@ export default function AlertToastProvider(props: IToastAlertProviderProps) {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get the error alert data.
  *
@@ -61,6 +71,7 @@ export function getSuccessAlertData(title: string): ToastAlertData {
   };
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get the error alert data.
  *
@@ -78,6 +89,7 @@ export function getErrorAlertData(title: string): ToastAlertData {
   };
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get the info alert data.
  *
@@ -95,6 +107,7 @@ export function getInfoAlertData(title: string): ToastAlertData {
   };
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get the warning alert data.
  *
@@ -111,3 +124,7 @@ export function getWarningAlertData(title: string): ToastAlertData {
     yPosition: ToastYPosition.BOTTOM,
   };
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

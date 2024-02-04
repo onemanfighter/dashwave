@@ -1,7 +1,14 @@
+/**
+ * Author: Amit raikwar
+ * Last updated: 04 Feb, 2024
+ */
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
-// Expenses screens components.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Expenses screens lazy components.
 const ExpenseScreen = lazy(
   () => import("../../../screens/private/screens/expenses/ExpenseScreen")
 );
@@ -35,6 +42,10 @@ const ExpenseDeleteScreen = lazy(
     )
 );
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Expenses screens components.
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy expenses screen component.
  * @returns The LazyExpensesScreenComponent component.
@@ -47,6 +58,7 @@ export function LazyExpenseScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy expenses main screen component.
  * @returns The LazyExpenseMainScreenComponent component.
@@ -59,6 +71,7 @@ export function LazyExpenseMainScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy expenses preview screen component.
  * @returns The LazyExpensePreviewScreenComponent component.
@@ -71,6 +84,7 @@ export function LazyExpensePreviewScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy expenses edit screen component.
  * @returns The LazyExpenseEditScreenComponent component.
@@ -83,6 +97,7 @@ export function LazyExpenseEditScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy expenses add screen component.
  * @returns The LazyExpenseAddScreenComponent component.
@@ -95,6 +110,7 @@ export function LazyExpenseAddScreenComponent() {
   );
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the lazy expenses delete screen component.
  * @returns The LazyExpenseDeleteScreenComponent component.
@@ -106,3 +122,7 @@ export function LazyExpenseDeleteScreenComponent() {
     </LazyComponentProvider>
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// End of file.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
