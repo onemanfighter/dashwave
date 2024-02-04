@@ -1,10 +1,8 @@
 /**
  * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
+ * Last updated: 05 Feb, 2024
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-import ProjectCard from "../../../../../components/card/ProjectCard";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
@@ -19,15 +17,7 @@ interface IProjectEditScreenProps {}
  * @returns The ProjectEditScreen component.
  */
 function ProjectEditScreen(props: IProjectEditScreenProps) {
-  const dummyData = [1, 1, 1, 1, 1, 1];
-
-  return (
-    <div className="overflow-auto h-screen">
-      {dummyData.map((item, index) => (
-        <ProjectCard key={index} />
-      ))}
-    </div>
-  );
+  return <div className="overflow-auto h-screen"></div>;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

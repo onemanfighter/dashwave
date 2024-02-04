@@ -21,13 +21,7 @@ interface IProjectDeleteScreenProps {}
 function ProjectDeleteScreen(props: IProjectDeleteScreenProps) {
   const dummyData = [1, 1, 1, 1, 1, 1];
 
-  return (
-    <div className="overflow-auto h-screen">
-      {dummyData.map((item, index) => (
-        <ProjectCard key={index} />
-      ))}
-    </div>
-  );
+  return <div className="overflow-auto h-screen"></div>;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -6,12 +6,17 @@
 
 // Import the functions you need from the SDKs you need
 import { createClient } from "@supabase/supabase-js";
+import {
+  PROJECTS_TABLE,
+  SUPABASE_KEY,
+  SUPABASE_URL,
+  USER_PROFILE_TABLE,
+} from "./VaultConstant";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Supabase configuration
-const supabaseUrl = "https://derclltpzfohoecoxvge.supabase.co";
-const supabaseKey: string =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlcmNsbHRwemZvaG9lY294dmdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDY0NDU2NjIsImV4cCI6MjAyMjAyMTY2Mn0.EDVPLpVX82RLxYlSv7ekIxcuXAP_fmEkzhOh67oXECk";
+const supabaseUrl = SUPABASE_URL;
+const supabaseKey: string = SUPABASE_KEY;
 const Supabase = createClient(supabaseUrl, supabaseKey);
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,12 +25,10 @@ const SupabaseAuth = Supabase.auth;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Initialize users Database
-const usersTable = "dashwave_users";
-const SupabaseUsersDB = Supabase.from(usersTable);
+const SupabaseUsersDB = Supabase.from(USER_PROFILE_TABLE);
 
 // Initialize Projects Database
-const projectsTable = "dashwave_projects";
-const SupabaseProjectsDB = Supabase.from(projectsTable);
+const SupabaseProjectsDB = Supabase.from(PROJECTS_TABLE);
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Initialize Storage

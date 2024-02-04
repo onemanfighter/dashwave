@@ -8,19 +8,29 @@ import { SupabaseProjectsDB } from "../../../supabase_main/Supabase";
 import { ProjectData, ProjectDataSchema } from "../ProjectsCollection";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Get a list of projects from your database
-async function getAllProjectForMainScreen(userId: string) {
+/**
+ * Method to get the all project data.
+ *
+ * @param userId - The user id.
+ * @param successCallback - The success callback function.
+ * @returns The projects data.
+ */
+async function getAllProjectForMainScreen(
+  userId: string,
+  successCallback: (projects: ProjectData[]) => void
+) {
   try {
     const { data, error } = await SupabaseProjectsDB.select("*")
       .eq("user_id", userId)
       .order("started_on", { ascending: false });
     if (data !== null && data.length > 0 && data !== undefined && !error) {
       const projects = getProjectsDateFromMultipleResponse(data);
-      return projects;
+      successCallback(projects);
     }
   } catch (error) {
     console.log(error);
   }
+  return [];
 }
 
 /**
@@ -76,16 +86,16 @@ function getProjectDataFromSingleResponse(
     projectName: project.project_name,
     projectDesc: project.project_desc,
     projectIcon: project.project_icon,
-    techUsed: project.tech_used.data,
+    techUsed: project.tech_used?.data,
     projectLink: project.project_link,
     githubLink: project.github_link,
     hostingerLink: project.hostinger_link,
-    images: project.images.data,
+    images: project.images?.data,
     isLive: project.is_live,
-    relatedIdeas: project.related_ideas.data,
+    relatedIdeas: project.related_ideas?.data,
     startedOn: project.started_on,
-    features: project.features.data,
-    todos: project.todos.data,
+    features: project.features?.data,
+    todos: project.todos?.data,
     projectCompleted: project.project_completed,
     backendLink: project.backend_link,
   };

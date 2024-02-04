@@ -1,6 +1,6 @@
 /**
  * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
+ * Last updated: 05 Feb, 2024
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -11,6 +11,11 @@ import EditIcon from "../../../../assets/icons/project_icon/EditIcon";
 import PreviewIcon from "../../../../assets/icons/project_icon/PreviewIcon";
 import DeleteIcon from "../../../../assets/icons/cred_icon/DeleteIcon";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../../data_store/Store";
+import { useEffect } from "react";
+import { getAllProjects } from "../../../../service/supabase/supastore/projects/ProjectsStoreApi";
+import { addProjects } from "../../../../data_store/slice/projects/ProjectsSlice";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
@@ -36,7 +41,18 @@ const ProjectRoutes = [
  * @returns The projects screen component.
  */
 function ProjectsScreen(props: IProjectsScreenProps) {
+  const dispatch = useDispatch();
   const currentLocation = useLocation();
+  const userId = useSelector((state: RootState) => state.auth.userData.userId);
+
+  // Making network request to get all projects.
+  useEffect(() => {
+    getAllProjects(userId, (projectsData) =>
+      dispatch(addProjects(projectsData))
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, userId]);
+
   return (
     <div className="h-full">
       <div className=" m-2 bg-primary-content p-1 drop-shadow-md rounded-lg flex flex-row justify-between items-center">

@@ -28,10 +28,14 @@ function getSingleProject(projectId: string) {
  * Method to get the all associated project data.
  *
  * @param userId - The user id.
+ * @param successCallback - The success callback function.
  * @returns The project data.
  */
-function getAllProjects(userId: string) {
-  return getAllProjectForMainScreen(userId);
+function getAllProjects(
+  userId: string,
+  successCallback: (projects: ProjectData[]) => void
+) {
+  return getAllProjectForMainScreen(userId, successCallback);
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

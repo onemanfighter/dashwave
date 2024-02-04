@@ -4,8 +4,6 @@
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-import ProjectCard from "../../../../../components/card/ProjectCard";
-
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Interface definition for the project preview screen props.
@@ -19,15 +17,7 @@ export interface IAppProps {}
  * @returns The ProjectPreviewScreen component.
  */
 export default function ProjectPreviewScreen(props: IAppProps) {
-  const dummyData = [1, 1, 1, 1, 1, 1];
-
-  return (
-    <div className="overflow-auto ">
-      {dummyData.map((item, index) => (
-        <ProjectCard key={index} />
-      ))}
-    </div>
-  );
+  return <div className="overflow-auto "></div>;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

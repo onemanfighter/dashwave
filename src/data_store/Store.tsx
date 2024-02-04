@@ -1,6 +1,6 @@
 /**
  * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
+ * Last updated: 05 Feb, 2024
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -10,10 +10,20 @@ import themeReducer from "./slice/ThemeSlice";
 import notificationReducer from "./slice/NotificationSlice";
 import profileReducer from "./slice/ProfileSlice";
 import toastAlertReducer from "./slice/ToastAlertSlice";
+import projectsReducer from "./slice/projects/ProjectsSlice";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
- * The redux store.
+ * The redux store configuration.
+ * @returns The redux store.
+ *
+ * Reducer;
+ * 1. authReducer
+ * 2. themeReducer
+ * 3. profileReducer
+ * 4. notificationReducer
+ * 5. toastAlertReducer
+ * 6. projectsReducer
  */
 const store = configureStore({
   reducer: {
@@ -22,6 +32,7 @@ const store = configureStore({
     profile: profileReducer,
     notification: notificationReducer,
     toastAlert: toastAlertReducer,
+    projects: projectsReducer,
   },
 });
 

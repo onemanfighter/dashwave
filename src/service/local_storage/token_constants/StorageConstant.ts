@@ -17,11 +17,11 @@ const themeKey = "theme_data";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // current path key for local storage
-const currentPathKey = "current_path";
+const ProjectsKey = "projects_data";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the constants
-export { AuthTokenKey, ProfileTokenKey, themeKey, currentPathKey };
+export { AuthTokenKey, ProfileTokenKey, themeKey, ProjectsKey };
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // End of file.
