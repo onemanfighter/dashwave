@@ -4,6 +4,7 @@ import publicRouter from "./routes/public_routes/PublicRoutes";
 import { useSelector } from "react-redux";
 import { RootState } from "../data_store/Store";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Router declaration for the demo app.
  */
@@ -14,3 +15,5 @@ export default function RouterProviderComponent() {
     <RouterProvider router={state !== "" ? privateRouter : publicRouter} />
   );
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -55,6 +55,7 @@ import {
   LazyProjectsScreenComponent,
 } from "../../../provider/lazy_provider/lazy_screen/LazyProjectScreen";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Router declaration for the demo app after login.
  */
@@ -123,4 +124,7 @@ const privateRouter = createBrowserRouter(
   )
 );
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export default privateRouter;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

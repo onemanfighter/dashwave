@@ -12,6 +12,7 @@ import {
   LazySignupScreenComponent,
 } from "../../../provider/lazy_provider/lazy_screen/LazyPublicScreen";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Router declaration for the demo app before login.
  */
@@ -33,4 +34,7 @@ const publicRouter = createBrowserRouter(
   )
 );
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export default publicRouter;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

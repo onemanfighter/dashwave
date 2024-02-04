@@ -1,3 +1,6 @@
+// Purpose: Contains the routes for the sidebar.
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Routes for the sidebar.
  */
@@ -44,8 +47,11 @@ export const sidebarRoutes = [
   },
 ];
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export const ProfileRoute = {
   name: "Profile",
   path: "/profile",
   iconName: "profile",
 };
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
