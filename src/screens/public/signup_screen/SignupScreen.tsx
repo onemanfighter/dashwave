@@ -90,17 +90,17 @@ function Register() {
         backgroundSize: "cover",
       }}
     >
-      <div className="card mx-auto w-full max-w-5xl  shadow-xl ">
+      <div className="card mx-auto w-full max-w-5xl shadow-xl">
         <div className="grid md:grid-cols-2 grid-cols-1">
-          <div className=" bg-base-content">
+          <div className="glass rounded-l-2xl">
             <LandingIntro />
           </div>
-          <div className="py-24 px-10 bg-primary-content">
+          <div className="py-12 px-10 bg-primary-content">
             <h2 className="text-2xl font-semibold mb-2 text-center">
               Register
             </h2>
             <form onSubmit={(e) => submitForm(e)}>
-              <div className="mb-4">
+              <div className="">
                 <InputText
                   defaultValue={registerObj.fName}
                   updateType="fName"
@@ -112,14 +112,14 @@ function Register() {
                 <InputText
                   defaultValue={registerObj.lName}
                   updateType="lName"
-                  containerStyle="mt-4"
+                  containerStyle="mt-2"
                   labelTitle="Last name"
                   updateFormValue={updateFormValue}
                 />
                 <InputText
                   defaultValue={registerObj.email}
                   updateType="email"
-                  containerStyle="mt-4"
+                  containerStyle="mt-2"
                   labelTitle="Email Id"
                   updateFormValue={updateFormValue}
                 />
@@ -127,13 +127,13 @@ function Register() {
                 <InputText
                   defaultValue={registerObj.password}
                   updateType="password"
-                  containerStyle="mt-4"
+                  containerStyle="mt-2"
                   labelTitle="Password"
                   updateFormValue={updateFormValue}
                 />
               </div>
 
-              <ErrorText styleClass="mt-8">{errorMessage}</ErrorText>
+              <ErrorText styleClass="mt-2">{errorMessage}</ErrorText>
               <button
                 type="submit"
                 className={
@@ -143,7 +143,7 @@ function Register() {
                 Register
               </button>
 
-              <div className="text-center mt-4">
+              <div className="text-center mt-2">
                 Already have an account?{" "}
                 <NavLink to="/login">
                   <span className="  inline-block  hover:text-primary hover:underline hover:cursor-pointer transition duration-200">

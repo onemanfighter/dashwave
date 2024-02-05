@@ -85,7 +85,7 @@ function ForgotPassword() {
     >
       <div className="card mx-auto w-full max-w-5xl shadow-xl">
         <div className="grid  md:grid-cols-2 grid-cols-1 rounded-xl">
-          <div className=" bg-base-content">
+          <div className="glass rounded-l-2xl">
             <LandingIntro />
           </div>
           <div className="py-24 px-10 bg-primary-content">
