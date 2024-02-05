@@ -143,7 +143,7 @@ function getProjectCardData(project: ProjectData): ProjectCardData {
     description: project.projectDesc,
     icon: project.projectIcon,
     image: project.images && project.images.length > 0 ? project.images[0] : "",
-    path: project.projectId,
+    path: "preview/" + project.projectId,
     projectLiveLink: project.projectLink,
     githubLink: project.githubLink,
     isLive: project.isLive,

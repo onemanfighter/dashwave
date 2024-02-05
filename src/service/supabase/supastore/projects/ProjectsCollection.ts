@@ -51,6 +51,7 @@ interface ProjectDataSchema {
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 interface ProjectData {
+  [x: string]: any;
   projectId: string;
   userId: string;
   projectName: string;
