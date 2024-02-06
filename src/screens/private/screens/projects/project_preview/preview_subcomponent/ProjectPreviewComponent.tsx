@@ -6,12 +6,12 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useDispatch } from "react-redux";
-import { GithubIcon } from "../../../../../assets/icons/social_icon/GithubIcon";
-import HostingerIcon from "../../../../../assets/icons/social_icon/HostingerIcon";
-import { WebsiteIcon } from "../../../../../assets/icons/social_icon/WebsiteIcon";
-import ImagePreviewModalButton from "../../../../../components/image_preview_modal/ImagePreviewButton";
-import { setModalImage } from "../../../../../data_store/slice/ImageModalSlice";
-import { ProjectData } from "../../../../../service/supabase/supastore/projects/ProjectsCollection";
+import { GithubIcon } from "../../../../../../assets/icons/social_icon/GithubIcon";
+import HostingerIcon from "../../../../../../assets/icons/social_icon/HostingerIcon";
+import { WebsiteIcon } from "../../../../../../assets/icons/social_icon/WebsiteIcon";
+import ImagePreviewModalButton from "../../../../../../components/image_preview_modal/ImagePreviewButton";
+import { setModalImage } from "../../../../../../data_store/slice/ImageModalSlice";
+import { ProjectData } from "../../../../../../service/supabase/supastore/projects/ProjectsCollection";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
@@ -68,7 +68,7 @@ export default function ProjectPreviewComponent(
           {/* Link buttons */}
           <div className="flex flex-row justify-between p-2">
             <a
-              href={"http://" + props.project.projectLink}
+              href={props.project.projectLink}
               target="_blank"
               rel="noreferrer"
               className="btn btn-success justify-between btn-outline w-[190px]"
