@@ -5,15 +5,18 @@
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+import { useDispatch } from "react-redux";
 import { GithubIcon } from "../../../../../assets/icons/social_icon/GithubIcon";
 import HostingerIcon from "../../../../../assets/icons/social_icon/HostingerIcon";
 import { WebsiteIcon } from "../../../../../assets/icons/social_icon/WebsiteIcon";
-import ImagePreviewModal from "../../../../../components/image_preview_modal/ImagePreviewModal";
+import ImagePreviewModalButton from "../../../../../components/image_preview_modal/ImagePreviewButton";
+import { setModalImage } from "../../../../../data_store/slice/ImageModalSlice";
 import { ProjectData } from "../../../../../service/supabase/supastore/projects/ProjectsCollection";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Project preview component props.
+ * @param project The project data.
  */
 export interface IProjectPreviewComponentProps {
   project: ProjectData;
@@ -28,6 +31,12 @@ export interface IProjectPreviewComponentProps {
 export default function ProjectPreviewComponent(
   props: IProjectPreviewComponentProps
 ) {
+  const dispatch = useDispatch();
+
+  const onImageClickHandler = (image: string) => {
+    dispatch(setModalImage(image));
+  };
+
   return (
     <div className="bg-base-100 shadow-xl outline-double rounded-md w-full px-4  py-1 h-full">
       <div className="w-full grid grid-cols-2">
@@ -93,13 +102,19 @@ export default function ProjectPreviewComponent(
           </div>
           <div className="flex flex-row items-start overflow-scroll gap-3 p-2 ">
             {props.project.images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={props.project.title}
-                loading="lazy"
-                className="w-[150px] h-[100px] rounded-md outline p-1 mt-4 hover:scale-105 hover:cursor-pointer"
-              />
+              <ImagePreviewModalButton
+                onClickHandler={() => {
+                  onImageClickHandler(image);
+                }}
+              >
+                <img
+                  key={index}
+                  src={image}
+                  alt={props.project.title}
+                  loading="lazy"
+                  className="w-[150px] h-[100px] rounded-md outline p-1 mt-4 hover:scale-105 hover:cursor-pointer"
+                />
+              </ImagePreviewModalButton>
             ))}
           </div>
         </div>

@@ -1,6 +1,6 @@
 /**
  * Author: Amit raikwar
- * Last updated: 05 Feb, 2024
+ * Last updated: 06 Feb, 2024
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -11,6 +11,7 @@ import notificationReducer from "./slice/NotificationSlice";
 import profileReducer from "./slice/ProfileSlice";
 import toastAlertReducer from "./slice/ToastAlertSlice";
 import projectsReducer from "./slice/projects/ProjectsSlice";
+import imageModalReducer from "./slice/ImageModalSlice";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
@@ -24,6 +25,7 @@ import projectsReducer from "./slice/projects/ProjectsSlice";
  * 4. notificationReducer
  * 5. toastAlertReducer
  * 6. projectsReducer
+ * 7. imageModalReducer
  */
 const store = configureStore({
   reducer: {
@@ -33,6 +35,7 @@ const store = configureStore({
     notification: notificationReducer,
     toastAlert: toastAlertReducer,
     projects: projectsReducer,
+    modalImage: imageModalReducer,
   },
 });
 

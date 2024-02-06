@@ -1,6 +1,6 @@
 /**
  * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
+ * Last updated: 06 Feb, 2024
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import React from "react";
@@ -13,6 +13,7 @@ import AlreadyLoginServiceProvider from "./provider/already_login/AlreadyLoginSe
 import NotificationProvider from "./provider/notification_provider/NotificationProvider";
 import AlertToastProvider from "./provider/alert_toast_provider/AlertToastProvider";
 import ReduxServiceProvider from "./provider/redux_service_provider/ReduxServiceProvider";
+import ImagePreviewModalProvider from "./provider/image_preview_modal_provider/ImagePreviewModalProvider";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const root = ReactDOM.createRoot(
@@ -22,13 +23,15 @@ root.render(
   <React.StrictMode>
     <ReduxServiceProvider>
       <ThemeProvider>
-        <AlreadyLoginServiceProvider>
-          <NotificationProvider>
-            <AlertToastProvider>
-              <RouterProviderComponent />
-            </AlertToastProvider>
-          </NotificationProvider>
-        </AlreadyLoginServiceProvider>
+        <ImagePreviewModalProvider>
+          <AlreadyLoginServiceProvider>
+            <NotificationProvider>
+              <AlertToastProvider>
+                <RouterProviderComponent />
+              </AlertToastProvider>
+            </NotificationProvider>
+          </AlreadyLoginServiceProvider>
+        </ImagePreviewModalProvider>
       </ThemeProvider>
     </ReduxServiceProvider>
   </React.StrictMode>
