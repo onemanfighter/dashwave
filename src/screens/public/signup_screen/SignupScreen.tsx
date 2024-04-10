@@ -13,7 +13,7 @@ import { SignUpCred } from "../../../service/supabase/supa_auth/actions/AuthSign
 import { signUp } from "../../../service/supabase/supa_auth/AuthApi";
 import { showAlertWithTimeout } from "../../../data_store/slice/ToastAlertSlice";
 import { useDispatch } from "react-redux";
-import { getSuccessAlertData } from "../../../provider/alert_toast_provider/AlertToastProvider";
+import { getSuccessAlertData } from "../../../provider";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

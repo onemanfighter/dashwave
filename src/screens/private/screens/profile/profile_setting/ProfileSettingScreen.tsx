@@ -31,7 +31,7 @@ import NotificationButton, {
 } from "../../../../../components/notification/NotificationButton";
 import { getSocialMediaLink } from "../../../../../util/Utils";
 import { showAlertWithTimeout } from "../../../../../data_store/slice/ToastAlertSlice";
-import { ToastAlertData } from "../../../../../provider/alert_toast_provider/AlertToastProvider";
+import { ToastAlertData } from "../../../../../provider";
 import PageLoadingComponent from "../../../../../components/page_loading/PageLoading";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

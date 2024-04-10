@@ -8,7 +8,7 @@ import {
   ToastAlertData,
   getErrorAlertData,
   getSuccessAlertData,
-} from "../../../../../provider/alert_toast_provider/AlertToastProvider";
+} from "../../../../../provider";
 import { SupabaseProjectsDB } from "../../../supabase_main/Supabase";
 import { ProjectFeature } from "../ProjectsCollection";
 

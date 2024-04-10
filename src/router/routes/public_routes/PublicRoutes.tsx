@@ -10,13 +10,13 @@ import {
   createBrowserRouter,
   createRoutesFromChildren,
 } from "react-router-dom";
-import LazyComponentProvider from "../../../provider/lazy_provider/component/LazyComponent";
-import { LazyAppComponent } from "../../../provider/lazy_provider/lazy_screen/LazyAppScreen";
 import {
-  LazyForgotPasswordScreenComponent,
+  LazyComponentProvider,
+  LazyAppComponent,
   LazyLoginScreenComponent,
   LazySignupScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyPublicScreen";
+  LazyForgotPasswordScreenComponent,
+} from "../../../provider";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

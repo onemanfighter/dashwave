@@ -35,6 +35,9 @@ export {
   LazyPlansAddScreenComponent,
   LazyPlansDeleteScreenComponent,
   LazyPlansEditScreenComponent,
+  LazyPlansMainScreenComponent,
+  LazyPlansPreviewScreenComponent,
+  LazyPlansScreenComponent,
 } from "./LazyPlansScreen";
 
 // LazyPrivateScreen

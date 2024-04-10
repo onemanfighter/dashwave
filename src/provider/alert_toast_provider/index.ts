@@ -1,5 +1,8 @@
 export { default as AlertToastProvider } from "./AlertToastProvider";
-export type { IToastAlertProviderProps } from "./AlertToastProvider";
+export type {
+  IToastAlertProviderProps,
+  ToastAlertData,
+} from "./AlertToastProvider";
 export {
   getErrorAlertData,
   getInfoAlertData,

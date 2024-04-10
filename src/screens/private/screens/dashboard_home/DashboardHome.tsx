@@ -13,7 +13,7 @@ import {
 import NotificationButton, {
   NotificationButtonType,
 } from "../../../../components/notification/NotificationButton";
-import { getErrorAlertData } from "../../../../provider/alert_toast_provider/AlertToastProvider";
+import { getErrorAlertData } from "../../../../provider";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

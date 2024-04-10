@@ -11,55 +11,40 @@ import {
   createRoutesFromChildren,
 } from "react-router-dom";
 import {
-  LazyDashboardScreenComponent,
   LazyHomeScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyPrivateScreen";
-import {
-  LazyProfileMainScreenComponent,
-  LazyProfilePreviewScreenComponent,
-  LazyProfileSettingScreenComponent,
-  LazyProfilePasswordResetScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyProfileScreen";
-import {
-  LazyPlansAddScreenComponent,
-  LazyPlansDeleteScreenComponent,
-  LazyPlansEditScreenComponent,
-  LazyPlansMainScreenComponent,
-  LazyPlansPreviewScreenComponent,
-  LazyPlansScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyPlansScreen";
-import {
-  LazyCredsAddScreenComponent,
-  LazyCredsDeleteScreenComponent,
-  LazyCredsEditScreenComponent,
-  LazyCredsMainScreenComponent,
-  LazyCredsPreviewScreenComponent,
-  LazyCredsScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyCredsScreen";
-import {
-  LazyGoalsAddScreenComponent,
-  LazyGoalsDeleteScreenComponent,
-  LazyGoalsEditScreenComponent,
-  LazyGoalsMainScreenComponent,
-  LazyGoalsPreviewScreenComponent,
-  LazyGoalsScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyGoalsScreen";
-import {
-  LazyExpenseAddScreenComponent,
-  LazyExpenseDeleteScreenComponent,
-  LazyExpenseEditScreenComponent,
-  LazyExpensePreviewScreenComponent,
-  LazyExpenseMainScreenComponent,
-  LazyExpenseScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyExpensesScreen";
-import {
-  LazyProjectAddComponent,
-  LazyProjectDeleteComponent,
-  LazyProjectEditComponent,
+  LazyDashboardScreenComponent,
+  LazyProjectsScreenComponent,
   LazyProjectMainScreenComponent,
   LazyProjectPreviewComponent,
-  LazyProjectsScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyProjectScreen";
+  LazyProjectAddComponent,
+  LazyProjectEditComponent,
+  LazyProjectDeleteComponent,
+  LazyPlansAddScreenComponent,
+  LazyPlansEditScreenComponent,
+  LazyPlansDeleteScreenComponent,
+  LazyExpenseScreenComponent,
+  LazyExpenseMainScreenComponent,
+  LazyExpensePreviewScreenComponent,
+  LazyExpenseAddScreenComponent,
+  LazyExpenseEditScreenComponent,
+  LazyExpenseDeleteScreenComponent,
+  LazyGoalsScreenComponent,
+  LazyGoalsMainScreenComponent,
+  LazyGoalsPreviewScreenComponent,
+  LazyGoalsAddScreenComponent,
+  LazyGoalsEditScreenComponent,
+  LazyGoalsDeleteScreenComponent,
+  LazyProfileMainScreenComponent,
+  LazyCredsMainScreenComponent,
+  LazyProfilePreviewScreenComponent,
+  LazyCredsScreenComponent,
+  LazyCredsPreviewScreenComponent,
+  LazyCredsAddScreenComponent,
+  LazyCredsEditScreenComponent,
+  LazyCredsDeleteScreenComponent,
+  LazyProfilePasswordResetScreenComponent,
+  LazyProfileSettingScreenComponent,
+} from "../../../provider";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
@@ -83,9 +68,9 @@ const privateRouter = createBrowserRouter(
           <Route path=":id" element={<LazyProjectDeleteComponent />} />
         </Route>
       </Route>
-      <Route path="plans" element={<LazyPlansScreenComponent />}>
-        <Route path="" element={<LazyPlansMainScreenComponent />} />
-        <Route path="preview" element={<LazyPlansPreviewScreenComponent />} />
+      <Route path="plans" element={<LazyPlansAddScreenComponent />}>
+        <Route path="" element={<LazyPlansAddScreenComponent />} />
+        <Route path="preview" element={<LazyGoalsPreviewScreenComponent />} />
         <Route path="add" element={<LazyPlansAddScreenComponent />} />
         <Route path="edit" element={<LazyPlansEditScreenComponent />} />
         <Route path="delete" element={<LazyPlansDeleteScreenComponent />} />

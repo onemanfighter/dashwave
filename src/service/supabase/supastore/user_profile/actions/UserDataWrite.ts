@@ -8,7 +8,7 @@ import {
   ToastAlertData,
   getErrorAlertData,
   getSuccessAlertData,
-} from "../../../../../provider/alert_toast_provider/AlertToastProvider";
+} from "../../../../../provider";
 import { getSocialMediaLink } from "../../../../../util/Utils";
 import { SupabaseUsersDB } from "../../../supabase_main/Supabase";
 import {
