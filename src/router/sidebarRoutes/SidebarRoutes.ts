@@ -7,7 +7,7 @@
 /**
  * Routes for the sidebar.
  */
-export const sidebarRoutes = [
+export const SidebarRoutes = [
   {
     name: "Home",
     path: "/dashboard",

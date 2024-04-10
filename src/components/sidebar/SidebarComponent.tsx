@@ -5,10 +5,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { NavLink } from "react-router-dom";
-import {
-  ProfileRoute,
-  sidebarRoutes,
-} from "../../router/sidebarRoutes/SidebarRoutes";
+import { ProfileRoute, SidebarRoutes } from "../../router";
 import TooltipComponent from "../tooltip/TooltipComponent";
 import {
   HomeIcon,
@@ -42,7 +39,7 @@ function SidebarComponent(props: ISidebarComponentProps) {
     <div className=" flex-col text-base-content flex justify-between h-[95%]">
       <ul className="menu p-2 w-full ">
         {/* Sidebar content here */}
-        {sidebarRoutes.map((route, index) => {
+        {SidebarRoutes.map((route, index) => {
           return (
             <TooltipComponent
               key={index}
