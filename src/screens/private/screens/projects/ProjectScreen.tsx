@@ -5,7 +5,6 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { NavLink, Outlet, useLocation } from "react-router-dom";
-import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
 import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from "../../../../assets";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,6 +12,7 @@ import { RootState } from "../../../../data_store/Store";
 import { useEffect } from "react";
 import { getAllProjects } from "../../../../service/supabase/supastore/projects/ProjectsStoreApi";
 import { addProjects } from "../../../../data_store/slice/projects/ProjectsSlice";
+import { TooltipComponent } from "../../../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

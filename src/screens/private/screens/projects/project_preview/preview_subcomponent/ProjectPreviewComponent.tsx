@@ -6,7 +6,6 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useDispatch } from "react-redux";
-import ImagePreviewModalButton from "../../../../../../components/image_preview_modal/ImagePreviewButton";
 import { setModalImage } from "../../../../../../data_store/slice/ImageModalSlice";
 import { ProjectData } from "../../../../../../service/supabase/supastore/projects/ProjectsCollection";
 import {
@@ -14,6 +13,7 @@ import {
   GithubIcon,
   HostingerIcon,
 } from "../../../../../../assets";
+import { ImagePreviewModalButton } from "../../../../../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

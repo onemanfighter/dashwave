@@ -6,11 +6,13 @@
 
 import { useSelector } from "react-redux";
 import { RootState } from "../../data_store/Store";
-import ToastAlertComponent, {
+import {
+  AlertComponentData,
   ToastXPosition,
   ToastYPosition,
-} from "../../components/toast/ToastComponent";
-import { AlertComponentData, AlertType } from "../../components/alert/Alert";
+  ToastAlertComponent,
+  AlertType,
+} from "../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

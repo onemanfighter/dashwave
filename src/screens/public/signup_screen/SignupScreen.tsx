@@ -6,14 +6,12 @@
 
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import LandingIntro from "../../../components/landing_intro/LandingIntro";
-import InputText from "../../../components/text/InputText";
-import ErrorText from "../../../components/text/ErrorText";
 import { SignUpCred } from "../../../service/supabase/supa_auth/actions/AuthSignUp";
 import { signUp } from "../../../service/supabase/supa_auth/AuthApi";
 import { showAlertWithTimeout } from "../../../data_store/slice/ToastAlertSlice";
 import { useDispatch } from "react-redux";
 import { getSuccessAlertData } from "../../../provider";
+import { LandingIntro, InputText, ErrorText } from "../../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

@@ -10,9 +10,10 @@ import {
   NotificationState,
   showNotification,
 } from "../../../../data_store/slice/NotificationSlice";
-import NotificationButton, {
+import {
   NotificationButtonType,
-} from "../../../../components/notification/NotificationButton";
+  NotificationButton,
+} from "../../../../components";
 import { getErrorAlertData } from "../../../../provider";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
