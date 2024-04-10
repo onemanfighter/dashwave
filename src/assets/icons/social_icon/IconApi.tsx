@@ -1,11 +1,11 @@
 import { SocialType } from "../../../service/supabase/supastore/user_profile/UserCollection";
 import FacebookIcon from "./FacebookIcon";
-import { GithubIcon } from "./GithubIcon";
-import { InstagramIcon } from "./InstagramIcon";
-import { LinkedInIcon } from "./LinkedInIcon";
-import { WebsiteIcon } from "./WebsiteIcon";
-import { XIcon } from "./XIcon";
-import { YoutubeIcon } from "./YoutubeIcon";
+import GithubIcon from "./GithubIcon";
+import InstagramIcon from "./InstagramIcon";
+import LinkedInIcon from "./LinkedInIcon";
+import WebsiteIcon from "./WebsiteIcon";
+import XIcon from "./XIcon";
+import YoutubeIcon from "./YoutubeIcon";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
