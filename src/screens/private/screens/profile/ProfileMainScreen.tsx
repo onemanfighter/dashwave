@@ -5,11 +5,13 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { NavLink, Outlet, useLocation } from "react-router-dom";
-import { SettingIcon } from "../../../../assets/icons/profile_icon/SettingsIcon";
-import { ProfileIcon } from "../../../../assets/icons/profile_icon/ProfileIcon";
-import { PasswordResetIcon } from "../../../../assets/icons/profile_icon/PasswordResetIcon";
 import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
+import {
+  ProfileIcon,
+  PasswordResetIcon,
+  SettingsIcon,
+} from "../../../../assets";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
@@ -24,7 +26,7 @@ interface IProfileMainScreenProps {}
 const ProfileRoutes = [
   { title: "Profile preview", icon: <ProfileIcon />, path: "preview" },
   { title: "Reset password", icon: <PasswordResetIcon />, path: "reset" },
-  { title: "Profile setting", icon: <SettingIcon />, path: "settings" },
+  { title: "Profile setting", icon: <SettingsIcon />, path: "settings" },
 ];
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

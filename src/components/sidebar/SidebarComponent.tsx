@@ -9,16 +9,18 @@ import {
   ProfileRoute,
   sidebarRoutes,
 } from "../../router/sidebarRoutes/SidebarRoutes";
-import ProjectIcon from "../../assets/icons/sidebar_icons/ProjectIcon";
-import PlanIcon from "../../assets/icons/sidebar_icons/PlanIcon";
-import ExpenseIcon from "../../assets/icons/sidebar_icons/ExpenseIcon";
-import GoalsIcon from "../../assets/icons/sidebar_icons/GoalsIcon";
-import CredsIcon from "../../assets/icons/sidebar_icons/CredsIcon";
-import { ProfileIcon } from "../../assets/icons/profile_icon/ProfileIcon";
 import TooltipComponent from "../tooltip/TooltipComponent";
-import LearningIcon from "../../assets/icons/sidebar_icons/LearningIcon";
-import ResourceIcon from "../../assets/icons/sidebar_icons/ResourceIcon";
-import HomeIcon from "../../assets/icons/sidebar_icons/HomeIcon";
+import {
+  HomeIcon,
+  ProjectIcon,
+  PlanIcon,
+  ExpenseIcon,
+  GoalsIcon,
+  CredsIcon,
+  ProfileIcon,
+  LearningIcon,
+  ResourceIcon,
+} from "../../assets";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

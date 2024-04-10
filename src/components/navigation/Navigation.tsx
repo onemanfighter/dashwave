@@ -9,11 +9,13 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Theme, setTheme } from "../../data_store/slice/ThemeSlice";
 import { RootState } from "../../data_store/Store";
-import { ProfileIcon } from "../../assets/icons/profile_icon/ProfileIcon";
-import { SettingIcon } from "../../assets/icons/profile_icon/SettingsIcon";
-import { LogoutIcon } from "../../assets/icons/sidebar_icons/LogoutIcon";
-import { PasswordResetIcon } from "../../assets/icons/profile_icon/PasswordResetIcon";
-import { ProfilePlaceholder } from "../../assets/icons/profile_icon/ProfilePlaceholder";
+import {
+  LogoutIcon,
+  PasswordResetIcon,
+  ProfileIcon,
+  ProfilePlaceholder,
+  SettingsIcon,
+} from "../../assets";
 import NavigationToggleButton from "./NavigationToggleButton";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +126,7 @@ function NavigationComponent(props: INavigationComponentProps) {
             </li>
             <li className="m-1">
               <NavLink to={"/profile/settings"}>
-                <SettingIcon />
+                <SettingsIcon />
                 Settings
               </NavLink>
             </li>

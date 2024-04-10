@@ -11,16 +11,18 @@ import {
   SocialLink,
   SocialType,
 } from "../../../../../service/supabase/supastore/user_profile/UserCollection";
-import SocialIcon from "../../../../../assets/icons/social_icon/IconApi";
 import TooltipComponent from "../../../../../components/tooltip/TooltipComponent";
-import NameIcon from "../../../../../assets/icons/profile_icon/NameIcon";
-import EmailIcon from "../../../../../assets/icons/profile_icon/EmailIcon";
-import PlaceIcon from "../../../../../assets/icons/profile_icon/PlaceIcon";
-import TitleIcon from "../../../../../assets/icons/profile_icon/TitleIcon";
-import DateIcon from "../../../../../assets/icons/profile_icon/DateIcon";
-import ExperienceIcon from "../../../../../assets/icons/profile_icon/ExperienceIcon";
-import { ProfilePlaceholder } from "../../../../../assets/icons/profile_icon/ProfilePlaceholder";
 import { getSocialMediaLink } from "../../../../../util/Utils";
+import {
+  NameIcon,
+  EmailIcon,
+  PlaceIcon,
+  TitleIcon,
+  DateIcon,
+  ExperienceIcon,
+  ProfilePlaceholder,
+} from "../../../../../assets";
+import SocialIcon from "../../../../../assets/icons/social_icon/IconApi";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

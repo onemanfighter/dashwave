@@ -1,6 +1,6 @@
 //~~~~~~~ Settings icon ~~~~~~~
 // Summary: This file contains the SVG for the settings icon
-export default function SettingIcon() {
+export default function SettingsIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
