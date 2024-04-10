@@ -1,6 +1,6 @@
 //~~~~~~~ X Icon ~~~~~~~
 // Summary: This file contains the SVG for the x icon
-export function XIcon() {
+export default function XIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

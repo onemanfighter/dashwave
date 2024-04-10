@@ -1,6 +1,6 @@
 //~~~~~~~ Instagram Icon ~~~~~~~
 // Summary: This file contains the SVG for the Instagram icon
-export function InstagramIcon() {
+export default function InstagramIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

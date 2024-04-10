@@ -1,0 +1,10 @@
+export { default as DateIcon } from "./DateIcon";
+export { default as EmailIcon } from "./EmailIcon";
+export { default as ExperienceIcon } from "./ExperienceIcon";
+export { default as NameIcon } from "./NameIcon";
+export { default as PasswordResetIcon } from "./PasswordResetIcon";
+export { default as PlaceIcon } from "./PlaceIcon";
+export { default as ProfileIcon } from "./ProfileIcon";
+export { default as ProfilePlaceholder } from "./ProfilePlaceholder";
+export { default as SettingsIcon } from "./SettingsIcon";
+export { default as TitleIcon } from "./TitleIcon";

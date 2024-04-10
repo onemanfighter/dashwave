@@ -1,6 +1,6 @@
 //~~~~~~ Logout icon ~~~~~~
 // Summary: This file contains the SVG for the logout icon
-export function LogoutIcon() {
+export default function LogoutIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

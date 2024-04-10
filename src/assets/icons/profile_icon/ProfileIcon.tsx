@@ -1,6 +1,6 @@
 //~~~~~~~ Profile Icon ~~~~~~~
 // Summary: This file contains the SVG for the profile icon
-export function ProfileIcon() {
+export default function ProfileIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,6 @@
 //~~~~~~ ProfilePlaceholder icon ~~~~~~~
 // Summary: This file contains the SVG for the profile placeholder icon
-export function ProfilePlaceholder() {
+export default function ProfilePlaceholder() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

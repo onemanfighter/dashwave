@@ -1,6 +1,6 @@
 //~~~~~ Github Icon ~~~~~
 // Summary: This file contains the SVG for the Github icon
-export function GithubIcon() {
+export default function GithubIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
