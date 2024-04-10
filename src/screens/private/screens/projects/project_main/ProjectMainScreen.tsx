@@ -5,7 +5,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useSelector } from "react-redux";
-import { RootState } from "../../../../../data_store/Store";
+import { RootState } from "../../../../../data_store";
 import { ProjectCard, getProjectCardData } from "../../../../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

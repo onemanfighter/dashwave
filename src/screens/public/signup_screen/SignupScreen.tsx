@@ -8,7 +8,7 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { SignUpCred } from "../../../service/supabase/supa_auth/actions/AuthSignUp";
 import { signUp } from "../../../service/supabase/supa_auth/AuthApi";
-import { showAlertWithTimeout } from "../../../data_store/slice/ToastAlertSlice";
+import { showAlertWithTimeout } from "../../../data_store";
 import { useDispatch } from "react-redux";
 import { getSuccessAlertData } from "../../../provider";
 import { LandingIntro, InputText, ErrorText } from "../../../components";

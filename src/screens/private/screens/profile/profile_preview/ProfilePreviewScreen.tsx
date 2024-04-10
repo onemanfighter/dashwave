@@ -5,7 +5,6 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useSelector } from "react-redux";
-import { RootState } from "../../../../../data_store/Store";
 import {
   SocialLink,
   SocialType,
@@ -22,6 +21,7 @@ import {
 } from "../../../../../assets";
 import SocialIcon from "../../../../../assets/icons/social_icon/IconApi";
 import { TitleCard, TooltipComponent } from "../../../../../components";
+import { RootState } from "../../../../../data_store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

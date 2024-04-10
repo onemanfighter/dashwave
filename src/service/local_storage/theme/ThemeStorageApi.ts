@@ -4,7 +4,7 @@
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-import { Theme } from "../../../data_store/slice/ThemeSlice";
+import { Theme } from "../../../data_store";
 import { themeKey } from "../token_constants/StorageConstant";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

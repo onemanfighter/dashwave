@@ -7,8 +7,6 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Theme, setTheme } from "../../data_store/slice/ThemeSlice";
-import { RootState } from "../../data_store/Store";
 import {
   LogoutIcon,
   PasswordResetIcon,
@@ -17,6 +15,7 @@ import {
   SettingsIcon,
 } from "../../assets";
 import NavigationToggleButton from "./NavigationToggleButton";
+import { RootState, Theme, setTheme } from "../../data_store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

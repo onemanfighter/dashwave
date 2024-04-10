@@ -5,7 +5,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { SupabaseAuth } from "../../supabase_main/Supabase";
-import { AuthData } from "../../../../data_store/slice/AuthSlice";
+import { AuthData } from "../../../../data_store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

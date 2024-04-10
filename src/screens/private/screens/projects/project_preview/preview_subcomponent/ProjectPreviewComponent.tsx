@@ -6,7 +6,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useDispatch } from "react-redux";
-import { setModalImage } from "../../../../../../data_store/slice/ImageModalSlice";
+import { setModalImage } from "../../../../../../data_store";
 import { ProjectData } from "../../../../../../service/supabase/supastore/projects/ProjectsCollection";
 import {
   WebsiteIcon,
