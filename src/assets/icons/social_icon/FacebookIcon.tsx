@@ -1,6 +1,6 @@
 //~~~~~~ Facebook Icon ~~~~~~~
 // Summary: This file contains the SVG for the facebook icon
-export default function FacebookIcon() {
+export function FacebookIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

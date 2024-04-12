@@ -5,10 +5,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import React from "react";
-import SuccessIcon from "../../assets/icons/alert_icon/SuccessIcon";
-import InfoIcon from "../../assets/icons/alert_icon/InfoIcon";
-import WarningIcon from "../../assets/icons/alert_icon/WarningIcon";
-import ErrorIcon from "../../assets/icons/alert_icon/ErrorIcon";
+import { SuccessIcon, InfoIcon, WarningIcon, ErrorIcon } from "../../assets";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
