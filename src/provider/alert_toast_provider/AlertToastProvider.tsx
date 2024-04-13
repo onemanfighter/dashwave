@@ -10,7 +10,7 @@ import ToastAlertComponent, {
   ToastXPosition,
   ToastYPosition,
 } from "../../components/toast/ToastComponent";
-import { AlertComponentData, AlertType } from "../../components/alert/Alert";
+import { AlertComponentData, AlertType } from "../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
