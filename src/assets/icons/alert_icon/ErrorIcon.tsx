@@ -1,6 +1,6 @@
 //~~~~~~ Error Icon ~~~~~~
 // Summary: This file contains the SVG for the error icon
-export default function ErrorIcon() {
+export function ErrorIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

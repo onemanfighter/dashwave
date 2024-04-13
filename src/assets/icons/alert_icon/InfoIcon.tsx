@@ -1,6 +1,6 @@
 //~~~ Info icon ~~~
 // Summary: This file contains the SVG for the info icon
-export default function InfoIcon() {
+export function InfoIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

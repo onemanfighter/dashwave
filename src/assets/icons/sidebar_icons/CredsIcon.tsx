@@ -1,6 +1,6 @@
 //~~~~~~ Creds icon ~~~~~~
 // Summary: This file contains the SVG for the creds icon
-export default function CredsIcon() {
+export function CredsIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

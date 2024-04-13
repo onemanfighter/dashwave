@@ -4,7 +4,7 @@
 
 //~~~~~ Learning Icon ~~~~~
 // Summary: This file contains the SVG for the learning icon
-export default function LearningIcon() {
+export function LearningIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

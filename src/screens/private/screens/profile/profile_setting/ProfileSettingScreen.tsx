@@ -13,13 +13,7 @@ import {
   SocialType,
   UserProfileData,
 } from "../../../../../service/supabase/supastore/user_profile/UserCollection";
-import FacebookIcon from "../../../../../assets/icons/social_icon/FacebookIcon";
-import { InstagramIcon } from "../../../../../assets/icons/social_icon/InstagramIcon";
-import { GithubIcon } from "../../../../../assets/icons/social_icon/GithubIcon";
-import { LinkedInIcon } from "../../../../../assets/icons/social_icon/LinkinIcon";
-import { XIcon } from "../../../../../assets/icons/social_icon/XIcon";
-import { YoutubeIcon } from "../../../../../assets/icons/social_icon/YoutubeIcon";
-import { WebsiteIcon } from "../../../../../assets/icons/social_icon/WebsiteIcon";
+
 import { useState } from "react";
 import { userProfileDataUpdate } from "../../../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
 import { updateProfile } from "../../../../../data_store/slice/ProfileSlice";
@@ -31,6 +25,15 @@ import { getSocialMediaLink } from "../../../../../util/Utils";
 import { showAlertWithTimeout } from "../../../../../data_store/slice/ToastAlertSlice";
 import { ToastAlertData } from "../../../../../provider/alert_toast_provider/AlertToastProvider";
 import PageLoadingComponent from "../../../../../components/page_loading/PageLoading";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  GithubIcon,
+  LinkedInIcon,
+  XIcon,
+  YoutubeIcon,
+  WebsiteIcon,
+} from "../../../../../assets";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

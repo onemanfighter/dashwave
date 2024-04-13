@@ -1,6 +1,6 @@
 //~~~~~~ OverviewIcon ~~~~~~
 // Summary: This file contains the SVG for the overview icon
-export default function OverviewIcon() {
+export function OverviewIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

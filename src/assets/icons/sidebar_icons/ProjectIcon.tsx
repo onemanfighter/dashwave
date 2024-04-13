@@ -1,6 +1,6 @@
 //~~~~~~~ ProjectIcon icon ~~~~~~~
 // Summary: This file contains the SVG for the project icon
-export default function ProjectIcon() {
+export function ProjectIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

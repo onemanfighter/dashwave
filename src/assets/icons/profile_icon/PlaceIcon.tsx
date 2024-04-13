@@ -1,6 +1,6 @@
 //~~~~~~ Place icon ~~~~~~
 // Summary: This file contains the SVG for the place icon
-export default function PlaceIcon() {
+export function PlaceIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

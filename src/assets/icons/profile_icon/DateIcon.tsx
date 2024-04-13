@@ -4,7 +4,7 @@
 
 //~~~ DateIcon ~~~
 // Summary: This file contains the SVG for the date icon
-export default function DateIcon() {
+export function DateIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

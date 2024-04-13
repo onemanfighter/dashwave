@@ -1,6 +1,6 @@
 //~~~~~~ HomeIcon icon ~~~~~~
 // Summary: This file contains the SVG for the home icon
-export default function HomeIcon() {
+export function HomeIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

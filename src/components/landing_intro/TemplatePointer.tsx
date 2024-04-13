@@ -4,7 +4,7 @@
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-import LoginPageIllustration from "../../assets/illustrations/landing_page/Login";
+import { LoginPageIllustration } from "../../assets";
 
 /**
  * Template pointers for the landing page.

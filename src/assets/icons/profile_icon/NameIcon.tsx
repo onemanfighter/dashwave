@@ -1,6 +1,6 @@
 //~~~ Name icon ~~~
 // Summary: This file contains the SVG for the name icon
-export default function NameIcon() {
+export function NameIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

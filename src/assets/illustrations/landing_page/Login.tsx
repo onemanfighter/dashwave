@@ -1,6 +1,6 @@
 //~~~~~~ Login page illustration ~~~~~~
 // Summary: This file contains the SVG for the Login page illustration
-function LoginPageIllustration() {
+export function LoginPageIllustration() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500">
       <g>
@@ -523,5 +523,3 @@ function LoginPageIllustration() {
     </svg>
   );
 }
-
-export default LoginPageIllustration;

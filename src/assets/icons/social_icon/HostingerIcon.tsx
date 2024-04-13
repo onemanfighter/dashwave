@@ -1,6 +1,6 @@
 //~~~~~~ Hostinger Icon ~~~~~~~
 // Svg icon for the hostinger icon.
-function HostingerIcon() {
+export function HostingerIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,5 +19,3 @@ function HostingerIcon() {
     </svg>
   );
 }
-
-export default HostingerIcon;

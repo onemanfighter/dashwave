@@ -6,16 +6,13 @@
 
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
-import { AddIcon } from "../../../../assets/icons/project_icon/AddIcon";
-import EditIcon from "../../../../assets/icons/project_icon/EditIcon";
-import PreviewIcon from "../../../../assets/icons/project_icon/PreviewIcon";
-import DeleteIcon from "../../../../assets/icons/cred_icon/DeleteIcon";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../data_store/Store";
 import { useEffect } from "react";
 import { getAllProjects } from "../../../../service/supabase/supastore/projects/ProjectsStoreApi";
 import { addProjects } from "../../../../data_store/slice/projects/ProjectsSlice";
+import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from "../../../../assets";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

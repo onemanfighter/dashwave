@@ -1,6 +1,6 @@
 //~~~~~ Preview Icon ~~~~~
 // Summary: This file contains the SVG for the preview icon
-export default function PreviewIcon() {
+export function PreviewIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,6 @@
 //~~~~~~ Goals icon ~~~~~~
 // Summary: This file contains the SVG for the goals icon
-export default function GoalsIcon() {
+export function GoalsIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
