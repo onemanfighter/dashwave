@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../../../data_store/Store";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ProjectCard, getProjectCardData } from "../../../../../components";
+import { ProjectCard, getProjectCardData } from "components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

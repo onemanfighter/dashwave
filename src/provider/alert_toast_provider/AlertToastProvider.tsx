@@ -12,7 +12,7 @@ import {
   ToastAlertComponent,
   ToastXPosition,
   ToastYPosition,
-} from "../../components";
+} from "components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

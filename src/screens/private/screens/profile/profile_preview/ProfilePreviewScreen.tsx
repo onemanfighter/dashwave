@@ -10,7 +10,6 @@ import {
   SocialLink,
   SocialType,
 } from "../../../../../service/supabase/supastore/user_profile/UserCollection";
-import { TooltipComponent } from "../../../../../components";
 import { getSocialMediaLink } from "../../../../../util/Utils";
 import {
   NameIcon,
@@ -22,7 +21,7 @@ import {
   ProfilePlaceholder,
   SocialIcon,
 } from "../../../../../assets";
-import { TitleCard } from "../../../../../components";
+import { TitleCard, TooltipComponent } from "components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
