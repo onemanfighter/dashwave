@@ -5,14 +5,12 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useDispatch, useSelector } from "react-redux";
-import { showNotification } from "../../../../../store/slice/notification/NotificationSlice";
 import {
   NotificationButton,
   NotificationButtonType,
   PageLoadingComponent,
   TitleCard,
 } from "components";
-import { RootState } from "../../../../../store/Store";
 import {
   SocialType,
   UserProfileData,
@@ -20,10 +18,7 @@ import {
 
 import { useState } from "react";
 import { userProfileDataUpdate } from "../../../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
-import { updateProfile } from "../../../../../store/slice/profile/ProfileSlice";
-import { getAuthUserID } from "../../../../../store/slice/auth/AuthSlice";
 import { getSocialMediaLink } from "../../../../../util/Utils";
-import { showAlertWithTimeout } from "../../../../../store/slice/toast_alert/ToastAlertSlice";
 import { ToastAlertData } from "../../../../../provider/alert_toast_provider/AlertToastProvider";
 import {
   FacebookIcon,
@@ -35,6 +30,13 @@ import {
   WebsiteIcon,
 } from "assets";
 import { InputText, InputType } from "components";
+import {
+  RootState,
+  showAlertWithTimeout,
+  updateProfile,
+  getAuthUserID,
+  showNotification,
+} from "store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

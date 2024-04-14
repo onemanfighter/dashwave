@@ -4,7 +4,7 @@
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-import { UserData } from "../../../../../store/slice/auth/AuthSlice";
+import { UserData } from "store";
 import { SupabaseUsersDB } from "../../../supabase_main/Supabase";
 import { SocialLink, SocialType, UserProfileData } from "../UserCollection";
 

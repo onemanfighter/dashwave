@@ -8,11 +8,10 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { TooltipComponent } from "components";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../../store/Store";
 import { useEffect } from "react";
 import { getAllProjects } from "../../../../service/supabase/supastore/projects/ProjectsStoreApi";
-import { addProjects } from "../../../../store/slice/projects/ProjectsSlice";
 import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from "assets";
+import { RootState, addProjects } from "store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

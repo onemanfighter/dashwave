@@ -5,7 +5,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useSelector } from "react-redux";
-import { RootState } from "../../../../../store/Store";
+import { RootState } from "store";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProjectCard, getProjectCardData } from "components";

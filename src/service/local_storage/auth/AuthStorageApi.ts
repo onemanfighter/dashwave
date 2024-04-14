@@ -4,7 +4,7 @@
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-import { AuthData } from "../../../store/slice/auth/AuthSlice";
+import { AuthData } from "store";
 import { AuthTokenKey } from "../token_constants/StorageConstant";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -6,16 +6,16 @@
 
 import { Outlet } from "react-router-dom";
 import { batch, useDispatch, useSelector } from "react-redux";
-import { onSignOut } from "../../../store/slice/auth/AuthSlice";
 import { signOut } from "../../../service/supabase/supa_auth/AuthApi";
 import { useCallback, useEffect, useState } from "react";
+import { NavigationComponent, SidebarComponent } from "components";
 import {
+  RootState,
+  onSignOut,
   removeProfile,
   syncForTheFirstTime,
   updateProfile,
-} from "../../../store/slice/profile/ProfileSlice";
-import { RootState } from "../../../store/Store";
-import { NavigationComponent, SidebarComponent } from "components";
+} from "store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
