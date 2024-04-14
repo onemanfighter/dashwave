@@ -5,7 +5,6 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useDispatch, useSelector } from "react-redux";
-import InputText, { InputType } from "../../../../../components/text/InputText";
 import { showNotification } from "../../../../../data_store/slice/NotificationSlice";
 import {
   NotificationButton,
@@ -35,6 +34,7 @@ import {
   YoutubeIcon,
   WebsiteIcon,
 } from "../../../../../assets";
+import { InputText, InputType } from "../../../../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
