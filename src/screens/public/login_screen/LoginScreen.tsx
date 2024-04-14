@@ -10,9 +10,9 @@ import { ErrorText, InputText, InputType, LandingIntro } from "components";
 
 import { LoginCred } from "../../../service/supabase/supa_auth/actions/AuthSignIn";
 import { signIn } from "../../../service/supabase/supa_auth/AuthApi";
-import { AuthData, onLogin } from "../../../data_store/slice/AuthSlice";
 import { useDispatch } from "react-redux";
 import { validatePassword } from "../../../util/input/Input";
+import { AuthData, onLogin } from "store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

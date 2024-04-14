@@ -5,13 +5,13 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { configureStore } from "@reduxjs/toolkit";
-import authReducer from "./slice/AuthSlice";
-import themeReducer from "./slice/ThemeSlice";
-import notificationReducer from "./slice/NotificationSlice";
-import profileReducer from "./slice/ProfileSlice";
-import toastAlertReducer from "./slice/ToastAlertSlice";
+import authReducer from "./slice/auth/AuthSlice";
+import themeReducer from "./slice/theme/ThemeSlice";
+import notificationReducer from "./slice/notification/NotificationSlice";
+import profileReducer from "./slice/profile/ProfileSlice";
+import toastAlertReducer from "./slice/toast_alert/ToastAlertSlice";
 import projectsReducer from "./slice/projects/ProjectsSlice";
-import imageModalReducer from "./slice/ImageModalSlice";
+import imageModalReducer from "./slice/image_modal/ImageModalSlice";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

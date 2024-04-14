@@ -5,14 +5,13 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { batch, useDispatch } from "react-redux";
-import { showAlertWithTimeout } from "../../../../data_store/slice/ToastAlertSlice";
-import {
-  NotificationState,
-  showNotification,
-} from "../../../../data_store/slice/NotificationSlice";
-
 import { getErrorAlertData } from "../../../../provider/alert_toast_provider/AlertToastProvider";
 import { NotificationButton, NotificationButtonType } from "components";
+import {
+  NotificationState,
+  showAlertWithTimeout,
+  showNotification,
+} from "store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
