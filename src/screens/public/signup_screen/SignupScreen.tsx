@@ -6,7 +6,7 @@
 
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { ErrorText, InputText, LandingIntro } from "../../../components";
+import { ErrorText, InputText, LandingIntro } from "components";
 import { SignUpCred } from "../../../service/supabase/supa_auth/actions/AuthSignUp";
 import { signUp } from "../../../service/supabase/supa_auth/AuthApi";
 import { showAlertWithTimeout } from "../../../data_store/slice/ToastAlertSlice";

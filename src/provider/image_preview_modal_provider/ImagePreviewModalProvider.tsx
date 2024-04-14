@@ -6,7 +6,7 @@
 
 import { useSelector } from "react-redux";
 import { RootState } from "../../data_store/Store";
-import { ImagePreviewModal } from "../../components";
+import { ImagePreviewModal } from "components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

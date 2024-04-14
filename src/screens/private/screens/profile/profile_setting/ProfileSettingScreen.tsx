@@ -11,7 +11,7 @@ import {
   NotificationButtonType,
   PageLoadingComponent,
   TitleCard,
-} from "../../../../../components";
+} from "components";
 import { RootState } from "../../../../../data_store/Store";
 import {
   SocialType,
@@ -34,7 +34,7 @@ import {
   YoutubeIcon,
   WebsiteIcon,
 } from "../../../../../assets";
-import { InputText, InputType } from "../../../../../components";
+import { InputText, InputType } from "components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

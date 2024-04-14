@@ -8,7 +8,6 @@ import { Outlet } from "react-router-dom";
 import { batch, useDispatch, useSelector } from "react-redux";
 import { onSignOut } from "../../../data_store/slice/AuthSlice";
 import { signOut } from "../../../service/supabase/supa_auth/AuthApi";
-import { SidebarComponent } from "../../../components";
 import { useCallback, useEffect, useState } from "react";
 import {
   removeProfile,
@@ -16,7 +15,7 @@ import {
   updateProfile,
 } from "../../../data_store/slice/ProfileSlice";
 import { RootState } from "../../../data_store/Store";
-import { NavigationComponent } from "../../../components";
+import { NavigationComponent, SidebarComponent } from "components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

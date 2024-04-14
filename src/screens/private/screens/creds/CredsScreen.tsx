@@ -12,7 +12,7 @@ import {
   AddIcon,
   EditIcon,
 } from "../../../../assets";
-import { TooltipComponent } from "../../../../components";
+import { TooltipComponent } from "components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

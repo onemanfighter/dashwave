@@ -5,13 +5,13 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { NavLink, Outlet, useLocation } from "react-router-dom";
-import { TooltipComponent } from "../../../../components";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 import {
   ProfileIcon,
   PasswordResetIcon,
   SettingsIcon,
 } from "../../../../assets";
+import { TooltipComponent } from "components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
