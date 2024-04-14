@@ -5,7 +5,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useDispatch } from "react-redux";
-import { onSignOut } from "../../data_store/slice/AuthSlice";
+import { onSignOut } from "../../data_store/slice/auth/AuthSlice";
 import { useEffect } from "react";
 import { alreadySignedIn } from "../../service/supabase/supa_auth/AuthApi";
 

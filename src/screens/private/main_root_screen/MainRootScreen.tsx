@@ -6,14 +6,14 @@
 
 import { Outlet } from "react-router-dom";
 import { batch, useDispatch, useSelector } from "react-redux";
-import { onSignOut } from "../../../data_store/slice/AuthSlice";
+import { onSignOut } from "../../../data_store/slice/auth/AuthSlice";
 import { signOut } from "../../../service/supabase/supa_auth/AuthApi";
 import { useCallback, useEffect, useState } from "react";
 import {
   removeProfile,
   syncForTheFirstTime,
   updateProfile,
-} from "../../../data_store/slice/ProfileSlice";
+} from "../../../data_store/slice/profile/ProfileSlice";
 import { RootState } from "../../../data_store/Store";
 import { NavigationComponent, SidebarComponent } from "components";
 

@@ -8,13 +8,13 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import {
   SocialType,
   UserProfileData,
-} from "../../service/supabase/supastore/user_profile/UserCollection";
+} from "../../../service/supabase/supastore/user_profile/UserCollection";
 import {
   getProfileKeyData,
   storeProfileKeyData,
-} from "../../service/local_storage/profile/ProfileStorageApi";
-import { userProfileDataRead } from "../../service/supabase/supastore/user_profile/UserProfileStoreApi";
-import { getAuthData } from "./AuthSlice";
+} from "../../../service/local_storage/profile/ProfileStorageApi";
+import { userProfileDataRead } from "../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
+import { getAuthData } from "../auth/AuthSlice";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

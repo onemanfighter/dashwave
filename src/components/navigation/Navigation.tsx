@@ -7,7 +7,7 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Theme, setTheme } from "../../data_store/slice/ThemeSlice";
+import { Theme, setTheme } from "../../data_store/slice/theme/ThemeSlice";
 import { RootState } from "../../data_store/Store";
 import NavigationToggleButton from "./NavigationToggleButton";
 import {

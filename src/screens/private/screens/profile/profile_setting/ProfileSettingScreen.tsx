@@ -5,7 +5,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useDispatch, useSelector } from "react-redux";
-import { showNotification } from "../../../../../data_store/slice/NotificationSlice";
+import { showNotification } from "../../../../../data_store/slice/notification/NotificationSlice";
 import {
   NotificationButton,
   NotificationButtonType,
@@ -20,10 +20,10 @@ import {
 
 import { useState } from "react";
 import { userProfileDataUpdate } from "../../../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
-import { updateProfile } from "../../../../../data_store/slice/ProfileSlice";
-import { getAuthUserID } from "../../../../../data_store/slice/AuthSlice";
+import { updateProfile } from "../../../../../data_store/slice/profile/ProfileSlice";
+import { getAuthUserID } from "../../../../../data_store/slice/auth/AuthSlice";
 import { getSocialMediaLink } from "../../../../../util/Utils";
-import { showAlertWithTimeout } from "../../../../../data_store/slice/ToastAlertSlice";
+import { showAlertWithTimeout } from "../../../../../data_store/slice/toast_alert/ToastAlertSlice";
 import { ToastAlertData } from "../../../../../provider/alert_toast_provider/AlertToastProvider";
 import {
   FacebookIcon,
