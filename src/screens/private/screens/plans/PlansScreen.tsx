@@ -7,12 +7,7 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { TooltipComponent } from "components";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
-import {
-  OverviewIcon,
-  DeleteIcon,
-  AddIcon,
-  EditIcon,
-} from "../../../../assets";
+import { OverviewIcon, DeleteIcon, AddIcon, EditIcon } from "assets";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

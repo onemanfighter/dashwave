@@ -20,7 +20,7 @@ import {
   ExperienceIcon,
   ProfilePlaceholder,
   SocialIcon,
-} from "../../../../../assets";
+} from "assets";
 import { TitleCard, TooltipComponent } from "components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
