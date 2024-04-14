@@ -5,7 +5,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { NavLink, Outlet, useLocation } from "react-router-dom";
-import TooltipComponent from "../../../../components/tooltip/TooltipComponent";
+import { TooltipComponent } from "../../../../components";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../data_store/Store";

@@ -5,9 +5,13 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useDispatch, useSelector } from "react-redux";
-import InputText, { InputType } from "../../../../../components/text/InputText";
 import { showNotification } from "../../../../../data_store/slice/NotificationSlice";
-import TitleCard from "../../../../../components/card/TitleCard";
+import {
+  NotificationButton,
+  NotificationButtonType,
+  PageLoadingComponent,
+  TitleCard,
+} from "../../../../../components";
 import { RootState } from "../../../../../data_store/Store";
 import {
   SocialType,
@@ -18,13 +22,9 @@ import { useState } from "react";
 import { userProfileDataUpdate } from "../../../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
 import { updateProfile } from "../../../../../data_store/slice/ProfileSlice";
 import { getAuthUserID } from "../../../../../data_store/slice/AuthSlice";
-import NotificationButton, {
-  NotificationButtonType,
-} from "../../../../../components/notification/NotificationButton";
 import { getSocialMediaLink } from "../../../../../util/Utils";
 import { showAlertWithTimeout } from "../../../../../data_store/slice/ToastAlertSlice";
 import { ToastAlertData } from "../../../../../provider/alert_toast_provider/AlertToastProvider";
-import PageLoadingComponent from "../../../../../components/page_loading/PageLoading";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -34,6 +34,7 @@ import {
   YoutubeIcon,
   WebsiteIcon,
 } from "../../../../../assets";
+import { InputText, InputType } from "../../../../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

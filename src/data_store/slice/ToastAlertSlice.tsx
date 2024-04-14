@@ -5,10 +5,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import {
-  ToastXPosition,
-  ToastYPosition,
-} from "../../components/toast/ToastComponent";
+import { ToastXPosition, ToastYPosition } from "../../components";
 import { AlertType } from "../../components/alert/Alert";
 import { ToastAlertData } from "../../provider/alert_toast_provider/AlertToastProvider";
 

@@ -5,13 +5,12 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useSelector } from "react-redux";
-import TitleCard from "../../../../../components/card/TitleCard";
 import { RootState } from "../../../../../data_store/Store";
 import {
   SocialLink,
   SocialType,
 } from "../../../../../service/supabase/supastore/user_profile/UserCollection";
-import TooltipComponent from "../../../../../components/tooltip/TooltipComponent";
+import { TooltipComponent } from "../../../../../components";
 import { getSocialMediaLink } from "../../../../../util/Utils";
 import {
   NameIcon,
@@ -23,6 +22,7 @@ import {
   ProfilePlaceholder,
   SocialIcon,
 } from "../../../../../assets";
+import { TitleCard } from "../../../../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
