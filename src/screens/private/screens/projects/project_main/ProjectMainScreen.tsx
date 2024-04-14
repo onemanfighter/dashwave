@@ -5,10 +5,8 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useSelector } from "react-redux";
-import ProjectCard, {
-  getProjectCardData,
-} from "../../../../../components/card/ProjectCard";
 import { RootState } from "../../../../../data_store/Store";
+import { ProjectCard, getProjectCardData } from "../../../../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

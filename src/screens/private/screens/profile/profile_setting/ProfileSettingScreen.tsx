@@ -7,7 +7,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import InputText, { InputType } from "../../../../../components/text/InputText";
 import { showNotification } from "../../../../../data_store/slice/NotificationSlice";
-import TitleCard from "../../../../../components/card/TitleCard";
+import { TitleCard } from "../../../../../components";
 import { RootState } from "../../../../../data_store/Store";
 import {
   SocialType,

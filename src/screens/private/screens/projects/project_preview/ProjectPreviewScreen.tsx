@@ -8,9 +8,6 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { RootState } from "../../../../../data_store/Store";
 import { useEffect, useState } from "react";
-import ProjectCard, {
-  getProjectCardData,
-} from "../../../../../components/card/ProjectCard";
 import ProjectPreviewComponent from "./ProjectPreviewComponent";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
