@@ -10,6 +10,7 @@ import { showNotification } from "../../../../../data_store/slice/NotificationSl
 import {
   NotificationButton,
   NotificationButtonType,
+  PageLoadingComponent,
   TitleCard,
 } from "../../../../../components";
 import { RootState } from "../../../../../data_store/Store";
@@ -25,7 +26,6 @@ import { getAuthUserID } from "../../../../../data_store/slice/AuthSlice";
 import { getSocialMediaLink } from "../../../../../util/Utils";
 import { showAlertWithTimeout } from "../../../../../data_store/slice/ToastAlertSlice";
 import { ToastAlertData } from "../../../../../provider/alert_toast_provider/AlertToastProvider";
-import PageLoadingComponent from "../../../../../components/page_loading/PageLoading";
 import {
   FacebookIcon,
   InstagramIcon,
