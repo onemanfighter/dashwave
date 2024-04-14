@@ -6,7 +6,7 @@
 
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import LandingIntro from "../../../components/landing_intro/LandingIntro";
+import { LandingIntro } from "../../../components";
 import InputText from "../../../components/text/InputText";
 import ErrorText from "../../../components/text/ErrorText";
 import { SignUpCred } from "../../../service/supabase/supa_auth/actions/AuthSignUp";

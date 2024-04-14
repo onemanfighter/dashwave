@@ -8,9 +8,9 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ErrorText from "../../../components/text/ErrorText";
 import InputText, { InputType } from "../../../components/text/InputText";
-import LandingIntro from "../../../components/landing_intro/LandingIntro";
 import { forgotPassword } from "../../../service/supabase/supa_auth/AuthApi";
 import { validateEmail } from "../../../util/input/Input";
+import { LandingIntro } from "../../../components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
