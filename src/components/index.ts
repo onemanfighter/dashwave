@@ -6,3 +6,4 @@ export * from "./landing_intro";
 export * from "./navigation";
 export * from "./notification";
 export * from "./page_loading";
+export * from "./sidebar";
