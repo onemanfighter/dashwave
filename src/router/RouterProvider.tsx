@@ -8,7 +8,7 @@ import { RouterProvider } from "react-router-dom";
 import privateRouter from "./routes/private_routes/PrivateRoutes";
 import publicRouter from "./routes/public_routes/PublicRoutes";
 import { useSelector } from "react-redux";
-import { RootState } from "../data_store/Store";
+import { RootState } from "../store/Store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

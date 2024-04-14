@@ -5,8 +5,8 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useSelector } from "react-redux";
-import { Theme } from "../../data_store/slice/theme/ThemeSlice";
-import { RootState } from "../../data_store/Store";
+import { Theme } from "../../store/slice/theme/ThemeSlice";
+import { RootState } from "../../store/Store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

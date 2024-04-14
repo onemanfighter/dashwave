@@ -6,7 +6,7 @@
 
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { RootState } from "../../../../../data_store/Store";
+import { RootState } from "../../../../../store/Store";
 import { useEffect, useState } from "react";
 import ProjectPreviewComponent from "./ProjectPreviewComponent";
 

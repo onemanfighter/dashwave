@@ -5,14 +5,14 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useDispatch, useSelector } from "react-redux";
-import { showNotification } from "../../../../../data_store/slice/notification/NotificationSlice";
+import { showNotification } from "../../../../../store/slice/notification/NotificationSlice";
 import {
   NotificationButton,
   NotificationButtonType,
   PageLoadingComponent,
   TitleCard,
 } from "components";
-import { RootState } from "../../../../../data_store/Store";
+import { RootState } from "../../../../../store/Store";
 import {
   SocialType,
   UserProfileData,
@@ -20,10 +20,10 @@ import {
 
 import { useState } from "react";
 import { userProfileDataUpdate } from "../../../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
-import { updateProfile } from "../../../../../data_store/slice/profile/ProfileSlice";
-import { getAuthUserID } from "../../../../../data_store/slice/auth/AuthSlice";
+import { updateProfile } from "../../../../../store/slice/profile/ProfileSlice";
+import { getAuthUserID } from "../../../../../store/slice/auth/AuthSlice";
 import { getSocialMediaLink } from "../../../../../util/Utils";
-import { showAlertWithTimeout } from "../../../../../data_store/slice/toast_alert/ToastAlertSlice";
+import { showAlertWithTimeout } from "../../../../../store/slice/toast_alert/ToastAlertSlice";
 import { ToastAlertData } from "../../../../../provider/alert_toast_provider/AlertToastProvider";
 import {
   FacebookIcon,

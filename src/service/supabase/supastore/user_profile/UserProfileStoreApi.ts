@@ -4,7 +4,7 @@
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-import { UserData } from "../../../../data_store/slice/auth/AuthSlice";
+import { UserData } from "../../../../store/slice/auth/AuthSlice";
 import { ToastAlertData } from "../../../../provider/alert_toast_provider/AlertToastProvider";
 import { UserProfileData } from "./UserCollection";
 import { getUserUsingId } from "./actions/UserDataRead";

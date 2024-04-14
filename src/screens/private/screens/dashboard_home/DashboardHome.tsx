@@ -5,11 +5,11 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { batch, useDispatch } from "react-redux";
-import { showAlertWithTimeout } from "../../../../data_store/slice/toast_alert/ToastAlertSlice";
+import { showAlertWithTimeout } from "../../../../store/slice/toast_alert/ToastAlertSlice";
 import {
   NotificationState,
   showNotification,
-} from "../../../../data_store/slice/notification/NotificationSlice";
+} from "../../../../store/slice/notification/NotificationSlice";
 
 import { getErrorAlertData } from "../../../../provider/alert_toast_provider/AlertToastProvider";
 import { NotificationButton, NotificationButtonType } from "components";
