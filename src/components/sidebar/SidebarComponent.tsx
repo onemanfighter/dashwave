@@ -19,7 +19,7 @@ import {
   ProfileIcon,
   ProjectIcon,
   ResourceIcon,
-} from "../../assets";
+} from "assets";
 import TooltipComponent from "../tooltip/TooltipComponent";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

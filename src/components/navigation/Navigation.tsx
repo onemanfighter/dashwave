@@ -16,7 +16,7 @@ import {
   PasswordResetIcon,
   SettingsIcon,
   LogoutIcon,
-} from "../../assets";
+} from "assets";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

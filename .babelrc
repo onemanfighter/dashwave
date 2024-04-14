@@ -6,7 +6,8 @@
         "root": ["./src"],
         "extensions": [".ts", ".tsx", ".jsx", ".js", ".json"],
         "alias": {
-          "components": "./src/components"
+          "components": "./src/components",
+          "assets": "./src/assets"
         }
       }
     ]

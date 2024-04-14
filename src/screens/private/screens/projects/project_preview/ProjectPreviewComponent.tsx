@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { ImagePreviewModalButton } from "components";
 import { setModalImage } from "../../../../../data_store/slice/ImageModalSlice";
 import { ProjectData } from "../../../../../service/supabase/supastore/projects/ProjectsCollection";
-import { WebsiteIcon, GithubIcon, HostingerIcon } from "../../../../../assets";
+import { WebsiteIcon, GithubIcon, HostingerIcon } from "assets";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**

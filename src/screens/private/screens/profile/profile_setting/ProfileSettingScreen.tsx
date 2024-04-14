@@ -33,7 +33,7 @@ import {
   XIcon,
   YoutubeIcon,
   WebsiteIcon,
-} from "../../../../../assets";
+} from "assets";
 import { InputText, InputType } from "components";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
