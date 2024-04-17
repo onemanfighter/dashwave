@@ -9,6 +9,7 @@
           "components": "./src/components",
           "assets": "./src/assets",
           "provider": "./src/provider",
+          "store": "./src/store",
           "router": "./src/router"
         }
       }
