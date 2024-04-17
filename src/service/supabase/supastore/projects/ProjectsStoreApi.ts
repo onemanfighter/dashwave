@@ -4,7 +4,7 @@
  */
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-import { ToastAlertData } from "../../../../provider/alert_toast_provider/AlertToastProvider";
+import { ToastAlertData } from "provider";
 import { ProjectData } from "./ProjectsCollection";
 import {
   getAllProjectForMainScreen,

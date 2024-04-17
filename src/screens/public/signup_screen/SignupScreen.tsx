@@ -10,7 +10,7 @@ import { ErrorText, InputText, LandingIntro } from "components";
 import { SignUpCred } from "../../../service/supabase/supa_auth/actions/AuthSignUp";
 import { signUp } from "../../../service/supabase/supa_auth/AuthApi";
 import { useDispatch } from "react-redux";
-import { getSuccessAlertData } from "../../../provider/alert_toast_provider/AlertToastProvider";
+import { getSuccessAlertData } from "provider";
 import { showAlertWithTimeout } from "store";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
