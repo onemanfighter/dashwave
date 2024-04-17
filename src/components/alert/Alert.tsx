@@ -1,34 +1,24 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import React from "react";
 import { SuccessIcon, InfoIcon, WarningIcon, ErrorIcon } from "assets";
+import { AlertComponentData, AlertType, GettingAlertType } from "./types";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Alert type declaration.
- */
-enum AlertType {
-  NORMAL = "normal",
-  SUCCESS = "success",
-  INFO = "info",
-  WARNING = "warning",
-  ERROR = "error",
+function getAlertType(type: AlertType): GettingAlertType {
+  switch (type) {
+    case AlertType.NORMAL:
+      return { typeString: "", icon: <></> };
+    case AlertType.SUCCESS:
+      return { typeString: "alert-success", icon: <SuccessIcon /> };
+    case AlertType.INFO:
+      return { typeString: "alert-info", icon: <InfoIcon /> };
+    case AlertType.WARNING:
+      return { typeString: "alert-warning", icon: <WarningIcon /> };
+    case AlertType.ERROR:
+      return { typeString: "alert-error", icon: <ErrorIcon /> };
+    default:
+      return { typeString: "", icon: <></> };
+  }
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Alert component data.
- */
-interface AlertComponentData {
-  title: string;
-  type: AlertType;
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Alert component.
  *
@@ -45,43 +35,4 @@ function AlertComponent(props: AlertComponentData) {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Getting alert type.
- */
-interface GettingAlertType {
-  typeString: string;
-  icon: React.ReactNode;
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Get alert type.
- *
- * @param type  The alert type.
- * @returns The alert type.
- */
-function getAlertType(type: AlertType): GettingAlertType {
-  switch (type) {
-    case AlertType.NORMAL:
-      return { typeString: "", icon: <></> };
-    case AlertType.SUCCESS:
-      return { typeString: "alert-success", icon: <SuccessIcon /> };
-    case AlertType.INFO:
-      return { typeString: "alert-info", icon: <InfoIcon /> };
-    case AlertType.WARNING:
-      return { typeString: "alert-warning", icon: <WarningIcon /> };
-    case AlertType.ERROR:
-      return { typeString: "alert-error", icon: <ErrorIcon /> };
-  }
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the AlertComponent.
-export type { AlertComponentData };
-export { AlertType };
 export default AlertComponent;
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
