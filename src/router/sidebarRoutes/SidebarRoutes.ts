@@ -7,7 +7,7 @@
 /**
  * Routes for the sidebar.
  */
-export const sidebarRoutes = [
+export const SidebarRoutes = [
   {
     name: "Home",
     path: "/dashboard",
@@ -51,7 +51,7 @@ export const sidebarRoutes = [
 ];
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export const ProfileRoute = {
+export const ProfileRoutes = {
   name: "Profile",
   path: "/profile",
   iconName: "profile",

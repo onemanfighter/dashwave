@@ -6,10 +6,6 @@
 
 import { NavLink } from "react-router-dom";
 import {
-  ProfileRoute,
-  sidebarRoutes,
-} from "../../router/sidebarRoutes/SidebarRoutes";
-import {
   CredsIcon,
   ExpenseIcon,
   GoalsIcon,
@@ -21,6 +17,7 @@ import {
   ResourceIcon,
 } from "assets";
 import TooltipComponent from "../tooltip/TooltipComponent";
+import { ProfileRoutes, SidebarRoutes } from "router/sidebarRoutes";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
@@ -42,7 +39,7 @@ function SidebarComponent(props: ISidebarComponentProps) {
     <div className=" flex-col text-base-content flex justify-between h-[95%]">
       <ul className="menu p-2 w-full ">
         {/* Sidebar content here */}
-        {sidebarRoutes.map((route, index) => {
+        {SidebarRoutes.map((route, index) => {
           return (
             <TooltipComponent
               key={index}
@@ -68,19 +65,19 @@ function SidebarComponent(props: ISidebarComponentProps) {
       </ul>
       <ul className="menu p-2 w-full ">
         <TooltipComponent
-          title={ProfileRoute.name}
+          title={ProfileRoutes.name}
           position="tooltip-right"
           disable={props.sideBarOpen}
         >
           <li className="mt-2">
             <NavLink
-              to={ProfileRoute.path}
+              to={ProfileRoutes.path}
               className={
                 " hover:bg-primary-content hover:outline-dotted hover:outline-primary"
               }
             >
-              {getIcon(ProfileRoute.iconName)}
-              {props.sideBarOpen ? ProfileRoute.name : ""}
+              {getIcon(ProfileRoutes.iconName)}
+              {props.sideBarOpen ? ProfileRoutes.name : ""}
             </NavLink>
           </li>
         </TooltipComponent>

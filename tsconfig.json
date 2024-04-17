@@ -19,7 +19,8 @@
     "paths": {
       "components": ["./components"],
       "assets": ["./assets"],
-      "provider": ["./provider"]
+      "provider": ["./provider"],
+      "router": ["./router"]
     }
   },
   "include": ["src"]

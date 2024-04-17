@@ -7,7 +7,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import RouterProviderComponent from "./router/RouterProvider";
 import { AlreadyLoginServiceProvider } from "./provider";
 import {
   AlertToastProvider,
@@ -16,6 +15,7 @@ import {
   ReduxServiceProvider,
   ThemeProvider,
 } from "provider";
+import { RouterProviderComponent } from "router";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const root = ReactDOM.createRoot(
