@@ -19,7 +19,7 @@ import {
 import { useState } from "react";
 import { userProfileDataUpdate } from "../../../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
 import { getSocialMediaLink } from "../../../../../util/Utils";
-import { ToastAlertData } from "../../../../../provider/alert_toast_provider/AlertToastProvider";
+import { ToastAlertData } from "provider";
 import {
   FacebookIcon,
   InstagramIcon,
