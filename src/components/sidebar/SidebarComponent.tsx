@@ -1,9 +1,3 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { NavLink } from "react-router-dom";
 import {
   CredsIcon,
@@ -18,23 +12,49 @@ import {
 } from "assets";
 import TooltipComponent from "../tooltip/TooltipComponent";
 import { ProfileRoutes, SidebarRoutes } from "router/sidebarRoutes";
+import {
+  SidebarComponentProps,
+  SidebarIconProps,
+  SidebarIconType,
+} from "./types";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
- * Sidebar component props.
+ * Gets the icon for the sidebar.
+ * @param icon The icon name.
+ * @returns The icon component.
  */
-interface ISidebarComponentProps {
-  sideBarOpen: boolean;
-}
+const SidebarIcon = ({ icon }: SidebarIconProps) => {
+  switch (icon) {
+    case SidebarIconType.Home:
+      return <HomeIcon />;
+    case SidebarIconType.Projects:
+      return <ProjectIcon />;
+    case SidebarIconType.Plans:
+      return <PlanIcon />;
+    case SidebarIconType.Expenses:
+      return <ExpenseIcon />;
+    case SidebarIconType.Goals:
+      return <GoalsIcon />;
+    case SidebarIconType.Credentials:
+      return <CredsIcon />;
+    case SidebarIconType.Profile:
+      return <ProfileIcon />;
+    case SidebarIconType.Learning:
+      return <LearningIcon />;
+    case SidebarIconType.Resources:
+      return <ResourceIcon />;
+    default:
+      return null;
+  }
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Sidebar component.
  *
  * @param props  The sidebar component props.
  * @returns The sidebar component.
  */
-function SidebarComponent(props: ISidebarComponentProps) {
+function SidebarComponent(props: SidebarComponentProps) {
   return (
     <div className=" flex-col text-base-content flex justify-between h-[95%]">
       <ul className="menu p-2 w-full ">
@@ -55,7 +75,7 @@ function SidebarComponent(props: ISidebarComponentProps) {
                     " hover:bg-primary-content hover:outline-dotted hover:outline-primary"
                   }
                 >
-                  {getIcon(route.iconName)}
+                  <SidebarIcon icon={route.iconName as SidebarIconType} />
                   {props.sideBarOpen ? route.name : ""}
                 </NavLink>
               </li>
@@ -76,7 +96,7 @@ function SidebarComponent(props: ISidebarComponentProps) {
                 " hover:bg-primary-content hover:outline-dotted hover:outline-primary"
               }
             >
-              {getIcon(ProfileRoutes.iconName)}
+              <SidebarIcon icon={ProfileRoutes.iconName as SidebarIconType} />
               {props.sideBarOpen ? ProfileRoutes.name : ""}
             </NavLink>
           </li>
@@ -86,42 +106,4 @@ function SidebarComponent(props: ISidebarComponentProps) {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Gets the icon for the sidebar.
- * @param icon The icon name.
- * @returns The icon component.
- */
-function getIcon(icon: string) {
-  switch (icon) {
-    case "home":
-      return <HomeIcon />;
-    case "projects":
-      return <ProjectIcon />;
-    case "plans":
-      return <PlanIcon />;
-    case "expenses":
-      return <ExpenseIcon />;
-    case "goals":
-      return <GoalsIcon />;
-    case "credentials":
-      return <CredsIcon />;
-    case "profile":
-      return <ProfileIcon />;
-    case "learning":
-      return <LearningIcon />;
-    case "resources":
-      return <ResourceIcon />;
-    default:
-      return null;
-  }
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the SidebarComponent component.
 export default SidebarComponent;
-export type { ISidebarComponentProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
