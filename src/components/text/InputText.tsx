@@ -1,39 +1,5 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { useState } from "react";
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * The input types for the input component.
- */
-enum InputType {
-  EMAIL = "email",
-  PASSWORD = "password",
-  TEXT = "text",
-  NUMBER = "number",
-  DATE = "date",
-  FILE = "file",
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * The input text props.
- */
-interface IInputTextProps {
-  labelTitle: string;
-  labelStyle?: string;
-  type?: InputType;
-  containerStyle?: string;
-  defaultValue?: string;
-  placeholder?: string;
-  updateFormValue: (args: { updateType: string; value: string }) => void;
-  updateType: string;
-  errorState?: boolean;
-}
+import { InputTextProps, InputType } from "./types";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
@@ -42,7 +8,7 @@ interface IInputTextProps {
  * @param props  The input text props.
  * @returns The input text component.
  */
-function InputText(props: IInputTextProps) {
+function InputText(props: InputTextProps) {
   const [value, setValue] = useState(props.defaultValue);
 
   const updateInputValue = (val: any) => {
@@ -85,7 +51,6 @@ function InputText(props: IInputTextProps) {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Export the InputText password eye component.
  * @param props  The password eye props.
@@ -126,12 +91,4 @@ function PasswordEye(props: { handleVisibility: () => void }) {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the InputText component
 export default InputText;
-export type { IInputTextProps };
-export { InputType };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

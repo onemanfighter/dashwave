@@ -1,18 +1,5 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import { ErrorTextProps } from "./types";
 
-/**
- * ErrorText component props.
- */
-interface ErrorTextProps {
-  styleClass?: string;
-  children: React.ReactNode;
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * ErrorText component.
  *
@@ -20,15 +7,8 @@ interface ErrorTextProps {
  * @param children  The children of the component.
  * @returns The ErrorText component.
  */
-function ErrorText({ styleClass, children }: ErrorTextProps) {
+const ErrorText = ({ styleClass, children }: ErrorTextProps) => {
   return <p className={`text-center  text-error ${styleClass}`}>{children}</p>;
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the ErrorText component.
 export default ErrorText;
-export type { ErrorTextProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
