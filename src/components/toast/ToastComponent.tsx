@@ -1,74 +1,26 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import { AlertComponent } from "../alert";
+import { ToastAlertComponentProps } from "./types";
 
-import { AlertComponentData, AlertComponent } from "../alert";
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Toast x position.
- */
-enum ToastXPosition {
-  START = "toast-start",
-  CENTER = "toast-center",
-  END = "toast-end",
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Toast y position.
- */
-enum ToastYPosition {
-  TOP = "toast-top",
-  CENTER = "toast-center",
-  BOTTOM = "toast-bottom",
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Toast alert component props.
- */
-interface IToastAlertComponentProps {
-  alertComponentData: AlertComponentData;
-  xposition?: ToastXPosition;
-  yposition?: ToastYPosition;
-  bounce?: boolean;
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Toast alert component.
- *
- * @param props  The toast alert component props.
- * @returns The toast alert component.
- */
-function ToastAlertComponent(props: IToastAlertComponentProps) {
-  return props.alertComponentData.title === "" ? (
+const ToastAlertComponent = ({
+  alertComponentData,
+  bounce,
+  xPosition,
+  yPosition,
+}: ToastAlertComponentProps) => {
+  return alertComponentData.title === "" ? (
     <></>
   ) : (
     <div
       className={`toast z-50 ${
-        props.bounce !== null && !props.bounce ? "" : "animate-bounce"
-      } ${props.xposition ? props.xposition : ""} ${
-        props.yposition ? props.yposition : ""
-      }`}
+        bounce !== null && !bounce ? "" : "animate-bounce"
+      } ${xPosition ? xPosition : ""} ${yPosition ? yPosition : ""}`}
     >
       <AlertComponent
-        title={props.alertComponentData.title}
-        type={props.alertComponentData.type}
+        title={alertComponentData.title}
+        type={alertComponentData.type}
       />
     </div>
   );
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the ToastAlertComponent.
 export default ToastAlertComponent;
-export type { IToastAlertComponentProps };
-export { ToastXPosition, ToastYPosition };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
