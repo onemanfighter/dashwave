@@ -8,13 +8,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import RouterProviderComponent from "./router/RouterProvider";
-import ThemeProvider from "./provider/theme_provider/ThemeProvider";
 import { AlreadyLoginServiceProvider } from "./provider";
 import {
   AlertToastProvider,
   ImagePreviewModalProvider,
   NotificationProvider,
   ReduxServiceProvider,
+  ThemeProvider,
 } from "provider";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
