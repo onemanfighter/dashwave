@@ -7,7 +7,7 @@ import { ImagePreviewModalProps } from "./types";
  * @param props  The image modal props.
  * @returns The image modal component.
  */
-export const ImagePreviewModal = ({ image }: ImagePreviewModalProps) => {
+const ImagePreviewModal = ({ image }: ImagePreviewModalProps) => {
   return (
     <div className="z-50 ">
       <input type="checkbox" id={IMAGE_MODAL_ID} className="modal-toggle" />
@@ -32,3 +32,5 @@ export const ImagePreviewModal = ({ image }: ImagePreviewModalProps) => {
     </div>
   );
 };
+
+export default ImagePreviewModal;

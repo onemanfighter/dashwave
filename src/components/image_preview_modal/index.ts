@@ -1,5 +1,5 @@
-export { ImagePreviewModalButton } from "./ImagePreviewButton";
-export { ImagePreviewModal } from "./ImagePreviewModal";
+export { default as ImagePreviewModalButton } from "./ImagePreviewButton";
+export { default as ImagePreviewModal } from "./ImagePreviewModal";
 export type {
   ImagePreviewModalButtonProps,
   ImagePreviewModalProps,

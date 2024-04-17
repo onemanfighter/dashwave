@@ -6,7 +6,7 @@ import { TitleCardProps } from "./types";
  * @param props The title card props.
  * @returns The title card component.
  */
-export const TitleCard = (props: TitleCardProps) => {
+const TitleCard = (props: TitleCardProps) => {
   return (
     <div
       className={
@@ -33,3 +33,5 @@ export const TitleCard = (props: TitleCardProps) => {
     </div>
   );
 };
+
+export default TitleCard;

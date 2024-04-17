@@ -6,7 +6,7 @@ import { ProjectCardProps } from "./types";
  * @param propsData The project card props.
  * @returns The project card component.
  */
-export const ProjectCard = ({ data }: ProjectCardProps) => {
+const ProjectCard = ({ data }: ProjectCardProps) => {
   const {
     image,
     title,
@@ -95,3 +95,5 @@ function TitleAndLiveBadge(props: {
     </div>
   );
 }
+
+export default ProjectCard;

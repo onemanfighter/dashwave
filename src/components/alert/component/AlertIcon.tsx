@@ -1,7 +1,7 @@
 import { ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from "assets";
 import { AlertIconProps } from "./types";
 
-export const AlertIcon = ({ type }: AlertIconProps) => {
+const AlertIcon = ({ type }: AlertIconProps) => {
   switch (type) {
     case "error":
       return <ErrorIcon />;
@@ -15,3 +15,5 @@ export const AlertIcon = ({ type }: AlertIconProps) => {
       return <></>;
   }
 };
+
+export default AlertIcon;

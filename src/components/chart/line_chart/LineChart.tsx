@@ -6,6 +6,8 @@ export type LineChartProps = {};
  * @param props  The line chart props.
  * @returns The line chart component.
  */
-export const LineChart = (props: LineChartProps) => {
+const LineChart = (props: LineChartProps) => {
   return <div>Line chart</div>;
 };
+
+export default LineChart;

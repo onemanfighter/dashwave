@@ -6,6 +6,8 @@ export type PieChartProps = {};
  * @param props  The pie chart props.
  * @returns The pie chart component.
  */
-export const PieChart = (props: PieChartProps) => {
+const PieChart = (props: PieChartProps) => {
   return <div>Pie chart</div>;
 };
+
+export default PieChart;

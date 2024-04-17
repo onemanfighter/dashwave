@@ -7,7 +7,7 @@ import { ImagePreviewModalButtonProps } from "./types";
  * @param props  The image modal button props.
  * @returns The image modal button component.
  */
-export const ImagePreviewModalButton = ({
+const ImagePreviewModalButton = ({
   children,
   onClickHandler,
 }: ImagePreviewModalButtonProps) => {
@@ -17,3 +17,5 @@ export const ImagePreviewModalButton = ({
     </label>
   );
 };
+
+export default ImagePreviewModalButton;

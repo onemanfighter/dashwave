@@ -9,7 +9,7 @@ import { getAlertType } from "./utils";
  * @param props  The alert component data.
  * @returns The alert component.
  */
-export const AlertComponent = ({ title, type }: AlertComponentProps) => {
+const AlertComponent = ({ title, type }: AlertComponentProps) => {
   const { typeString, alertIconType } = getAlertType(type);
   return (
     <div role="alert" className={`alert ${typeString}`}>
@@ -18,3 +18,5 @@ export const AlertComponent = ({ title, type }: AlertComponentProps) => {
     </div>
   );
 };
+
+export default AlertComponent;

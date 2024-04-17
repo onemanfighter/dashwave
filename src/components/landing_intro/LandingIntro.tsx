@@ -1,11 +1,11 @@
-import { TemplatePointers } from "./TemplatePointer";
+import TemplatePointers from "./TemplatePointer";
 
 /**
  * LandingIntro component
  *
  * @returns The LandingIntro component.
  */
-export const LandingIntro = () => {
+const LandingIntro = () => {
   return (
     <div className="hero min-h-full">
       <div className="hero-content py-12">
@@ -24,3 +24,5 @@ export const LandingIntro = () => {
     </div>
   );
 };
+
+export default LandingIntro;

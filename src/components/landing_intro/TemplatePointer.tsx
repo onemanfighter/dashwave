@@ -1,6 +1,6 @@
 import { LoginPageIllustration } from "assets";
 
-export const TemplatePointers = () => {
+const TemplatePointers = () => {
   return (
     <div>
       <LoginPageIllustration />
@@ -10,3 +10,5 @@ export const TemplatePointers = () => {
     </div>
   );
 };
+
+export default TemplatePointers;
