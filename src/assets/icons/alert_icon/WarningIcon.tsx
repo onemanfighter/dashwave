@@ -1,6 +1,6 @@
 //~~~~~~ WarningIcon ~~~~~~
 // Summary: This file contains the SVG for the warning icon
-export function WarningIcon() {
+export default function WarningIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

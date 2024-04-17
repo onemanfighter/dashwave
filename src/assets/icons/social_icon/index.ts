@@ -1,5 +1,4 @@
 export { SocialIcon } from "./IconApi";
-
 export { FacebookIcon } from "./FacebookIcon";
 export { GithubIcon } from "./GithubIcon";
 export { HostingerIcon } from "./HostingerIcon";

@@ -1,27 +1,18 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Navigation toggle button component props.
- */
-interface NavigationToggleButtonProps {
-  openSidebarClickHandler: () => void;
-}
+import { NavigationToggleButtonProps } from "./types";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Navigation toggle button component.
  *
- * @param props  The navigation toggle button props.
+ * @param props The navigation toggle button props.
  * @returns The navigation toggle button component.
  */
-function NavigationToggleButton(props: NavigationToggleButtonProps) {
+const NavigationToggleButton = ({
+  openSidebarClickHandler,
+}: NavigationToggleButtonProps) => {
   return (
     <label className="swap swap-rotate">
       {/* this hidden checkbox controls the state */}
-      <input type="checkbox" onClick={props.openSidebarClickHandler} />
+      <input type="checkbox" onClick={openSidebarClickHandler} />
 
       {/* hamburger icon */}
       <svg
@@ -46,13 +37,6 @@ function NavigationToggleButton(props: NavigationToggleButtonProps) {
       </svg>
     </label>
   );
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the NavigationToggleButton component
 export default NavigationToggleButton;
-export type { NavigationToggleButtonProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

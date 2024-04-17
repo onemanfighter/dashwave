@@ -46,8 +46,8 @@ export default function AlertToastProvider(props: IToastAlertProviderProps) {
     <div className="z-50">
       <ToastAlertComponent
         alertComponentData={toastAlert.alertData}
-        xposition={toastAlert.xPosition}
-        yposition={toastAlert.yPosition}
+        xPosition={toastAlert.xPosition}
+        yPosition={toastAlert.yPosition}
         bounce={toastAlert.bounce}
       />
       {props.children}
