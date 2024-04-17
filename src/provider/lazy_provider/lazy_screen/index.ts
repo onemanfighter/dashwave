@@ -55,6 +55,16 @@ export {
   LazyProfileSettingScreenComponent,
 } from "./LazyProfileScreen";
 
+// Project lazy components.
+export {
+  LazyProjectAddComponent,
+  LazyProjectDeleteComponent,
+  LazyProjectEditComponent,
+  LazyProjectMainScreenComponent,
+  LazyProjectPreviewComponent,
+  LazyProjectsScreenComponent,
+} from "./LazyProjectScreen";
+
 // Public lazy components.
 export {
   LazyForgotPasswordScreenComponent,

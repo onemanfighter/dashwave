@@ -35,15 +35,13 @@ import {
   LazyCredsDeleteScreenComponent,
   LazyProfilePasswordResetScreenComponent,
   LazyProfileSettingScreenComponent,
-} from "provider";
-import {
-  LazyProjectsScreenComponent,
+  LazyProjectAddComponent,
+  LazyProjectDeleteComponent,
+  LazyProjectEditComponent,
   LazyProjectMainScreenComponent,
   LazyProjectPreviewComponent,
-  LazyProjectAddComponent,
-  LazyProjectEditComponent,
-  LazyProjectDeleteComponent,
-} from "provider/lazy_provider/lazy_screen/LazyProjectScreen";
+  LazyProjectsScreenComponent,
+} from "provider";
 import {
   Navigate,
   Route,
@@ -55,7 +53,7 @@ import {
 /**
  * Router declaration for the demo app after login.
  */
-const privateRouter = createBrowserRouter(
+export const privateRouter = createBrowserRouter(
   createRoutesFromChildren(
     <Route path="/" element={<LazyHomeScreenComponent />}>
       <Route path="" element={<Navigate to="dashboard" replace />} />
@@ -125,10 +123,6 @@ const privateRouter = createBrowserRouter(
     </Route>
   )
 );
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the private router.
-export default privateRouter;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // End of file.

@@ -22,7 +22,7 @@ import {
 /**
  * Router declaration for the demo app before login.
  */
-const publicRouter = createBrowserRouter(
+export const publicRouter = createBrowserRouter(
   createRoutesFromChildren(
     <Route
       path="/"
@@ -39,10 +39,6 @@ const publicRouter = createBrowserRouter(
     </Route>
   )
 );
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the public router.
-export default publicRouter;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // End of file.
