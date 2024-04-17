@@ -14,8 +14,8 @@ import {
   AlertToastProvider,
   ImagePreviewModalProvider,
   NotificationProvider,
+  ReduxServiceProvider,
 } from "provider";
-import ReduxServiceProvider from "./provider/redux_service_provider/ReduxServiceProvider";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const root = ReactDOM.createRoot(
