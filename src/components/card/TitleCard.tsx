@@ -1,27 +1,12 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import { TitleCardProps } from "./types";
 
-/**
- * Title card props.
- */
-interface ITitleCardProps {
-  title: string;
-  children: React.ReactNode;
-  topMargin?: string;
-  TopSideButtons?: React.ReactNode;
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Title card component.
  *
- * @param props  The title card props.
+ * @param props The title card props.
  * @returns The title card component.
  */
-function TitleCard(props: ITitleCardProps) {
+export const TitleCard = (props: TitleCardProps) => {
   return (
     <div
       className={
@@ -47,12 +32,4 @@ function TitleCard(props: ITitleCardProps) {
       <div className="h-full w-full pb-6 bg-base-100">{props.children}</div>
     </div>
   );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the TitleCard component.
-export default TitleCard;
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+};

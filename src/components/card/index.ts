@@ -1,5 +1,5 @@
-export { default as ProjectCard } from "./ProjectCard";
-export type { IProjectCardProps, ProjectCardData } from "./ProjectCard";
-export { getProjectCardData } from "./ProjectCard";
+export { ProjectCard } from "./ProjectCard";
+export type { ProjectCardProps, ProjectCardData } from "./types";
+export { getProjectCardData } from "./utils";
 
-export { default as TitleCard } from "./TitleCard";
+export { TitleCard } from "./TitleCard";

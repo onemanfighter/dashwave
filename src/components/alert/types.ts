@@ -1,17 +1,11 @@
-export enum AlertType {
-  NORMAL = "normal",
-  SUCCESS = "success",
-  INFO = "info",
-  WARNING = "warning",
-  ERROR = "error",
-}
+import { AlertType } from "./component";
 
 export type AlertComponentData = {
   title: string;
   type: AlertType;
 };
 
-export type GettingAlertType = {
+export type AlertData = {
   typeString: string;
-  icon: React.ReactNode;
+  alertIconType: AlertType;
 };
