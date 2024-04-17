@@ -1,9 +1,3 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,24 +11,15 @@ import {
   SettingsIcon,
   LogoutIcon,
 } from "assets";
+import { NavigationComponentProps } from "./types";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Navigation component props.
- */
-interface INavigationComponentProps {
-  logOutClickHandler: () => void;
-  openSidebarClickHandler: () => void;
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Navigation component.
  *
  * @param props  The navigation component props.
  * @returns The navigation component.
  */
-function NavigationComponent(props: INavigationComponentProps) {
+const NavigationComponent = (props: NavigationComponentProps) => {
   const dispatch = useDispatch();
   const themeState = useSelector((state: RootState) => state.theme);
   const profileState = useSelector((state: RootState) => state.profile);
@@ -144,13 +129,6 @@ function NavigationComponent(props: INavigationComponentProps) {
       </div>
     </div>
   );
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the NavigationComponent component.
 export default NavigationComponent;
-export type { INavigationComponentProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
