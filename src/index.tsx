@@ -10,8 +10,11 @@ import reportWebVitals from "./reportWebVitals";
 import RouterProviderComponent from "./router/RouterProvider";
 import ThemeProvider from "./provider/theme_provider/ThemeProvider";
 import { AlreadyLoginServiceProvider } from "./provider";
-import NotificationProvider from "./provider/notification_provider/NotificationProvider";
-import { AlertToastProvider, ImagePreviewModalProvider } from "provider";
+import {
+  AlertToastProvider,
+  ImagePreviewModalProvider,
+  NotificationProvider,
+} from "provider";
 import ReduxServiceProvider from "./provider/redux_service_provider/ReduxServiceProvider";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
