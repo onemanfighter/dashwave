@@ -5,61 +5,51 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import {
+  LazyHomeScreenComponent,
+  LazyDashboardScreenComponent,
+  LazyPlansScreenComponent,
+  LazyPlansMainScreenComponent,
+  LazyPlansPreviewScreenComponent,
+  LazyPlansAddScreenComponent,
+  LazyPlansEditScreenComponent,
+  LazyPlansDeleteScreenComponent,
+  LazyExpenseScreenComponent,
+  LazyExpenseMainScreenComponent,
+  LazyExpensePreviewScreenComponent,
+  LazyExpenseAddScreenComponent,
+  LazyExpenseEditScreenComponent,
+  LazyExpenseDeleteScreenComponent,
+  LazyGoalsScreenComponent,
+  LazyGoalsMainScreenComponent,
+  LazyGoalsPreviewScreenComponent,
+  LazyGoalsAddScreenComponent,
+  LazyGoalsEditScreenComponent,
+  LazyGoalsDeleteScreenComponent,
+  LazyProfileMainScreenComponent,
+  LazyCredsMainScreenComponent,
+  LazyProfilePreviewScreenComponent,
+  LazyCredsScreenComponent,
+  LazyCredsPreviewScreenComponent,
+  LazyCredsAddScreenComponent,
+  LazyCredsEditScreenComponent,
+  LazyCredsDeleteScreenComponent,
+  LazyProfilePasswordResetScreenComponent,
+  LazyProfileSettingScreenComponent,
+} from "provider";
+import {
+  LazyProjectsScreenComponent,
+  LazyProjectMainScreenComponent,
+  LazyProjectPreviewComponent,
+  LazyProjectAddComponent,
+  LazyProjectEditComponent,
+  LazyProjectDeleteComponent,
+} from "provider/lazy_provider/lazy_screen/LazyProjectScreen";
+import {
   Navigate,
   Route,
   createBrowserRouter,
   createRoutesFromChildren,
 } from "react-router-dom";
-import {
-  LazyDashboardScreenComponent,
-  LazyHomeScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyPrivateScreen";
-import {
-  LazyProfileMainScreenComponent,
-  LazyProfilePreviewScreenComponent,
-  LazyProfileSettingScreenComponent,
-  LazyProfilePasswordResetScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyProfileScreen";
-import {
-  LazyPlansAddScreenComponent,
-  LazyPlansDeleteScreenComponent,
-  LazyPlansEditScreenComponent,
-  LazyPlansMainScreenComponent,
-  LazyPlansPreviewScreenComponent,
-  LazyPlansScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyPlansScreen";
-import {
-  LazyCredsAddScreenComponent,
-  LazyCredsDeleteScreenComponent,
-  LazyCredsEditScreenComponent,
-  LazyCredsMainScreenComponent,
-  LazyCredsPreviewScreenComponent,
-  LazyCredsScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyCredsScreen";
-import {
-  LazyGoalsAddScreenComponent,
-  LazyGoalsDeleteScreenComponent,
-  LazyGoalsEditScreenComponent,
-  LazyGoalsMainScreenComponent,
-  LazyGoalsPreviewScreenComponent,
-  LazyGoalsScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyGoalsScreen";
-import {
-  LazyExpenseAddScreenComponent,
-  LazyExpenseDeleteScreenComponent,
-  LazyExpenseEditScreenComponent,
-  LazyExpensePreviewScreenComponent,
-  LazyExpenseMainScreenComponent,
-  LazyExpenseScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyExpensesScreen";
-import {
-  LazyProjectAddComponent,
-  LazyProjectDeleteComponent,
-  LazyProjectEditComponent,
-  LazyProjectMainScreenComponent,
-  LazyProjectPreviewComponent,
-  LazyProjectsScreenComponent,
-} from "../../../provider/lazy_provider/lazy_screen/LazyProjectScreen";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
