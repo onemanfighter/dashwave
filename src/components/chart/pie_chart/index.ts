@@ -1,2 +1,2 @@
-export { default as PieChart } from "./PieChart";
-export type { IPieChartProps } from "./PieChart";
+export { PieChart } from "./PieChart";
+export type { PieChartProps } from "./PieChart";
