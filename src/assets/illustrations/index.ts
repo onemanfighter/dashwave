@@ -1,1 +1,1 @@
-export * from "./landing_page";
+export * from './landing_page';

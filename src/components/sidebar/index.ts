@@ -1,2 +1,2 @@
-export { default as SidebarComponent } from "./SidebarComponent";
-export type { SidebarComponentProps } from "./types";
+export { default as SidebarComponent } from './SidebarComponent';
+export type { SidebarComponentProps } from './types';

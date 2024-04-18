@@ -1,11 +1,11 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
-import { TooltipComponent } from "components";
-import getSubNavTitle from "../../../../util/nav/NavTitle";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getAllProjects } from "../../../../service/supabase/supastore/projects/ProjectsStoreApi";
-import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from "assets";
-import { RootState, addProjects } from "store";
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { TooltipComponent } from 'components';
+import getSubNavTitle from '../../../../util/nav/NavTitle';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getAllProjects } from '../../../../service/supabase/supastore/projects/ProjectsStoreApi';
+import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from 'assets';
+import { RootState, addProjects } from 'store';
 
 /**
  * Props for the ProjectsScreen component.
@@ -16,10 +16,10 @@ interface IProjectsScreenProps {}
  * Project screen routes.
  */
 const ProjectRoutes = [
-  { title: "Project preview", icon: <PreviewIcon />, path: "preview" },
-  { title: "Add project", icon: <AddIcon />, path: "add" },
-  { title: "Edit project", icon: <EditIcon />, path: "edit" },
-  { title: "Delete project", icon: <DeleteIcon />, path: "delete" },
+    { title: 'Project preview', icon: <PreviewIcon />, path: 'preview' },
+    { title: 'Add project', icon: <AddIcon />, path: 'add' },
+    { title: 'Edit project', icon: <EditIcon />, path: 'edit' },
+    { title: 'Delete project', icon: <DeleteIcon />, path: 'delete' },
 ];
 
 /**
@@ -28,39 +28,44 @@ const ProjectRoutes = [
  * @returns The projects screen component.
  */
 function ProjectsScreen(props: IProjectsScreenProps) {
-  const dispatch = useDispatch();
-  const currentLocation = useLocation();
-  const userId = useSelector((state: RootState) => state.auth.userData.userId);
-
-  // Making network request to get all projects.
-  useEffect(() => {
-    getAllProjects(userId, (projectsData) =>
-      dispatch(addProjects(projectsData))
+    const dispatch = useDispatch();
+    const currentLocation = useLocation();
+    const userId = useSelector(
+        (state: RootState) => state.auth.userData.userId
     );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, userId]);
 
-  return (
-    <div className="h-full">
-      <div className=" m-2 bg-primary-content p-1 drop-shadow-md rounded-lg flex flex-row justify-between items-center">
-        <div className="text-xl font-semibold mx-4">
-          {getSubNavTitle(currentLocation.pathname)}
+    // Making network request to get all projects.
+    useEffect(() => {
+        getAllProjects(userId, (projectsData) =>
+            dispatch(addProjects(projectsData))
+        );
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [dispatch, userId]);
+
+    return (
+        <div className="h-full">
+            <div className=" m-2 bg-primary-content p-1 drop-shadow-md rounded-lg flex flex-row justify-between items-center">
+                <div className="text-xl font-semibold mx-4">
+                    {getSubNavTitle(currentLocation.pathname)}
+                </div>
+                <div className="flex flex-row space-x-2 gap-3">
+                    {ProjectRoutes.map((item, index) => (
+                        <TooltipComponent key={index} title={item.title}>
+                            <NavLink
+                                to={item.path}
+                                className="btn btn-square btn-outline "
+                            >
+                                {item.icon}
+                            </NavLink>
+                        </TooltipComponent>
+                    ))}
+                </div>
+            </div>
+            <div className="overflow-scroll h-[90%]">
+                <Outlet />
+            </div>
         </div>
-        <div className="flex flex-row space-x-2 gap-3">
-          {ProjectRoutes.map((item, index) => (
-            <TooltipComponent key={index} title={item.title}>
-              <NavLink to={item.path} className="btn btn-square btn-outline ">
-                {item.icon}
-              </NavLink>
-            </TooltipComponent>
-          ))}
-        </div>
-      </div>
-      <div className="overflow-scroll h-[90%]">
-        <Outlet />
-      </div>
-    </div>
-  );
+    );
 }
 
 // Export the ProjectsScreen component.

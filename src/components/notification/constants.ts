@@ -1,1 +1,1 @@
-export const NOTIFICATION_MODAL_ID = "notification_modal";
+export const NOTIFICATION_MODAL_ID = 'notification_modal';

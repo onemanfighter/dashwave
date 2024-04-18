@@ -9,5 +9,5 @@ export interface ICredsAddProps {}
  * @returns The creds add component.
  */
 export default function CredsAdd(props: ICredsAddProps) {
-  return <div>Creds Add</div>;
+    return <div>Creds Add</div>;
 }

@@ -10,7 +10,7 @@ interface IError404Props {}
  * @returns The Error404 component.
  */
 function Error404(props: IError404Props) {
-  return <div>Error404</div>;
+    return <div>Error404</div>;
 }
 
 // Export the Error404 component.

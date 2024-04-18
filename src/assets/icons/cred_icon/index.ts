@@ -1,2 +1,2 @@
-export { DeleteIcon } from "./DeleteIcon";
-export { OverviewIcon } from "./OverviewIcon";
+export { DeleteIcon } from './DeleteIcon';
+export { OverviewIcon } from './OverviewIcon';

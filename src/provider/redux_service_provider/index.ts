@@ -1,2 +1,2 @@
-export { default as ReduxServiceProvider } from "./ReduxServiceProvider";
-export type { ReduxServiceProviderProps } from "./types";
+export { default as ReduxServiceProvider } from './ReduxServiceProvider';
+export type { ReduxServiceProviderProps } from './types';

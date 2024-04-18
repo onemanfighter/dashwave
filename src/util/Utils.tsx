@@ -1,7 +1,7 @@
 import {
-  SocialLink,
-  SocialType,
-} from "../service/supabase/supastore/user_profile/UserCollection";
+    SocialLink,
+    SocialType,
+} from '../service/supabase/supastore/user_profile/UserCollection';
 
 /**
  * Get social links from the user profile data.
@@ -11,7 +11,7 @@ import {
  * @returns The social link.
  */
 function getSocialMediaLink(links: Array<SocialLink>, type: SocialType) {
-  return links.find((socialLink) => socialLink.type === type)?.link || "";
+    return links.find((socialLink) => socialLink.type === type)?.link || '';
 }
 
 // Export the getSocialMediaLink function.

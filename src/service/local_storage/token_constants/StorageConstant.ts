@@ -1,14 +1,14 @@
 // Auth_token key for local storage
-const AuthTokenKey = "sb-derclltpzfohoecoxvge-auth-token";
+const AuthTokenKey = 'sb-derclltpzfohoecoxvge-auth-token';
 
 // Profile key for local storage
-const ProfileTokenKey = "user_profile";
+const ProfileTokenKey = 'user_profile';
 
 // Theme key for local storage
-const themeKey = "theme_data";
+const themeKey = 'theme_data';
 
 // current path key for local storage
-const ProjectsKey = "projects_data";
+const ProjectsKey = 'projects_data';
 
 // Export the constants
 export { AuthTokenKey, ProfileTokenKey, themeKey, ProjectsKey };

@@ -1,1 +1,1 @@
-export { LoginPageIllustration } from "./Login";
+export { LoginPageIllustration } from './Login';
