@@ -1,22 +1,30 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Expenses screens lazy components.
 const ExpenseScreen = lazy(
   () => import("../../../screens/private/screens/expenses/ExpenseScreen")
 );
+
+const LazyExpenseScreenComponent = () => {
+  return (
+    <LazyComponentProvider>
+      <ExpenseScreen />
+    </LazyComponentProvider>
+  );
+};
 
 const ExpenseMainScreen = lazy(
   () =>
     import("../../../screens/private/screens/expenses/expense_main/ExpenseMain")
 );
+
+const LazyExpenseMainScreenComponent = () => {
+  return (
+    <LazyComponentProvider>
+      <ExpenseMainScreen />
+    </LazyComponentProvider>
+  );
+};
 
 const ExpensePreviewScreen = lazy(
   () =>
@@ -25,15 +33,39 @@ const ExpensePreviewScreen = lazy(
     )
 );
 
+const LazyExpensePreviewScreenComponent = () => {
+  return (
+    <LazyComponentProvider>
+      <ExpensePreviewScreen />
+    </LazyComponentProvider>
+  );
+};
+
 const ExpenseEditScreen = lazy(
   () =>
     import("../../../screens/private/screens/expenses/expense_edit/ExpenseEdit")
 );
 
+const LazyExpenseEditScreenComponent = () => {
+  return (
+    <LazyComponentProvider>
+      <ExpenseEditScreen />
+    </LazyComponentProvider>
+  );
+};
+
 const ExpenseAddScreen = lazy(
   () =>
     import("../../../screens/private/screens/expenses/expense_add/ExpenseAdd")
 );
+
+const LazyExpenseAddScreenComponent = () => {
+  return (
+    <LazyComponentProvider>
+      <ExpenseAddScreen />
+    </LazyComponentProvider>
+  );
+};
 
 const ExpenseDeleteScreen = lazy(
   () =>
@@ -41,88 +73,19 @@ const ExpenseDeleteScreen = lazy(
       "../../../screens/private/screens/expenses/expense_delete/ExpenseDelete"
     )
 );
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Expenses screens components.
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy expenses screen component.
- * @returns The LazyExpensesScreenComponent component.
- */
-export function LazyExpenseScreenComponent() {
-  return (
-    <LazyComponentProvider>
-      <ExpenseScreen />
-    </LazyComponentProvider>
-  );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy expenses main screen component.
- * @returns The LazyExpenseMainScreenComponent component.
- */
-export function LazyExpenseMainScreenComponent() {
-  return (
-    <LazyComponentProvider>
-      <ExpenseMainScreen />
-    </LazyComponentProvider>
-  );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy expenses preview screen component.
- * @returns The LazyExpensePreviewScreenComponent component.
- */
-export function LazyExpensePreviewScreenComponent() {
-  return (
-    <LazyComponentProvider>
-      <ExpensePreviewScreen />
-    </LazyComponentProvider>
-  );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy expenses edit screen component.
- * @returns The LazyExpenseEditScreenComponent component.
- */
-export function LazyExpenseEditScreenComponent() {
-  return (
-    <LazyComponentProvider>
-      <ExpenseEditScreen />
-    </LazyComponentProvider>
-  );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy expenses add screen component.
- * @returns The LazyExpenseAddScreenComponent component.
- */
-export function LazyExpenseAddScreenComponent() {
-  return (
-    <LazyComponentProvider>
-      <ExpenseAddScreen />
-    </LazyComponentProvider>
-  );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy expenses delete screen component.
- * @returns The LazyExpenseDeleteScreenComponent component.
- */
-export function LazyExpenseDeleteScreenComponent() {
+const LazyExpenseDeleteScreenComponent = () => {
   return (
     <LazyComponentProvider>
       <ExpenseDeleteScreen />
     </LazyComponentProvider>
   );
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export {
+  LazyExpenseScreenComponent,
+  LazyExpenseAddScreenComponent,
+  LazyExpenseDeleteScreenComponent,
+  LazyExpenseEditScreenComponent,
+  LazyExpenseMainScreenComponent,
+  LazyExpensePreviewScreenComponent,
+};

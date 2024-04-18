@@ -1,17 +1,17 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Projects screens lazy components.
 const ProjectsScreen = lazy(
   () => import("../../../screens/private/screens/projects/ProjectScreen")
 );
+const LazyProjectsScreenComponent = () => {
+  return (
+    <LazyComponentProvider>
+      <ProjectsScreen />
+    </LazyComponentProvider>
+  );
+};
 
 const ProjectMainScreen = lazy(
   () =>
@@ -19,6 +19,13 @@ const ProjectMainScreen = lazy(
       "../../../screens/private/screens/projects/project_main/ProjectMainScreen"
     )
 );
+const LazyProjectMainScreenComponent = () => {
+  return (
+    <LazyComponentProvider>
+      <ProjectMainScreen />
+    </LazyComponentProvider>
+  );
+};
 
 const ProjectPreviewScreen = lazy(
   () =>
@@ -26,6 +33,13 @@ const ProjectPreviewScreen = lazy(
       "../../../screens/private/screens/projects/project_preview/ProjectPreviewScreen"
     )
 );
+const LazyProjectPreviewComponent = () => {
+  return (
+    <LazyComponentProvider>
+      <ProjectPreviewScreen />
+    </LazyComponentProvider>
+  );
+};
 
 const ProjectEditScreen = lazy(
   () =>
@@ -33,6 +47,13 @@ const ProjectEditScreen = lazy(
       "../../../screens/private/screens/projects/project_edit/ProjectEditScreen"
     )
 );
+const LazyProjectEditComponent = () => {
+  return (
+    <LazyComponentProvider>
+      <ProjectEditScreen />
+    </LazyComponentProvider>
+  );
+};
 
 const ProjectAddScreen = lazy(
   () =>
@@ -40,6 +61,13 @@ const ProjectAddScreen = lazy(
       "../../../screens/private/screens/projects/project_add/ProjectAddScreen"
     )
 );
+const LazyProjectAddComponent = () => {
+  return (
+    <LazyComponentProvider>
+      <ProjectAddScreen />
+    </LazyComponentProvider>
+  );
+};
 
 const ProjectDeleteScreen = lazy(
   () =>
@@ -47,88 +75,19 @@ const ProjectDeleteScreen = lazy(
       "../../../screens/private/screens/projects/project_delete/ProjectDeleteScreen"
     )
 );
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Projects screens components.
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy projects screen component.
- * @returns The LazyProjectsScreenComponent component.
- */
-export function LazyProjectsScreenComponent() {
-  return (
-    <LazyComponentProvider>
-      <ProjectsScreen />
-    </LazyComponentProvider>
-  );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy project main screen component.
- * @returns The LazyProjectMainScreenComponent component.
- */
-export function LazyProjectMainScreenComponent() {
-  return (
-    <LazyComponentProvider>
-      <ProjectMainScreen />
-    </LazyComponentProvider>
-  );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy projects preview screen component.
- * @returns The LazyProjectPreviewComponent component.
- */
-export function LazyProjectPreviewComponent() {
-  return (
-    <LazyComponentProvider>
-      <ProjectPreviewScreen />
-    </LazyComponentProvider>
-  );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy project edit screen component.
- * @returns The LazyProjectEditComponent component.
- */
-export function LazyProjectEditComponent() {
-  return (
-    <LazyComponentProvider>
-      <ProjectEditScreen />
-    </LazyComponentProvider>
-  );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy add project screen component.
- * @returns The LazyProjectAddComponent component.
- */
-export function LazyProjectAddComponent() {
-  return (
-    <LazyComponentProvider>
-      <ProjectAddScreen />
-    </LazyComponentProvider>
-  );
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy delete project screen component.
- * @returns The LazyProjectDeleteComponent component.
- */
-export function LazyProjectDeleteComponent() {
+const LazyProjectDeleteComponent = () => {
   return (
     <LazyComponentProvider>
       <ProjectDeleteScreen />
     </LazyComponentProvider>
   );
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export {
+  LazyProjectsScreenComponent,
+  LazyProjectMainScreenComponent,
+  LazyProjectPreviewComponent,
+  LazyProjectEditComponent,
+  LazyProjectAddComponent,
+  LazyProjectDeleteComponent,
+};

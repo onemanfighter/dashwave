@@ -1,44 +1,16 @@
-/**
- * Author: Amit raikwar
- * Last updated: 06 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { useSelector } from "react-redux";
 import { RootState } from "store";
 import { ImagePreviewModal } from "components";
+import { ImagePreviewModalProviderProps } from "./types";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the notification provider component.
- * @param props The notification provider props.
- */
-interface IImagePreviewModalProviderProps {
-  children: React.ReactNode;
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Image preview modal provider component.
- * @param props The image preview modal provider props.
- * @returns The image preview modal provider component.
- */
-function ImagePreviewModalProvider(props: IImagePreviewModalProviderProps) {
+const ImagePreviewModalProvider = (props: ImagePreviewModalProviderProps) => {
   const modalImage = useSelector((state: RootState) => state.modalImage);
-  console.log("modalImage", modalImage);
   return (
     <div>
       <ImagePreviewModal image={modalImage} />
       {props.children}
     </div>
   );
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Export the ImagePreviewModalProvider component.
 export default ImagePreviewModalProvider;
-export type { IImagePreviewModalProviderProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
