@@ -30,7 +30,7 @@
         "eject": "react-scripts eject",
         "prettier:write": "prettier --write .",
         "prettier:check": "prettier --check .",
-        "prettier:staged": "prettier --write $(git diff --name-only --cached --relative --diff-filter=ACMRTUXB | grep '\\.tsx\\?$')",
+        "prettier:staged": "prettier --write .",
         "lint:staged": "eslint --fix --ext .ts,.tsx $(git diff --name-only --cached --relative --diff-filter=ACMRTUXB | grep '\\.tsx\\?$')",
         "lint:fix": "eslint --fix --ext .ts,.tsx ./src",
         "prepare": "husky"
