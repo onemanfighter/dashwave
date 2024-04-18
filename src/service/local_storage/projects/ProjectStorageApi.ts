@@ -1,13 +1,6 @@
-/**
- * Author: Amit raikwar
- * Last updated: 05 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { ProjectData } from "../../supabase/supastore/projects/ProjectsCollection";
 import { ProjectsKey } from "../token_constants/StorageConstant";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to store the projects key in local storage
  */
@@ -15,7 +8,6 @@ function storeProjectsKeyData(projectsData: ProjectData[]) {
   localStorage.setItem(ProjectsKey, JSON.stringify(projectsData));
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to get the profile key from local storage
  */
@@ -31,7 +23,6 @@ function getProjectsKeyData(): ProjectData[] | null {
   return null;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to remove the projects key data from local storage
  */
@@ -39,10 +30,5 @@ function removeProjectsKeyData() {
   localStorage.removeItem(ProjectsKey);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the functions
 export { storeProjectsKeyData, getProjectsKeyData, removeProjectsKeyData };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

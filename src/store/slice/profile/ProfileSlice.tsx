@@ -1,9 +1,3 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import {
   SocialType,
@@ -16,7 +10,6 @@ import {
 import { userProfileDataRead } from "../../../service/supabase/supastore/user_profile/UserProfileStoreApi";
 import { getAuthData } from "../auth/AuthSlice";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Initial profile data.
  */
@@ -62,10 +55,8 @@ const initialProfile: UserProfileData = {
   ],
 };
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const PROFILE = "profile";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * The profile slice.
  */
@@ -85,7 +76,6 @@ export const profileSlice = createSlice({
   },
 });
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Check if local storage has profile data, if not then fetch from the server database.
  * If the profile data is not available in the server database then add the initial profile data.
@@ -109,14 +99,9 @@ function syncForTheFirstTime(
   userProfileDataRead(getAuthData().userData, setProfileCallback);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the profile slice.
 export const { updateProfile, removeProfile } = profileSlice.actions;
 export default profileSlice.reducer;
 
 export type { UserProfileData };
 export { syncForTheFirstTime };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

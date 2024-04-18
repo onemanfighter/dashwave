@@ -7,7 +7,6 @@ import { WebsiteIcon } from "./WebsiteIcon";
 import { XIcon } from "./XIcon";
 import { YoutubeIcon } from "./YoutubeIcon";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Props for the Social Icon component.
  */
@@ -15,7 +14,6 @@ interface SocialIconProps {
   socialType: SocialType;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Returns a social Icon using the social type.
  *
@@ -40,5 +38,3 @@ export function SocialIcon(props: SocialIconProps) {
       return <WebsiteIcon />;
   }
 }
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

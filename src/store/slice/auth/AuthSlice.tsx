@@ -1,14 +1,7 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { removeProfileKeyData } from "../../../service/local_storage/profile/ProfileStorageApi";
 import { getAuthKeyData } from "../../../service/local_storage/auth/AuthStorageApi";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * User data.
  */
@@ -19,7 +12,6 @@ interface UserData {
   email: string;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Auth data.
  */
@@ -28,7 +20,6 @@ interface AuthData {
   userData: UserData;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Initial user data.
  */
@@ -39,7 +30,6 @@ const initialUserData: UserData = {
   email: "",
 };
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Initial auth data.
  */
@@ -48,13 +38,11 @@ const initialState: AuthData = {
   userData: initialUserData,
 };
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * The name of the auth slice.
  */
 const AUTH_NAME = "auth_token";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * The auth slice.
  */
@@ -72,7 +60,6 @@ const authSlice = createSlice({
   },
 });
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get the auth data from the local storage.
  *
@@ -87,7 +74,6 @@ function getAuthData(): AuthData {
   return initialState;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function getAuthUserID(): string {
   const authData = getAuthKeyData();
   if (authData) {
@@ -97,7 +83,6 @@ function getAuthUserID(): string {
   return "";
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the auth slice.
 export const { onLogin, onSignOut } = authSlice.actions;
 export default authSlice.reducer;
@@ -105,7 +90,3 @@ export default authSlice.reducer;
 export type { AuthData, UserData };
 export { getAuthUserID };
 export { getAuthData };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

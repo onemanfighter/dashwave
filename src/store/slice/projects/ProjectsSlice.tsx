@@ -1,9 +1,3 @@
-/**
- * Author: Amit raikwar
- * Last updated: 05 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ProjectData } from "../../../service/supabase/supastore/projects/ProjectsCollection";
 import {
@@ -12,16 +6,13 @@ import {
   storeProjectsKeyData,
 } from "../../../service/local_storage/projects/ProjectStorageApi";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Initial projects data.
  */
 const initialProjects: ProjectData[] = [];
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const PROJECTS = "projects";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * The all project slice.
  */
@@ -51,7 +42,6 @@ export const projectsSlice = createSlice({
   },
 });
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get single project.
  * @param state The state of the project slice.
@@ -62,7 +52,6 @@ const getSingleProject = (state: ProjectData[], projectId: string) => {
   return state.find((project) => project.projectId === projectId);
 };
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get local project data.
  * @returns The project data.
@@ -75,7 +64,6 @@ function getLocalProjectData(): ProjectData[] {
   return initialProjects;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the profile slice.
 export const {
   addProjects,
@@ -86,7 +74,3 @@ export const {
 export default projectsSlice.reducer;
 
 export { getSingleProject };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
