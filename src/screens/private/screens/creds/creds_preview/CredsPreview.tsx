@@ -9,7 +9,7 @@ interface ICredsPreviewProps {}
  * @returns The creds preview component.
  */
 function CredsPreview(props: ICredsPreviewProps) {
-  return <div>Creds Preview</div>;
+    return <div>Creds Preview</div>;
 }
 
 // Export the CredsPreview component.

@@ -1,2 +1,2 @@
-export { default as AlreadyLoginServiceProvider } from "./AlreadyLoginServiceProvider";
-export type { AlreadyLoginServiceProviderProps } from "./types";
+export { default as AlreadyLoginServiceProvider } from './AlreadyLoginServiceProvider';
+export type { AlreadyLoginServiceProviderProps } from './types';

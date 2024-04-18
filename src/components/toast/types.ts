@@ -1,20 +1,20 @@
-import { AlertComponentData } from "components/alert";
+import { AlertComponentData } from 'components/alert';
 
 export enum ToastXPosition {
-  START = "toast-start",
-  CENTER = "toast-center",
-  END = "toast-end",
+    START = 'toast-start',
+    CENTER = 'toast-center',
+    END = 'toast-end',
 }
 
 export enum ToastYPosition {
-  TOP = "toast-top",
-  CENTER = "toast-center",
-  BOTTOM = "toast-bottom",
+    TOP = 'toast-top',
+    CENTER = 'toast-center',
+    BOTTOM = 'toast-bottom',
 }
 
 export type ToastAlertComponentProps = {
-  alertComponentData: AlertComponentData;
-  xPosition?: ToastXPosition;
-  yPosition?: ToastYPosition;
-  bounce?: boolean;
+    alertComponentData: AlertComponentData;
+    xPosition?: ToastXPosition;
+    yPosition?: ToastYPosition;
+    bounce?: boolean;
 };

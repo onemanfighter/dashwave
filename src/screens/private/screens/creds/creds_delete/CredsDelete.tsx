@@ -9,7 +9,7 @@ interface ICredsDeleteProps {}
  * @returns The creds delete component.
  */
 function CredsDelete(props: ICredsDeleteProps) {
-  return <div>Creds delete</div>;
+    return <div>Creds delete</div>;
 }
 
 // Export the CredsDelete component.

@@ -1,1 +1,1 @@
-export { SidebarRoutes, ProfileRoutes } from "./SidebarRoutes";
+export { SidebarRoutes, ProfileRoutes } from './SidebarRoutes';

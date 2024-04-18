@@ -9,7 +9,7 @@ interface ICredsMainProps {}
  * @returns The creds main component.
  */
 function CredsMain(props: ICredsMainProps) {
-  return <div>Creds main</div>;
+    return <div>Creds main</div>;
 }
 
 // Export the CredsMain component.

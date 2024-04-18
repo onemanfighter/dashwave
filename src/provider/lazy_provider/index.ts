@@ -1,2 +1,2 @@
-export * from "./component";
-export * from "./lazy_screen";
+export * from './component';
+export * from './lazy_screen';

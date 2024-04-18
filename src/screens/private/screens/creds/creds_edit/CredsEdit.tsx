@@ -9,7 +9,7 @@ interface ICredsEditProps {}
  * @returns The creds edit component.
  */
 function CredsEdit(props: ICredsEditProps) {
-  return <div>Creds Edit</div>;
+    return <div>Creds Edit</div>;
 }
 
 // Export the CredsEdit component.
