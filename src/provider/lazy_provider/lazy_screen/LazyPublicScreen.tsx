@@ -1,67 +1,41 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { lazy } from "react";
 import LazyComponentProvider from "../component/LazyComponent";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Public screens lazy components.
 const LoginScreen = lazy(
   () => import("../../../screens/public/login_screen/LoginScreen")
 );
-const SignupScreen = lazy(
-  () => import("../../../screens/public/signup_screen/SignupScreen")
-);
-
-const ForgotPasswordScreen = lazy(
-  () => import("../../../screens/public/forgot_password/ForgotPassword")
-);
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Public screens components.
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy login screen component.
- * @returns The LazyLoginScreenComponent component.
- */
-export function LazyLoginScreenComponent() {
+const LazyLoginScreenComponent = () => {
   return (
     <LazyComponentProvider>
       <LoginScreen />
     </LazyComponentProvider>
   );
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy signup screen component.
- * @returns The LazySignupScreenComponent component.
- */
-export function LazySignupScreenComponent() {
+const SignupScreen = lazy(
+  () => import("../../../screens/public/signup_screen/SignupScreen")
+);
+const LazySignupScreenComponent = () => {
   return (
     <LazyComponentProvider>
       <SignupScreen />
     </LazyComponentProvider>
   );
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the lazy forgot password screen component.
- * @returns The LazyForgotPasswordScreenComponent component.
- */
-export function LazyForgotPasswordScreenComponent() {
+const ForgotPasswordScreen = lazy(
+  () => import("../../../screens/public/forgot_password/ForgotPassword")
+);
+const LazyForgotPasswordScreenComponent = () => {
   return (
     <LazyComponentProvider>
       <ForgotPasswordScreen />
     </LazyComponentProvider>
   );
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export {
+  LazyLoginScreenComponent,
+  LazySignupScreenComponent,
+  LazyForgotPasswordScreenComponent,
+};

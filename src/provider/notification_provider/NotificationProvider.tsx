@@ -1,36 +1,13 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { NotificationComponent } from "components";
+import { NotificationProviderProps } from "./types";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the notification provider component.
- */
-export interface INotificationProviderProps {
-  children: React.ReactNode;
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
- * Component definition for the notification provider component.
- * @param props The properties of the notification provider component.
- * @returns The NotificationProvider component.
- */
-export default function NotificationProvider(
-  props: INotificationProviderProps
-) {
+const NotificationProvider = (props: NotificationProviderProps) => {
   return (
     <div>
       <NotificationComponent />
       {props.children}
     </div>
   );
-}
+};
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export default NotificationProvider;
