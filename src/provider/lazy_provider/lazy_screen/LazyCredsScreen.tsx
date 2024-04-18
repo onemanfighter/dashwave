@@ -14,7 +14,7 @@ const LazyCredsScreenComponent = () => {
 };
 
 const CredsMainScreen = lazy(
-  () => import("../../../screens/private/screens/creds/creds_main/CredsMain")
+  () => import("../../../screens/private/screens/creds/CredsMain/CredsMain")
 );
 const LazyCredsMainScreenComponent = () => {
   return (
@@ -26,7 +26,7 @@ const LazyCredsMainScreenComponent = () => {
 
 const CredsPreviewScreen = lazy(
   () =>
-    import("../../../screens/private/screens/creds/creds_preview/CredsPreview")
+    import("../../../screens/private/screens/creds/CredsPreview/CredsPreview")
 );
 const LazyCredsPreviewScreenComponent = () => {
   return (
@@ -37,7 +37,7 @@ const LazyCredsPreviewScreenComponent = () => {
 };
 
 const CredsEditScreen = lazy(
-  () => import("../../../screens/private/screens/creds/creds_edit/CredsEdit")
+  () => import("../../../screens/private/screens/creds/CredsEdit/CredsEdit")
 );
 
 const LazyCredsEditScreenComponent = () => {
@@ -49,7 +49,7 @@ const LazyCredsEditScreenComponent = () => {
 };
 
 const CredsAddScreen = lazy(
-  () => import("../../../screens/private/screens/creds/creds_settings/CredsAdd")
+  () => import("../../../screens/private/screens/creds/CredsAdd/CredsAdd")
 );
 
 const LazyCredsAddScreenComponent = () => {
@@ -62,7 +62,7 @@ const LazyCredsAddScreenComponent = () => {
 
 const CredsDeleteScreen = lazy(
   () =>
-    import("../../../screens/private/screens/creds/creds_delete/CredsDelete")
+    import("../../../screens/private/screens/creds/CredsDelete/CredsDelete")
 );
 const LazyCredsDeleteScreenComponent = () => {
   return (
