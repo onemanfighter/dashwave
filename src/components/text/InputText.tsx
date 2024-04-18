@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { InputTextProps, InputType } from "./types";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Input text component.
  *

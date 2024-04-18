@@ -1,21 +1,13 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 import { OverviewIcon, DeleteIcon, AddIcon, EditIcon } from "assets";
 import { TooltipComponent } from "components";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Props for the CredsScreen component.
  */
 interface ICredsScreenProps {}
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * cred screen routes.
  */
@@ -26,7 +18,6 @@ const CredsRoutes = [
   { title: "Delete credentials", icon: <DeleteIcon />, path: "delete" },
 ];
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the creds screen component.
  * @param props The props for the creds screen component.
@@ -57,11 +48,6 @@ function CredsScreen(props: ICredsScreenProps) {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the CredsScreen component.
 export default CredsScreen;
 export type { ICredsScreenProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

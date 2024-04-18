@@ -1,9 +1,3 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { batch, useDispatch } from "react-redux";
 import { NotificationButton, NotificationButtonType } from "components";
 import {
@@ -13,13 +7,11 @@ import {
 } from "store";
 import { getErrorAlertData } from "provider";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Interface definition for the dashboard home props.
  */
 interface IDashboardHomeProps {}
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the dashboard home component.
  * @param props The props for the dashboard home component.
@@ -63,11 +55,6 @@ function DashboardHome(props: IDashboardHomeProps) {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the dashboard home component.
 export default DashboardHome;
 export type { IDashboardHomeProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

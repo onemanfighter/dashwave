@@ -1,21 +1,13 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 import { ProfileIcon, PasswordResetIcon, SettingsIcon } from "assets";
 import { TooltipComponent } from "components";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Props for the ProfileMainScreen component.
  */
 interface IProfileMainScreenProps {}
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Profile screen routes.
  */
@@ -25,7 +17,6 @@ const ProfileRoutes = [
   { title: "Profile setting", icon: <SettingsIcon />, path: "settings" },
 ];
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the profile screen component.
  * @param props The props for the profile screen component.
@@ -56,11 +47,6 @@ function ProfileMainScreen(props: IProfileMainScreenProps) {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the profile screen component.
 export default ProfileMainScreen;
 export type { IProfileMainScreenProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,9 +1,3 @@
-/**
- * Author: Amit raikwar
- * Last updated: 06 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./slice/auth/AuthSlice";
 import themeReducer from "./slice/theme/ThemeSlice";
@@ -13,7 +7,6 @@ import toastAlertReducer from "./slice/toast_alert/ToastAlertSlice";
 import projectsReducer from "./slice/projects/ProjectsSlice";
 import imageModalReducer from "./slice/image_modal/ImageModalSlice";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * The redux store configuration.
  * @returns The redux store.
@@ -39,12 +32,7 @@ const store = configureStore({
   },
 });
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the store.
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 export { store };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

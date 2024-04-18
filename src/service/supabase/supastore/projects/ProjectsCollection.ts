@@ -1,9 +1,4 @@
 /**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/**
  * Type definition for the tech data.
  */
 interface TechData {
@@ -11,7 +6,6 @@ interface TechData {
   icon: string;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Type definition for the project todo.
  */
@@ -21,14 +15,12 @@ interface ProjectTodo {
   isCompleted: boolean;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 interface ProjectFeature {
   featureName: string;
   featureDesc: string;
   isCompleted: boolean;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 interface ProjectDataSchema {
   project_id: string;
   user_id: string;
@@ -49,7 +41,6 @@ interface ProjectDataSchema {
   backend_link: string;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 interface ProjectData {
   [x: string]: any;
   projectId: string;
@@ -71,7 +62,6 @@ interface ProjectData {
   backendLink: string;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the type
 export type {
   ProjectData,
@@ -80,7 +70,3 @@ export type {
   ProjectTodo,
   ProjectFeature,
 };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

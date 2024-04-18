@@ -1,21 +1,13 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { TooltipComponent } from "components";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 import { OverviewIcon, DeleteIcon, AddIcon, EditIcon } from "assets";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Props for the PlansScreen component.
  */
 interface IPlansScreenProps {}
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Plans screen routes.
  */
@@ -26,7 +18,6 @@ const PlansRoutes = [
   { title: "Delete plan", icon: <DeleteIcon />, path: "delete" },
 ];
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the plans screen component.
  * @param props The props for the plans screen component.
@@ -57,11 +48,6 @@ function PlansScreen(props: IPlansScreenProps) {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the PlansScreen component.
 export default PlansScreen;
 export type { IPlansScreenProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,8 +1,3 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import { AuthData } from "store";
 import { AuthTokenKey } from "../../local_storage/token_constants/StorageConstant";
 import { firebaseForgotPassword } from "./actions/AuthForgotPassword";
@@ -10,7 +5,6 @@ import { LoginCred, firebaseSingIn } from "./actions/AuthSignIn";
 import { firebaseSignOut } from "./actions/AuthSignOut";
 import supabaseSignUp, { SignUpCred } from "./actions/AuthSignUp";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to make the Firebase signin
  */
@@ -22,7 +16,6 @@ function signIn(
   firebaseSingIn(cred, signInHandler, errorCallback);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to make the Firebase signup
  */
@@ -34,7 +27,6 @@ function signUp(
   supabaseSignUp(cred, signUpHandler, errorCallback);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to make firebase signout
  */
@@ -42,7 +34,6 @@ function signOut(signOutHandler: () => void) {
   firebaseSignOut(signOutHandler);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to make the firebase forgot password.
  */
@@ -54,7 +45,6 @@ function forgotPassword(
   firebaseForgotPassword(email, forgotPasswordHandler, errorCallback);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to make the firebase already signin
  *
@@ -67,10 +57,5 @@ function alreadySignedIn(signOutHandler: () => void) {
   }
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the function
 export { signIn, signUp, signOut, forgotPassword, alreadySignedIn };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

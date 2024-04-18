@@ -1,13 +1,6 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { UserProfileData } from "../../supabase/supastore/user_profile/UserCollection";
 import { ProfileTokenKey } from "../token_constants/StorageConstant";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to store the profile key in local storage
  */
@@ -15,7 +8,6 @@ function storeProfileKeyData(profileData: UserProfileData) {
   localStorage.setItem(ProfileTokenKey, JSON.stringify(profileData));
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to get the profile key from local storage
  */
@@ -33,7 +25,6 @@ function getProfileKeyData(): UserProfileData | null {
   return null;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to remove the profile key from local storage
  */
@@ -41,10 +32,5 @@ function removeProfileKeyData() {
   localStorage.removeItem(ProfileTokenKey);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the functions
 export { storeProfileKeyData, getProfileKeyData, removeProfileKeyData };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,21 +1,13 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { TooltipComponent } from "components";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
 import { OverviewIcon, DeleteIcon, AddIcon, EditIcon } from "assets";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Props for the GoalsScreen component.
  */
 interface IGoalsScreenProps {}
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Goals screen routes.
  */
@@ -26,7 +18,6 @@ const GoalsRoutes = [
   { title: "Delete goal", icon: <DeleteIcon />, path: "delete" },
 ];
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the goals screen component.
  * @param props The props for the goals screen component.
@@ -57,11 +48,6 @@ function GoalsScreen(props: IGoalsScreenProps) {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the GoalsScreen component.
 export default GoalsScreen;
 export type { IGoalsScreenProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

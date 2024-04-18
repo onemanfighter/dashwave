@@ -1,20 +1,12 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ToastAlertData } from "provider";
 import { AlertType, ToastXPosition, ToastYPosition } from "components";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * The name of the toast alert slice.
  */
 const TOAST_ALERT = "alert";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Initial toast alert state.
  */
@@ -28,7 +20,6 @@ const initialToastAlertState: ToastAlertData = {
   bounce: false,
 };
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * The toast alert slice.
  */
@@ -45,7 +36,6 @@ export const alertSlice = createSlice({
   },
 });
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Show the alert with a timeout.
  *
@@ -64,13 +54,8 @@ function showAlertWithTimeout(
   }, timeMS);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const { showToastAlert, hideToastAlert } = alertSlice.actions;
 export default alertSlice.reducer;
 
 export type { ToastAlertData };
 export { showAlertWithTimeout };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

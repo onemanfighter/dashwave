@@ -1,9 +1,3 @@
-/**
- * Author: Amit raikwar
- * Last updated: 05 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { TooltipComponent } from "components";
 import getSubNavTitle from "../../../../util/nav/NavTitle";
@@ -13,13 +7,11 @@ import { getAllProjects } from "../../../../service/supabase/supastore/projects/
 import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from "assets";
 import { RootState, addProjects } from "store";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Props for the ProjectsScreen component.
  */
 interface IProjectsScreenProps {}
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Project screen routes.
  */
@@ -30,7 +22,6 @@ const ProjectRoutes = [
   { title: "Delete project", icon: <DeleteIcon />, path: "delete" },
 ];
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Component definition for the projects screen component.
  * @param props The props for the projects screen component.
@@ -72,11 +63,6 @@ function ProjectsScreen(props: IProjectsScreenProps) {
   );
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the ProjectsScreen component.
 export default ProjectsScreen;
 export type { IProjectsScreenProps };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -35,7 +35,6 @@ export function getErrorAlertData(title: string): ToastAlertData {
   };
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get the info alert data.
  *
@@ -53,7 +52,6 @@ export function getInfoAlertData(title: string): ToastAlertData {
   };
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Get the warning alert data.
  *
@@ -70,7 +68,3 @@ export function getWarningAlertData(title: string): ToastAlertData {
     yPosition: ToastYPosition.BOTTOM,
   };
 }
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

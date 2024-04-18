@@ -1,16 +1,9 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { UserData } from "store";
 import { ToastAlertData } from "provider";
 import { UserProfileData } from "./UserCollection";
 import { getUserUsingId } from "./actions/UserDataRead";
 import { updateUserData } from "./actions/UserDataWrite";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to get the user profileData
  *
@@ -26,7 +19,6 @@ function userProfileDataRead(
   getUserUsingId(userAuthState, callback);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to update the user profileData.
  * @param userIdFromAuth - The user id.
@@ -44,10 +36,5 @@ function userProfileDataUpdate(
   return updateUserData(userIdFromAuth, data, callback, showAlertHandler);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the functions
 export { userProfileDataRead, userProfileDataUpdate };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

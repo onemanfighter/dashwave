@@ -1,9 +1,3 @@
-/**
- * Author: Amit raikwar
- * Last updated: 04 Feb, 2024
- */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 import { ToastAlertData } from "provider";
 import { ProjectData } from "./ProjectsCollection";
 import {
@@ -12,7 +6,6 @@ import {
 } from "./actions/ProjectsDataRead";
 import { insertOrUpdateProject } from "./actions/ProjectsDataWrite";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to get the project data.
  *
@@ -23,7 +16,6 @@ function getSingleProject(projectId: string) {
   return getProjectUsingProjectId(projectId);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to get the all associated project data.
  *
@@ -38,7 +30,6 @@ function getAllProjects(
   return getAllProjectForMainScreen(userId, successCallback);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to add the new project data.
  *
@@ -52,7 +43,6 @@ function addNewProject(
   insertOrUpdateProject(projectData, showAlertHandler);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Method to update the existing project data.
  *
@@ -66,7 +56,6 @@ function updateExistingProject(
   insertOrUpdateProject(projectData, showAlertHandler);
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Export the functions.
 export {
   getSingleProject,
@@ -74,7 +63,3 @@ export {
   addNewProject,
   updateExistingProject,
 };
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// End of file.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

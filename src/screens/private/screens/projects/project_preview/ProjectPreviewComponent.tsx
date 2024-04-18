@@ -3,7 +3,6 @@
  * Author : Amit raikwar
  * Last updated : 06 Feb, 2024
  */
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 import { useDispatch } from "react-redux";
 import { ImagePreviewModalButton } from "components";
@@ -11,7 +10,6 @@ import { ProjectData } from "../../../../../service/supabase/supastore/projects/
 import { WebsiteIcon, GithubIcon, HostingerIcon } from "assets";
 import { setModalImage } from "store";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Project preview component props.
  * @param project The project data.
@@ -20,7 +18,6 @@ export interface IProjectPreviewComponentProps {
   project: ProjectData;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /**
  * Project preview component.
  * @param props The project preview component props.
