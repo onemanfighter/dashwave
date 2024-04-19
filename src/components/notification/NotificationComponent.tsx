@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import { RootState } from 'store';
 import { NOTIFICATION_MODAL_ID } from './constants';
 import { useTranslation } from 'react-i18next';
+import { NotificationSelector } from 'store/selectors';
 
 /**
  * Component definition for the notification component.
@@ -9,9 +9,7 @@ import { useTranslation } from 'react-i18next';
  */
 const NotificationComponent = () => {
     const { t } = useTranslation();
-    const notificationData = useSelector(
-        (state: RootState) => state.notification
-    );
+    const { notificationData } = useSelector(NotificationSelector);
     return (
         notificationData && (
             <div className="z-50">

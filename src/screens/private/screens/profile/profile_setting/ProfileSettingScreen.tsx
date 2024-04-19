@@ -29,8 +29,8 @@ import {
     showAlertWithTimeout,
     updateProfile,
     getAuthUserID,
-    showNotification,
 } from 'store';
+import { NotificationSelector } from 'store/selectors';
 
 /**
  * Type definition for the update form value.
@@ -45,6 +45,7 @@ interface UpdateFormValue {
  * @returns The ProfileSettingScreen component.
  */
 function ProfileSettingScreen() {
+    const { showNotificationAction } = useSelector(NotificationSelector);
     const profileData = useSelector((state: RootState) => state.profile);
     const [loading, setLoading] = useState(false);
     const [userProfileState, setUserProfileState] =
@@ -81,14 +82,12 @@ function ProfileSettingScreen() {
                 buttonType={NotificationButtonType.INFO}
                 isButtonOutline={true}
                 onClickHandler={() => {
-                    dispatch(
-                        showNotification({
-                            title: 'Profile Update',
-                            description:
-                                'Are you sure you want to update your profile?',
-                            onConfirm: updateProfileHandler,
-                        })
-                    );
+                    showNotificationAction({
+                        title: 'Profile Update',
+                        description:
+                            'Are you sure you want to update your profile?',
+                        onConfirm: updateProfileHandler,
+                    });
                 }}
             />
         );
