@@ -11,11 +11,7 @@ import {
     updateProfile,
 } from 'store';
 
-/**
- * Component definition for the main root screen component.
- * @returns The MainRootScreen component.
- */
-function MainRootScreen() {
+const MainRootScreen = () => {
     const userAuthUserIdState = useSelector(
         (state: RootState) => state.auth.userData.userId
     );
@@ -74,7 +70,6 @@ function MainRootScreen() {
             </div>
         </div>
     );
-}
+};
 
-// Export the MainRootScreen component.
 export default MainRootScreen;

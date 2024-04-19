@@ -2,15 +2,8 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import getSubNavTitle from '../../../../util/nav/NavTitle';
 import { OverviewIcon, DeleteIcon, AddIcon, EditIcon } from 'assets';
 import { TooltipComponent } from 'components';
+import { CredsScreenProps } from './types';
 
-/**
- * Props for the CredsScreen component.
- */
-interface ICredsScreenProps {}
-
-/**
- * cred screen routes.
- */
 const CredsRoutes = [
     { title: 'Credentials over', icon: <OverviewIcon />, path: 'preview' },
     { title: 'Credentials add', icon: <AddIcon />, path: 'add' },
@@ -23,7 +16,7 @@ const CredsRoutes = [
  * @param props The props for the creds screen component.
  * @returns The creds screen component.
  */
-function CredsScreen(props: ICredsScreenProps) {
+const CredsScreen = (props: CredsScreenProps) => {
     const currentLocation = useLocation();
     return (
         <div className="h-full">
@@ -49,8 +42,6 @@ function CredsScreen(props: ICredsScreenProps) {
             </div>
         </div>
     );
-}
+};
 
-// Export the CredsScreen component.
 export default CredsScreen;
-export type { ICredsScreenProps };
