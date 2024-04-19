@@ -93,7 +93,7 @@ const NavigationComponent = (props: NavigationComponentProps) => {
                     >
                         <li className="menu-title">
                             <span>
-                                {t('MainScreen.hiText', {
+                                {t('ProfileMenuOption.hiText', {
                                     firstName: profileState.firstName,
                                     lastName: profileState.lastName,
                                 })}
@@ -106,7 +106,7 @@ const NavigationComponent = (props: NavigationComponentProps) => {
                             >
                                 <div className="flex flex-row gap-2 items-center">
                                     <ProfileIcon />
-                                    {t('MainScreen.profile')}
+                                    {t('ProfileMenuOption.profile')}
                                 </div>
                                 <span className="badge">New</span>
                             </NavLink>
@@ -114,13 +114,13 @@ const NavigationComponent = (props: NavigationComponentProps) => {
                         <li className="m-1">
                             <NavLink to={'/profile/reset'}>
                                 <PasswordResetIcon />
-                                {t('MainScreen.passwordReset')}
+                                {t('ProfileMenuOption.passwordReset')}
                             </NavLink>
                         </li>
                         <li className="m-1">
                             <NavLink to={'/profile/settings'}>
                                 <SettingsIcon />
-                                {t('MainScreen.settings')}
+                                {t('ProfileMenuOption.settings')}
                             </NavLink>
                         </li>
                         <li className="m-1">
@@ -129,7 +129,7 @@ const NavigationComponent = (props: NavigationComponentProps) => {
                                 className=" bg-error text-error-content"
                             >
                                 <LogoutIcon />
-                                {t('MainScreen.logout')}
+                                {t('ProfileMenuOption.logout')}
                             </button>
                         </li>
                     </ul>

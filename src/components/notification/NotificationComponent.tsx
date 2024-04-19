@@ -1,12 +1,14 @@
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { NOTIFICATION_MODAL_ID } from './constants';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Component definition for the notification component.
  * @returns The notification component.
  */
 const NotificationComponent = () => {
+    const { t } = useTranslation();
     const notificationData = useSelector(
         (state: RootState) => state.notification
     );
@@ -33,7 +35,7 @@ const NotificationComponent = () => {
                                         className="btn btn-success btn-outline"
                                         onClick={notificationData?.onConfirm}
                                     >
-                                        Confirm
+                                        {t('Notification.confirm')}
                                     </label>
                                 </div>
                             )}
@@ -42,7 +44,7 @@ const NotificationComponent = () => {
                                     htmlFor={NOTIFICATION_MODAL_ID}
                                     className="btn btn-error btn-outline"
                                 >
-                                    Close
+                                    {t('Notification.close')}
                                 </label>
                             </div>
                         </div>

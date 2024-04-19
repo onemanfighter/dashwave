@@ -6,6 +6,7 @@ import { signUp } from '../../../service/supabase/supa_auth/AuthApi';
 import { useDispatch } from 'react-redux';
 import { getSuccessAlertData } from 'provider';
 import { showAlertWithTimeout } from 'store';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Prop types for the update form value function.
@@ -21,6 +22,7 @@ interface UpdateProps {
  * @returns The Register component.
  */
 function Register() {
+    const { t } = useTranslation();
     const INITIAL_REGISTER_OBJ: SignUpCred = {
         fName: '',
         lName: '',
@@ -37,9 +39,7 @@ function Register() {
     const signUpHandler = () => {
         showAlertWithTimeout(
             dispatch,
-            getSuccessAlertData(
-                'Sign up successfull! Please verify the email to login.'
-            ),
+            getSuccessAlertData(t('SignUpScreen.successfulAlert')),
             3000
         );
         navigate('login');
@@ -50,13 +50,13 @@ function Register() {
         setErrorMessage('');
 
         if (registerObj.fName.trim() === '')
-            return setErrorMessage('First name is required! (use any value)');
+            return setErrorMessage(t('SignUpError.firstNameRequired'));
         if (registerObj.lName.trim() === '')
-            return setErrorMessage('Last name is required! (use any value)');
+            return setErrorMessage(t('SignUpError.lastNameRequired'));
         if (registerObj.email.trim() === '')
-            return setErrorMessage('Email Id is required! (use any value)');
+            return setErrorMessage(t('SignUpError.emailRequired'));
         if (registerObj.password.trim() === '')
-            return setErrorMessage('Password is required! (use any value)');
+            return setErrorMessage(t('SignUpError.emailNotValid'));
         else {
             setLoading(true);
             // Show alert
@@ -88,7 +88,7 @@ function Register() {
                     </div>
                     <div className="py-12 px-10 bg-primary-content">
                         <h2 className="text-2xl font-semibold mb-2 text-center">
-                            Register
+                            {t('SignUpScreen.title')}
                         </h2>
                         <form onSubmit={(e) => submitForm(e)}>
                             <div className="">
@@ -96,7 +96,7 @@ function Register() {
                                     defaultValue={registerObj.fName}
                                     updateType="fName"
                                     containerStyle="mt-4"
-                                    labelTitle="First name"
+                                    labelTitle={t('Account.input.firstName')}
                                     updateFormValue={updateFormValue}
                                 />
 
@@ -104,14 +104,14 @@ function Register() {
                                     defaultValue={registerObj.lName}
                                     updateType="lName"
                                     containerStyle="mt-2"
-                                    labelTitle="Last name"
+                                    labelTitle={t('Account.input.lastName')}
                                     updateFormValue={updateFormValue}
                                 />
                                 <InputText
                                     defaultValue={registerObj.email}
                                     updateType="email"
                                     containerStyle="mt-2"
-                                    labelTitle="Email Id"
+                                    labelTitle={t('Account.input.email')}
                                     updateFormValue={updateFormValue}
                                 />
 
@@ -119,7 +119,7 @@ function Register() {
                                     defaultValue={registerObj.password}
                                     updateType="password"
                                     containerStyle="mt-2"
-                                    labelTitle="Password"
+                                    labelTitle={t('Account.input.password')}
                                     updateFormValue={updateFormValue}
                                 />
                             </div>
@@ -134,14 +134,14 @@ function Register() {
                                     (loading ? ' loading' : '')
                                 }
                             >
-                                Register
+                                {t('SignUpScreen.registerButton')}
                             </button>
 
                             <div className="text-center mt-2">
-                                Already have an account?{' '}
+                                {t('Account.noAccountText')}
                                 <NavLink to="/login">
                                     <span className="  inline-block  hover:text-primary hover:underline hover:cursor-pointer transition duration-200">
-                                        Login
+                                        {t('Account.login')}
                                     </span>
                                 </NavLink>
                             </div>

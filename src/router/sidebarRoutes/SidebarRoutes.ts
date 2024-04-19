@@ -3,49 +3,49 @@
  */
 export const SidebarRoutes = [
     {
-        name: 'Home',
+        nameKey: 'Sidebar.home',
         path: '/dashboard',
         iconName: 'home',
     },
     {
-        name: 'Projects',
+        nameKey: 'Sidebar.projects',
         path: '/projects',
         iconName: 'projects',
     },
     {
-        name: 'Plans',
+        nameKey: 'Sidebar.plans',
         path: '/plans',
         iconName: 'plans',
     },
     {
-        name: 'Expenses',
+        nameKey: 'Sidebar.expenses',
         path: '/expenses',
         iconName: 'expenses',
     },
     {
-        name: 'Goals',
+        nameKey: 'Sidebar.goals',
         path: '/goals',
         iconName: 'goals',
     },
     {
-        name: 'Learning',
+        nameKey: 'Sidebar.learning',
         path: '/learning',
         iconName: 'learning',
     },
     {
-        name: 'Resources',
+        nameKey: 'Sidebar.resources',
         path: '/resources',
         iconName: 'resources',
     },
     {
-        name: 'Credentials',
+        nameKey: 'Sidebar.creds',
         path: '/creds',
         iconName: 'credentials',
     },
 ];
 
 export const ProfileRoutes = {
-    name: 'Profile',
+    nameKey: 'Sidebar.profile',
     path: '/profile',
     iconName: 'profile',
 };

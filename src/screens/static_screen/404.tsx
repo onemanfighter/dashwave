@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 /**
  * Props type definition for the Error404 component.
  */
@@ -10,7 +12,8 @@ interface IError404Props {}
  * @returns The Error404 component.
  */
 function Error404(props: IError404Props) {
-    return <div>Error404</div>;
+    const { t } = useTranslation();
+    return <div>{t('Static.errorText')}</div>;
 }
 
 // Export the Error404 component.

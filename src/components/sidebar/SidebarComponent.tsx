@@ -17,6 +17,7 @@ import {
     SidebarIconProps,
     SidebarIconType,
 } from './types';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Gets the icon for the sidebar.
@@ -55,6 +56,7 @@ const SidebarIcon = ({ icon }: SidebarIconProps) => {
  * @returns The sidebar component.
  */
 function SidebarComponent(props: SidebarComponentProps) {
+    const { t } = useTranslation();
     return (
         <div className=" flex-col text-base-content flex justify-between h-[95%]">
             <ul className="menu p-2 w-full ">
@@ -63,7 +65,7 @@ function SidebarComponent(props: SidebarComponentProps) {
                     return (
                         <TooltipComponent
                             key={index}
-                            title={route.name}
+                            title={t(route.nameKey)}
                             position="tooltip-right"
                             disable={props.sideBarOpen}
                         >
@@ -78,7 +80,7 @@ function SidebarComponent(props: SidebarComponentProps) {
                                     <SidebarIcon
                                         icon={route.iconName as SidebarIconType}
                                     />
-                                    {props.sideBarOpen ? route.name : ''}
+                                    {props.sideBarOpen ? t(route.nameKey) : ''}
                                 </NavLink>
                             </li>
                         </TooltipComponent>
@@ -87,7 +89,7 @@ function SidebarComponent(props: SidebarComponentProps) {
             </ul>
             <ul className="menu p-2 w-full ">
                 <TooltipComponent
-                    title={ProfileRoutes.name}
+                    title={t(ProfileRoutes.nameKey)}
                     position="tooltip-right"
                     disable={props.sideBarOpen}
                 >
@@ -101,7 +103,7 @@ function SidebarComponent(props: SidebarComponentProps) {
                             <SidebarIcon
                                 icon={ProfileRoutes.iconName as SidebarIconType}
                             />
-                            {props.sideBarOpen ? ProfileRoutes.name : ''}
+                            {props.sideBarOpen ? t(ProfileRoutes.nameKey) : ''}
                         </NavLink>
                     </li>
                 </TooltipComponent>
