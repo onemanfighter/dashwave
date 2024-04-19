@@ -4,8 +4,7 @@ import notificationReducer from '../slice/notification/NotificationSlice';
 import profileReducer from '../slice/profile/ProfileSlice';
 import toastAlertReducer from '../slice/toast_alert/ToastAlertSlice';
 import projectsReducer from '../slice/projects/ProjectsSlice';
-import imageModalReducer from '../slice/image_modal/ImageModalSlice';
-import { authSlice } from 'store/slice';
+import { authSlice, imageModalSlice } from 'store/slice';
 
 /**
  * The redux store configuration.
@@ -28,7 +27,7 @@ const store = configureStore({
         notification: notificationReducer,
         toastAlert: toastAlertReducer,
         projects: projectsReducer,
-        modalImage: imageModalReducer,
+        modalImage: imageModalSlice.reducer,
     },
 });
 

@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-import { RootState } from 'store';
 import { ImagePreviewModal } from 'components';
 import { ImagePreviewModalProviderProps } from './types';
+import { ImageModalSelector } from 'store/selectors';
 
 const ImagePreviewModalProvider = (props: ImagePreviewModalProviderProps) => {
-    const modalImage = useSelector((state: RootState) => state.modalImage);
+    const { modalImage } = useSelector(ImageModalSelector);
     return (
         <div>
             <ImagePreviewModal image={modalImage} />

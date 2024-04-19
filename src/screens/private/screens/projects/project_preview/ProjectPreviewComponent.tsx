@@ -1,35 +1,22 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-/**
- * Author : Amit raikwar
- * Last updated : 06 Feb, 2024
- */
 
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ImagePreviewModalButton } from 'components';
 import { ProjectData } from '../../../../../service/supabase/supastore/projects/ProjectsCollection';
 import { WebsiteIcon, GithubIcon, HostingerIcon } from 'assets';
-import { setModalImage } from 'store';
+import { ImageModalSelector } from 'store/selectors';
 
-/**
- * Project preview component props.
- * @param project The project data.
- */
-export interface IProjectPreviewComponentProps {
+export type IProjectPreviewComponentProps = {
     project: ProjectData;
-}
+};
 
-/**
- * Project preview component.
- * @param props The project preview component props.
- * @returns The project preview component.
- */
 export default function ProjectPreviewComponent(
     props: IProjectPreviewComponentProps
 ) {
-    const dispatch = useDispatch();
+    const { setModalImageAction } = useSelector(ImageModalSelector);
 
     const onImageClickHandler = (image: string) => {
-        dispatch(setModalImage(image));
+        setModalImageAction(image);
     };
 
     return (
