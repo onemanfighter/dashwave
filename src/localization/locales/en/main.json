@@ -1,0 +1,9 @@
+{
+    "MainScreen": {
+        "hiText": "Hi, {{firstName}} {{lastName}}",
+        "profile": "Profile",
+        "passwordReset": "Password reset",
+        "settings": "Settings"
+    },
+    "logout": "Logout"
+}

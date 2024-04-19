@@ -11,6 +11,8 @@ import {
     ThemeProvider,
 } from 'provider';
 import { RouterProviderComponent } from 'router';
+// init localization
+import './localization/config';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement

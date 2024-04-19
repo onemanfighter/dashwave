@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,6 +21,7 @@ import { NavigationComponentProps } from './types';
  * @returns The navigation component.
  */
 const NavigationComponent = (props: NavigationComponentProps) => {
+    const { t } = useTranslation();
     const dispatch = useDispatch();
     const themeState = useSelector((state: RootState) => state.theme);
     const profileState = useSelector((state: RootState) => state.profile);
@@ -91,8 +93,10 @@ const NavigationComponent = (props: NavigationComponentProps) => {
                     >
                         <li className="menu-title">
                             <span>
-                                Hi, {profileState.firstName}{' '}
-                                {profileState.lastName}
+                                {t('MainScreen.hiText', {
+                                    firstName: profileState.firstName,
+                                    lastName: profileState.lastName,
+                                })}
                             </span>
                         </li>
                         <li className="m-1">
@@ -102,7 +106,7 @@ const NavigationComponent = (props: NavigationComponentProps) => {
                             >
                                 <div className="flex flex-row gap-2 items-center">
                                     <ProfileIcon />
-                                    Profile
+                                    {t('MainScreen.profile')}
                                 </div>
                                 <span className="badge">New</span>
                             </NavLink>
@@ -110,13 +114,13 @@ const NavigationComponent = (props: NavigationComponentProps) => {
                         <li className="m-1">
                             <NavLink to={'/profile/reset'}>
                                 <PasswordResetIcon />
-                                Password reset
+                                {t('MainScreen.passwordReset')}
                             </NavLink>
                         </li>
                         <li className="m-1">
                             <NavLink to={'/profile/settings'}>
                                 <SettingsIcon />
-                                Settings
+                                {t('MainScreen.settings')}
                             </NavLink>
                         </li>
                         <li className="m-1">
@@ -125,7 +129,7 @@ const NavigationComponent = (props: NavigationComponentProps) => {
                                 className=" bg-error text-error-content"
                             >
                                 <LogoutIcon />
-                                Logout
+                                {t('MainScreen.logout')}
                             </button>
                         </li>
                     </ul>
