@@ -1,0 +1,7 @@
+# Prettier configuration: 
+# https://andrebnassis.medium.com/setting-prettier-on-a-react-typescript-project-2021-f9f0d5a1d6b0
+
+node_modules
+# Ignore artifacts:
+build
+coverage

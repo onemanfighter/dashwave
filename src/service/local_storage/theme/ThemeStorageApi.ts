@@ -1,17 +1,17 @@
-import { Theme } from "store";
-import { themeKey } from "../token_constants/StorageConstant";
+import { Theme } from 'store';
+import { themeKey } from '../token_constants/StorageConstant';
 
 /**
  * Theme check for dark mode.
  */
-const themeCheck = getThemeData() === "dark" ? true : false;
+const themeCheck = getThemeData() === 'dark' ? true : false;
 
 /**
  * Function to get theme data from local storage.
  * @returns theme data from local storage.
  */
 function getThemeData() {
-  return localStorage.getItem(themeKey);
+    return localStorage.getItem(themeKey);
 }
 
 /**
@@ -19,7 +19,7 @@ function getThemeData() {
  * @param theme theme data to set in local storage.
  */
 function setThemeData(theme: Theme) {
-  localStorage.setItem(themeKey, theme);
+    localStorage.setItem(themeKey, theme);
 }
 
 // Export the functions

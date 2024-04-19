@@ -1,18 +1,18 @@
 {
-  "plugins": [
-    [
-      "module-resolver",
-      {
-        "root": ["./src"],
-        "extensions": [".ts", ".tsx", ".jsx", ".js", ".json"],
-        "alias": {
-          "components": "./src/components",
-          "assets": "./src/assets",
-          "provider": "./src/provider",
-          "store": "./src/store",
-          "router": "./src/router"
-        }
-      }
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": ["./src"],
+                "extensions": [".ts", ".tsx", ".jsx", ".js", ".json"],
+                "alias": {
+                    "components": "./src/components",
+                    "assets": "./src/assets",
+                    "provider": "./src/provider",
+                    "store": "./src/store",
+                    "router": "./src/router"
+                }
+            }
+        ]
     ]
-  ]
 }

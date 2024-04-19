@@ -1,39 +1,39 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { ToastAlertData } from "provider";
-import { AlertType, ToastXPosition, ToastYPosition } from "components";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { ToastAlertData } from 'provider';
+import { AlertType, ToastXPosition, ToastYPosition } from 'components';
 
 /**
  * The name of the toast alert slice.
  */
-const TOAST_ALERT = "alert";
+const TOAST_ALERT = 'alert';
 
 /**
  * Initial toast alert state.
  */
 const initialToastAlertState: ToastAlertData = {
-  alertData: {
-    title: "",
-    type: AlertType.INFO,
-  },
-  xPosition: ToastXPosition.START,
-  yPosition: ToastYPosition.BOTTOM,
-  bounce: false,
+    alertData: {
+        title: '',
+        type: AlertType.INFO,
+    },
+    xPosition: ToastXPosition.START,
+    yPosition: ToastYPosition.BOTTOM,
+    bounce: false,
 };
 
 /**
  * The toast alert slice.
  */
 export const alertSlice = createSlice({
-  name: TOAST_ALERT,
-  initialState: initialToastAlertState,
-  reducers: {
-    showToastAlert: (_state, action: PayloadAction<ToastAlertData>) => {
-      return action.payload;
+    name: TOAST_ALERT,
+    initialState: initialToastAlertState,
+    reducers: {
+        showToastAlert: (_state, action: PayloadAction<ToastAlertData>) => {
+            return action.payload;
+        },
+        hideToastAlert: () => {
+            return initialToastAlertState;
+        },
     },
-    hideToastAlert: () => {
-      return initialToastAlertState;
-    },
-  },
 });
 
 /**
@@ -44,14 +44,14 @@ export const alertSlice = createSlice({
  * @param timeMS The time in milliseconds.
  */
 function showAlertWithTimeout(
-  dispatch: any,
-  alertData: ToastAlertData,
-  timeMS: number
+    dispatch: any,
+    alertData: ToastAlertData,
+    timeMS: number
 ) {
-  dispatch(showToastAlert(alertData));
-  setTimeout(() => {
-    dispatch(hideToastAlert());
-  }, timeMS);
+    dispatch(showToastAlert(alertData));
+    setTimeout(() => {
+        dispatch(hideToastAlert());
+    }, timeMS);
 }
 
 const { showToastAlert, hideToastAlert } = alertSlice.actions;

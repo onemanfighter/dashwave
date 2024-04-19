@@ -1,63 +1,63 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { removeProfileKeyData } from "../../../service/local_storage/profile/ProfileStorageApi";
-import { getAuthKeyData } from "../../../service/local_storage/auth/AuthStorageApi";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { removeProfileKeyData } from '../../../service/local_storage/profile/ProfileStorageApi';
+import { getAuthKeyData } from '../../../service/local_storage/auth/AuthStorageApi';
 
 /**
  * User data.
  */
 interface UserData {
-  userId: string;
-  firstName: string;
-  lastName: string;
-  email: string;
+    userId: string;
+    firstName: string;
+    lastName: string;
+    email: string;
 }
 
 /**
  * Auth data.
  */
 interface AuthData {
-  authToken: string;
-  userData: UserData;
+    authToken: string;
+    userData: UserData;
 }
 
 /**
  * Initial user data.
  */
 const initialUserData: UserData = {
-  userId: "",
-  firstName: "",
-  lastName: "",
-  email: "",
+    userId: '',
+    firstName: '',
+    lastName: '',
+    email: '',
 };
 
 /**
  * Initial auth data.
  */
 const initialState: AuthData = {
-  authToken: "",
-  userData: initialUserData,
+    authToken: '',
+    userData: initialUserData,
 };
 
 /**
  * The name of the auth slice.
  */
-const AUTH_NAME = "auth_token";
+const AUTH_NAME = 'auth_token';
 
 /**
  * The auth slice.
  */
 const authSlice = createSlice({
-  name: AUTH_NAME,
-  initialState: getAuthData(),
-  reducers: {
-    onLogin: (_state, action: PayloadAction<AuthData>) => {
-      return action.payload;
+    name: AUTH_NAME,
+    initialState: getAuthData(),
+    reducers: {
+        onLogin: (_state, action: PayloadAction<AuthData>) => {
+            return action.payload;
+        },
+        onSignOut: () => {
+            removeProfileKeyData();
+            return initialState;
+        },
     },
-    onSignOut: () => {
-      removeProfileKeyData();
-      return initialState;
-    },
-  },
 });
 
 /**
@@ -66,21 +66,21 @@ const authSlice = createSlice({
  * @returns The auth data from the local storage.
  */
 function getAuthData(): AuthData {
-  const authData = getAuthKeyData();
-  if (authData) {
-    return authData;
-  }
+    const authData = getAuthKeyData();
+    if (authData) {
+        return authData;
+    }
 
-  return initialState;
+    return initialState;
 }
 
 function getAuthUserID(): string {
-  const authData = getAuthKeyData();
-  if (authData) {
-    return authData.userData.userId;
-  }
+    const authData = getAuthKeyData();
+    if (authData) {
+        return authData.userData.userId;
+    }
 
-  return "";
+    return '';
 }
 
 // Export the auth slice.

@@ -1,14 +1,14 @@
-import { lazy } from "react";
-import { LazyComponentProvider } from "../component";
+import { lazy } from 'react';
+import { LazyComponentProvider } from '../component';
 
-const App = lazy(() => import("../../../App"));
+const App = lazy(() => import('../../../App'));
 
 const LazyAppComponent = () => {
-  return (
-    <LazyComponentProvider>
-      <App />
-    </LazyComponentProvider>
-  );
+    return (
+        <LazyComponentProvider>
+            <App />
+        </LazyComponentProvider>
+    );
 };
 
 export { LazyAppComponent };

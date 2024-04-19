@@ -2,50 +2,50 @@
  * Routes for the sidebar.
  */
 export const SidebarRoutes = [
-  {
-    name: "Home",
-    path: "/dashboard",
-    iconName: "home",
-  },
-  {
-    name: "Projects",
-    path: "/projects",
-    iconName: "projects",
-  },
-  {
-    name: "Plans",
-    path: "/plans",
-    iconName: "plans",
-  },
-  {
-    name: "Expenses",
-    path: "/expenses",
-    iconName: "expenses",
-  },
-  {
-    name: "Goals",
-    path: "/goals",
-    iconName: "goals",
-  },
-  {
-    name: "Learning",
-    path: "/learning",
-    iconName: "learning",
-  },
-  {
-    name: "Resources",
-    path: "/resources",
-    iconName: "resources",
-  },
-  {
-    name: "Credentials",
-    path: "/creds",
-    iconName: "credentials",
-  },
+    {
+        nameKey: 'Sidebar.home',
+        path: '/dashboard',
+        iconName: 'home',
+    },
+    {
+        nameKey: 'Sidebar.projects',
+        path: '/projects',
+        iconName: 'projects',
+    },
+    {
+        nameKey: 'Sidebar.plans',
+        path: '/plans',
+        iconName: 'plans',
+    },
+    {
+        nameKey: 'Sidebar.expenses',
+        path: '/expenses',
+        iconName: 'expenses',
+    },
+    {
+        nameKey: 'Sidebar.goals',
+        path: '/goals',
+        iconName: 'goals',
+    },
+    {
+        nameKey: 'Sidebar.learning',
+        path: '/learning',
+        iconName: 'learning',
+    },
+    {
+        nameKey: 'Sidebar.resources',
+        path: '/resources',
+        iconName: 'resources',
+    },
+    {
+        nameKey: 'Sidebar.creds',
+        path: '/creds',
+        iconName: 'credentials',
+    },
 ];
 
 export const ProfileRoutes = {
-  name: "Profile",
-  path: "/profile",
-  iconName: "profile",
+    nameKey: 'Sidebar.profile',
+    path: '/profile',
+    iconName: 'profile',
 };

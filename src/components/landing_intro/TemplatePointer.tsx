@@ -1,14 +1,14 @@
-import { LoginPageIllustration } from "assets";
+import { LoginPageIllustration } from 'assets';
+import { useTranslation } from 'react-i18next';
 
 const TemplatePointers = () => {
-  return (
-    <div>
-      <LoginPageIllustration />
-      <div className=" text-center w-full">
-        A management system for your ideas, projects, and tasks.
-      </div>
-    </div>
-  );
+    const { t } = useTranslation();
+    return (
+        <div>
+            <LoginPageIllustration />
+            <div className=" text-center w-full">{t('LandingIntro.title')}</div>
+        </div>
+    );
 };
 
 export default TemplatePointers;

@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import { RootState } from "store";
-import { ToastAlertComponent } from "components";
-import { ToastAlertProviderProps } from "./types";
+import { useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { ToastAlertComponent } from 'components';
+import { ToastAlertProviderProps } from './types';
 
 /**
  * Component definition for the alert toast provider.
@@ -9,19 +9,19 @@ import { ToastAlertProviderProps } from "./types";
  * @returns The toast provider component.
  */
 const AlertToastProvider = (props: ToastAlertProviderProps) => {
-  const toastAlert = useSelector((state: RootState) => state.toastAlert);
+    const toastAlert = useSelector((state: RootState) => state.toastAlert);
 
-  return (
-    <div className="z-50">
-      <ToastAlertComponent
-        alertComponentData={toastAlert.alertData}
-        xPosition={toastAlert.xPosition}
-        yPosition={toastAlert.yPosition}
-        bounce={toastAlert.bounce}
-      />
-      {props.children}
-    </div>
-  );
+    return (
+        <div className="z-50">
+            <ToastAlertComponent
+                alertComponentData={toastAlert.alertData}
+                xPosition={toastAlert.xPosition}
+                yPosition={toastAlert.yPosition}
+                bounce={toastAlert.bounce}
+            />
+            {props.children}
+        </div>
+    );
 };
 
 export default AlertToastProvider;

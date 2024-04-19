@@ -1,12 +1,12 @@
-import { AlertComponentData, ToastXPosition, ToastYPosition } from "components";
+import { AlertComponentData, ToastXPosition, ToastYPosition } from 'components';
 
 export type ToastAlertProviderProps = {
-  children: React.ReactNode;
+    children: React.ReactNode;
 };
 
 export type ToastAlertData = {
-  alertData: AlertComponentData;
-  xPosition?: ToastXPosition;
-  yPosition?: ToastYPosition;
-  bounce?: boolean;
+    alertData: AlertComponentData;
+    xPosition?: ToastXPosition;
+    yPosition?: ToastYPosition;
+    bounce?: boolean;
 };

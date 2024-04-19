@@ -1,2 +1,2 @@
-export { default as ImageModalReducer } from "./ImageModalSlice";
-export { setModalImage } from "./ImageModalSlice";
+export { default as ImageModalReducer } from './ImageModalSlice';
+export { setModalImage } from './ImageModalSlice';

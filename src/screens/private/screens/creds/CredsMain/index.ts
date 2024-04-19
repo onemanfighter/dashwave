@@ -1,2 +1,2 @@
-export { default as CredsMain } from "./CredsMain";
-export type { CredsMainProps } from "./types";
+export { default as CredsMain } from './CredsMain';
+export type { CredsMainProps } from './types';

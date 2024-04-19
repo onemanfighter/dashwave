@@ -1,2 +1,2 @@
-export { default as CredsDelete } from "./CredsDelete";
-export type { CredsDeleteProps } from "./types";
+export { default as CredsDelete } from './CredsDelete';
+export type { CredsDeleteProps } from './types';

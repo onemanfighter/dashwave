@@ -1,1 +1,1 @@
-export { default as MainRootScreen } from "./MainRootScreen";
+export { default as MainRootScreen } from './MainRootScreen';
