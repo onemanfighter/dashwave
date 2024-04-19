@@ -3,25 +3,19 @@ import { batch, useDispatch, useSelector } from 'react-redux';
 import { signOut } from '../../../service/supabase/supa_auth/AuthApi';
 import { useCallback, useEffect, useState } from 'react';
 import { NavigationComponent, SidebarComponent } from 'components';
-import {
-    RootState,
-    onSignOut,
-    removeProfile,
-    syncForTheFirstTime,
-    updateProfile,
-} from 'store';
+import { removeProfile, syncForTheFirstTime, updateProfile } from 'store';
+import { AuthSelector } from 'store/selectors';
 
 const MainRootScreen = () => {
-    const userAuthUserIdState = useSelector(
-        (state: RootState) => state.auth.userData.userId
-    );
+    const { userId } = useSelector(AuthSelector);
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const { removeLoginDataAction } = useSelector(AuthSelector);
     const dispatch = useDispatch();
 
     const logOutClickHandler = useCallback(() => {
         const signOutHandler = () => {
             batch(() => {
-                dispatch(onSignOut());
+                removeLoginDataAction();
                 dispatch(removeProfile());
             });
         };
@@ -29,7 +23,7 @@ const MainRootScreen = () => {
     }, [dispatch]);
 
     useEffect(() => {
-        if (userAuthUserIdState === '') {
+        if (userId === '') {
             logOutClickHandler();
         } else {
             console.log('syncing for the first time');
@@ -39,7 +33,7 @@ const MainRootScreen = () => {
             if (userData) dispatch(updateProfile(userData));
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [userAuthUserIdState]);
+    }, [userId]);
 
     const openSidebarClickHandler = () => {
         setSidebarOpen((prev) => !prev);

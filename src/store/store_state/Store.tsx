@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './slice/auth/AuthSlice';
-import themeReducer from './slice/theme/ThemeSlice';
-import notificationReducer from './slice/notification/NotificationSlice';
-import profileReducer from './slice/profile/ProfileSlice';
-import toastAlertReducer from './slice/toast_alert/ToastAlertSlice';
-import projectsReducer from './slice/projects/ProjectsSlice';
-import imageModalReducer from './slice/image_modal/ImageModalSlice';
+import themeReducer from '../slice/theme/ThemeSlice';
+import notificationReducer from '../slice/notification/NotificationSlice';
+import profileReducer from '../slice/profile/ProfileSlice';
+import toastAlertReducer from '../slice/toast_alert/ToastAlertSlice';
+import projectsReducer from '../slice/projects/ProjectsSlice';
+import imageModalReducer from '../slice/image_modal/ImageModalSlice';
+import { authSlice } from 'store/slice';
 
 /**
  * The redux store configuration.
@@ -22,7 +22,7 @@ import imageModalReducer from './slice/image_modal/ImageModalSlice';
  */
 const store = configureStore({
     reducer: {
-        auth: authReducer,
+        auth: authSlice.reducer,
         theme: themeReducer,
         profile: profileReducer,
         notification: notificationReducer,

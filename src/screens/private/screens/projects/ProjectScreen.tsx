@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { getAllProjects } from '../../../../service/supabase/supastore/projects/ProjectsStoreApi';
 import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from 'assets';
 import { RootState, addProjects } from 'store';
+import { AuthSelector } from 'store/selectors';
 
 /**
  * Props for the ProjectsScreen component.
@@ -30,9 +31,7 @@ const ProjectRoutes = [
 function ProjectsScreen(props: IProjectsScreenProps) {
     const dispatch = useDispatch();
     const currentLocation = useLocation();
-    const userId = useSelector(
-        (state: RootState) => state.auth.userData.userId
-    );
+    const { userId } = useSelector(AuthSelector);
 
     // Making network request to get all projects.
     useEffect(() => {

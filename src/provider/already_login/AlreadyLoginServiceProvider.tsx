@@ -1,16 +1,16 @@
-import { useDispatch } from 'react-redux';
-import { onSignOut } from 'store';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { alreadySignedIn } from '../../service/supabase/supa_auth/AuthApi';
 import { AlreadyLoginServiceProviderProps } from './types';
+import { AuthSelector } from 'store/selectors';
 
 const AlreadyLoginServiceProvider = (
     props: AlreadyLoginServiceProviderProps
 ) => {
-    const dispatch = useDispatch();
+    const { removeLoginDataAction } = useSelector(AuthSelector);
 
     const signOutHandler = () => {
-        dispatch(onSignOut());
+        removeLoginDataAction();
     };
 
     useEffect(() => {

@@ -4,10 +4,11 @@ import { ErrorText, InputText, InputType, LandingIntro } from 'components';
 
 import { LoginCred } from '../../../service/supabase/supa_auth/actions/AuthSignIn';
 import { signIn } from '../../../service/supabase/supa_auth/AuthApi';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { validatePassword } from '../../../util/input/Input';
-import { AuthData, onLogin } from 'store';
+import { AuthData } from 'store';
 import { useTranslation } from 'react-i18next';
+import { AuthSelector } from 'store/selectors';
 
 /**
  * Proptypes for the update form value function.
@@ -29,13 +30,13 @@ function Login() {
         email: '',
     };
 
-    const dispatch = useDispatch();
+    const { setLoginDataAction, authToken } = useSelector(AuthSelector);
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [loginObj, setLoginObj] = useState<LoginCred>(INITIAL_LOGIN_OBJ);
 
     const signInHandler = (authData: AuthData) => {
-        dispatch(onLogin(authData));
+        setLoginDataAction(authData);
     };
 
     const submitForm = (e: any) => {
