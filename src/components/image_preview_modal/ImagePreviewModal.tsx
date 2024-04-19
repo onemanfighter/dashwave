@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { IMAGE_MODAL_ID } from './constants';
 import { ImagePreviewModalProps } from './types';
 
@@ -8,6 +9,7 @@ import { ImagePreviewModalProps } from './types';
  * @returns The image modal component.
  */
 const ImagePreviewModal = ({ image }: ImagePreviewModalProps) => {
+    const { t } = useTranslation();
     return (
         <div className="z-50 ">
             <input
@@ -22,7 +24,7 @@ const ImagePreviewModal = ({ image }: ImagePreviewModalProps) => {
                             htmlFor={IMAGE_MODAL_ID}
                             className="btn btn-outline btn-error btn-circle btn-sm"
                         >
-                            ✕
+                            {t('ImageModalCloseCross')}
                         </label>
                     </div>
                     <img

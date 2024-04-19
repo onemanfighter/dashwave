@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { ProjectCardProps } from './types';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Project card component.
@@ -7,6 +8,7 @@ import { ProjectCardProps } from './types';
  * @returns The project card component.
  */
 const ProjectCard = ({ data }: ProjectCardProps) => {
+    const { t } = useTranslation();
     const {
         image,
         title,
@@ -58,10 +60,10 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
                         className="btn btn-outline"
                         rel="noreferrer"
                     >
-                        Project link
+                        {t('ProjectCard.projectLink')}
                     </a>
                     <NavLink to={path} className="btn btn-outline btn-primary">
-                        See preview
+                        {t('ProjectCard.projectPreview')}
                     </NavLink>
                 </div>
             </div>
@@ -75,6 +77,7 @@ function TitleAndLiveBadge(props: {
     isLive: boolean;
     liveLink: string;
 }) {
+    const { t } = useTranslation();
     return (
         <div className="flex flex-row justify-start items-center">
             <h2 className="card-title">
@@ -90,7 +93,7 @@ function TitleAndLiveBadge(props: {
             <div>
                 {props.isLive && (
                     <span className="badge badge-success animate-pulse duration-75 m-1">
-                        Live
+                        {t('ProjectCard.liveStatus')}
                     </span>
                 )}
             </div>
