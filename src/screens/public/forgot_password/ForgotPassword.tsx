@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { forgotPassword } from '../../../service/supabase/supa_auth/AuthApi';
 import { validateEmail } from '../../../util/input/Input';
 import { ErrorText, InputText, InputType, LandingIntro } from 'components';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Update props.
@@ -24,6 +25,7 @@ interface RegisterObjType {
  * @returns The ForgotPassword component.
  */
 function ForgotPassword() {
+    const { t } = useTranslation();
     const INITIAL_USER_OBJ: RegisterObjType = {
         emailId: '',
     };
@@ -43,9 +45,9 @@ function ForgotPassword() {
         setErrorMessage('');
 
         if (userObj.emailId.trim() === '')
-            return setErrorMessage('Email Id is required! (use any value)');
+            return setErrorMessage(t('ForgotPasswordError.emailRequired'));
         else if (!validateEmail(userObj.emailId)) {
-            return setErrorMessage('Email Id is not valid!');
+            return setErrorMessage(t('ForgotPasswordError.emailNotValid'));
         } else {
             setLoading(true);
             forgotPassword(
@@ -80,21 +82,21 @@ function ForgotPassword() {
                     </div>
                     <div className="py-24 px-10 bg-primary-content">
                         <h2 className="text-2xl font-semibold mb-2 text-center">
-                            Forgot Password
+                            {t('ForgotPasswordScreen.title')}
                         </h2>
 
                         {linkSent && (
                             <>
                                 <p className="my-4 text-xl font-bold text-center">
-                                    Link Sent
+                                    {t('ForgotPasswordScreen.linkSent')}
                                 </p>
                                 <p className="mt-4 mb-8 font-semibold text-center">
-                                    Check your email to reset password
+                                    {t('ForgotPasswordScreen.checkEmailText')}
                                 </p>
                                 <div className="text-center mt-4">
                                     <NavLink to="/login">
                                         <button className="btn btn-block btn-primary ">
-                                            Login
+                                            {t('Account.login')}
                                         </button>
                                     </NavLink>
                                 </div>
@@ -104,8 +106,9 @@ function ForgotPassword() {
                         {!linkSent && (
                             <>
                                 <p className="my-8 font-semibold text-center">
-                                    We will send password reset link on your
-                                    email Id
+                                    {t(
+                                        'ForgotPasswordScreen.passwordResetLinkText'
+                                    )}
                                 </p>
                                 <form onSubmit={(e) => submitForm(e)}>
                                     <div className="mb-4">
@@ -114,7 +117,9 @@ function ForgotPassword() {
                                             defaultValue={userObj.emailId}
                                             updateType="emailId"
                                             containerStyle="mt-4"
-                                            labelTitle="Email Id"
+                                            labelTitle={t(
+                                                'Account.input.email'
+                                            )}
                                             updateFormValue={updateFormValue}
                                         />
                                     </div>
@@ -129,14 +134,16 @@ function ForgotPassword() {
                                             (loading ? ' loading' : '')
                                         }
                                     >
-                                        Send Reset Link
+                                        {t(
+                                            'ForgotPasswordScreen.sendResetLink'
+                                        )}
                                     </button>
 
                                     <div className="text-center mt-4">
-                                        Don`&#39;`t have an account yet?{' '}
+                                        {t('Account.noAccountText')}
                                         <NavLink to="/register">
                                             <button className="  inline-block  hover:text-primary hover:underline hover:cursor-pointer transition duration-200">
-                                                Register
+                                                {t('Account.register')}
                                             </button>
                                         </NavLink>
                                     </div>
