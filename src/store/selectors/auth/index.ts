@@ -1,1 +1,1 @@
-export * from './Auth.Selector';
+export * from './AuthSelector';

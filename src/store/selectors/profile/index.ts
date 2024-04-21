@@ -1,1 +1,1 @@
-export * from './Profile.Selector';
+export * from './ProfileSelector';

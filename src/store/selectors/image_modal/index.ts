@@ -1,1 +1,1 @@
-export * from './ImageModal.Selector';
+export * from './ImageModalSelector';

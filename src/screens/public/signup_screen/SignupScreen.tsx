@@ -3,10 +3,10 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { ErrorText, InputText, LandingIntro } from 'components';
 import { SignUpCred } from '../../../service/supabase/supa_auth/actions/AuthSignUp';
 import { signUp } from '../../../service/supabase/supa_auth/AuthApi';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getSuccessAlertData } from 'provider';
-import { showAlertWithTimeout } from 'store';
 import { useTranslation } from 'react-i18next';
+import { AlertSelector } from 'store/selectors/alert';
 
 /**
  * Prop types for the update form value function.
@@ -29,16 +29,15 @@ function Register() {
         password: '',
         email: '',
     };
+    const { showAlertWithTimeout } = useSelector(AlertSelector);
 
     const navigate = useNavigate();
-    const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [registerObj, setRegisterObj] = useState(INITIAL_REGISTER_OBJ);
 
     const signUpHandler = () => {
         showAlertWithTimeout(
-            dispatch,
             getSuccessAlertData(t('SignUpScreen.successfulAlert')),
             3000
         );

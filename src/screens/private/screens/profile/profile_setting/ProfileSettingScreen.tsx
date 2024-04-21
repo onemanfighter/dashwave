@@ -24,9 +24,10 @@ import {
     WebsiteIcon,
 } from 'assets';
 import { InputText, InputType } from 'components';
-import { showAlertWithTimeout, updateProfile, getAuthUserID } from 'store';
+import { getAuthUserID } from 'store';
 import { NotificationSelector } from 'store/selectors';
 import { ProfileSelector } from 'store/selectors/profile';
+import { AlertSelector } from 'store/selectors/alert';
 
 /**
  * Type definition for the update form value.
@@ -42,6 +43,7 @@ interface UpdateFormValue {
  */
 function ProfileSettingScreen() {
     const { showNotificationAction } = useSelector(NotificationSelector);
+    const { showAlertWithTimeout } = useSelector(AlertSelector);
     const { profile: profileData, updateProfileAction } =
         useSelector(ProfileSelector);
     const [loading, setLoading] = useState(false);
@@ -50,7 +52,7 @@ function ProfileSettingScreen() {
     const dispatch = useDispatch();
 
     const showSuccessAlertHandler = (toastAlertData: ToastAlertData) => {
-        showAlertWithTimeout(dispatch, toastAlertData, 3000);
+        showAlertWithTimeout(toastAlertData, 3000);
     };
 
     const profileSavingHandler = (profile: UserProfileData) => {
