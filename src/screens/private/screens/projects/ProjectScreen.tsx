@@ -7,6 +7,7 @@ import { getAllProjects } from '../../../../service/supabase/supastore/projects/
 import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from 'assets';
 import { RootState, addProjects } from 'store';
 import { AuthSelector } from 'store/selectors';
+import { ProjectSelectorAction } from 'store/selectors/project_selector';
 
 /**
  * Props for the ProjectsScreen component.
@@ -32,14 +33,15 @@ function ProjectsScreen(props: IProjectsScreenProps) {
     const dispatch = useDispatch();
     const currentLocation = useLocation();
     const { userId } = useSelector(AuthSelector);
+    const { addProjectsAction } = ProjectSelectorAction(dispatch);
 
     // Making network request to get all projects.
     useEffect(() => {
         getAllProjects(userId, (projectsData) =>
-            dispatch(addProjects(projectsData))
+            addProjectsAction(projectsData)
         );
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dispatch, userId]);
+    }, [userId]);
 
     return (
         <div className="h-full">

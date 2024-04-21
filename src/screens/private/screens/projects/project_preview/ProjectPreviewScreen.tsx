@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { RootState } from 'store';
 import { useEffect, useState } from 'react';
 import ProjectPreviewComponent from './ProjectPreviewComponent';
+import { ProjectSelector } from 'store/selectors/project_selector';
 
 /**
  * Project select data
@@ -18,7 +18,7 @@ interface ProjectSelectData {
  * @returns The ProjectPreviewScreen component.
  */
 function ProjectPreviewScreen() {
-    const projectData = useSelector((state: RootState) => state.projects);
+    const { projects: projectData } = useSelector(ProjectSelector);
     const projectIdData: ProjectSelectData[] = projectData.map((project) => {
         return {
             projectId: project.projectId,
