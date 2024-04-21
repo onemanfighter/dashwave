@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { ProjectCard, getProjectCardData } from '@dash-ui';
-import { ProjectSelector } from 'store/selectors/project_selector';
+import { ProjectSelector } from '@store/selectors/project_selector';
 
 /**
  * Component definition for the project main screen.

@@ -1,4 +1,4 @@
-import { UserData } from 'store';
+import { UserData } from '@store';
 import { SupabaseUsersDB } from '../../../supabase_main/Supabase';
 import { SocialLink, SocialType, UserProfileData } from '../UserCollection';
 

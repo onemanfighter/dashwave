@@ -13,8 +13,8 @@
             "@screens/*": ["src/screens/*"],
             "@service": ["src/service"],
             "@service/*": ["src/service/*"],
-            "store": ["src/store", "src/store/index"],
-            "store/*": ["src/store/*"],
+            "@store": ["src/store", "src/store/index"],
+            "@store/*": ["src/store/*"],
             "zustand_store": ["src/zustand_store/index"],
             "zustand_store/*": ["src/zustand_store/*"]
         }

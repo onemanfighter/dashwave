@@ -24,10 +24,10 @@ import {
     WebsiteIcon,
 } from '@assets';
 import { InputText, InputType } from '@dash-ui';
-import { getAuthUserID } from 'store';
-import { NotificationSelector } from 'store/selectors';
-import { ProfileSelector } from 'store/selectors/profile_selector';
-import { AlertSelector } from 'store/selectors/alert_selector';
+import { getAuthUserID } from '@store';
+import { NotificationSelector } from '@store/selectors';
+import { ProfileSelector } from '@store/selectors/profile_selector';
+import { AlertSelector } from '@store/selectors/alert_selector';
 
 /**
  * Type definition for the update form value.

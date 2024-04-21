@@ -6,7 +6,7 @@ import { signUp } from '@service/supabase/supa_auth/AuthApi';
 import { useSelector } from 'react-redux';
 import { getSuccessAlertData } from '@provider';
 import { useTranslation } from 'react-i18next';
-import { AlertSelector } from 'store/selectors/alert_selector';
+import { AlertSelector } from '@store/selectors/alert_selector';
 
 /**
  * Prop types for the update form value function.

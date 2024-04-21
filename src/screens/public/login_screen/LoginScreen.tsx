@@ -6,9 +6,9 @@ import { LoginCred } from '@service/supabase/supa_auth/actions/AuthSignIn';
 import { signIn } from '@service/supabase/supa_auth/AuthApi';
 import { useSelector } from 'react-redux';
 import { validatePassword } from '../../../util/input/Input';
-import { AuthData } from 'store';
+import { AuthData } from '@store';
 import { useTranslation } from 'react-i18next';
-import { AuthSelector } from 'store/selectors';
+import { AuthSelector } from '@store/selectors';
 
 /**
  * Proptypes for the update form value function.

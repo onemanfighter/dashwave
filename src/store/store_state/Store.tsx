@@ -6,7 +6,7 @@ import {
     authSlice,
     notificationSlice,
     imageModalSlice,
-} from 'store/slice';
+} from '@store/slice';
 
 /**
  * The redux store configuration.

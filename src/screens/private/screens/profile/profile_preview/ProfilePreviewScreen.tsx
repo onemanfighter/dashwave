@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { RootState } from 'store';
+import { RootState } from '@store';
 import {
     SocialLink,
     SocialType,
@@ -16,7 +16,7 @@ import {
     SocialIcon,
 } from '@assets';
 import { TitleCard, TooltipComponent } from '@dash-ui';
-import { ProfileSelector } from 'store/selectors/profile_selector';
+import { ProfileSelector } from '@store/selectors/profile_selector';
 
 /**
  * The text style for the profile preview screen.

@@ -1,4 +1,4 @@
-import { AuthData } from 'store';
+import { AuthData } from '@store';
 import { SupabaseAuth } from '../../supabase_main/Supabase';
 
 /**

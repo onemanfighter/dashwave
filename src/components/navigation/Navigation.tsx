@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from 'store';
+import { RootState } from '@store';
 import NavigationToggleButton from './NavigationToggleButton';
 import {
     ProfilePlaceholder,

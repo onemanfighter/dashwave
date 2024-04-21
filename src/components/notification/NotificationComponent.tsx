@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { NOTIFICATION_MODAL_ID } from './constants';
 import { useTranslation } from 'react-i18next';
-import { NotificationSelector } from 'store/selectors';
+import { NotificationSelector } from '@store/selectors';
 
 /**
  * Component definition for the notification component.

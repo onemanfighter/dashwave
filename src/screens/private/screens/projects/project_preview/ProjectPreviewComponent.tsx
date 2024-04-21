@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { ImagePreviewModalButton } from '@dash-ui';
 import { ProjectData } from '@service/supabase/supastore/projects/ProjectsCollection';
 import { WebsiteIcon, GithubIcon, HostingerIcon } from '@assets';
-import { ImageModalSelector } from 'store/selectors';
+import { ImageModalSelector } from '@store/selectors';
 
 export type IProjectPreviewComponentProps = {
     project: ProjectData;

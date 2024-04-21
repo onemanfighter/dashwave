@@ -1,4 +1,4 @@
-import { UserData } from 'store';
+import { UserData } from '@store';
 import { ToastAlertData } from '@provider';
 import { UserProfileData } from './UserCollection';
 import { getUserUsingId } from './actions/UserDataRead';

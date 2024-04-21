@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getAllProjects } from '@service/supabase/supastore/projects/ProjectsStoreApi';
 import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from '@assets';
-import { RootState, addProjects } from 'store';
-import { AuthSelector } from 'store/selectors';
-import { ProjectSelectorAction } from 'store/selectors/project_selector';
+import { RootState, addProjects } from '@store';
+import { AuthSelector } from '@store/selectors';
+import { ProjectSelectorAction } from '@store/selectors/project_selector';
 
 /**
  * Props for the ProjectsScreen component.
