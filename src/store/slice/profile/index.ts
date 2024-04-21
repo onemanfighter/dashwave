@@ -1,4 +1,4 @@
-export { default as ProfileReducer } from './ProfileSlice';
+export { profileSlice } from './ProfileSlice';
 export type { UserProfileData } from './ProfileSlice';
 export {
     removeProfile,

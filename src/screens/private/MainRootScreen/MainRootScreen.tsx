@@ -5,22 +5,23 @@ import { useCallback, useEffect, useState } from 'react';
 import { NavigationComponent, SidebarComponent } from 'components';
 import { removeProfile, syncForTheFirstTime, updateProfile } from 'store';
 import { AuthSelector } from 'store/selectors';
+import { ProfileSelector } from 'store/selectors/profile';
 
 const MainRootScreen = () => {
     const { userId } = useSelector(AuthSelector);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const { removeLoginDataAction } = useSelector(AuthSelector);
-    const dispatch = useDispatch();
+    const { removeProfileAction, updateProfileAction } =
+        useSelector(ProfileSelector);
 
-    const logOutClickHandler = useCallback(() => {
-        const signOutHandler = () => {
+    const logOutClickHandler = () => {
+        signOut(() => {
             batch(() => {
                 removeLoginDataAction();
-                dispatch(removeProfile());
+                removeProfileAction();
             });
-        };
-        signOut(signOutHandler);
-    }, [dispatch]);
+        });
+    };
 
     useEffect(() => {
         if (userId === '') {
@@ -28,9 +29,9 @@ const MainRootScreen = () => {
         } else {
             console.log('syncing for the first time');
             const userData = syncForTheFirstTime((data) =>
-                dispatch(updateProfile(data))
+                updateProfileAction(data)
             );
-            if (userData) dispatch(updateProfile(userData));
+            if (userData) updateProfileAction(userData);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userId]);

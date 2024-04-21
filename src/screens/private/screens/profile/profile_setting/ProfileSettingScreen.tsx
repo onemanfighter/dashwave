@@ -24,13 +24,9 @@ import {
     WebsiteIcon,
 } from 'assets';
 import { InputText, InputType } from 'components';
-import {
-    RootState,
-    showAlertWithTimeout,
-    updateProfile,
-    getAuthUserID,
-} from 'store';
+import { showAlertWithTimeout, updateProfile, getAuthUserID } from 'store';
 import { NotificationSelector } from 'store/selectors';
+import { ProfileSelector } from 'store/selectors/profile';
 
 /**
  * Type definition for the update form value.
@@ -46,7 +42,8 @@ interface UpdateFormValue {
  */
 function ProfileSettingScreen() {
     const { showNotificationAction } = useSelector(NotificationSelector);
-    const profileData = useSelector((state: RootState) => state.profile);
+    const { profile: profileData, updateProfileAction } =
+        useSelector(ProfileSelector);
     const [loading, setLoading] = useState(false);
     const [userProfileState, setUserProfileState] =
         useState<UserProfileData>(profileData);
@@ -57,7 +54,7 @@ function ProfileSettingScreen() {
     };
 
     const profileSavingHandler = (profile: UserProfileData) => {
-        dispatch(updateProfile(profile));
+        updateProfileAction(profile);
     };
 
     const updateProfileHandler = () => {
