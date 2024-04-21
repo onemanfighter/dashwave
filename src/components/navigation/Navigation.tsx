@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Theme, setTheme } from 'store/slice/theme';
+import { useSelector } from 'react-redux';
 import { RootState } from 'store';
 import NavigationToggleButton from './NavigationToggleButton';
 import {
@@ -13,6 +12,7 @@ import {
     LogoutIcon,
 } from 'assets';
 import { NavigationComponentProps } from './types';
+import { Theme, appStore, themeSelector, useShallow } from 'zustand_store';
 
 /**
  * Navigation component.
@@ -22,20 +22,20 @@ import { NavigationComponentProps } from './types';
  */
 const NavigationComponent = (props: NavigationComponentProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
-    const themeState = useSelector((state: RootState) => state.theme);
+    const { themeValue, setTheme } = appStore(useShallow(themeSelector));
     const profileState = useSelector((state: RootState) => state.profile);
     const [themeCheckState, setThemeCheckState] = useState(
-        themeState.theme === Theme.DARK ? true : false
+        themeValue === Theme.DARK ? true : false
     );
 
     useEffect(() => {
         if (themeCheckState) {
-            dispatch(setTheme({ theme: Theme.DARK }));
+            setTheme(Theme.DARK);
         } else {
-            dispatch(setTheme({ theme: Theme.LIGHT }));
+            setTheme(Theme.LIGHT);
         }
-    }, [dispatch, themeCheckState]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [themeCheckState]);
 
     return (
         <div className="navbar bg-base-300 h-[9%]">
