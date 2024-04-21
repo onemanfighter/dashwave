@@ -12,7 +12,9 @@ import {
     LogoutIcon,
 } from '@assets';
 import { NavigationComponentProps } from './types';
-import { Theme, appStore, themeSelector, useShallow } from 'zustand_store';
+
+import { themeSelector, useShallow } from '@selectors';
+import { Theme, appStore } from '@zustand_store';
 
 /**
  * Navigation component.

@@ -16,8 +16,15 @@ module.exports = {
             '@service/*': path.resolve(__dirname, './src/service/*'),
             '@store': path.resolve(__dirname, './src/store'),
             '@store/*': path.resolve(__dirname, './src/store/*'),
-            zustand_store: path.resolve(__dirname, './src/zustand_store'),
-            'zustand_store/*': path.resolve(__dirname, './src/zustand_store/*'),
+            '@zustand_store': path.resolve(__dirname, './src/zustand_store'),
+            '@zustand_store/*': path.resolve(
+                __dirname,
+                './src/zustand_store/*'
+            ),
+            '@selectors': path.resolve(
+                __dirname,
+                './src/zustand_store/selectors'
+            ),
         },
     },
 };

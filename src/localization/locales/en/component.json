@@ -2,7 +2,7 @@
     "ProjectCard": {
         "projectLink": "Project link",
         "projectPreview": "See preview",
-        "liveState": "Live"
+        "liveStatus": "Live"
     },
     "ImageModalCloseCross": "X",
     "LandingIntro": {
