@@ -26,8 +26,8 @@ import {
 import { InputText, InputType } from 'components';
 import { getAuthUserID } from 'store';
 import { NotificationSelector } from 'store/selectors';
-import { ProfileSelector } from 'store/selectors/profile';
-import { AlertSelector } from 'store/selectors/alert';
+import { ProfileSelector } from 'store/selectors/profile_selector';
+import { AlertSelector } from 'store/selectors/alert_selector';
 
 /**
  * Type definition for the update form value.

@@ -23,7 +23,7 @@
         "no-undef": "off",
         "no-console": "off",
         "no-empty": "off",
-        "no-useless-escape": "warn",
+        "no-useless-escape": "off",
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-empty-function": "off",
         "no-nested-ternary": "off",

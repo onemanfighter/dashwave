@@ -16,7 +16,7 @@ import {
     SocialIcon,
 } from 'assets';
 import { TitleCard, TooltipComponent } from 'components';
-import { ProfileSelector } from 'store/selectors/profile';
+import { ProfileSelector } from 'store/selectors/profile_selector';
 
 /**
  * The text style for the profile preview screen.

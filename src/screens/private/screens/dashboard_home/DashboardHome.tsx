@@ -3,7 +3,7 @@ import { NotificationButton, NotificationButtonType } from 'components';
 import { NotificationState } from 'store';
 import { getErrorAlertData } from 'provider';
 import { NotificationSelector } from 'store/selectors';
-import { AlertSelector } from 'store/selectors/alert';
+import { AlertSelector } from 'store/selectors/alert_selector';
 
 /**
  * Interface definition for the dashboard home props.

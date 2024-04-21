@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { NavigationComponent, SidebarComponent } from 'components';
 import { removeProfile, syncForTheFirstTime, updateProfile } from 'store';
 import { AuthSelector } from 'store/selectors';
-import { ProfileSelector } from 'store/selectors/profile';
+import { ProfileSelector } from 'store/selectors/profile_selector';
 
 const MainRootScreen = () => {
     const { userId } = useSelector(AuthSelector);
