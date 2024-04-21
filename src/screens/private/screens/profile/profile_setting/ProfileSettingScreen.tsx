@@ -27,7 +27,8 @@ import { InputText, InputType } from '@dash-ui';
 import { getAuthUserID } from '@store';
 import { NotificationSelector } from '@store/selectors';
 import { ProfileSelector } from '@store/selectors/profile_selector';
-import { AlertSelector } from '@store/selectors/alert_selector';
+import { alertSelector, useShallow } from '@selectors';
+import { appStore } from 'src/zustand_store';
 
 /**
  * Type definition for the update form value.
@@ -43,7 +44,7 @@ interface UpdateFormValue {
  */
 function ProfileSettingScreen() {
     const { showNotificationAction } = useSelector(NotificationSelector);
-    const { showAlertWithTimeout } = useSelector(AlertSelector);
+    const { showAlertWithTimeout } = appStore(useShallow(alertSelector));
     const { profile: profileData, updateProfileAction } =
         useSelector(ProfileSelector);
     const [loading, setLoading] = useState(false);
