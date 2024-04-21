@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 import { batch, useDispatch, useSelector } from 'react-redux';
-import { signOut } from '../../../service/supabase/supa_auth/AuthApi';
+import { signOut } from '@service/supabase/supa_auth/AuthApi';
 import { useCallback, useEffect, useState } from 'react';
-import { NavigationComponent, SidebarComponent } from 'components';
+import { NavigationComponent, SidebarComponent } from '@dash-ui';
 import { removeProfile, syncForTheFirstTime, updateProfile } from 'store';
 import { AuthSelector } from 'store/selectors';
 import { ProfileSelector } from 'store/selectors/profile_selector';

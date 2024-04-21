@@ -9,9 +9,9 @@ import {
     ProfileIcon,
     ProjectIcon,
     ResourceIcon,
-} from 'assets';
+} from '@assets';
 import TooltipComponent from '../tooltip/TooltipComponent';
-import { ProfileRoutes, SidebarRoutes } from 'router/sidebarRoutes';
+import { ProfileRoutes, SidebarRoutes } from '@router/sidebarRoutes';
 import {
     SidebarComponentProps,
     SidebarIconProps,

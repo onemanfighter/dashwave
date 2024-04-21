@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import LazyComponentProvider from '../component/LazyComponent';
 
 const HomeScreen = lazy(
-    () => import('../../../screens/private/MainRootScreen/MainRootScreen')
+    () => import('@screens/private/MainRootScreen/MainRootScreen')
 );
 const LazyHomeScreenComponent = () => {
     return (
@@ -13,8 +13,7 @@ const LazyHomeScreenComponent = () => {
 };
 
 const DashboardHome = lazy(
-    () =>
-        import('../../../screens/private/screens/dashboard_home/DashboardHome')
+    () => import('@screens/private/screens/dashboard_home/DashboardHome')
 );
 const LazyDashboardScreenComponent = () => {
     return (

@@ -6,7 +6,7 @@ import {
     LazyPlansAddScreenComponent,
     LazyPlansEditScreenComponent,
     LazyPlansDeleteScreenComponent,
-} from 'provider';
+} from '@provider';
 import { Route } from 'react-router-dom';
 
 const PlanRoutes = (

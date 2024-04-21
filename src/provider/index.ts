@@ -5,3 +5,4 @@ export * from './notification_provider';
 export * from './redux_service_provider';
 export * from './theme_provider';
 export * from './lazy_provider';
+export * from './router_provider';

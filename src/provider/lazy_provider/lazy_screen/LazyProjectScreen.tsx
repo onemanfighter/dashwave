@@ -3,7 +3,7 @@ import LazyComponentProvider from '../component/LazyComponent';
 
 // Projects screens lazy components.
 const ProjectsScreen = lazy(
-    () => import('../../../screens/private/screens/projects/ProjectScreen')
+    () => import('@screens/private/screens/projects/ProjectScreen')
 );
 const LazyProjectsScreenComponent = () => {
     return (
@@ -16,7 +16,7 @@ const LazyProjectsScreenComponent = () => {
 const ProjectMainScreen = lazy(
     () =>
         import(
-            '../../../screens/private/screens/projects/project_main/ProjectMainScreen'
+            '@screens/private/screens/projects/project_main/ProjectMainScreen'
         )
 );
 const LazyProjectMainScreenComponent = () => {
@@ -30,7 +30,7 @@ const LazyProjectMainScreenComponent = () => {
 const ProjectPreviewScreen = lazy(
     () =>
         import(
-            '../../../screens/private/screens/projects/project_preview/ProjectPreviewScreen'
+            '@screens/private/screens/projects/project_preview/ProjectPreviewScreen'
         )
 );
 const LazyProjectPreviewComponent = () => {
@@ -44,7 +44,7 @@ const LazyProjectPreviewComponent = () => {
 const ProjectEditScreen = lazy(
     () =>
         import(
-            '../../../screens/private/screens/projects/project_edit/ProjectEditScreen'
+            '@screens/private/screens/projects/project_edit/ProjectEditScreen'
         )
 );
 const LazyProjectEditComponent = () => {
@@ -57,9 +57,7 @@ const LazyProjectEditComponent = () => {
 
 const ProjectAddScreen = lazy(
     () =>
-        import(
-            '../../../screens/private/screens/projects/project_add/ProjectAddScreen'
-        )
+        import('@screens/private/screens/projects/project_add/ProjectAddScreen')
 );
 const LazyProjectAddComponent = () => {
     return (
@@ -72,7 +70,7 @@ const LazyProjectAddComponent = () => {
 const ProjectDeleteScreen = lazy(
     () =>
         import(
-            '../../../screens/private/screens/projects/project_delete/ProjectDeleteScreen'
+            '@screens/private/screens/projects/project_delete/ProjectDeleteScreen'
         )
 );
 const LazyProjectDeleteComponent = () => {

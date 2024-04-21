@@ -1,10 +1,10 @@
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { TooltipComponent } from 'components';
+import { TooltipComponent } from '@dash-ui';
 import getSubNavTitle from '../../../../util/nav/NavTitle';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getAllProjects } from '../../../../service/supabase/supastore/projects/ProjectsStoreApi';
-import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from 'assets';
+import { getAllProjects } from '@service/supabase/supastore/projects/ProjectsStoreApi';
+import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from '@assets';
 import { RootState, addProjects } from 'store';
 import { AuthSelector } from 'store/selectors';
 import { ProjectSelectorAction } from 'store/selectors/project_selector';

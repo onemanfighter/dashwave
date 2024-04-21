@@ -1,4 +1,4 @@
-import { LoginPageIllustration } from 'assets';
+import { LoginPageIllustration } from '@assets';
 import { useTranslation } from 'react-i18next';
 
 const TemplatePointers = () => {

@@ -4,7 +4,7 @@ import {
     LazyProfilePreviewScreenComponent,
     LazyProfilePasswordResetScreenComponent,
     LazyProfileSettingScreenComponent,
-} from 'provider';
+} from '@provider';
 import { Route, Navigate } from 'react-router-dom';
 
 const ProfileRoutes = (

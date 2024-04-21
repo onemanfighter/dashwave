@@ -1,7 +1,7 @@
 import { batch, useSelector } from 'react-redux';
-import { NotificationButton, NotificationButtonType } from 'components';
+import { NotificationButton, NotificationButtonType } from '@dash-ui';
 import { NotificationState } from 'store';
-import { getErrorAlertData } from 'provider';
+import { getErrorAlertData } from '@provider';
 import { NotificationSelector } from 'store/selectors';
 import { AlertSelector } from 'store/selectors/alert_selector';
 

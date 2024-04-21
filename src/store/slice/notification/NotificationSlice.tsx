@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { NotificationData } from 'components';
+import { NotificationData } from '@dash-ui';
 
 const NOTIFICATION = 'notification';
 

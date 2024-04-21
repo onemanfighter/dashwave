@@ -1,4 +1,4 @@
-import { ProjectData } from 'service/supabase/supastore/projects/ProjectsCollection';
+import { ProjectData } from '@service/supabase/supastore/projects/ProjectsCollection';
 import { ProjectCardData } from './types';
 
 /**

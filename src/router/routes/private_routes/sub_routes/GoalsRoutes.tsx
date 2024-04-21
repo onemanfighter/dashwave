@@ -6,7 +6,7 @@ import {
     LazyGoalsMainScreenComponent,
     LazyGoalsPreviewScreenComponent,
     LazyGoalsScreenComponent,
-} from 'provider';
+} from '@provider';
 import { Route } from 'react-router-dom';
 
 const GoalsRoutes = (

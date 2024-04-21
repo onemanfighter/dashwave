@@ -1,4 +1,4 @@
-import { AlertType, ToastXPosition, ToastYPosition } from 'components';
+import { AlertType, ToastXPosition, ToastYPosition } from '@dash-ui';
 import { ToastAlertData } from './types';
 
 /**

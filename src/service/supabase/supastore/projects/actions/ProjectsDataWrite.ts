@@ -2,7 +2,7 @@ import {
     ToastAlertData,
     getErrorAlertData,
     getSuccessAlertData,
-} from 'provider';
+} from '@provider';
 import { SupabaseProjectsDB } from '../../../supabase_main/Supabase';
 import {
     ProjectData,

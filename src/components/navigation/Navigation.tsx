@@ -10,7 +10,7 @@ import {
     PasswordResetIcon,
     SettingsIcon,
     LogoutIcon,
-} from 'assets';
+} from '@assets';
 import { NavigationComponentProps } from './types';
 import { Theme, appStore, themeSelector, useShallow } from 'zustand_store';
 

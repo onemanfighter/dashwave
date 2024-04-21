@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { ProjectCard, getProjectCardData } from 'components';
+import { ProjectCard, getProjectCardData } from '@dash-ui';
 import { ProjectSelector } from 'store/selectors/project_selector';
 
 /**

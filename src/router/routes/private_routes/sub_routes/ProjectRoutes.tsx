@@ -6,7 +6,7 @@ import {
     LazyProjectAddComponent,
     LazyProjectEditComponent,
     LazyProjectDeleteComponent,
-} from 'provider';
+} from '@provider';
 import { Route } from 'react-router-dom';
 
 const ProjectRoutes = (

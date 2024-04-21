@@ -1,5 +1,5 @@
 import { UserData } from 'store';
-import { ToastAlertData } from 'provider';
+import { ToastAlertData } from '@provider';
 import { UserProfileData } from './UserCollection';
 import { getUserUsingId } from './actions/UserDataRead';
 import { updateUserData } from './actions/UserDataWrite';

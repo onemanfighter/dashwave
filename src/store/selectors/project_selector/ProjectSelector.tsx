@@ -1,4 +1,4 @@
-import { ProjectData } from 'service/supabase/supastore/projects/ProjectsCollection';
+import { ProjectData } from '@service/supabase/supastore/projects/ProjectsCollection';
 import { projectsSlice } from 'store/slice/projects/ProjectsSlice';
 import { AppDispatch, RootState } from 'store/store_state';
 

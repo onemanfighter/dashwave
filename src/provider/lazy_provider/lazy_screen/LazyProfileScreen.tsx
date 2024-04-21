@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import LazyComponentProvider from '../component/LazyComponent';
 
 const ProfileMainScreen = lazy(
-    () => import('../../../screens/private/screens/profile/ProfileMainScreen')
+    () => import('@screens/private/screens/profile/ProfileMainScreen')
 );
 const LazyProfileMainScreenComponent = () => {
     return (
@@ -15,7 +15,7 @@ const LazyProfileMainScreenComponent = () => {
 const ProfilePasswordResetScreen = lazy(
     () =>
         import(
-            '../../../screens/private/screens/profile/profile_reset_password/ProfilePasswordResetScreen'
+            '@screens/private/screens/profile/profile_reset_password/ProfilePasswordResetScreen'
         )
 );
 const LazyProfilePasswordResetScreenComponent = () => {
@@ -29,7 +29,7 @@ const LazyProfilePasswordResetScreenComponent = () => {
 const ProfileSettingScreen = lazy(
     () =>
         import(
-            '../../../screens/private/screens/profile/profile_setting/ProfileSettingScreen'
+            '@screens/private/screens/profile/profile_setting/ProfileSettingScreen'
         )
 );
 const LazyProfileSettingScreenComponent = () => {
@@ -43,7 +43,7 @@ const LazyProfileSettingScreenComponent = () => {
 const ProfilePreviewScreen = lazy(
     () =>
         import(
-            '../../../screens/private/screens/profile/profile_preview/ProfilePreviewScreen'
+            '@screens/private/screens/profile/profile_preview/ProfilePreviewScreen'
         )
 );
 const LazyProfilePreviewScreenComponent = () => {

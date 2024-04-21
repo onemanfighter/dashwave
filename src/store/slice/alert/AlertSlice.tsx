@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { ToastAlertData } from 'provider';
-import { AlertType, ToastXPosition, ToastYPosition } from 'components';
+import { ToastAlertData } from '@provider';
+import { AlertType, ToastXPosition, ToastYPosition } from '@dash-ui';
 
 /**
  * The name of the toast alert slice.

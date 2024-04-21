@@ -2,33 +2,27 @@ import { lazy } from 'react';
 import LazyComponentProvider from '../component/LazyComponent';
 
 const PlansScreen = lazy(
-    () => import('../../../screens/private/screens/plans/PlansScreen')
+    () => import('@screens/private/screens/plans/PlansScreen')
 );
 
 const PlansMainScreen = lazy(
-    () => import('../../../screens/private/screens/plans/plans_main/PlansMain')
+    () => import('@screens/private/screens/plans/plans_main/PlansMain')
 );
 
 const PlansPreviewScreen = lazy(
-    () =>
-        import(
-            '../../../screens/private/screens/plans/plans_preview/PlansPreview'
-        )
+    () => import('@screens/private/screens/plans/plans_preview/PlansPreview')
 );
 
 const PlansEditScreen = lazy(
-    () => import('../../../screens/private/screens/plans/plans_edit/PlansEdit')
+    () => import('@screens/private/screens/plans/plans_edit/PlansEdit')
 );
 
 const PlansAddScreen = lazy(
-    () => import('../../../screens/private/screens/plans/plans_add/PlansAdd')
+    () => import('@screens/private/screens/plans/plans_add/PlansAdd')
 );
 
 const PlansDeleteScreen = lazy(
-    () =>
-        import(
-            '../../../screens/private/screens/plans/plans_delete/PlansDelete'
-        )
+    () => import('@screens/private/screens/plans/plans_delete/PlansDelete')
 );
 
 const LazyPlansScreenComponent = () => {

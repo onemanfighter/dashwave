@@ -6,7 +6,7 @@ import {
     LazyCredsMainScreenComponent,
     LazyCredsPreviewScreenComponent,
     LazyCredsScreenComponent,
-} from 'provider';
+} from '@provider';
 import { Route } from 'react-router-dom';
 
 const CredsRoutes = (

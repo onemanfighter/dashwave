@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import LazyComponentProvider from '../component/LazyComponent';
 
 const LoginScreen = lazy(
-    () => import('../../../screens/public/login_screen/LoginScreen')
+    () => import('@screens/public/login_screen/LoginScreen')
 );
 const LazyLoginScreenComponent = () => {
     return (
@@ -13,7 +13,7 @@ const LazyLoginScreenComponent = () => {
 };
 
 const SignupScreen = lazy(
-    () => import('../../../screens/public/signup_screen/SignupScreen')
+    () => import('@screens/public/signup_screen/SignupScreen')
 );
 const LazySignupScreenComponent = () => {
     return (
@@ -24,7 +24,7 @@ const LazySignupScreenComponent = () => {
 };
 
 const ForgotPasswordScreen = lazy(
-    () => import('../../../screens/public/forgot_password/ForgotPassword')
+    () => import('@screens/public/forgot_password/ForgotPassword')
 );
 const LazyForgotPasswordScreenComponent = () => {
     return (

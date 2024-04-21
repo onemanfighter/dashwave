@@ -3,7 +3,7 @@ import { RootState } from 'store';
 import {
     SocialLink,
     SocialType,
-} from '../../../../../service/supabase/supastore/user_profile/UserCollection';
+} from '@service/supabase/supastore/user_profile/UserCollection';
 import { getSocialMediaLink } from '../../../../../util/Utils';
 import {
     NameIcon,
@@ -14,8 +14,8 @@ import {
     ExperienceIcon,
     ProfilePlaceholder,
     SocialIcon,
-} from 'assets';
-import { TitleCard, TooltipComponent } from 'components';
+} from '@assets';
+import { TitleCard, TooltipComponent } from '@dash-ui';
 import { ProfileSelector } from 'store/selectors/profile_selector';
 
 /**
