@@ -4,7 +4,9 @@
         "creds",
         "dashwave",
         "hostinger",
+        "immer",
         "raikwar",
-        "Supabase"
+        "Supabase",
+        "zustand"
     ]
 }

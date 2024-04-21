@@ -1,12 +1,10 @@
-import { useSelector } from 'react-redux';
-import { RootState, Theme } from 'store';
 import { ThemeProviderProps } from './types';
-import { ThemeSelector } from 'store/selectors/theme_selector';
+import { appStore, themeSelector, useShallow } from 'zustand_store';
 
 const ThemeProvider = (props: ThemeProviderProps) => {
-    const { theme } = useSelector(ThemeSelector);
+    const { themeValue } = appStore(useShallow(themeSelector));
 
-    return <div data-theme={theme}>{props.children}</div>;
+    return <div data-theme={themeValue}>{props.children}</div>;
 };
 
 export default ThemeProvider;
