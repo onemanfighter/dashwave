@@ -1,4 +1,4 @@
-import { AppStoreSlice } from 'zustand_store/store/types';
+import { AppStoreSlice } from '@zustand_store/store/types';
 import { Theme, ThemeState, ThemeStateSlice } from './types';
 
 const THEME = 'theme';

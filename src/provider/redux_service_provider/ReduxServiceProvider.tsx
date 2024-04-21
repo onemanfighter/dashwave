@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import { store } from 'store';
+import { store } from '@store';
 import { ReduxServiceProviderProps } from './types';
 
 const ReduxServiceProvider = (props: ReduxServiceProviderProps) => {

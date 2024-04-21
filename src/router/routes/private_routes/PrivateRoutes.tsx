@@ -1,7 +1,7 @@
 import {
     LazyHomeScreenComponent,
     LazyDashboardScreenComponent,
-} from 'provider';
+} from '@provider';
 import {
     Navigate,
     Route,

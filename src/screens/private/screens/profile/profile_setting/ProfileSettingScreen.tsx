@@ -4,16 +4,16 @@ import {
     NotificationButtonType,
     PageLoadingComponent,
     TitleCard,
-} from 'components';
+} from '@dash-ui';
 import {
     SocialType,
     UserProfileData,
-} from '../../../../../service/supabase/supastore/user_profile/UserCollection';
+} from '@service/supabase/supastore/user_profile/UserCollection';
 
 import { useState } from 'react';
-import { userProfileDataUpdate } from '../../../../../service/supabase/supastore/user_profile/UserProfileStoreApi';
+import { userProfileDataUpdate } from '@service/supabase/supastore/user_profile/UserProfileStoreApi';
 import { getSocialMediaLink } from '../../../../../util/Utils';
-import { ToastAlertData } from 'provider';
+import { ToastAlertData } from '@provider';
 import {
     FacebookIcon,
     InstagramIcon,
@@ -22,12 +22,12 @@ import {
     XIcon,
     YoutubeIcon,
     WebsiteIcon,
-} from 'assets';
-import { InputText, InputType } from 'components';
-import { getAuthUserID } from 'store';
-import { NotificationSelector } from 'store/selectors';
-import { ProfileSelector } from 'store/selectors/profile_selector';
-import { AlertSelector } from 'store/selectors/alert_selector';
+} from '@assets';
+import { InputText, InputType } from '@dash-ui';
+import { getAuthUserID } from '@store';
+import { NotificationSelector } from '@store/selectors';
+import { ProfileSelector } from '@store/selectors/profile_selector';
+import { AlertSelector } from '@store/selectors/alert_selector';
 
 /**
  * Type definition for the update form value.

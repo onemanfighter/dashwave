@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 
 import { useSelector } from 'react-redux';
-import { ImagePreviewModalButton } from 'components';
-import { ProjectData } from '../../../../../service/supabase/supastore/projects/ProjectsCollection';
-import { WebsiteIcon, GithubIcon, HostingerIcon } from 'assets';
-import { ImageModalSelector } from 'store/selectors';
+import { ImagePreviewModalButton } from '@dash-ui';
+import { ProjectData } from '@service/supabase/supastore/projects/ProjectsCollection';
+import { WebsiteIcon, GithubIcon, HostingerIcon } from '@assets';
+import { ImageModalSelector } from '@store/selectors';
 
 export type IProjectPreviewComponentProps = {
     project: ProjectData;

@@ -6,7 +6,7 @@ import {
     LazyExpenseAddScreenComponent,
     LazyExpenseEditScreenComponent,
     LazyExpenseDeleteScreenComponent,
-} from 'provider';
+} from '@provider';
 import { Route } from 'react-router-dom';
 
 const ExpensesRoutes = (

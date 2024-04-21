@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { ErrorText, InputText, LandingIntro } from 'components';
-import { SignUpCred } from '../../../service/supabase/supa_auth/actions/AuthSignUp';
-import { signUp } from '../../../service/supabase/supa_auth/AuthApi';
+import { ErrorText, InputText, LandingIntro } from '@dash-ui';
+import { SignUpCred } from '@service/supabase/supa_auth/actions/AuthSignUp';
+import { signUp } from '@service/supabase/supa_auth/AuthApi';
 import { useSelector } from 'react-redux';
-import { getSuccessAlertData } from 'provider';
+import { getSuccessAlertData } from '@provider';
 import { useTranslation } from 'react-i18next';
-import { AlertSelector } from 'store/selectors/alert_selector';
+import { AlertSelector } from '@store/selectors/alert_selector';
 
 /**
  * Prop types for the update form value function.

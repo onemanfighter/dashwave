@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import LazyComponentProvider from '../component/LazyComponent';
 
 const ExpenseScreen = lazy(
-    () => import('../../../screens/private/screens/expenses/ExpenseScreen')
+    () => import('@screens/private/screens/expenses/ExpenseScreen')
 );
 
 const LazyExpenseScreenComponent = () => {
@@ -14,10 +14,7 @@ const LazyExpenseScreenComponent = () => {
 };
 
 const ExpenseMainScreen = lazy(
-    () =>
-        import(
-            '../../../screens/private/screens/expenses/expense_main/ExpenseMain'
-        )
+    () => import('@screens/private/screens/expenses/expense_main/ExpenseMain')
 );
 
 const LazyExpenseMainScreenComponent = () => {
@@ -31,7 +28,7 @@ const LazyExpenseMainScreenComponent = () => {
 const ExpensePreviewScreen = lazy(
     () =>
         import(
-            '../../../screens/private/screens/expenses/expense_preview/ExpensePreview'
+            '@screens/private/screens/expenses/expense_preview/ExpensePreview'
         )
 );
 
@@ -44,10 +41,7 @@ const LazyExpensePreviewScreenComponent = () => {
 };
 
 const ExpenseEditScreen = lazy(
-    () =>
-        import(
-            '../../../screens/private/screens/expenses/expense_edit/ExpenseEdit'
-        )
+    () => import('@screens/private/screens/expenses/expense_edit/ExpenseEdit')
 );
 
 const LazyExpenseEditScreenComponent = () => {
@@ -59,10 +53,7 @@ const LazyExpenseEditScreenComponent = () => {
 };
 
 const ExpenseAddScreen = lazy(
-    () =>
-        import(
-            '../../../screens/private/screens/expenses/expense_add/ExpenseAdd'
-        )
+    () => import('@screens/private/screens/expenses/expense_add/ExpenseAdd')
 );
 
 const LazyExpenseAddScreenComponent = () => {
@@ -75,9 +66,7 @@ const LazyExpenseAddScreenComponent = () => {
 
 const ExpenseDeleteScreen = lazy(
     () =>
-        import(
-            '../../../screens/private/screens/expenses/expense_delete/ExpenseDelete'
-        )
+        import('@screens/private/screens/expenses/expense_delete/ExpenseDelete')
 );
 const LazyExpenseDeleteScreenComponent = () => {
     return (

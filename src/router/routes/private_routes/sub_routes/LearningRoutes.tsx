@@ -3,7 +3,7 @@ import {
     LazyCredsMainScreenComponent,
     LazyProfileMainScreenComponent,
     LazyProfilePreviewScreenComponent,
-} from 'provider';
+} from '@provider';
 import { Route } from 'react-router-dom';
 
 const LearningRoutes = (

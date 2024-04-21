@@ -1,7 +1,7 @@
 /**
  * Routes for the sidebar.
  */
-export const SidebarRoutes = [
+const SidebarRoutes = [
     {
         nameKey: 'Sidebar.home',
         path: '/dashboard',
@@ -44,8 +44,11 @@ export const SidebarRoutes = [
     },
 ];
 
-export const ProfileRoutes = {
+const ProfileRoutes = {
     nameKey: 'Sidebar.profile',
     path: '/profile',
     iconName: 'profile',
 };
+
+export default SidebarRoutes;
+export { ProfileRoutes };

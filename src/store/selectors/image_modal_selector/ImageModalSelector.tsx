@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { imageModalSlice } from 'store/slice/image_modal/ImageModalSlice';
-import { RootState } from 'store/store_state';
+import { imageModalSlice } from '@store/slice/image_modal/ImageModalSlice';
+import { RootState } from '@store/store_state';
 
 export const ImageModalSelector = (state: RootState) => {
     const dispatch = useDispatch();

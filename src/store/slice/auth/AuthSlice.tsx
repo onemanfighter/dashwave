@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { removeProfileKeyData } from '../../../service/local_storage/profile/ProfileStorageApi';
-import { getAuthKeyData } from '../../../service/local_storage/auth/AuthStorageApi';
+import { removeProfileKeyData } from '@service/local_storage/profile/ProfileStorageApi';
+import { getAuthKeyData } from '@service/local_storage/auth/AuthStorageApi';
 import { AuthData } from './types';
 
 export const initialState: AuthData = {

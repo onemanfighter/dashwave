@@ -1,4 +1,4 @@
-import { ToastAlertData } from 'provider';
+import { ToastAlertData } from '@provider';
 import { ProjectData } from './ProjectsCollection';
 import {
     getAllProjectForMainScreen,

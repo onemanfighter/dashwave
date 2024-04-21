@@ -2,7 +2,7 @@ import {
     ToastAlertData,
     getErrorAlertData,
     getSuccessAlertData,
-} from 'provider';
+} from '@provider';
 import { getSocialMediaLink } from '../../../../../util/Utils';
 import { SupabaseUsersDB } from '../../../supabase_main/Supabase';
 import {

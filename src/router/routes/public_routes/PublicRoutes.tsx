@@ -10,7 +10,7 @@ import {
     LazyForgotPasswordScreenComponent,
     LazyLoginScreenComponent,
     LazySignupScreenComponent,
-} from 'provider';
+} from '@provider';
 
 export const publicRouter = createBrowserRouter(
     createRoutesFromChildren(

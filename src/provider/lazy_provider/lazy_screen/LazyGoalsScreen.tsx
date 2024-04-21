@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import LazyComponentProvider from '../component/LazyComponent';
 
 const GoalsScreen = lazy(
-    () => import('../../../screens/private/screens/goals/GoalsScreen')
+    () => import('@screens/private/screens/goals/GoalsScreen')
 );
 
 const LazyGoalsScreenComponent = () => {
@@ -14,7 +14,7 @@ const LazyGoalsScreenComponent = () => {
 };
 
 const GoalsMainScreen = lazy(
-    () => import('../../../screens/private/screens/goals/goals_main/GoalsMain')
+    () => import('@screens/private/screens/goals/goals_main/GoalsMain')
 );
 
 const LazyGoalsMainScreenComponent = () => {
@@ -26,10 +26,7 @@ const LazyGoalsMainScreenComponent = () => {
 };
 
 const GoalsPreviewScreen = lazy(
-    () =>
-        import(
-            '../../../screens/private/screens/goals/goals_preview/GoalsPreview'
-        )
+    () => import('@screens/private/screens/goals/goals_preview/GoalsPreview')
 );
 
 const LazyGoalsPreviewScreenComponent = () => {
@@ -41,7 +38,7 @@ const LazyGoalsPreviewScreenComponent = () => {
 };
 
 const GoalsEditScreen = lazy(
-    () => import('../../../screens/private/screens/goals/goals_edit/GoalsEdit')
+    () => import('@screens/private/screens/goals/goals_edit/GoalsEdit')
 );
 
 const LazyGoalsEditScreenComponent = () => {
@@ -53,7 +50,7 @@ const LazyGoalsEditScreenComponent = () => {
 };
 
 const GoalsAddScreen = lazy(
-    () => import('../../../screens/private/screens/goals/goals_add/GoalsAdd')
+    () => import('@screens/private/screens/goals/goals_add/GoalsAdd')
 );
 
 const LazyGoalsAddScreenComponent = () => {
@@ -65,10 +62,7 @@ const LazyGoalsAddScreenComponent = () => {
 };
 
 const GoalsDeleteScreen = lazy(
-    () =>
-        import(
-            '../../../screens/private/screens/goals/goals_delete/GoalsDelete'
-        )
+    () => import('@screens/private/screens/goals/goals_delete/GoalsDelete')
 );
 const LazyGoalsDeleteScreenComponent = () => {
     return (

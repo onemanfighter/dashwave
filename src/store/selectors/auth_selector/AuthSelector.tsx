@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
-import { AuthData } from 'store/slice';
-import { authSlice } from 'store/slice/auth/AuthSlice';
-import { RootState } from 'store/store_state';
+import { AuthData } from '@store/slice';
+import { authSlice } from '@store/slice/auth/AuthSlice';
+import { RootState } from '@store/store_state';
 
 export const AuthSelector = (state: RootState) => {
     const dispatch = useDispatch();

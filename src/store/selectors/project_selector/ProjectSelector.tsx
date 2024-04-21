@@ -1,6 +1,6 @@
-import { ProjectData } from 'service/supabase/supastore/projects/ProjectsCollection';
-import { projectsSlice } from 'store/slice/projects/ProjectsSlice';
-import { AppDispatch, RootState } from 'store/store_state';
+import { ProjectData } from '@service/supabase/supastore/projects/ProjectsCollection';
+import { projectsSlice } from '@store/slice/projects/ProjectsSlice';
+import { AppDispatch, RootState } from '@store/store_state';
 
 export const ProjectSelector = (state: RootState) => {
     return { projects: state.projects };

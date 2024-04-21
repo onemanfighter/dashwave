@@ -7,12 +7,12 @@ import {
     AlertToastProvider,
     ImagePreviewModalProvider,
     NotificationProvider,
+    AppRouterProviderComponent,
     ReduxServiceProvider,
     ThemeProvider,
-} from 'provider';
-import { RouterProviderComponent } from 'router';
+} from '@provider';
 // init localization
-import './localization/config';
+import '@localization';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -25,7 +25,7 @@ root.render(
                     <AlreadyLoginServiceProvider>
                         <NotificationProvider>
                             <AlertToastProvider>
-                                <RouterProviderComponent />
+                                <AppRouterProviderComponent />
                             </AlertToastProvider>
                         </NotificationProvider>
                     </AlreadyLoginServiceProvider>

@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from 'store';
+import { RootState } from '@store';
 import NavigationToggleButton from './NavigationToggleButton';
 import {
     ProfilePlaceholder,
@@ -10,9 +10,11 @@ import {
     PasswordResetIcon,
     SettingsIcon,
     LogoutIcon,
-} from 'assets';
+} from '@assets';
 import { NavigationComponentProps } from './types';
-import { Theme, appStore, themeSelector, useShallow } from 'zustand_store';
+
+import { themeSelector, useShallow } from '@selectors';
+import { Theme, appStore } from '@zustand_store';
 
 /**
  * Navigation component.

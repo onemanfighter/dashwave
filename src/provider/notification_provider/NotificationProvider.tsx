@@ -1,4 +1,4 @@
-import { NotificationComponent } from 'components';
+import { NotificationComponent } from '@dash-ui';
 import { NotificationProviderProps } from './types';
 
 const NotificationProvider = (props: NotificationProviderProps) => {

@@ -1,4 +1,4 @@
-import { ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from 'assets';
+import { ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from '@assets';
 import { AlertIconProps } from './types';
 
 const AlertIcon = ({ type }: AlertIconProps) => {

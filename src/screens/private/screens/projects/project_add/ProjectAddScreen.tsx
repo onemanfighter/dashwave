@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import { RootState } from 'store';
+import { RootState } from '@store';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ProjectCard, getProjectCardData } from 'components';
-import { ProjectSelector } from 'store/selectors/project_selector';
+import { ProjectCard, getProjectCardData } from '@dash-ui';
+import { ProjectSelector } from '@store/selectors/project_selector';
 
 /**
  * Interface definition for the project edit screen props.

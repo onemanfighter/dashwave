@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import { ImagePreviewModal } from 'components';
+import { ImagePreviewModal } from '@dash-ui';
 import { ImagePreviewModalProviderProps } from './types';
-import { ImageModalSelector } from 'store/selectors';
+import { ImageModalSelector } from '@store/selectors';
 
 const ImagePreviewModalProvider = (props: ImagePreviewModalProviderProps) => {
     const { modalImage } = useSelector(ImageModalSelector);

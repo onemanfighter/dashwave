@@ -1,4 +1,4 @@
-import { AuthData } from 'store';
+import { AuthData } from '@store';
 import { AuthTokenKey } from '../../local_storage/token_constants/StorageConstant';
 import { firebaseForgotPassword } from './actions/AuthForgotPassword';
 import { LoginCred, firebaseSingIn } from './actions/AuthSignIn';

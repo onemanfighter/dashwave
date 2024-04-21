@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { forgotPassword } from '../../../service/supabase/supa_auth/AuthApi';
+import { forgotPassword } from '@service/supabase/supa_auth/AuthApi';
 import { validateEmail } from '../../../util/input/Input';
-import { ErrorText, InputText, InputType, LandingIntro } from 'components';
+import { ErrorText, InputText, InputType, LandingIntro } from '@dash-ui';
 import { useTranslation } from 'react-i18next';
 
 /**

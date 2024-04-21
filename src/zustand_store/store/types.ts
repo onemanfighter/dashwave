@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand';
-import { ThemeStateSlice } from 'zustand_store/slice/Theme/types';
+import { ThemeStateSlice } from '@zustand_store/slice/Theme/types';
 
 export interface AppStoreState {
     Theme: ThemeStateSlice;

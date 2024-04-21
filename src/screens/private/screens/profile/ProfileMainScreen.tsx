@@ -1,7 +1,7 @@
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import getSubNavTitle from '../../../../util/nav/NavTitle';
-import { ProfileIcon, PasswordResetIcon, SettingsIcon } from 'assets';
-import { TooltipComponent } from 'components';
+import { ProfileIcon, PasswordResetIcon, SettingsIcon } from '@assets';
+import { TooltipComponent } from '@dash-ui';
 
 /**
  * Props for the ProfileMainScreen component.

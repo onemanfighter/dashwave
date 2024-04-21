@@ -1,10 +1,10 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { ProjectData } from '../../../service/supabase/supastore/projects/ProjectsCollection';
+import { ProjectData } from '@service/supabase/supastore/projects/ProjectsCollection';
 import {
     getProjectsKeyData,
     removeProjectsKeyData,
     storeProjectsKeyData,
-} from '../../../service/local_storage/projects/ProjectStorageApi';
+} from '@service/local_storage/projects/ProjectStorageApi';
 
 /**
  * Initial projects data.

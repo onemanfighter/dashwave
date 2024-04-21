@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import { RootState } from 'store';
-import { ToastAlertComponent } from 'components';
+import { RootState } from '@store';
+import { ToastAlertComponent } from '@dash-ui';
 import { ToastAlertProviderProps } from './types';
 
 /**

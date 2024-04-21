@@ -1,5 +1,6 @@
+import { appStore } from '@zustand_store';
+import { themeSelector, useShallow } from '@selectors';
 import { ThemeProviderProps } from './types';
-import { appStore, themeSelector, useShallow } from 'zustand_store';
 
 const ThemeProvider = (props: ThemeProviderProps) => {
     const { themeValue } = appStore(useShallow(themeSelector));

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { UserProfileData, profileSlice } from 'store/slice';
-import { RootState } from 'store/store_state';
+import { UserProfileData, profileSlice } from '@store/slice';
+import { RootState } from '@store/store_state';
 
 export const ProfileSelector = (state: RootState) => {
     const dispatch = useDispatch();

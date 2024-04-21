@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ProjectPreviewComponent from './ProjectPreviewComponent';
-import { ProjectSelector } from 'store/selectors/project_selector';
+import { ProjectSelector } from '@store/selectors/project_selector';
 
 /**
  * Project select data

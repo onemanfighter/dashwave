@@ -2,8 +2,8 @@ import { useDispatch } from 'react-redux';
 import {
     NotificationState,
     notificationSlice,
-} from 'store/slice/notification/NotificationSlice';
-import { RootState } from 'store/store_state';
+} from '@store/slice/notification/NotificationSlice';
+import { RootState } from '@store/store_state';
 
 export const NotificationSelector = (state: RootState) => {
     const dispatch = useDispatch();

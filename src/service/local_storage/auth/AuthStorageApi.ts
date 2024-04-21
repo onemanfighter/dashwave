@@ -1,4 +1,4 @@
-import { AuthData } from 'store';
+import { AuthData } from '@store';
 import { AuthTokenKey } from '../token_constants/StorageConstant';
 
 /**
