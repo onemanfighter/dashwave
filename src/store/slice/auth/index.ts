@@ -1,3 +1,3 @@
-export { default as AuthReducer } from './AuthSlice';
-export type { AuthData, UserData } from './AuthSlice';
-export { onLogin, onSignOut, getAuthData, getAuthUserID } from './AuthSlice';
+export { authSlice } from './AuthSlice';
+export type { AuthData, UserData } from './types';
+export { getAuthData, getAuthUserID } from './AuthSlice';

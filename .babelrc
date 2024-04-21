@@ -4,13 +4,14 @@
             "module-resolver",
             {
                 "root": ["./src"],
-                "extensions": [".ts", ".tsx", ".jsx", ".js", ".json"],
+                // "extensions": [".ts", ".tsx", ".jsx", ".js", ".json"],
                 "alias": {
                     "components": "./src/components",
                     "assets": "./src/assets",
                     "provider": "./src/provider",
                     "store": "./src/store",
-                    "router": "./src/router"
+                    "router": "./src/router",
+                    "selectors": "./src/store/selectors"
                 }
             }
         ]

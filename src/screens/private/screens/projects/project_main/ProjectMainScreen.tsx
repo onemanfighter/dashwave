@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
-import { RootState } from 'store';
 import { ProjectCard, getProjectCardData } from 'components';
+import { ProjectSelector } from 'store/selectors/project_selector';
 
 /**
  * Component definition for the project main screen.
  * @returns The ProjectMainScreen component.
  */
 function ProjectMainScreen() {
-    const projectData = useSelector((state: RootState) => state.projects);
+    const { projects: projectData } = useSelector(ProjectSelector);
 
     return (
         <div className="m-2">

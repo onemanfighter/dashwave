@@ -35,27 +35,3 @@ export const alertSlice = createSlice({
         },
     },
 });
-
-/**
- * Show the alert with a timeout.
- *
- * @param dispatch The dispatch function.
- * @param alertData The alert data.
- * @param timeMS The time in milliseconds.
- */
-function showAlertWithTimeout(
-    dispatch: any,
-    alertData: ToastAlertData,
-    timeMS: number
-) {
-    dispatch(showToastAlert(alertData));
-    setTimeout(() => {
-        dispatch(hideToastAlert());
-    }, timeMS);
-}
-
-const { showToastAlert, hideToastAlert } = alertSlice.actions;
-export default alertSlice.reducer;
-
-export type { ToastAlertData };
-export { showAlertWithTimeout };

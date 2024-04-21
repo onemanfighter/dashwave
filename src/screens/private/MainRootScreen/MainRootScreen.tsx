@@ -3,43 +3,38 @@ import { batch, useDispatch, useSelector } from 'react-redux';
 import { signOut } from '../../../service/supabase/supa_auth/AuthApi';
 import { useCallback, useEffect, useState } from 'react';
 import { NavigationComponent, SidebarComponent } from 'components';
-import {
-    RootState,
-    onSignOut,
-    removeProfile,
-    syncForTheFirstTime,
-    updateProfile,
-} from 'store';
+import { removeProfile, syncForTheFirstTime, updateProfile } from 'store';
+import { AuthSelector } from 'store/selectors';
+import { ProfileSelector } from 'store/selectors/profile_selector';
 
 const MainRootScreen = () => {
-    const userAuthUserIdState = useSelector(
-        (state: RootState) => state.auth.userData.userId
-    );
+    const { userId } = useSelector(AuthSelector);
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const dispatch = useDispatch();
+    const { removeLoginDataAction } = useSelector(AuthSelector);
+    const { removeProfileAction, updateProfileAction } =
+        useSelector(ProfileSelector);
 
-    const logOutClickHandler = useCallback(() => {
-        const signOutHandler = () => {
+    const logOutClickHandler = () => {
+        signOut(() => {
             batch(() => {
-                dispatch(onSignOut());
-                dispatch(removeProfile());
+                removeLoginDataAction();
+                removeProfileAction();
             });
-        };
-        signOut(signOutHandler);
-    }, [dispatch]);
+        });
+    };
 
     useEffect(() => {
-        if (userAuthUserIdState === '') {
+        if (userId === '') {
             logOutClickHandler();
         } else {
             console.log('syncing for the first time');
             const userData = syncForTheFirstTime((data) =>
-                dispatch(updateProfile(data))
+                updateProfileAction(data)
             );
-            if (userData) dispatch(updateProfile(userData));
+            if (userData) updateProfileAction(userData);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [userAuthUserIdState]);
+    }, [userId]);
 
     const openSidebarClickHandler = () => {
         setSidebarOpen((prev) => !prev);

@@ -4,4 +4,4 @@ export * from './notification';
 export * from './projects';
 export * from './profile';
 export * from './theme';
-export * from './toast_alert';
+export * from './alert';

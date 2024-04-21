@@ -42,14 +42,11 @@ export const themeSlice = createSlice({
             setThemeData(action.payload.theme);
             return action.payload;
         },
-        getTheme: (_state, action: PayloadAction<ThemeState>) => {
-            return action.payload;
-        },
     },
 });
 
 // Export the theme slice.
-export const { setTheme, getTheme } = themeSlice.actions;
+export const { setTheme } = themeSlice.actions;
 export default themeSlice.reducer;
 
 export type { ThemeState };

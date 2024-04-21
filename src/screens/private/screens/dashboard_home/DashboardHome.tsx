@@ -1,11 +1,9 @@
-import { batch, useDispatch } from 'react-redux';
+import { batch, useSelector } from 'react-redux';
 import { NotificationButton, NotificationButtonType } from 'components';
-import {
-    NotificationState,
-    showAlertWithTimeout,
-    showNotification,
-} from 'store';
+import { NotificationState } from 'store';
 import { getErrorAlertData } from 'provider';
+import { NotificationSelector } from 'store/selectors';
+import { AlertSelector } from 'store/selectors/alert_selector';
 
 /**
  * Interface definition for the dashboard home props.
@@ -18,8 +16,8 @@ interface IDashboardHomeProps {}
  * @returns The dashboard home component.
  */
 function DashboardHome(props: IDashboardHomeProps) {
-    const dispatch = useDispatch();
-
+    const { showNotificationAction } = useSelector(NotificationSelector);
+    const { showAlertWithTimeout } = useSelector(AlertSelector);
     const notificationData: NotificationState = {
         title: 'Notification',
         description: 'This is a notification data',
@@ -27,8 +25,8 @@ function DashboardHome(props: IDashboardHomeProps) {
 
     const clickHandler = () => {
         batch(() => {
-            showAlertWithTimeout(dispatch, getErrorAlertData('Error'), 3000);
-            dispatch(showNotification(notificationData));
+            showAlertWithTimeout(getErrorAlertData('Error'), 3000);
+            showNotificationAction(notificationData);
         });
     };
 

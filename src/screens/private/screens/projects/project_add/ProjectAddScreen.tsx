@@ -3,6 +3,7 @@ import { RootState } from 'store';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ProjectCard, getProjectCardData } from 'components';
+import { ProjectSelector } from 'store/selectors/project_selector';
 
 /**
  * Interface definition for the project edit screen props.
@@ -15,7 +16,7 @@ interface IProjectEditScreenProps {}
  * @returns The ProjectEditScreen component.
  */
 function ProjectAddScreen(props: IProjectEditScreenProps) {
-    const projectData = useSelector((state: RootState) => state.projects);
+    const { projects: projectData } = useSelector(ProjectSelector);
     const initialProjectId = projectData[0].projectId;
     const [selectedProjectId, setSelectedProjectId] =
         useState<string>(initialProjectId);

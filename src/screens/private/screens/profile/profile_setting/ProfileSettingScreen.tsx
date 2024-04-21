@@ -24,13 +24,10 @@ import {
     WebsiteIcon,
 } from 'assets';
 import { InputText, InputType } from 'components';
-import {
-    RootState,
-    showAlertWithTimeout,
-    updateProfile,
-    getAuthUserID,
-    showNotification,
-} from 'store';
+import { getAuthUserID } from 'store';
+import { NotificationSelector } from 'store/selectors';
+import { ProfileSelector } from 'store/selectors/profile_selector';
+import { AlertSelector } from 'store/selectors/alert_selector';
 
 /**
  * Type definition for the update form value.
@@ -45,18 +42,21 @@ interface UpdateFormValue {
  * @returns The ProfileSettingScreen component.
  */
 function ProfileSettingScreen() {
-    const profileData = useSelector((state: RootState) => state.profile);
+    const { showNotificationAction } = useSelector(NotificationSelector);
+    const { showAlertWithTimeout } = useSelector(AlertSelector);
+    const { profile: profileData, updateProfileAction } =
+        useSelector(ProfileSelector);
     const [loading, setLoading] = useState(false);
     const [userProfileState, setUserProfileState] =
         useState<UserProfileData>(profileData);
     const dispatch = useDispatch();
 
     const showSuccessAlertHandler = (toastAlertData: ToastAlertData) => {
-        showAlertWithTimeout(dispatch, toastAlertData, 3000);
+        showAlertWithTimeout(toastAlertData, 3000);
     };
 
     const profileSavingHandler = (profile: UserProfileData) => {
-        dispatch(updateProfile(profile));
+        updateProfileAction(profile);
     };
 
     const updateProfileHandler = () => {
@@ -81,14 +81,12 @@ function ProfileSettingScreen() {
                 buttonType={NotificationButtonType.INFO}
                 isButtonOutline={true}
                 onClickHandler={() => {
-                    dispatch(
-                        showNotification({
-                            title: 'Profile Update',
-                            description:
-                                'Are you sure you want to update your profile?',
-                            onConfirm: updateProfileHandler,
-                        })
-                    );
+                    showNotificationAction({
+                        title: 'Profile Update',
+                        description:
+                            'Are you sure you want to update your profile?',
+                        onConfirm: updateProfileHandler,
+                    });
                 }}
             />
         );

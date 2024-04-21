@@ -2,27 +2,31 @@
     "compilerOptions": {
         "target": "es5",
         "lib": ["dom", "dom.iterable", "esnext"],
+        "allowSyntheticDefaultImports": true,
+        "noFallthroughCasesInSwitch": true,
         "allowJs": true,
         "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
-        "noFallthroughCasesInSwitch": true,
+        "esModuleInterop": true,
         "module": "esnext",
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "noEmit": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "types": ["jest"],
         "baseUrl": "./src",
-        "jsx": "react-jsx",
+        "noEmit": true,
         "paths": {
             "components": ["./components"],
             "assets": ["./assets"],
             "provider": ["./provider"],
             "store": ["./store"],
-            "router": ["./router"]
+            "router": ["./router"],
+            "selectors": ["./store/selectors"]
         }
     },
-    "include": ["src"]
+    "include": ["**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules"]
 }

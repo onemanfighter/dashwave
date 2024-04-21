@@ -16,6 +16,7 @@ import {
     SocialIcon,
 } from 'assets';
 import { TitleCard, TooltipComponent } from 'components';
+import { ProfileSelector } from 'store/selectors/profile_selector';
 
 /**
  * The text style for the profile preview screen.
@@ -28,7 +29,7 @@ const TextStyle =
  * @returns The profile preview screen component.
  */
 function ProfilePreviewScreen() {
-    const profileData = useSelector((state: RootState) => state.profile);
+    const { profile: profileData } = useSelector(ProfileSelector);
 
     return (
         <div className=" m-2 h-full">

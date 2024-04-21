@@ -10,9 +10,6 @@ import {
 import { userProfileDataRead } from '../../../service/supabase/supastore/user_profile/UserProfileStoreApi';
 import { getAuthData } from '../auth/AuthSlice';
 
-/**
- * Initial profile data.
- */
 const initialProfile: UserProfileData = {
     userId: '',
     firstName: '',
@@ -57,9 +54,6 @@ const initialProfile: UserProfileData = {
 
 const PROFILE = 'profile';
 
-/**
- * The profile slice.
- */
 export const profileSlice = createSlice({
     name: PROFILE,
     initialState: initialProfile,
@@ -98,10 +92,8 @@ function syncForTheFirstTime(
 
     userProfileDataRead(getAuthData().userData, setProfileCallback);
 }
-
 // Export the profile slice.
 export const { updateProfile, removeProfile } = profileSlice.actions;
 export default profileSlice.reducer;
-
 export type { UserProfileData };
 export { syncForTheFirstTime };
