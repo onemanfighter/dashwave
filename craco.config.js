@@ -16,9 +16,9 @@ module.exports = {
             '@store': path.resolve(__dirname, './src/store'),
             '@store/*': path.resolve(__dirname, './src/store/*'),
             '@zustand_store': path.resolve(__dirname, './src/zustand_store'),
-            '@zustand_store/*': path.resolve(
+            '@zustand_store/slice': path.resolve(
                 __dirname,
-                './src/zustand_store/*'
+                './src/zustand_store/slice'
             ),
             '@selectors': path.resolve(
                 __dirname,

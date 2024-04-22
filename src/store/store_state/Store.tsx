@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import projectsReducer from '../slice/projects/ProjectsSlice';
-import { profileSlice, notificationSlice, imageModalSlice } from '@store/slice';
+import { profileSlice } from '@store/slice';
 
 /**
  * The redux store configuration.
@@ -8,16 +7,10 @@ import { profileSlice, notificationSlice, imageModalSlice } from '@store/slice';
  *
  * Reducer;
  * 1. profileReducer
- * 2. notificationReducer
- * 3. projectsReducer
- * 4. imageModalReducer
  */
 const store = configureStore({
     reducer: {
         profile: profileSlice.reducer,
-        notification: notificationSlice.reducer,
-        projects: projectsReducer,
-        modalImage: imageModalSlice.reducer,
     },
 });
 

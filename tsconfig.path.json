@@ -15,7 +15,7 @@
             "@store": ["src/store", "src/store/index"],
             "@store/*": ["src/store/*"],
             "@zustand_store": ["src/zustand_store/index"],
-            "@zustand_store/*": ["src/zustand_store/*"],
+            "@zustand_store/slice": ["src/zustand_store/slice"],
             "@selectors": ["src/zustand_store/selectors"]
         }
     }

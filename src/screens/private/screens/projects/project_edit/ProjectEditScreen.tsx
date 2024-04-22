@@ -1,21 +1,13 @@
-import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ProjectCard, getProjectCardData } from '@dash-ui';
-import { ProjectSelector } from '@store/selectors/project_selector';
+import { projectsSelector, useShallow } from '@selectors';
+import { appStore } from '@zustand_store';
 
-/**
- * Interface definition for the project edit screen props.
- */
-interface IProjectEditScreenProps {}
+type IProjectEditScreenProps = {};
 
-/**
- * Component definition for the project edit screen.
- * @param props The props for the project edit screen.
- * @returns The ProjectEditScreen component.
- */
-function ProjectEditScreen(props: IProjectEditScreenProps) {
-    const { projects: projectData } = useSelector(ProjectSelector);
+const ProjectEditScreen = (props: IProjectEditScreenProps) => {
+    const { projectData } = appStore(useShallow(projectsSelector));
     const initialProjectId = projectData[0].projectId;
     const [selectedProjectId, setSelectedProjectId] =
         useState<string>(initialProjectId);
@@ -68,7 +60,7 @@ function ProjectEditScreen(props: IProjectEditScreenProps) {
             </div>
         </div>
     );
-}
+};
 
 // Export the ProjectEditScreen component.
 export default ProjectEditScreen;

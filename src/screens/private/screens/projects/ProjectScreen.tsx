@@ -1,13 +1,13 @@
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { TooltipComponent } from '@dash-ui';
-import getSubNavTitle from '../../../../util/nav/NavTitle';
-import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+
+import { TooltipComponent } from '@dash-ui';
 import { getAllProjects } from '@service/supabase/supastore/projects/ProjectsStoreApi';
 import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from '@assets';
-import { ProjectSelectorAction } from '@store/selectors/project_selector';
 import { appStore } from '@zustand_store';
-import { authSelector, useShallow } from '@selectors';
+import { authSelector, projectsSelector, useShallow } from '@selectors';
+
+import getSubNavTitle from '../../../../util/nav/NavTitle';
 
 /**
  * Props for the ProjectsScreen component.
@@ -24,23 +24,13 @@ const ProjectRoutes = [
     { title: 'Delete project', icon: <DeleteIcon />, path: 'delete' },
 ];
 
-/**
- * Component definition for the projects screen component.
- * @param props The props for the projects screen component.
- * @returns The projects screen component.
- */
-function ProjectsScreen(props: IProjectsScreenProps) {
-    const dispatch = useDispatch();
+const ProjectsScreen = (props: IProjectsScreenProps) => {
     const currentLocation = useLocation();
-
     const { userId } = appStore(useShallow(authSelector));
-    const { addProjectsAction } = ProjectSelectorAction(dispatch);
+    const { addProjects } = appStore(useShallow(projectsSelector));
 
-    // Making network request to get all projects.
     useEffect(() => {
-        getAllProjects(userId, (projectsData) =>
-            addProjectsAction(projectsData)
-        );
+        getAllProjects(userId, (projectsData) => addProjects(projectsData));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userId]);
 
@@ -68,7 +58,7 @@ function ProjectsScreen(props: IProjectsScreenProps) {
             </div>
         </div>
     );
-}
+};
 
 // Export the ProjectsScreen component.
 export default ProjectsScreen;

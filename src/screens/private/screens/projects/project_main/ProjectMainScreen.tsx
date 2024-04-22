@@ -1,13 +1,9 @@
-import { useSelector } from 'react-redux';
 import { ProjectCard, getProjectCardData } from '@dash-ui';
-import { ProjectSelector } from '@store/selectors/project_selector';
+import { projectsSelector, useShallow } from '@selectors';
+import { appStore } from '@zustand_store';
 
-/**
- * Component definition for the project main screen.
- * @returns The ProjectMainScreen component.
- */
-function ProjectMainScreen() {
-    const { projects: projectData } = useSelector(ProjectSelector);
+const ProjectMainScreen = () => {
+    const { projectData } = appStore(useShallow(projectsSelector));
 
     return (
         <div className="m-2">
@@ -20,7 +16,7 @@ function ProjectMainScreen() {
             </div>
         </div>
     );
-}
+};
 
 // Export the ProjectMainScreen component.
 export default ProjectMainScreen;

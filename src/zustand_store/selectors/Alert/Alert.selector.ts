@@ -1,5 +1,5 @@
-import { ToastAlertData } from '@zustand_store/slice/Alert/types';
-import { AppStoreState } from '@zustand_store/store';
+import { ToastAlertData } from '@zustand_store/slice';
+import { AppStoreState } from '@zustand_store';
 
 export const alertSelector = (state: AppStoreState) => ({
     alertData: state.Alert.alertData,

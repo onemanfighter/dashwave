@@ -6,6 +6,9 @@ import {
     createThemeSlice,
     createAlertSlice,
     createAuthSlice,
+    createProjectsSlice,
+    createImageModalSlice,
+    createNotificationSlice,
 } from '@zustand_store/slice';
 import { AppStoreState } from './types';
 
@@ -14,5 +17,8 @@ export const appStore = create<AppStoreState>()(
         Theme: createThemeSlice(...api),
         Alert: createAlertSlice(...api),
         Auth: createAuthSlice(...api),
+        Projects: createProjectsSlice(...api),
+        ImageModal: createImageModalSlice(...api),
+        Notification: createNotificationSlice(...api),
     }))
 );

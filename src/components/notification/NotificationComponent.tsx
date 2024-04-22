@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux';
 import { NOTIFICATION_MODAL_ID } from './constants';
 import { useTranslation } from 'react-i18next';
-import { NotificationSelector } from '@store/selectors';
+import { appStore } from '@zustand_store';
+import { notificationSelector, useShallow } from '@selectors';
 
 /**
  * Component definition for the notification component.
@@ -9,7 +9,8 @@ import { NotificationSelector } from '@store/selectors';
  */
 const NotificationComponent = () => {
     const { t } = useTranslation();
-    const { notificationData } = useSelector(NotificationSelector);
+    const { notificationData } = appStore(useShallow(notificationSelector));
+
     return (
         notificationData && (
             <div className="z-50">

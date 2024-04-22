@@ -1,4 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import {
     NotificationButton,
     NotificationButtonType,
@@ -10,9 +11,7 @@ import {
     UserProfileData,
 } from '@service/supabase/supastore/user_profile/UserCollection';
 
-import { useState } from 'react';
 import { userProfileDataUpdate } from '@service/supabase/supastore/user_profile/UserProfileStoreApi';
-import { getSocialMediaLink } from '../../../../../util/Utils';
 import { ToastAlertData } from '@provider';
 import {
     FacebookIcon,
@@ -24,10 +23,15 @@ import {
     WebsiteIcon,
 } from '@assets';
 import { InputText, InputType } from '@dash-ui';
-import { NotificationSelector } from '@store/selectors';
 import { ProfileSelector } from '@store/selectors/profile_selector';
-import { alertSelector, authSelector, useShallow } from '@selectors';
 import { appStore } from '@zustand_store';
+import {
+    alertSelector,
+    authSelector,
+    notificationSelector,
+    useShallow,
+} from '@selectors';
+import { getSocialMediaLink } from '../../../../../util/Utils';
 
 /**
  * Type definition for the update form value.
@@ -42,7 +46,7 @@ interface UpdateFormValue {
  * @returns The ProfileSettingScreen component.
  */
 function ProfileSettingScreen() {
-    const { showNotificationAction } = useSelector(NotificationSelector);
+    const { showNotification } = appStore(useShallow(notificationSelector));
     const { showAlertWithTimeout } = appStore(useShallow(alertSelector));
     const { getAuthUserID } = appStore(useShallow(authSelector));
     const { profile: profileData, updateProfileAction } =
@@ -81,7 +85,7 @@ function ProfileSettingScreen() {
                 buttonType={NotificationButtonType.INFO}
                 isButtonOutline={true}
                 onClickHandler={() => {
-                    showNotificationAction({
+                    showNotification({
                         title: 'Profile Update',
                         description:
                             'Are you sure you want to update your profile?',
