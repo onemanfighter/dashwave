@@ -1,10 +1,10 @@
-import { AuthData } from '@store';
+import { AuthDataState } from '@zustand_store';
 import { AuthTokenKey } from '../token_constants/StorageConstant';
 
 /**
  * Method to get the authkey from local storage
  */
-function getAuthKeyData(): AuthData | null {
+function getAuthKeyData(): AuthDataState | null {
     const authData = localStorage.getItem(AuthTokenKey);
     if (authData) {
         const data = JSON.parse(authData);

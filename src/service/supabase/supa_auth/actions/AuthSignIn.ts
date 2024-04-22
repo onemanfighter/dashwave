@@ -1,4 +1,4 @@
-import { AuthData } from '@store';
+import { AuthDataState } from '@zustand_store';
 import { SupabaseAuth } from '../../supabase_main/Supabase';
 
 /**
@@ -14,7 +14,7 @@ interface LoginCred {
  */
 async function firebaseSingIn(
     cred: LoginCred,
-    signInHandler: (authData: AuthData) => void,
+    signInHandler: (authData: AuthDataState) => void,
     errorCallback: (error: string) => void
 ) {
     if (cred.email !== null && cred.password !== null)
@@ -28,7 +28,7 @@ async function firebaseSingIn(
                 errorCallback(error.message);
             } else {
                 console.log(data);
-                const authData: AuthData = {
+                const authData: AuthDataState = {
                     authToken: data.session.access_token,
                     userData: {
                         userId: data.user.id,

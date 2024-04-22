@@ -8,7 +8,8 @@ import {
     storeProfileKeyData,
 } from '@service/local_storage/profile/ProfileStorageApi';
 import { userProfileDataRead } from '@service/supabase/supastore/user_profile/UserProfileStoreApi';
-import { getAuthData } from '../auth/AuthSlice';
+import { UserData } from '@zustand_store';
+import { getAuthKeyData } from 'src/service/local_storage/auth/AuthStorageApi';
 
 const initialProfile: UserProfileData = {
     userId: '',
@@ -70,6 +71,21 @@ export const profileSlice = createSlice({
     },
 });
 
+function getUserAuthData(): UserData {
+    const authData = getAuthKeyData();
+
+    if (authData) {
+        return authData.userData;
+    }
+
+    return {
+        userId: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+    };
+}
+
 /**
  * Check if local storage has profile data, if not then fetch from the server database.
  * If the profile data is not available in the server database then add the initial profile data.
@@ -90,7 +106,7 @@ function syncForTheFirstTime(
         return profileData as UserProfileData;
     }
 
-    userProfileDataRead(getAuthData().userData, setProfileCallback);
+    userProfileDataRead(getUserAuthData(), setProfileCallback);
 }
 // Export the profile slice.
 export const { updateProfile, removeProfile } = profileSlice.actions;

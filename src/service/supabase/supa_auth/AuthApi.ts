@@ -1,4 +1,4 @@
-import { AuthData } from '@store';
+import { AuthDataState } from '@zustand_store';
 import { AuthTokenKey } from '../../local_storage/token_constants/StorageConstant';
 import { firebaseForgotPassword } from './actions/AuthForgotPassword';
 import { LoginCred, firebaseSingIn } from './actions/AuthSignIn';
@@ -10,7 +10,7 @@ import supabaseSignUp, { SignUpCred } from './actions/AuthSignUp';
  */
 function signIn(
     cred: LoginCred,
-    signInHandler: (authData: AuthData) => void,
+    signInHandler: (authData: AuthDataState) => void,
     errorCallback: (error: string) => void
 ) {
     firebaseSingIn(cred, signInHandler, errorCallback);

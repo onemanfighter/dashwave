@@ -24,10 +24,9 @@ import {
     WebsiteIcon,
 } from '@assets';
 import { InputText, InputType } from '@dash-ui';
-import { getAuthUserID } from '@store';
 import { NotificationSelector } from '@store/selectors';
 import { ProfileSelector } from '@store/selectors/profile_selector';
-import { alertSelector, useShallow } from '@selectors';
+import { alertSelector, authSelector, useShallow } from '@selectors';
 import { appStore } from 'src/zustand_store';
 
 /**
@@ -45,12 +44,12 @@ interface UpdateFormValue {
 function ProfileSettingScreen() {
     const { showNotificationAction } = useSelector(NotificationSelector);
     const { showAlertWithTimeout } = appStore(useShallow(alertSelector));
+    const { getAuthUserID } = appStore(useShallow(authSelector));
     const { profile: profileData, updateProfileAction } =
         useSelector(ProfileSelector);
     const [loading, setLoading] = useState(false);
     const [userProfileState, setUserProfileState] =
         useState<UserProfileData>(profileData);
-    const dispatch = useDispatch();
 
     const showSuccessAlertHandler = (toastAlertData: ToastAlertData) => {
         showAlertWithTimeout(toastAlertData, 3000);

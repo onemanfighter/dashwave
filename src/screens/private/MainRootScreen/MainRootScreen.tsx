@@ -1,23 +1,23 @@
 import { Outlet } from 'react-router-dom';
-import { batch, useDispatch, useSelector } from 'react-redux';
+import { batch, useSelector } from 'react-redux';
 import { signOut } from '@service/supabase/supa_auth/AuthApi';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavigationComponent, SidebarComponent } from '@dash-ui';
-import { removeProfile, syncForTheFirstTime, updateProfile } from '@store';
-import { AuthSelector } from '@store/selectors';
+import { syncForTheFirstTime } from '@store';
 import { ProfileSelector } from '@store/selectors/profile_selector';
+import { appStore } from '@zustand_store';
+import { authSelector, useShallow } from '@selectors';
 
 const MainRootScreen = () => {
-    const { userId } = useSelector(AuthSelector);
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const { removeLoginDataAction } = useSelector(AuthSelector);
+    const { userId, removeLoginData } = appStore(useShallow(authSelector));
     const { removeProfileAction, updateProfileAction } =
         useSelector(ProfileSelector);
 
     const logOutClickHandler = () => {
         signOut(() => {
             batch(() => {
-                removeLoginDataAction();
+                removeLoginData();
                 removeProfileAction();
             });
         });

@@ -1,13 +1,13 @@
 import { RouterProvider } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { privateRouter, publicRouter } from '@router';
-import { AuthSelector } from '@store/selectors';
+import { appStore } from '@zustand_store';
+import { authSelector, useShallow } from '@selectors';
 
 /**
  * Router declaration for the demo app.
  */
 export default function AppRouterProviderComponent() {
-    const { authToken } = useSelector(AuthSelector);
+    const { authToken } = appStore(useShallow(authSelector));
 
     return (
         <RouterProvider

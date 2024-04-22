@@ -1,13 +1,13 @@
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { TooltipComponent } from '@dash-ui';
 import getSubNavTitle from '../../../../util/nav/NavTitle';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getAllProjects } from '@service/supabase/supastore/projects/ProjectsStoreApi';
 import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from '@assets';
-import { RootState, addProjects } from '@store';
-import { AuthSelector } from '@store/selectors';
 import { ProjectSelectorAction } from '@store/selectors/project_selector';
+import { appStore } from '@zustand_store';
+import { authSelector, useShallow } from '@selectors';
 
 /**
  * Props for the ProjectsScreen component.
@@ -32,7 +32,8 @@ const ProjectRoutes = [
 function ProjectsScreen(props: IProjectsScreenProps) {
     const dispatch = useDispatch();
     const currentLocation = useLocation();
-    const { userId } = useSelector(AuthSelector);
+
+    const { userId } = appStore(useShallow(authSelector));
     const { addProjectsAction } = ProjectSelectorAction(dispatch);
 
     // Making network request to get all projects.
