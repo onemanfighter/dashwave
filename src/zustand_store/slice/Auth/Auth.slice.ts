@@ -1,6 +1,6 @@
 import { AppStoreSlice } from '@zustand_store';
 import { AuthDataState, AuthStateSlice } from './types';
-import { getAuthKeyData } from 'src/service/local_storage/auth/AuthStorageApi';
+import { getAuthKeyData } from '@service/local_storage/auth/AuthStorageApi';
 
 export const initialState: AuthDataState = {
     authToken: '',

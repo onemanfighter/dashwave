@@ -27,7 +27,7 @@ import { InputText, InputType } from '@dash-ui';
 import { NotificationSelector } from '@store/selectors';
 import { ProfileSelector } from '@store/selectors/profile_selector';
 import { alertSelector, authSelector, useShallow } from '@selectors';
-import { appStore } from 'src/zustand_store';
+import { appStore } from '@zustand_store';
 
 /**
  * Type definition for the update form value.

@@ -1,5 +1,5 @@
 import { AppStoreState } from '@zustand_store/store';
-import { getAuthKeyData } from 'src/service/local_storage/auth/AuthStorageApi';
+import { getAuthKeyData } from '@service/local_storage/auth/AuthStorageApi';
 
 export const authSelector = (state: AppStoreState) => ({
     userId: state.Auth.userData.userId,

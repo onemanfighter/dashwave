@@ -6,7 +6,7 @@ import { signUp } from '@service/supabase/supa_auth/AuthApi';
 import { useSelector } from 'react-redux';
 import { getSuccessAlertData } from '@provider';
 import { useTranslation } from 'react-i18next';
-import { appStore } from 'src/zustand_store';
+import { appStore } from '@zustand_store';
 import { alertSelector, useShallow } from '@selectors';
 
 /**

@@ -3,7 +3,6 @@ const path = require('path');
 module.exports = {
     webpack: {
         alias: {
-            src: path.resolve(__dirname, './src'),
             '@assets': path.resolve(__dirname, './src/assets'),
             '@dash-ui': path.resolve(__dirname, './src/components'),
             '@provider': path.resolve(__dirname, './src/provider'),

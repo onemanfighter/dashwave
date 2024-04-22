@@ -9,7 +9,7 @@ import {
 } from '@service/local_storage/profile/ProfileStorageApi';
 import { userProfileDataRead } from '@service/supabase/supastore/user_profile/UserProfileStoreApi';
 import { UserData } from '@zustand_store';
-import { getAuthKeyData } from 'src/service/local_storage/auth/AuthStorageApi';
+import { getAuthKeyData } from '@service/local_storage/auth/AuthStorageApi';
 
 const initialProfile: UserProfileData = {
     userId: '',

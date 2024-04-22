@@ -1,7 +1,7 @@
 import { ToastAlertComponent } from '@dash-ui';
 import { ToastAlertProviderProps } from './types';
-import { appStore } from 'src/zustand_store';
-import { alertSelector, useShallow } from 'src/zustand_store/selectors';
+import { appStore } from '@zustand_store';
+import { alertSelector, useShallow } from '@selectors';
 
 /**
  * Component definition for the alert toast provider.

@@ -2,7 +2,6 @@
     "compilerOptions": {
         "baseUrl": "./",
         "paths": {
-            "src/*": ["src/*"],
             "@assets": ["src/assets"],
             "@dash-ui": ["src/components"],
             "@localization": ["src/localization"],
