@@ -6,7 +6,9 @@ import {
     ProjectStateSlice,
     ImageModalStateSlice,
     NotificationStateSlice,
+    ProfileStateSlice,
 } from '@zustand_store/slice';
+import {} from '../slice/Profile/types';
 
 export interface AppStoreState {
     Theme: ThemeStateSlice;
@@ -15,6 +17,7 @@ export interface AppStoreState {
     Projects: ProjectStateSlice;
     ImageModal: ImageModalStateSlice;
     Notification: NotificationStateSlice;
+    Profile: ProfileStateSlice;
 }
 
 export type AppStoreSlice<T> = StateCreator<

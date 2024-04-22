@@ -6,3 +6,4 @@ export * from './Auth';
 export * from './Projects';
 export * from './ImageModal';
 export * from './Notification';
+export * from './Profile';

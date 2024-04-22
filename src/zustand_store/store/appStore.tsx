@@ -11,6 +11,7 @@ import {
     createNotificationSlice,
 } from '@zustand_store/slice';
 import { AppStoreState } from './types';
+import { createProfileSlice } from '../slice/Profile';
 
 export const appStore = create<AppStoreState>()(
     immer((...api) => ({
@@ -20,5 +21,6 @@ export const appStore = create<AppStoreState>()(
         Projects: createProjectsSlice(...api),
         ImageModal: createImageModalSlice(...api),
         Notification: createNotificationSlice(...api),
+        Profile: createProfileSlice(...api),
     }))
 );
