@@ -1,25 +1,21 @@
 import { Outlet } from 'react-router-dom';
-import { batch, useSelector } from 'react-redux';
 import { signOut } from '@service/supabase/supa_auth/AuthApi';
 import { useEffect, useState } from 'react';
 import { NavigationComponent, SidebarComponent } from '@dash-ui';
-import { syncForTheFirstTime } from '@store';
-import { ProfileSelector } from '@store/selectors/profile_selector';
-import { appStore } from '@zustand_store';
-import { authSelector, useShallow } from '@selectors';
+import { appStore, syncForTheFirstTime } from '@zustand_store';
+import { authSelector, profileSelector, useShallow } from '@selectors';
 
 const MainRootScreen = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const { userId, removeLoginData } = appStore(useShallow(authSelector));
-    const { removeProfileAction, updateProfileAction } =
-        useSelector(ProfileSelector);
+    const { removeProfile, updateProfile } = appStore(
+        useShallow(profileSelector)
+    );
 
     const logOutClickHandler = () => {
         signOut(() => {
-            batch(() => {
-                removeLoginData();
-                removeProfileAction();
-            });
+            removeLoginData();
+            removeProfile();
         });
     };
 
@@ -28,10 +24,8 @@ const MainRootScreen = () => {
             logOutClickHandler();
         } else {
             console.log('syncing for the first time');
-            const userData = syncForTheFirstTime((data) =>
-                updateProfileAction(data)
-            );
-            if (userData) updateProfileAction(userData);
+            const userData = syncForTheFirstTime((data) => updateProfile(data));
+            if (userData) updateProfile(userData);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userId]);

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import {
     NotificationButton,
     NotificationButtonType,
@@ -23,12 +22,12 @@ import {
     WebsiteIcon,
 } from '@assets';
 import { InputText, InputType } from '@dash-ui';
-import { ProfileSelector } from '@store/selectors/profile_selector';
 import { appStore } from '@zustand_store';
 import {
     alertSelector,
     authSelector,
     notificationSelector,
+    profileSelector,
     useShallow,
 } from '@selectors';
 import { getSocialMediaLink } from '../../../../../util/Utils';
@@ -49,8 +48,9 @@ function ProfileSettingScreen() {
     const { showNotification } = appStore(useShallow(notificationSelector));
     const { showAlertWithTimeout } = appStore(useShallow(alertSelector));
     const { getAuthUserID } = appStore(useShallow(authSelector));
-    const { profile: profileData, updateProfileAction } =
-        useSelector(ProfileSelector);
+    const { profileData, updateProfile } = appStore(
+        useShallow(profileSelector)
+    );
     const [loading, setLoading] = useState(false);
     const [userProfileState, setUserProfileState] =
         useState<UserProfileData>(profileData);
@@ -60,7 +60,7 @@ function ProfileSettingScreen() {
     };
 
     const profileSavingHandler = (profile: UserProfileData) => {
-        updateProfileAction(profile);
+        updateProfile(profile);
     };
 
     const updateProfileHandler = () => {

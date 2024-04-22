@@ -8,7 +8,6 @@ import {
     ImagePreviewModalProvider,
     NotificationProvider,
     AppRouterProviderComponent,
-    ReduxServiceProvider,
     ThemeProvider,
 } from '@provider';
 // init localization
@@ -19,19 +18,17 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <ReduxServiceProvider>
-            <ThemeProvider>
-                <ImagePreviewModalProvider>
-                    <AlreadyLoginServiceProvider>
-                        <NotificationProvider>
-                            <AlertToastProvider>
-                                <AppRouterProviderComponent />
-                            </AlertToastProvider>
-                        </NotificationProvider>
-                    </AlreadyLoginServiceProvider>
-                </ImagePreviewModalProvider>
-            </ThemeProvider>
-        </ReduxServiceProvider>
+        <ThemeProvider>
+            <ImagePreviewModalProvider>
+                <AlreadyLoginServiceProvider>
+                    <NotificationProvider>
+                        <AlertToastProvider>
+                            <AppRouterProviderComponent />
+                        </AlertToastProvider>
+                    </NotificationProvider>
+                </AlreadyLoginServiceProvider>
+            </ImagePreviewModalProvider>
+        </ThemeProvider>
     </React.StrictMode>
 );
 

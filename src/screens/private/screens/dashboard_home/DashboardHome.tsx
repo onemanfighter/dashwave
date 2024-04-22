@@ -1,4 +1,3 @@
-import { batch } from 'react-redux';
 import { NotificationButton, NotificationButtonType } from '@dash-ui';
 import { getErrorAlertData } from '@provider';
 import { NotificationData, appStore } from '@zustand_store';
@@ -23,10 +22,8 @@ function DashboardHome(props: IDashboardHomeProps) {
     };
 
     const clickHandler = () => {
-        batch(() => {
-            showAlertWithTimeout(getErrorAlertData('Error'), 3000);
-            showNotification(notificationData);
-        });
+        showAlertWithTimeout(getErrorAlertData('Error'), 3000);
+        showNotification(notificationData);
     };
 
     return (

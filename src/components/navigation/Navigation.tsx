@@ -1,8 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '@store';
 import NavigationToggleButton from './NavigationToggleButton';
 import {
     ProfilePlaceholder,
@@ -13,7 +11,7 @@ import {
 } from '@assets';
 import { NavigationComponentProps } from './types';
 
-import { themeSelector, useShallow } from '@selectors';
+import { profileSelector, themeSelector, useShallow } from '@selectors';
 import { Theme, appStore } from '@zustand_store';
 
 /**
@@ -25,7 +23,7 @@ import { Theme, appStore } from '@zustand_store';
 const NavigationComponent = (props: NavigationComponentProps) => {
     const { t } = useTranslation();
     const { themeValue, setTheme } = appStore(useShallow(themeSelector));
-    const profileState = useSelector((state: RootState) => state.profile);
+    const { profileData: profileState } = appStore(useShallow(profileSelector));
     const [themeCheckState, setThemeCheckState] = useState(
         themeValue === Theme.DARK ? true : false
     );
