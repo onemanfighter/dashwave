@@ -1,24 +1,16 @@
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ProjectPreviewComponent from './ProjectPreviewComponent';
-import { ProjectSelector } from '@store/selectors/project_selector';
+import { projectsSelector, useShallow } from '@selectors';
+import { appStore } from '@zustand_store';
 
-/**
- * Project select data
- */
-interface ProjectSelectData {
+type ProjectSelectData = {
     projectId: string;
     projectName: string;
-}
+};
 
-/**
- * Component definition for the project preview screen.
- * @param props The props for the project preview screen.
- * @returns The ProjectPreviewScreen component.
- */
-function ProjectPreviewScreen() {
-    const { projects: projectData } = useSelector(ProjectSelector);
+const ProjectPreviewScreen = () => {
+    const { projectData } = appStore(useShallow(projectsSelector));
     const projectIdData: ProjectSelectData[] = projectData.map((project) => {
         return {
             projectId: project.projectId,
@@ -81,7 +73,7 @@ function ProjectPreviewScreen() {
             </div>
         </div>
     );
-}
+};
 
 // Export the ProjectPreviewScreen component.
 export default ProjectPreviewScreen;

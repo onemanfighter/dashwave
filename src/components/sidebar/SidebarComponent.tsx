@@ -11,7 +11,10 @@ import {
     ResourceIcon,
 } from '@assets';
 import TooltipComponent from '../tooltip/TooltipComponent';
+// Do not resolve the below imports
+// ----------------------------------------------
 import { ProfileRoutes, SidebarRoutes } from '@router/sidebarRoutes';
+// ----------------------------------------------
 import {
     SidebarComponentProps,
     SidebarIconProps,

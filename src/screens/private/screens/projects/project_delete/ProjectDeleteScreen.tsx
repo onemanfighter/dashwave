@@ -1,21 +1,13 @@
-import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ProjectCard, getProjectCardData } from '@dash-ui';
-import { ProjectSelector } from '@store/selectors/project_selector';
+import { appStore } from '@zustand_store';
+import { projectsSelector, useShallow } from '@selectors';
 
-/**
- * Interface definition for the project delete screen props.
- */
-interface IProjectDeleteScreenProps {}
+type IProjectDeleteScreenProps = {};
 
-/**
- * Component definition for the project delete screen.
- * @param props The props for the project delete screen.
- * @returns The ProjectDeleteScreen component.
- */
-function ProjectDeleteScreen(props: IProjectDeleteScreenProps) {
-    const { projects: projectData } = useSelector(ProjectSelector);
+const ProjectDeleteScreen = (props: IProjectDeleteScreenProps) => {
+    const { projectData } = appStore(useShallow(projectsSelector));
     const initialProjectId = projectData[0].projectId;
     const [selectedProjectId, setSelectedProjectId] =
         useState<string>(initialProjectId);
@@ -68,7 +60,7 @@ function ProjectDeleteScreen(props: IProjectDeleteScreenProps) {
             </div>
         </div>
     );
-}
+};
 
 // Exports for the ProjectDeleteScreen component.
 export default ProjectDeleteScreen;

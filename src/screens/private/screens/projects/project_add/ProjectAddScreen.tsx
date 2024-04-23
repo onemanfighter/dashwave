@@ -1,9 +1,9 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '@store';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { ProjectCard, getProjectCardData } from '@dash-ui';
-import { ProjectSelector } from '@store/selectors/project_selector';
+import { appStore } from '@zustand_store';
+import { projectsSelector, useShallow } from '@selectors';
 
 /**
  * Interface definition for the project edit screen props.
@@ -16,7 +16,7 @@ interface IProjectEditScreenProps {}
  * @returns The ProjectEditScreen component.
  */
 function ProjectAddScreen(props: IProjectEditScreenProps) {
-    const { projects: projectData } = useSelector(ProjectSelector);
+    const { projectData } = appStore(useShallow(projectsSelector));
     const initialProjectId = projectData[0].projectId;
     const [selectedProjectId, setSelectedProjectId] =
         useState<string>(initialProjectId);

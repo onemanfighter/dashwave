@@ -1,5 +1,3 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '@store';
 import {
     SocialLink,
     SocialType,
@@ -16,7 +14,8 @@ import {
     SocialIcon,
 } from '@assets';
 import { TitleCard, TooltipComponent } from '@dash-ui';
-import { ProfileSelector } from '@store/selectors/profile_selector';
+import { profileSelector, useShallow } from '@selectors';
+import { appStore } from '@zustand_store';
 
 /**
  * The text style for the profile preview screen.
@@ -29,7 +28,7 @@ const TextStyle =
  * @returns The profile preview screen component.
  */
 function ProfilePreviewScreen() {
-    const { profile: profileData } = useSelector(ProfileSelector);
+    const { profileData } = appStore(useShallow(profileSelector));
 
     return (
         <div className=" m-2 h-full">

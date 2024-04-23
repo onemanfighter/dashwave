@@ -1,22 +1,19 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 
-import { useSelector } from 'react-redux';
 import { ImagePreviewModalButton } from '@dash-ui';
 import { ProjectData } from '@service/supabase/supastore/projects/ProjectsCollection';
 import { WebsiteIcon, GithubIcon, HostingerIcon } from '@assets';
-import { ImageModalSelector } from '@store/selectors';
+import { imageModalSelector, useShallow } from '@selectors';
+import { appStore } from '@zustand_store';
 
 export type IProjectPreviewComponentProps = {
     project: ProjectData;
 };
 
-export default function ProjectPreviewComponent(
-    props: IProjectPreviewComponentProps
-) {
-    const { setModalImageAction } = useSelector(ImageModalSelector);
-
+const ProjectPreviewComponent = (props: IProjectPreviewComponentProps) => {
+    const { setImageString } = appStore(useShallow(imageModalSelector));
     const onImageClickHandler = (image: string) => {
-        setModalImageAction(image);
+        setImageString(image);
     };
 
     return (
@@ -128,4 +125,6 @@ export default function ProjectPreviewComponent(
             </div>
         </div>
     );
-}
+};
+
+export default ProjectPreviewComponent;

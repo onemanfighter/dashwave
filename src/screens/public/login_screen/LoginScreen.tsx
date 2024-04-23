@@ -4,15 +4,11 @@ import { ErrorText, InputText, InputType, LandingIntro } from '@dash-ui';
 
 import { LoginCred } from '@service/supabase/supa_auth/actions/AuthSignIn';
 import { signIn } from '@service/supabase/supa_auth/AuthApi';
-import { useSelector } from 'react-redux';
 import { validatePassword } from '../../../util/input/Input';
-import { AuthData } from '@store';
 import { useTranslation } from 'react-i18next';
-import { AuthSelector } from '@store/selectors';
+import { AuthDataState, appStore } from '@zustand_store';
+import { authSelector, useShallow } from '@selectors';
 
-/**
- * Proptypes for the update form value function.
- */
 interface UpdateProps {
     updateType: string;
     value: string;
@@ -29,14 +25,13 @@ function Login() {
         password: '',
         email: '',
     };
-
-    const { setLoginDataAction, authToken } = useSelector(AuthSelector);
+    const { setLoginData } = appStore(useShallow(authSelector));
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [loginObj, setLoginObj] = useState<LoginCred>(INITIAL_LOGIN_OBJ);
 
-    const signInHandler = (authData: AuthData) => {
-        setLoginDataAction(authData);
+    const signInHandler = (authData: AuthDataState) => {
+        setLoginData(authData);
     };
 
     const submitForm = (e: any) => {

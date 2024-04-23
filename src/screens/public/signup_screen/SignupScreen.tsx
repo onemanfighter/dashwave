@@ -3,10 +3,10 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { ErrorText, InputText, LandingIntro } from '@dash-ui';
 import { SignUpCred } from '@service/supabase/supa_auth/actions/AuthSignUp';
 import { signUp } from '@service/supabase/supa_auth/AuthApi';
-import { useSelector } from 'react-redux';
 import { getSuccessAlertData } from '@provider';
 import { useTranslation } from 'react-i18next';
-import { AlertSelector } from '@store/selectors/alert_selector';
+import { appStore } from '@zustand_store';
+import { alertSelector, useShallow } from '@selectors';
 
 /**
  * Prop types for the update form value function.
@@ -29,7 +29,7 @@ function Register() {
         password: '',
         email: '',
     };
-    const { showAlertWithTimeout } = useSelector(AlertSelector);
+    const { showAlertWithTimeout } = appStore(useShallow(alertSelector));
 
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);

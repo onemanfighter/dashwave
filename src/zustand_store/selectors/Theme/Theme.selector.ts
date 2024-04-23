@@ -1,4 +1,4 @@
-import { AppStoreState } from '@zustand_store/store';
+import { AppStoreState } from '@zustand_store';
 
 export const themeSelector = (state: AppStoreState) => ({
     themeValue: state.Theme.themeValue,
