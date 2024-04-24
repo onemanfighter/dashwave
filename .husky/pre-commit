@@ -1,2 +1,2 @@
-npm run lint:staged
-npm run prettier:staged
+yarn lint:staged
+yarn prettier:staged
