@@ -5,7 +5,7 @@ import {
     PROJECTS_TABLE,
     SUPABASE_KEY,
     SUPABASE_URL,
-} from '../../../env';
+} from '../../env';
 
 // Supabase configuration
 const supabaseUrl = SUPABASE_URL;
