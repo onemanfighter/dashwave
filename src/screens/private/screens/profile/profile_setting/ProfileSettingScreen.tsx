@@ -22,7 +22,7 @@ import {
     WebsiteIcon,
 } from '@assets';
 import { InputText, InputType } from '@dash-ui';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 import {
     alertSelector,
     authSelector,

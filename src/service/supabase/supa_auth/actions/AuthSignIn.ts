@@ -1,4 +1,4 @@
-import { AuthDataState } from '@zustand_store';
+import { AuthDataState } from '@store';
 import { SupabaseAuth } from '../../supabase_main/Supabase';
 
 /**

@@ -2,7 +2,7 @@ import { ToastAlertData } from '@provider';
 import { UserProfileData } from './UserCollection';
 import { getUserUsingId } from './actions/UserDataRead';
 import { updateUserData } from './actions/UserDataWrite';
-import { UserData } from '@zustand_store';
+import { UserData } from '@store';
 
 /**
  * Method to get the user profileData

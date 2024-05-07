@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ProjectPreviewComponent from './ProjectPreviewComponent';
 import { projectsSelector, useShallow } from '@selectors';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 
 type ProjectSelectData = {
     projectId: string;

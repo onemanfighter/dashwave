@@ -5,7 +5,7 @@ import { SignUpCred } from '@service/supabase/supa_auth/actions/AuthSignUp';
 import { signUp } from '@service/supabase/supa_auth/AuthApi';
 import { getSuccessAlertData } from '@provider';
 import { useTranslation } from 'react-i18next';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 import { alertSelector, useShallow } from '@selectors';
 
 /**

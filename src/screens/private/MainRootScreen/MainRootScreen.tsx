@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { signOut } from '@service/supabase/supa_auth/AuthApi';
 import { useEffect, useState } from 'react';
 import { NavigationComponent, SidebarComponent } from '@dash-ui';
-import { appStore, syncForTheFirstTime } from '@zustand_store';
+import { appStore, syncForTheFirstTime } from '@store';
 import { authSelector, profileSelector, useShallow } from '@selectors';
 
 const MainRootScreen = () => {

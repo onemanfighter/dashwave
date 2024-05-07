@@ -1,6 +1,6 @@
 import { ProjectCard, getProjectCardData } from '@dash-ui';
 import { projectsSelector, useShallow } from '@selectors';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 
 const ProjectMainScreen = () => {
     const { projectData } = appStore(useShallow(projectsSelector));

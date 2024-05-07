@@ -1,4 +1,4 @@
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 import { themeSelector, useShallow } from '@selectors';
 import { ThemeProviderProps } from './types';
 

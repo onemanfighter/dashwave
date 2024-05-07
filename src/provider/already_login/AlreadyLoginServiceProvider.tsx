@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { alreadySignedIn } from '@service/supabase/supa_auth/AuthApi';
 import { AlreadyLoginServiceProviderProps } from './types';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 import { authSelector, useShallow } from '@selectors';
 
 const AlreadyLoginServiceProvider = (

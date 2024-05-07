@@ -1,6 +1,6 @@
 import { ImagePreviewModal } from '@dash-ui';
 import { ImagePreviewModalProviderProps } from './types';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 import { imageModalSelector, useShallow } from '@selectors';
 
 const ImagePreviewModalProvider = (props: ImagePreviewModalProviderProps) => {
