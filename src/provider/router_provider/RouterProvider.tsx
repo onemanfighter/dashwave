@@ -1,6 +1,6 @@
 import { RouterProvider } from 'react-router-dom';
 import { privateRouter, publicRouter } from '@router';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 import { authSelector, useShallow } from '@selectors';
 
 /**

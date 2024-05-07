@@ -4,7 +4,7 @@ import { ImagePreviewModalButton } from '@dash-ui';
 import { ProjectData } from '@service/supabase/supastore/projects/ProjectsCollection';
 import { WebsiteIcon, GithubIcon, HostingerIcon } from '@assets';
 import { imageModalSelector, useShallow } from '@selectors';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 
 export type IProjectPreviewComponentProps = {
     project: ProjectData;

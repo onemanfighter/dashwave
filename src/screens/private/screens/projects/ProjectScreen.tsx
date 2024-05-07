@@ -4,7 +4,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { TooltipComponent } from '@dash-ui';
 import { getAllProjects } from '@service/supabase/supastore/projects/ProjectsStoreApi';
 import { AddIcon, DeleteIcon, EditIcon, PreviewIcon } from '@assets';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 import { authSelector, projectsSelector, useShallow } from '@selectors';
 
 import getSubNavTitle from '../../../../util/nav/NavTitle';

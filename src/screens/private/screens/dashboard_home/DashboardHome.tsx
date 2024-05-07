@@ -1,6 +1,6 @@
 import { NotificationButton, NotificationButtonType } from '@dash-ui';
 import { getErrorAlertData } from '@provider';
-import { NotificationData, appStore } from '@zustand_store';
+import { NotificationData, appStore } from '@store';
 import { alertSelector, notificationSelector, useShallow } from '@selectors';
 
 /**

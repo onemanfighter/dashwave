@@ -12,7 +12,7 @@ import {
 import { NavigationComponentProps } from './types';
 
 import { profileSelector, themeSelector, useShallow } from '@selectors';
-import { Theme, appStore } from '@zustand_store';
+import { Theme, appStore } from '@store';
 
 /**
  * Navigation component.

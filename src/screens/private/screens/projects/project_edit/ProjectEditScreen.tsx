@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ProjectCard, getProjectCardData } from '@dash-ui';
 import { projectsSelector, useShallow } from '@selectors';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 
 type IProjectEditScreenProps = {};
 

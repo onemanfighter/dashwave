@@ -1,6 +1,6 @@
 import { NOTIFICATION_MODAL_ID } from './constants';
 import { useTranslation } from 'react-i18next';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 import { notificationSelector, useShallow } from '@selectors';
 
 /**

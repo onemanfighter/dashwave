@@ -1,4 +1,4 @@
-import { Theme } from '@zustand_store';
+import { Theme } from '@store';
 import { themeKey } from '../token_constants/StorageConstant';
 
 /**

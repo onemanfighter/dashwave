@@ -13,15 +13,9 @@ module.exports = {
             '@screens/*': path.resolve(__dirname, './src/screens/*'),
             '@service': path.resolve(__dirname, './src/service'),
             '@service/*': path.resolve(__dirname, './src/service/*'),
-            '@zustand_store': path.resolve(__dirname, './src/zustand_store'),
-            '@zustand_store/slice': path.resolve(
-                __dirname,
-                './src/zustand_store/slice'
-            ),
-            '@selectors': path.resolve(
-                __dirname,
-                './src/zustand_store/selectors'
-            ),
+            '@store': path.resolve(__dirname, './src/store'),
+            '@store/slice': path.resolve(__dirname, './src/store/slice'),
+            '@selectors': path.resolve(__dirname, './src/store/selectors'),
         },
     },
 };

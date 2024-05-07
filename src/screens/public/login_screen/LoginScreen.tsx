@@ -6,7 +6,7 @@ import { LoginCred } from '@service/supabase/supa_auth/actions/AuthSignIn';
 import { signIn } from '@service/supabase/supa_auth/AuthApi';
 import { validatePassword } from '../../../util/input/Input';
 import { useTranslation } from 'react-i18next';
-import { AuthDataState, appStore } from '@zustand_store';
+import { AuthDataState, appStore } from '@store';
 import { authSelector, useShallow } from '@selectors';
 
 interface UpdateProps {

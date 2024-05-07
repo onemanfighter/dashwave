@@ -15,7 +15,7 @@ import {
 } from '@assets';
 import { TitleCard, TooltipComponent } from '@dash-ui';
 import { profileSelector, useShallow } from '@selectors';
-import { appStore } from '@zustand_store';
+import { appStore } from '@store';
 
 /**
  * The text style for the profile preview screen.
